@@ -97,75 +97,10 @@ const NO_SMALL  = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" s
 let activeFilters = { cashback: false, employees: false, datev: false, kreditrahmen: false };
 let sortKey = 'base', sortAsc = true;
 
-/* ========== CUSTOM DROPDOWN ========== */
-function fdGetValue(id) {
-  const el = document.getElementById(id);
-  return el ? (el.dataset.value || '') : '';
-}
-function fdSetValue(id, value, label) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.dataset.value = value;
-  const txt = el.querySelector('.fd-trigger-text');
-  if (txt && label !== undefined) txt.textContent = label;
-  // Update selected state in the dropdown menu.
-  el.querySelectorAll('.fd-option').forEach(o => {
-    o.classList.toggle('selected', o.dataset.value === value);
-  });
-  // Highlight triggers for filters only.
-  if (id === 'fd-sort') {
-    el.classList.remove('has-value');
-  } else {
-    el.classList.toggle('has-value', value !== '');
-  }
-}
-function fdInit() {
-  document.querySelectorAll('.fd').forEach(fd => {
-    const trigger = fd.querySelector('.fd-trigger');
-    const menu = fd.querySelector('.fd-menu');
-    if (!trigger || !menu) return;
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      // close others
-      document.querySelectorAll('.fd.open').forEach(o => {
-        if (o !== fd) o.classList.remove('open');
-      });
-      fd.classList.toggle('open');
-      trigger.setAttribute('aria-expanded', fd.classList.contains('open') ? 'true' : 'false');
-    });
-    menu.querySelectorAll('.fd-option').forEach(opt => {
-      opt.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const val = opt.dataset.value || '';
-        const label = opt.textContent.trim();
-        fdSetValue(fd.id, val, label);
-        fd.classList.remove('open');
-        trigger.setAttribute('aria-expanded', 'false');
-        // Trigger appropriate handler
-        if (fd.id === 'fd-sort') applySort();
-        else applyFilters();
-      });
-    });
-  });
-  // Close on outside click
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.fd.open').forEach(o => {
-      o.classList.remove('open');
-      const t = o.querySelector('.fd-trigger');
-      if (t) t.setAttribute('aria-expanded', 'false');
-    });
-  });
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.fd.open').forEach(o => o.classList.remove('open'));
-    }
-  });
-}
-
 function toggleFilter(key, btn) {
   activeFilters[key] = !activeFilters[key];
   btn.classList.toggle('active', activeFilters[key]);
+  btn.setAttribute('aria-pressed', activeFilters[key] ? 'true' : 'false');
   renderTable();
 }
 
@@ -185,7 +120,10 @@ function applySort() {
 
 function resetFilters() {
   activeFilters = { cashback: false, employees: false, datev: false, kreditrahmen: false };
-  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.toggle-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-pressed', 'false');
+  });
   fdSetValue('fd-suit', '', 'Alle Rechtsformen');
   fdSetValue('fd-type', '', 'Alle Typen');
   fdSetValue('fd-budget', '', 'Alle Preise');
@@ -239,6 +177,8 @@ function renderTable() {
 
   if (sortKey) {
     data.sort((a, b) => {
+      const highlightOrder = compareHighlightFirst(a, b);
+      if (highlightOrder) return highlightOrder;
       let av = a[sortKey];
       let bv = b[sortKey];
       if (typeof av === 'string') av = av.toLowerCase();
@@ -255,6 +195,7 @@ function renderTable() {
   updateFilterCount();
   renderDesktopTable(data);
   renderMobileCards(data);
+  requestAnimationFrame(updateScrollState);
 }
 
 function renderDesktopTable(data) {
@@ -413,8 +354,16 @@ function renderMobileCards(data) {
   }).join('');
 }
 
+function updateScrollState() {
+  updateTableScrollState({ scrollThreshold: 4, endWhenNotScrollable: true });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  fdInit();
+  fdInitControls({
+    onSort: applySort,
+    onFilter: applyFilters
+  });
+  document.querySelectorAll('.toggle-btn').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
   document.querySelectorAll('th.sortable').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.key;
@@ -439,25 +388,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (defaultTh) defaultTh.classList.add('asc');
   renderTable();
 
-  // Scroll detection inside DOMContentLoaded for reliable measurements.
-  const _tw = document.getElementById('tableWrap');
-  const _sw = document.getElementById('tableScrollWrap');
-  const _hint = document.getElementById('scrollHint');
-  if (_tw && _sw) {
-    const checkScroll = () => {
-      const hasScroll = _tw.scrollWidth > _tw.clientWidth + 2;
-      const atStart = _tw.scrollLeft <= 2;
-      const atEnd = _tw.scrollLeft + _tw.clientWidth >= _tw.scrollWidth - 8;
-      _sw.classList.toggle('scrollable', hasScroll);
-      _sw.classList.toggle('at-start', atStart);
-      _sw.classList.toggle('at-end', atEnd);
-      if (_hint) _hint.classList.toggle('visible', hasScroll && !atEnd);
-    };
-    _tw.addEventListener('scroll', checkScroll, { passive: true });
-    window.addEventListener('resize', checkScroll);
-    setTimeout(checkScroll, 50);
-    setTimeout(checkScroll, 300);
-    setTimeout(checkScroll, 800);
-    checkScroll();
-  }
+  const tableWrap = document.getElementById('tableWrap');
+  if (tableWrap) tableWrap.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', updateScrollState);
+  setTimeout(updateScrollState, 50);
+  setTimeout(updateScrollState, 300);
+  updateScrollState();
 });

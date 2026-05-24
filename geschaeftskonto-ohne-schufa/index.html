@@ -733,7 +733,7 @@
                 <ul class="mini-pros-list">
                   <li>Keine Schufa-Abfrage</li>
                   <li>Multi-Währungskonto (USD, GBP, …)</li>
-                  <li>5 kostenlose internationale Überweisungen</li>
+                  <li>10 lokale Überweisungen inklusive</li>
                   <li>Auch für GmbH &amp; AG</li>
                 </ul>
               </div>
@@ -761,7 +761,7 @@
           <li class="inline-arrow-item"><span class="inline-arrow-marker">→</span> <strong><a href="/firmendo-test-pages/vivid-geschaeftskonto/">Vivid Business Free</a>:</strong> 0 €/Monat, GmbH &amp; UG, keine klassische Schufa-Abfrage, gut für Gründer</li>
           <li class="inline-arrow-item"><span class="inline-arrow-marker">→</span> <strong><a href="/firmendo-test-pages/qonto-geschaeftskonto/">Qonto Starter</a>:</strong> 0 €/Monat, 5 Transaktionen inklusive, keine klassische Schufa-Abfrage, gut für Gründer</li>
           <li class="inline-arrow-item"><span class="inline-arrow-marker">→</span> <strong>Revolut Business Basic:</strong> 10 €/Monat, GmbH, AG, OHG, internationale Zahlungen, gut für Internationales</li>
-          <li class="inline-arrow-item"><span class="inline-arrow-marker">→</span> <strong><a href="/firmendo-test-pages/holvi-geschaeftskonto/">Holvi Business</a>:</strong> 59 €/Monat zzgl. USt., für GmbH &amp; UG mit mehreren Nutzer*innen</li>
+          <li class="inline-arrow-item"><span class="inline-arrow-marker">→</span> <strong><a href="/firmendo-test-pages/holvi-geschaeftskonto/">Holvi Flex</a>:</strong> 0 €/Monat, dauerhaft ohne Grundgebühr, 0,25 € je SEPA-Überweisung/Lastschrift</li>
         </ul>
         <div class="content-highlight orange">
           <strong>Hinweis für GmbH-Gründer:</strong> Bei der Gründung einer GmbH ist ein Geschäftskonto für die Einzahlung des Stammkapitals gesetzlich erforderlich. Fintechs wie <a href="/firmendo-test-pages/qonto-geschaeftskonto/">Qonto</a> oder <a href="/firmendo-test-pages/fyrst-geschaeftskonto/">FYRST</a> unterstützen auch diesen Prozess — ohne klassische Schufa-Abfrage.
@@ -1018,14 +1018,14 @@ const products = [
     logo: '<img class="provider-logo-img" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async" width="256" height="256">'
   },
   {
-    name: 'Qonto Starter', priceNote: 'Starter · 0 €/Monat · 5 Transaktionen inkl. · virtuelle Karte inklusive · 0,40 €/weitere', base: 0, txCost: 0.40, abhebePct: 0, abhebeMin: 2, txFree: 5, cat: 'Fintech', price: 0, highlight: false,
+    name: 'Qonto Starter', priceNote: 'Starter · 5 Transaktionen inkl. · virtuelle Karte inklusive', base: 0, txCost: 0.40, abhebePct: 0, abhebeMin: 2, txFree: 5, cat: 'Fintech', price: 0, highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     schufa: false, rating: 4.6, label: 'Kostenloser Einstieg mit DATEV', cashback: '—', intl: false, datev: true, accounting: true,
     affiliateUrl: 'https://qonto.com/de?ref=firmendo', reviewUrl: '/qonto-geschaeftskonto/',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async" width="480" height="480">'
   },
   {
-    name: 'Revolut Business Basic', priceNote: 'Basic · 10 €/Monat · 10 lokale Überweisungen inkl. · 0,20 €/weitere · internationale Überweisungen kostenpflichtig', base: 10, txCost: 0.20, abhebePct: 0.02, abhebeMin: 1, txFree: 10, cat: 'Fintech', price: 10, highlight: false, pinLast: true,
+    name: 'Revolut Business Basic', priceNote: 'Basic · 10 lokale Überweisungen inkl. · 0,20 €/weitere · internationale Überweisungen kostenpflichtig', base: 10, txCost: 0.20, abhebePct: 0.02, abhebeMin: 1, txFree: 10, cat: 'Fintech', price: 10, highlight: false, pinLast: true,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','OHG','Gründer'],
     schufa: false, rating: 4.4, label: 'Stark bei internationalen Zahlungen', cashback: '—', intl: true, datev: false, accounting: false,
     affiliateUrl: 'https://www.revolut.com/business/?ref=firmendo', reviewUrl: '',
