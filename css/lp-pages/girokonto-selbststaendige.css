@@ -158,6 +158,12 @@ body.lp-comparison-page .td-provider {
   white-space: nowrap;
 }
 
+body.lp-comparison-page .td-anbieter .highlight-badge {
+  order: 0;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
 body.lp-comparison-page .table-wrap tbody td:nth-child(5),
 body.lp-comparison-page .table-wrap tbody td:nth-child(6) {
   text-align: center;

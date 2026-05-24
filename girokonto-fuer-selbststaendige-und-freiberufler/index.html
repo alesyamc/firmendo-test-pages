@@ -1215,6 +1215,22 @@
 const YES_ICON = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>`;
 const NO_ICON = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--gray-300)" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
 
+function tariffName(p) {
+  const names = {
+    'Finom': 'Finom Solo',
+    'Tide': 'Tide Geschäftskonto',
+    'Kontist': 'Kontist Free / Premium',
+    'FYRST': 'FYRST Base',
+    'N26 Business': 'N26 Business',
+    'Qonto': 'Qonto Solo / Team',
+    'Vivid Business': 'Vivid Business Free / Premium',
+    'FYRST Complete': 'FYRST Complete',
+    'Commerzbank': 'Commerzbank Business Girokonto',
+    'Deutsche Bank': 'Deutsche Bank BusinessKonto'
+  };
+  return names[p.name] || p.name;
+}
+
 const products = [
   {
     name: 'Finom',
@@ -1492,8 +1508,8 @@ function renderTable() {
         <div class="td-anbieter">
           <div class="td-logo">${p.logo}</div>
           <div>
-            <div class="td-name">${p.name}</div>
-            <div class="td-cat">${p.cat}</div>
+            <div class="td-name">${tariffName(p)}</div>
+            <div class="td-cat">${p.typ}</div>
             ${p.highlight ? '<span class="highlight-badge">Empfehlung Freelancer</span>' : ''}
           </div>
         </div>
@@ -1545,9 +1561,9 @@ function renderMobileCards(data) {
       <div class="mc-head">
         <div class="mc-logo">${p.logo}</div>
         <div class="mc-head-text">
-          <div class="mc-name">${p.name}</div>
+          <div class="mc-name">${tariffName(p)}</div>
           <div class="mc-meta">
-            <span class="mc-cat">${p.cat}</span>
+            <span class="mc-cat">${p.typ}</span>
             ${p.highlight ? '<span class="mc-badge">Empfehlung Freelancer</span>' : ''}
           </div>
         </div>
