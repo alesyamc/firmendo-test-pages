@@ -1,0 +1,46 @@
+.content-section {
+  padding: var(--content-section-padding, var(--space-section-y) var(--space-page-x));
+  background: var(--gray-50);
+}
+
+.content-section-compact {
+  --content-section-padding: var(--space-4xl) var(--space-page-x) var(--space-section-y);
+}
+
+.page-with-toc {
+  display: grid;
+  grid-template-columns: 1fr var(--content-toc-width, 280px);
+  gap: var(--content-toc-gap, var(--space-6xl));
+  max-width: var(--content-layout-max-width, 1260px);
+  margin: var(--space-0) auto;
+  padding: var(--content-layout-padding, 0 12px);
+  align-items: start;
+}
+
+.page-with-toc-compact {
+  --content-toc-width: 280px;
+  --toc-width: var(--content-toc-width);
+  --content-toc-gap: var(--space-6xl);
+  --content-layout-max-width: 1200px;
+  --content-layout-padding: 0;
+}
+
+.content-body,
+.content-inner,
+.text-body {
+  min-width: 0;
+}
+
+body.lp-comparison-page .text-body a[href$="-geschaeftskonto/"] {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+@media (max-width: 1024px) {
+  .page-with-toc {
+    grid-template-columns: 1fr;
+  }
+
+  .text-body {
+    overflow-x: hidden;
+  }
+}

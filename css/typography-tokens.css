@@ -1,0 +1,246 @@
+:root {
+  --fs-xxs: 0.68rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.82rem;
+  --fs-md: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.0625rem;
+  --fs-lg-plus: 1.08rem;
+  --fs-xl-sm: 1.1rem;
+  --fs-xl: 1.15rem;
+  --fs-subtitle: 1.18rem;
+  --fs-cta-title: 1.2rem;
+  --fs-logo: 1.3rem;
+  --fs-h3: 1.344rem;
+  --fs-highlight: 1.4rem;
+  --fs-h2: 1.8rem;
+  --fs-stat: 2rem;
+  --fs-hero: clamp(1.7rem, 3.5vw, 2.6rem);
+  --space-0: 0;
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 6px;
+  --space-sm: 8px;
+  --space-md: 10px;
+  --space-lg: 12px;
+  --space-xl: 14px;
+  --space-2xl: 16px;
+  --space-3xl: 20px;
+  --space-card-xl: 22px;
+  --space-4xl: 24px;
+  --space-5xl: 32px;
+  --space-6xl: 40px;
+  --space-7xl: 48px;
+  --space-8xl: 56px;
+  --space-layout-gap: 60px;
+  --space-9xl: 64px;
+  --space-10xl: 80px;
+  --space-section-y: 72px;
+  --space-page-x: 5vw;
+  --space-container-x: 24px;
+  --radius-0: 0;
+  --radius-circle: 50%;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+  --radius-3xl: 18px;
+  --radius-4xl: 24px;
+  --radius-card: 16px;
+  --radius-card-lg: 20px;
+  --radius-card-xl: 22px;
+  --radius-pill: 999px;
+  --radius: var(--radius-card);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  --line-height-tight: 1;
+  --line-height-title: 1.15;
+  --line-height-heading: 1.2;
+  --line-height-heading-loose: 1.25;
+  --line-height-compact: 1.35;
+  --line-height-caption: 1.4;
+  --line-height-ui: 1.45;
+  --line-height-normal: 1.5;
+  --line-height-list: 1.55;
+  --line-height-note: 1.6;
+  --line-height-body: 1.65;
+  --line-height-reading: 1.75;
+  --line-height-base: 1.7;
+  --line-height-meta: 1.3;
+  --letter-spacing-none: 0;
+  --letter-spacing-ui-tight: -0.2px;
+  --letter-spacing-title-tight: -0.4px;
+  --letter-spacing-heading-tight: -0.5px;
+  --letter-spacing-display-tight: -0.7px;
+  --letter-spacing-brand-tight: -1.5px;
+  --letter-spacing-subtle: 0.02em;
+  --letter-spacing-avatar: 0.04em;
+  --letter-spacing-meta: 0.06em;
+  --letter-spacing-label: 0.07em;
+  --letter-spacing-eyebrow: 0.08em;
+  --letter-spacing-kicker: 0.09em;
+  --letter-spacing-wide: 0.1em;
+  --letter-spacing-xwide: 0.12em;
+  --text-body-size: var(--fs-lg);
+  --text-body-color: var(--gray-700);
+  --text-body-line-height: var(--line-height-reading);
+  --text-body-margin-bottom: var(--space-xl);
+  --text-list-size: var(--fs-lg);
+  --text-list-color: var(--gray-700);
+  --text-list-line-height: var(--line-height-list);
+  --text-list-margin-bottom: var(--space-sm);
+  --text-step-size: var(--fs-base);
+  --text-step-line-height: var(--line-height-list);
+  --text-nav-size: var(--fs-base);
+  --text-nav-meta-size: var(--fs-sm);
+  --text-caption-size: var(--fs-sm);
+  --text-eyebrow-size: var(--fs-sm);
+  --text-badge-size: var(--fs-xs);
+  --text-table-head-size: var(--fs-sm);
+  --text-table-body-size: var(--fs-md);
+  --text-table-note-size: var(--fs-xs);
+  --text-button-size: var(--fs-sm);
+  --text-card-title-size: var(--fs-base);
+  --text-card-body-size: var(--fs-md);
+  --text-hero-title-size: clamp(1.8rem, 3vw, 2.6rem);
+  --text-hero-subtitle-size: var(--fs-lg);
+  --text-filter-title-size: 26px;
+  --text-section-title-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  --text-heading-2-size: var(--fs-h2);
+  --text-heading-3-size: 21px;
+  --text-heading-note-size: var(--fs-lg-plus);
+  --text-hero-title-compact-size: clamp(1.8rem, 3vw, 2.6rem);
+  --text-brand-display-size: var(--fs-logo);
+  --text-wordmark-xl-size: 2.75rem;
+  --text-legal-tiny-size: var(--fs-xs);
+  --text-logo-size: var(--fs-logo);
+  --text-mini-label-size: var(--fs-xxs);
+  --text-inline-icon-size: var(--fs-sm);
+  --text-promo-price-size: var(--fs-xl);
+  --text-cta-title-size: var(--fs-cta-title);
+  --text-method-card-title-size: var(--fs-lg-plus);
+  --text-inline-logo-size: var(--fs-xl-sm);
+  --text-article-hero-title-size: var(--fs-hero);
+  --text-article-subtitle-size: var(--fs-subtitle);
+  --text-ui-size: var(--fs-base);
+  --text-ui-large-size: var(--fs-lg);
+  --text-summary-title-size: 0.98rem;
+  --text-summary-title-mobile-size: 0.9rem;
+  --text-summary-item-size: 1.02rem;
+  --text-summary-item-mobile-size: 0.96rem;
+  --text-stat-size: var(--fs-stat);
+  --text-highlight-size: var(--fs-highlight);
+  --text-pullquote-size: var(--fs-xl);
+  --text-faq-icon-size: var(--fs-logo);
+  --text-faq-title-size: clamp(1.5rem, 2.4vw, 2rem);
+  --text-logo-emphasis-size: 1.12em;
+  --text-invoice-brand-size: var(--fs-xl-sm);
+  --text-home-hero-title-size: clamp(2rem, 3.6vw, 2.9rem);
+  --text-home-section-title-size: 2rem;
+  --text-home-section-subtitle-size: 1.125rem;
+  --text-home-card-title-size: 1.25rem;
+  --text-home-banner-title-size: 1.5rem;
+  --text-home-banner-title-large-size: 1.75rem;
+  --text-home-result-title-size: 1.375rem;
+  --text-home-faq-icon-size: 1.3rem;
+  --text-home-step-title-size: 1.0625rem;
+  --text-home-body-size: 1rem;
+  --text-home-ui-size: 0.9375rem;
+  --text-home-ui-plus-size: 0.95rem;
+  --text-home-caption-size: 0.875rem;
+  --text-home-small-size: 0.8125rem;
+  --text-home-micro-size: 0.75rem;
+  --text-home-tiny-size: 0.6875rem;
+  --text-home-price-size: 2rem;
+  --text-display-card-title-size: 1.25rem;
+  --text-visual-icon-size: 8rem;
+  --text-calculator-result-size: 1.6rem;
+  --text-inline-percent-size: 1rem;
+  --text-inline-percent-small-size: 0.875rem;
+  --text-card-heading-size: 1.35rem;
+  --text-wordmark-size: 1.5rem;
+  --text-wordmark-large-size: 2.2rem;
+  --text-guide-number-size: 3.5rem;
+  --text-page-hero-title-size: clamp(2.4rem, 5vw, 3.4rem);
+  --text-page-header-title-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  --text-overlay-title-size: clamp(1.4rem, 2.5vw, 2rem);
+  --text-icon-xl-size: 2.4rem;
+  --text-icon-2xl-size: 2.8rem;
+  --text-icon-3xl-size: 3rem;
+  --text-pro-con-mark-size: 1.85rem;
+  --text-review-title-size: clamp(1.08rem, 1.2vw, 1.34rem);
+  --text-module-price-size: 1.7rem;
+  --toc-list-overflow: auto;
+  --highlight-boxes-font-size: var(--text-body-size);
+  --highlight-boxes-green-accent: var(--green);
+  --content-highlight-bg: var(--accent-color-soft);
+  --content-highlight-border-color: var(--accent-color-border);
+  --content-highlight-border-width: 3px;
+  --content-highlight-font-size: var(--highlight-boxes-font-size);
+  --content-highlight-line-height: var(--line-height-body);
+  --content-highlight-strong-color: var(--accent-color-text);
+  --content-highlight-strong-weight: var(--font-weight-bold);
+  --content-highlight-green-strong-weight: var(--font-weight-bold);
+}
+
+.text-body p {
+  font-size: var(--text-body-size);
+  color: var(--text-body-color);
+  line-height: var(--text-body-line-height);
+  margin-bottom: var(--text-body-margin-bottom);
+}
+
+.text-body p:last-child { margin-bottom: 0; }
+
+.content-check-list li,
+.text-body li {
+  font-size: var(--text-list-size);
+  color: var(--text-list-color);
+  line-height: var(--text-list-line-height);
+}
+
+.text-body li {
+  margin-bottom: var(--text-list-margin-bottom);
+}
+
+.step-text {
+  font-size: var(--text-step-size);
+  color: var(--text-list-color);
+  line-height: var(--text-step-line-height);
+}
+
+/* Font-size utilities for markup that still carries inline layout/color styles. */
+.u-fs-0 { font-size: 0 !important; }
+.u-fs-badge { font-size: var(--text-badge-size) !important; }
+.u-fs-body { font-size: var(--text-body-size) !important; }
+.u-fs-button { font-size: var(--text-button-size) !important; }
+.u-fs-calculator-result { font-size: var(--text-calculator-result-size) !important; }
+.u-fs-caption { font-size: var(--text-caption-size) !important; }
+.u-fs-card-body { font-size: var(--text-card-body-size) !important; }
+.u-fs-card-heading { font-size: var(--text-card-heading-size) !important; }
+.u-fs-card-title { font-size: var(--text-card-title-size) !important; }
+.u-fs-cta-title { font-size: var(--text-cta-title-size) !important; }
+.u-fs-eyebrow { font-size: var(--text-eyebrow-size) !important; }
+.u-fs-filter-title { font-size: var(--text-filter-title-size) !important; }
+.u-fs-guide-number { font-size: var(--text-guide-number-size) !important; }
+.u-fs-highlight { font-size: var(--text-highlight-size) !important; }
+.u-fs-inline-logo { font-size: var(--text-inline-logo-size) !important; }
+.u-fs-inline-percent { font-size: var(--text-inline-percent-size) !important; }
+.u-fs-inline-percent-small { font-size: var(--text-inline-percent-small-size) !important; }
+.u-fs-logo { font-size: var(--text-logo-size) !important; }
+.u-fs-method-card-title { font-size: var(--text-method-card-title-size) !important; }
+.u-fs-mini-label { font-size: var(--text-mini-label-size) !important; }
+.u-fs-section-title { font-size: var(--text-section-title-size) !important; }
+.u-fs-step { font-size: var(--text-step-size) !important; }
+.u-fs-summary-item { font-size: var(--text-summary-item-size) !important; }
+.u-fs-summary-title { font-size: var(--text-summary-title-size) !important; }
+.u-fs-table-body { font-size: var(--text-table-body-size) !important; }
+.u-fs-table-head { font-size: var(--text-table-head-size) !important; }
+.u-fs-ui { font-size: var(--text-ui-size) !important; }
+.u-fs-ui-large { font-size: var(--text-ui-large-size) !important; }

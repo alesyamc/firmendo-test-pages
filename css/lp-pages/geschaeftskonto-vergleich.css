@@ -1,0 +1,352 @@
+/* Vergleich: page-specific additions. Shared filter/table chrome lives in lp-comparison-table.css. */
+
+body.lp-comparison-page .vergleich-filter-primary {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(180px, 0.7fr) minmax(520px, 1.6fr);
+  gap: 16px;
+  align-items: end;
+}
+
+body.lp-comparison-page .vergleich-rechner-inline {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+body.lp-comparison-page .rechner-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-caption-size);
+  font-weight: 800;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .rechner-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.lp-comparison-page .rechner-field {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+body.lp-comparison-page .rechner-field label {
+  overflow: hidden;
+  color: var(--gray-700);
+  font-size: var(--text-mini-label-size);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .rechner-field input {
+  width: 100%;
+  min-height: 44px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  background: var(--gray-50);
+  color: var(--gray-800);
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--text-ui-size);
+  font-weight: 700;
+  padding: 8px 10px;
+  text-align: right;
+  transition: border-color .15s, background .15s;
+}
+
+body.lp-comparison-page .rechner-field input:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: #fff;
+}
+
+body.lp-comparison-page #inp-abhebungen {
+  padding-right: 24px;
+}
+
+body.lp-comparison-page .geschaeftskonto-table { min-width: 1368px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-anbieter { width: 252px; min-width: 252px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-price { width: 148px; min-width: 148px; text-align: center; padding-left: 18px; padding-right: 18px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-abhebung { width: 154px; min-width: 154px; text-align: center; padding-left: 18px; padding-right: 18px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-schufa { width: 146px; min-width: 146px; text-align: center; padding-left: 18px; padding-right: 18px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-rf { width: 170px; min-width: 170px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-cashback { width: 122px; min-width: 122px; text-align: center; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-feature { width: 116px; min-width: 116px; text-align: center; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-total { width: 176px; min-width: 176px; text-align: center; padding-left: 20px; padding-right: 20px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-cta { width: 168px; min-width: 168px; }
+
+body.lp-comparison-page .td-price .price-blue {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+body.lp-comparison-page .td-price .price-green {
+  font-weight: 600;
+}
+
+body.lp-comparison-page .td-total {
+  color: var(--gray-800);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .td-total-col .u-text-green-xstrong {
+  font-weight: 600;
+}
+
+body.lp-comparison-page .geschaeftskonto-table .u-text-green-strong {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+body.lp-comparison-page .geschaeftskonto-table .total-breakdown-tooltip {
+  top: calc(100% + 10px);
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-22%);
+  width: min(280px, 72vw);
+  white-space: normal;
+  text-align: left;
+}
+
+body.lp-comparison-page .geschaeftskonto-table .total-breakdown-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  left: 22%;
+  border-top-color: transparent;
+  border-bottom-color: var(--gray-800);
+}
+
+body.lp-comparison-page .td-abhebung {
+  white-space: normal;
+}
+
+body.lp-comparison-page .td-abhebung .table-text {
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1.25;
+}
+
+body.lp-comparison-page .td-abhebung .u-text-gray-300 {
+  font-size: 15px;
+}
+
+body.lp-comparison-page .rechtsform-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+body.lp-comparison-page .bank-type-list li {
+  font-size: 16px;
+}
+
+body.lp-comparison-page .guide-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0 18px;
+  align-items: stretch;
+}
+
+body.lp-comparison-page .guide-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 20px 22px 18px;
+  background: linear-gradient(180deg, #fff 0%, #fcfdff 100%);
+  border: 1px solid rgba(211, 220, 246, 0.92);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(17, 24, 69, 0.035);
+}
+
+body.lp-comparison-page .guide-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--guide-accent, var(--blue)) 0%, rgba(47,73,179,0.18) 100%);
+}
+
+body.lp-comparison-page .guide-card:nth-child(3n + 1) { --guide-accent: var(--blue); }
+body.lp-comparison-page .guide-card:nth-child(3n + 2) { --guide-accent: var(--orange); }
+body.lp-comparison-page .guide-card:nth-child(3n) { --guide-accent: var(--green); }
+
+body.lp-comparison-page .guide-num {
+  margin: 0;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 48px;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+body.lp-comparison-page .guide-title {
+  margin-bottom: 8px;
+  padding-right: 72px;
+  font-size: 17px;
+  line-height: 1.25;
+  max-width: 18ch;
+}
+
+body.lp-comparison-page .guide-text {
+  margin-bottom: 14px;
+  color: var(--gray-700);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body.lp-comparison-page .guide-tip {
+  margin-top: auto;
+  padding: 10px 12px 0 0;
+  color: var(--gray-600);
+  font-size: 14px;
+  line-height: 1.45;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--gray-100);
+  border-radius: 0;
+}
+
+body.lp-comparison-page .guide-tip-label {
+  margin-right: 4px;
+  color: var(--guide-accent, var(--blue));
+}
+
+@media (max-width: 768px) {
+  body.lp-comparison-page .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 20px 0 14px;
+  }
+
+  body.lp-comparison-page .guide-card {
+    padding: 16px;
+  }
+
+  body.lp-comparison-page .guide-title {
+    font-size: 17px;
+    padding-right: 56px;
+    max-width: none;
+  }
+
+  body.lp-comparison-page .guide-num {
+    top: 12px;
+    right: 14px;
+    font-size: 40px;
+  }
+}
+
+body.lp-comparison-page .table-scroll-wrap {
+  max-width: 1200px;
+}
+
+body.lp-comparison-page .table-wrap {
+  max-width: 100%;
+}
+
+body.lp-comparison-page .table-wrap {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.vergleich-top-band {
+  padding: 24px 5vw 0;
+  background: var(--gray-50);
+}
+
+@media (max-width: 980px) {
+  body.lp-comparison-page .vergleich-filter-primary { grid-template-columns: 1fr; }
+  body.lp-comparison-page .vergleich-rechner-inline { gap: 10px; }
+  body.lp-comparison-page .geschaeftskonto-table {
+    min-width: 1448px;
+  }
+  body.lp-comparison-page .geschaeftskonto-table .th-col-price { width: 156px; min-width: 156px; padding-left: 20px; padding-right: 20px; }
+  body.lp-comparison-page .geschaeftskonto-table .th-col-abhebung { width: 168px; min-width: 168px; padding-left: 20px; padding-right: 20px; }
+  body.lp-comparison-page .geschaeftskonto-table .th-col-total { width: 188px; min-width: 188px; padding-left: 24px; padding-right: 24px; }
+  body.lp-comparison-page .geschaeftskonto-table .th-col-schufa { width: 154px; min-width: 154px; padding-left: 20px; padding-right: 20px; }
+  }
+
+@media (max-width: 640px) {
+  body.lp-comparison-page .filter-header { grid-template-columns: minmax(0, 1fr); }
+  body.lp-comparison-page .filter-header-left,
+  body.lp-comparison-page .sort-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  body.lp-comparison-page .filter-title { overflow-wrap: normal; }
+  body.lp-comparison-page .filter-subtitle { overflow-wrap: anywhere; }
+  body.lp-comparison-page .fd-sort {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  body.lp-comparison-page .rechner-fields { grid-template-columns: 1fr; }
+  body.lp-comparison-page .rechner-label { white-space: normal; }
+}
+
+/* RATGEBER */
+section.content-section { padding: 64px 5vw; background: var(--gray-50); }
+.content-body { min-width: 0; }
+
+/* COST GRID */
+.cost-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0 22px;
+}
+.cost-grid .u-card-flex-note {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  align-items: flex-start;
+  box-shadow: none;
+}
+.cost-grid .u-card-flex-note > div:last-child {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.cost-grid .u-icon-square-blue,
+.cost-grid .u-icon-square-orange {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  margin-bottom: 0;
+}
+.cost-grid .u-fs-card-body.u-title-strong-mb5 {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 16px !important;
+  line-height: 1.35;
+  margin-bottom: 0;
+}
+.cost-grid .u-fs-card-body.u-body-muted {
+  width: calc(100% + 44px);
+  max-width: calc(100% + 44px);
+  margin-left: -44px;
+  font-size: 15px !important;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  section.content-section { padding: 40px 5vw; }
+  .cost-grid { grid-template-columns: 1fr; }
+}

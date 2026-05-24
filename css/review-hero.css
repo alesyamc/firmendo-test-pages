@@ -1,0 +1,140 @@
+@import url("./hero.css");
+
+/* Review-specific hero extensions. Shared hero primitives live in css/hero.css. */
+.hero-trust-row + .review-affiliate-note {
+  margin-top: 0;
+}
+
+.hero-disclaimer {
+  margin: 10px 0 0;
+  font-size: var(--text-badge-size);
+  color: #6B7280;
+}
+
+.hero-infocard {
+  background: rgba(255,255,255,0.97);
+  border: var(--border-card);
+  border-radius: 28px;
+  padding: 19px 28px 18px;
+  box-shadow: 0 14px 34px rgba(34,68,232,0.08);
+  width: 404px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-self: start;
+  backdrop-filter: blur(10px);
+}
+
+.ic-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 0 0 10px;
+  border-bottom: var(--border-bottom-subtle);
+}
+
+.ic-logo-mark {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ic-logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ic-logo-meta {
+  font-size: var(--text-card-body-size);
+  color: #6672A8;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.08;
+  margin-top: 1px;
+}
+
+.ic-logo-name {
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-logo-emphasis-size);
+  color: #33427A;
+}
+
+.ic-logo-sub {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.ic-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.ic-row {
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  align-items: flex-start;
+  column-gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(228,233,248,0.65);
+}
+
+.ic-row:last-child {
+  border-bottom: var(--border-none);
+}
+
+.ic-row.einlagensicherung-row {
+  align-items: flex-start;
+}
+
+.ic-row-label {
+  font-size: var(--text-card-body-size);
+  color: #4E588B;
+  font-weight: 550;
+  line-height: 1.16;
+  min-width: 0;
+}
+
+.ic-row-val {
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-800);
+  text-align: right;
+  white-space: normal;
+  line-height: 1.18;
+  text-wrap: balance;
+  min-width: 0;
+  justify-self: stretch;
+}
+
+.ic-row-val.soft {
+  font-size: var(--text-caption-size);
+  font-weight: 560;
+  line-height: 1.16;
+}
+
+.ic-row-val.green {
+  color: var(--green);
+}
+
+.ic-disclaimer {
+  font-size: var(--text-legal-tiny-size);
+  color: #8C97C8;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.28;
+}
+
+@media (max-width: 1000px) {
+  .hero-infocard {
+    width: 100%;
+    max-width: 500px;
+  }
+}

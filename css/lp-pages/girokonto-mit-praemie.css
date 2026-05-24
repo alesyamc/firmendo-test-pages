@@ -1,0 +1,207 @@
+/* Girokonto mit Prämie: page-specific additions. Shared filter/table chrome lives in lp-comparison-table.css. */
+
+body.lp-comparison-page .praemie-filter-primary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+body.lp-comparison-page .praemie-table { min-width: 1120px; }
+body.lp-comparison-page .praemie-table .th-col-anbieter { width: 250px; min-width: 250px; }
+body.lp-comparison-page .praemie-table .th-col-price { width: 132px; min-width: 132px; text-align: center; }
+body.lp-comparison-page .praemie-table .th-col-praemie { width: 150px; min-width: 150px; text-align: center; }
+body.lp-comparison-page .praemie-table .th-col-condition { width: 230px; min-width: 230px; }
+body.lp-comparison-page .praemie-table .th-col-cashback { width: 130px; min-width: 130px; text-align: center; }
+body.lp-comparison-page .praemie-table .th-col-zins { width: 180px; min-width: 180px; text-align: center; }
+body.lp-comparison-page .praemie-table .th-col-feature { width: 110px; min-width: 110px; text-align: center; }
+body.lp-comparison-page .praemie-table .th-col-cta { width: 168px; min-width: 168px; }
+
+body.lp-comparison-page .td-praemie-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(34,68,232,0.1);
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body.lp-comparison-page .td-praemie-value--muted {
+  background: rgba(34,68,232,0.1);
+  color: var(--blue);
+}
+
+body.lp-comparison-page .td-praemie,
+body.lp-comparison-page .td-praemie-col {
+  text-align: center;
+}
+
+body.lp-comparison-page .tooltip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  color: var(--gray-500);
+  font-size: 9px;
+  font-style: italic;
+  font-weight: 700;
+  cursor: help;
+  vertical-align: middle;
+}
+
+body.lp-comparison-page .mc-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+body.lp-comparison-page .mc-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: 14px;
+}
+
+body.lp-comparison-page .mc-spec-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+body.lp-comparison-page .mc-spec-grid span {
+  color: var(--gray-500);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+body.lp-comparison-page .mc-spec-grid strong {
+  color: var(--gray-800);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+body.lp-comparison-page .mc-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+body.lp-comparison-page .td-condition {
+  color: var(--gray-600);
+  font-size: var(--text-caption-size);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+body.lp-comparison-page .td-center {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+body.lp-comparison-page .td-positive {
+  color: var(--green);
+  font-weight: 600;
+}
+body.lp-comparison-page .td-blue {
+  color: var(--blue);
+  font-weight: 600;
+}
+body.lp-comparison-page .td-muted { color: var(--gray-300); }
+
+body.lp-comparison-page .fd-sort.has-value .fd-trigger {
+  background: var(--gray-50);
+  border-color: var(--gray-200);
+  color: var(--gray-800);
+}
+
+body.lp-comparison-page .fd-sort.has-value .fd-arrow {
+  color: var(--gray-300);
+}
+
+body.lp-comparison-page .fd-sort.open .fd-trigger,
+body.lp-comparison-page .fd-sort .fd-trigger:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(34,68,232,0.12);
+}
+
+body.lp-comparison-page .counter-text svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  color: var(--gray-300);
+}
+
+@media (max-width: 640px) {
+  body.lp-comparison-page .filter-header {
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  body.lp-comparison-page .sort-wrap {
+    width: 100%;
+  }
+
+  body.lp-comparison-page .praemie-filter-primary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RATGEBER */
+section.content-section { background: var(--gray-50); padding: 64px 5vw 80px; border-bottom: 1px solid var(--gray-200); }
+.content-body { min-width: 0; }
+
+.content-highlight strong { color: var(--gray-800); }
+
+/* Vergleich 2col */
+.vergleich-col { background: #fff; border: 1.5px solid var(--gray-200); border-radius: 16px; padding: 22px 20px; }
+.vergleich-col.yes { border-color: rgba(22,163,74,0.22); background: rgba(22,163,74,0.04); }
+.vergleich-col.no { border-color: rgba(220,38,38,0.16); background: rgba(220,38,38,0.035); }
+.vergleich-col-title { display: flex; align-items: center; gap: 8px; font-size: var(--text-ui-size); font-weight: 700; color: var(--gray-800); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.vergleich-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.vergleich-col ul li { font-size: var(--text-ui-size); color: var(--gray-700); padding-left: 24px; position: relative; line-height: 1.5; }
+.vergleich-col.yes ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230F8A3A' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+.vergleich-col.no ul li::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--red);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body.lp-comparison-page .praemie-table { min-width: 900px; }
+}

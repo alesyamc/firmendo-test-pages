@@ -1,0 +1,54 @@
+.u-mt-16 {
+  margin-top: 16px;
+}
+
+.u-mt-20 {
+  margin-top: 20px;
+}
+
+.u-mb-20 {
+  margin-bottom: 20px;
+}
+
+.u-mb-22 {
+  margin-bottom: 22px;
+}
+
+.u-mb-24 {
+  margin-bottom: 24px;
+}
+
+.u-mb-0 {
+  margin-bottom: 0;
+}
+
+.section-divider-compact {
+  margin: 24px 0;
+}
+
+.inline-info-icon {
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+.impressum-text-callout {
+  padding-left: 16px;
+  border-left: 3px solid var(--accent-color-soft);
+  margin-left: 4px;
+}
+
+.impressum-row-plain {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.status-card-success {
+  margin-bottom: 0;
+  background: var(--green-light);
+  border-color: rgba(22,163,74,0.2);
+}
+
+.status-title-success {
+  color: var(--green);
+}

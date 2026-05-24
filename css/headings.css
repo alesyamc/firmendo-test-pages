@@ -1,0 +1,80 @@
+.text-body h2,
+.text-body .faq-section h2 {
+  font-size: 28px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--gray-800);
+  letter-spacing: var(--letter-spacing-title-tight);
+  line-height: var(--line-height-heading-loose);
+  margin: 0 0 16px;
+  scroll-margin-top: 92px;
+}
+
+.text-body h2:first-child {
+  margin-top: 0;
+}
+
+.content-divider {
+  border: var(--border-none);
+  border-top: 1.5px solid var(--gray-200);
+  margin: 36px 0;
+}
+
+.text-body h3 {
+  font-size: var(--text-heading-3-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--gray-700);
+  margin: 28px 0 10px;
+  scroll-margin-top: 92px;
+}
+
+.text-body h4 {
+  font-size: var(--text-heading-note-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--gray-800);
+  line-height: var(--line-height-caption);
+  margin: 24px 0 10px;
+  scroll-margin-top: 92px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: var(--text-eyebrow-size);
+  font-weight: var(--font-weight-semibold);
+  color: #46527A;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-orange-bg);
+  flex: 0 0 7px;
+  margin-top: 1px;
+}
+
+.methodik-intro h2,
+.faq-section h2 {
+  font-size: var(--text-card-heading-size);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--gray-800);
+  letter-spacing: var(--letter-spacing-title-tight);
+  margin-bottom: 14px;
+  line-height: var(--line-height-heading-loose);
+}
+
+.methodik-intro h2 span,
+.faq-section h2 span,
+.text-body h2 span {
+  color: var(--heading-accent-blue, var(--accent-color-text, var(--blue)));
+}

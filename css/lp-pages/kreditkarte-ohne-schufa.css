@@ -1,0 +1,156 @@
+/* Page-specific additions for Kreditkarte ohne Schufa. Shared tokens, base, and comparison-table chrome live in css/*. */
+
+/* RATGEBER */
+section.content-section { padding: 60px 5vw 80px; background: var(--gray-50); }
+.content-body { order: 1; min-width: 0; }
+/* VERGLEICH BOXES */
+body.lp-comparison-page .card-type-grid {
+  --content-block-grid-gap: 14px;
+  --content-block-grid-margin: 18px 0 20px;
+}
+body.lp-comparison-page .card-type-card {
+  --content-card-padding-compact: 18px;
+  --content-card-radius: 12px;
+}
+body.lp-comparison-page .card-type-card .vergleich-col-title {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(17,24,64,0.08);
+  font-size: 16px;
+  line-height: 1.25;
+}
+body.lp-comparison-page .card-type-card .vergleich-col-title svg { flex: 0 0 16px; }
+body.lp-comparison-page .card-type-card ul { gap: 8px; }
+body.lp-comparison-page .card-type-card ul li {
+  padding-left: 18px;
+  color: var(--gray-700);
+  font-size: 15px;
+  line-height: 1.45;
+}
+body.lp-comparison-page .card-type-card ul li::before {
+  width: 10px;
+  color: var(--blue);
+  font-size: 13px;
+  line-height: 1.45;
+}
+body.lp-comparison-page .card-type-card ul li:last-child {
+  margin-top: 2px;
+  color: var(--gray-800);
+}
+@media (max-width: 1120px) {
+  .page-with-toc .card-type-grid { grid-template-columns: 1fr; }
+  .page-with-toc .card-type-card ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 8px;
+  }
+}
+@media (max-width: 640px) {
+  .page-with-toc .card-type-card ul { display: flex; }
+}
+
+.mini-anbieter-cta--disabled,
+.mini-anbieter-cta--disabled:hover {
+  background: var(--gray-200);
+  color: var(--gray-500);
+  cursor: default;
+  transform: none;
+}
+
+/* Comparison table: align this page with the current Firmendo reference tables. */
+body.lp-comparison-page .counter-bar { margin: 0 auto 6px; }
+body.lp-comparison-page .scroll-hint { line-height: 1.2; margin-bottom: 2px; }
+body.lp-comparison-page .table-scroll-wrap::after { display: none; }
+body.lp-comparison-page .table-wrap table { min-width: 1270px; }
+body.lp-comparison-page .th-col-anbieter { width: 286px; min-width: 286px; }
+body.lp-comparison-page .th-col-type { width: 132px; min-width: 132px; text-align: center; }
+body.lp-comparison-page .th-col-price { width: 164px; min-width: 164px; text-align: center; }
+body.lp-comparison-page .th-col-foreign { width: 172px; min-width: 172px; text-align: center; }
+body.lp-comparison-page .th-col-withdraw { width: 176px; min-width: 176px; text-align: center; }
+body.lp-comparison-page .th-col-digital { width: 106px; min-width: 106px; text-align: center; }
+body.lp-comparison-page .th-col-feature { width: 154px; min-width: 154px; }
+body.lp-comparison-page .th-col-cta { width: 186px; min-width: 186px; text-align: center; }
+body.lp-comparison-page .table-wrap td:nth-child(2),
+body.lp-comparison-page .table-wrap td:nth-child(3),
+body.lp-comparison-page .table-wrap td:nth-child(4),
+body.lp-comparison-page .table-wrap td:nth-child(5),
+body.lp-comparison-page .table-wrap td:nth-child(6) { text-align: center; }
+body.lp-comparison-page .td-logo {
+  font-weight: 900;
+  font-size: var(--text-badge-size);
+  color: var(--gray-700);
+}
+body.lp-comparison-page .zins-badge-td {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  font-weight: 800;
+  line-height: 1.2;
+}
+body.lp-comparison-page .zins-badge-td.kostenlos {
+  background: var(--green-light);
+  color: var(--green);
+}
+body.lp-comparison-page .td-limit-value,
+body.lp-comparison-page .td-limit-value.debit {
+  font-size: 15px;
+}
+body.lp-comparison-page .editorial-table-item-logo--text {
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table {
+  min-width: 980px;
+  table-layout: auto;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(1),
+body.lp-comparison-page #gebuehren + .content-section .editorial-table td:nth-child(1) {
+  width: 28%;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(2),
+body.lp-comparison-page #gebuehren + .content-section .editorial-table td:nth-child(2) {
+  width: 10%;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(3),
+body.lp-comparison-page #gebuehren + .content-section .editorial-table td:nth-child(3) {
+  width: 13%;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(4),
+body.lp-comparison-page #gebuehren + .content-section .editorial-table td:nth-child(4) {
+  width: 13%;
+  text-align: center;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(5),
+body.lp-comparison-page #gebuehren + .content-section .editorial-table td:nth-child(5) {
+  width: 18%;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(6),
+body.lp-comparison-page #gebuehren + .content-section .editorial-table td:nth-child(6) {
+  width: 18%;
+}
+
+body.lp-comparison-page #gebuehren + .content-section .editorial-table th:nth-child(6) {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body.lp-comparison-page #gebuehren + .content-section .editorial-table {
+    min-width: 900px;
+  }
+}

@@ -1,0 +1,111 @@
+/* Page-specific additions for Guthabenkonto. Shared tokens, base, and comparison-table chrome live in css/*. */
+
+body.lp-comparison-page .guthaben-table .th-col-anbieter { width: 286px; min-width: 286px; }
+body.lp-comparison-page .guthaben-table .th-col-fee { width: 142px; min-width: 142px; text-align: center; }
+body.lp-comparison-page .guthaben-table .th-col-card { width: 158px; min-width: 158px; }
+body.lp-comparison-page .guthaben-table .th-col-cash { width: 170px; min-width: 170px; }
+body.lp-comparison-page .guthaben-table .th-col-type { width: 190px; min-width: 190px; }
+body.lp-comparison-page .guthaben-table .th-col-interest { width: 104px; min-width: 104px; text-align: center; }
+body.lp-comparison-page .guthaben-table .th-col-basis { width: 136px; min-width: 136px; text-align: center; }
+body.lp-comparison-page .guthaben-table .th-total { width: 178px; min-width: 178px; }
+body.lp-comparison-page .guthaben-table .th-col-cta { width: 176px; min-width: 176px; }
+body.lp-comparison-page .guthaben-table thead th {
+  text-align: center;
+}
+body.lp-comparison-page .guthaben-table .td-bool { text-align: center; }
+body.lp-comparison-page .guthaben-table .th-total {
+  background: var(--gray-100) !important;
+  color: var(--gray-500) !important;
+  border-left: 0;
+  border-right: 0;
+}
+body.lp-comparison-page .guthaben-table .td-total-col {
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+}
+body.lp-comparison-page .guthaben-table tr:hover .td-total-col {
+  background: transparent;
+}
+body.lp-comparison-page .guthaben-table .highlight-badge {
+  display: flex;
+  width: fit-content;
+  margin: 0 0 6px;
+}
+body.lp-comparison-page .guthaben-table .tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 170px;
+}
+body.lp-comparison-page .guthaben-table .tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: var(--text-mini-label-size);
+  font-weight: 650;
+  color: var(--blue);
+  background: var(--blue-light);
+  border-radius: 20px;
+  padding: 3px 8px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+body.lp-comparison-page .guthaben-table .yes-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--blue);
+  background: var(--blue-light);
+  border-radius: 50%;
+}
+body.lp-comparison-page .guthaben-table .yes-badge svg {
+  width: 12px;
+  height: 12px;
+}
+body.lp-comparison-page .filter-card .toggle-btn svg { flex-shrink: 0; }
+
+body.lp-comparison-page .editorial-table-wrap-basiskonto {
+  overflow-x: auto;
+}
+
+body.lp-comparison-page .editorial-table-basiskonto {
+  width: max-content;
+  min-width: 100%;
+  table-layout: auto;
+}
+
+body.lp-comparison-page .editorial-table-basiskonto th,
+body.lp-comparison-page .editorial-table-basiskonto td {
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .editorial-table-basiskonto th:first-child,
+body.lp-comparison-page .editorial-table-basiskonto td:first-child {
+  width: 1%;
+  min-width: max-content;
+}
+
+/* RATGEBER */
+section.content-section { background: var(--gray-50); padding: 64px 5vw 80px; border-bottom: 1px solid var(--gray-200); }
+.content-body { min-width: 0; }
+body.lp-comparison-page #was-ist + .content-section .u-float-img-right {
+  margin-top: 96px;
+}
+
+body.lp-comparison-page .pc-title.pc-title-no-icon {
+  gap: 0;
+}
+
+body.lp-comparison-page .pc-title.pc-title-no-icon::before {
+  content: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body.lp-comparison-page #was-ist + .content-section .u-float-img-right {
+    margin-top: 18px;
+  }
+}

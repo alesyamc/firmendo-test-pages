@@ -1,0 +1,23 @@
+.content-section {
+  --content-section-padding: 24px var(--space-page-x) 52px;
+}
+
+.text-body > .content-section,
+.content-body > .content-section {
+  margin-bottom: 36px;
+}
+
+.content-highlight {
+  --content-highlight-bg: #F5F7FE;
+  --content-highlight-radius: 0 8px 8px 0;
+  --content-highlight-padding: 12px 16px;
+  --content-highlight-margin: 14px 0;
+  --content-highlight-color: var(--gray-700);
+}
+
+.toc-promo-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}

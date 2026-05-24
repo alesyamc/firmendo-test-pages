@@ -1,0 +1,123 @@
+.toc-list {
+  --toc-list-max-height: 360px;
+}
+
+.modul-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+@media (max-width: 900px) {
+  .modul-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .modul-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modul-card {
+  background: #fff;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 22px 18px;
+  position: relative;
+}
+
+.modul-card.recommended {
+  border-color: #003865;
+  box-shadow: 0 4px 20px rgba(0,56,101,0.10);
+}
+
+.modul-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-badge-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  background: #003865;
+  color: #fff;
+}
+
+.modul-name {
+  font-size: var(--text-card-body-size);
+  font-weight: 700;
+  color: var(--gray-500);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.modul-price {
+  font-size: var(--text-module-price-size);
+  font-weight: 800;
+  color: var(--gray-800);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.modul-price span {
+  font-size: var(--text-ui-size);
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.modul-incl {
+  font-size: var(--text-caption-size);
+  color: var(--blue);
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
+
+.modul-extra {
+  font-size: var(--text-caption-size);
+  color: var(--gray-500);
+}
+
+.modul-features {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modul-features li {
+  font-size: var(--text-caption-size);
+  color: var(--gray-700);
+  padding-left: 16px;
+  position: relative;
+}
+
+.modul-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: var(--text-caption-size);
+}
+
+.note-bar {
+  background: var(--amber-light);
+  border-bottom: 1px solid #F3D17A;
+  padding: 10px 5vw;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: var(--text-caption-size);
+  color: var(--amber);
+  font-weight: 600;
+}

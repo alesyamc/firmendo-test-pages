@@ -1,0 +1,280 @@
+/* Shared hero primitives for LP and review pages. Page-specific hero CSS may extend these rules. */
+.hero {
+  --lp-highlight-marker-color: var(--accent-orange-bg);
+  --border-blue: 2px solid var(--accent-color-border);
+  --shadow-cta: 0 4px 16px rgba(47,73,179,0.24);
+  background: linear-gradient(180deg, #F8FAFF 0%, #F2F5FC 52%, #EDF1F8 100%);
+  padding: 52px 5vw 48px;
+  border-bottom: var(--border-bottom-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47,73,179,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-text {
+  min-width: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #46527A;
+  font-size: var(--text-eyebrow-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-eyebrow-mark,
+.hero-eyebrow svg {
+  display: none;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lp-highlight-marker-color, var(--orange));
+  flex: 0 0 7px;
+  margin-top: 1px;
+}
+
+.hero h1 {
+  font-size: 37px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--gray-800);
+  letter-spacing: -0.8px;
+  line-height: var(--line-height-heading);
+  margin-bottom: 16px;
+}
+
+.hero h1 .accent,
+.hero h1 .accent-orange {
+  color: var(--lp-highlight-marker-color, var(--accent-orange-bg));
+}
+
+.hero h1 .accent-blue {
+  color: var(--accent-color-text);
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--gray-500);
+  line-height: var(--line-height-body);
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 56px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--text-ui-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(17,24,69,0.14);
+  transition: background .18s, color .18s, transform .15s, box-shadow .2s;
+}
+
+.hero-cta.primary,
+.hero-cta-primary {
+  background: var(--accent-color-bg);
+  border-color: var(--accent-color-border);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(47,73,179,0.28);
+}
+
+.hero-cta.secondary,
+.hero-cta-secondary {
+  background: #fff;
+  color: var(--accent-color-text);
+  border: 2px solid var(--accent-color-border);
+  box-shadow: 0 10px 24px rgba(47,73,179,0.10);
+}
+
+.hero-cta:hover,
+.hero-cta-primary:hover,
+.hero-cta-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.hero-cta.primary:hover,
+.hero-cta-primary:hover {
+  background: var(--accent-color-bg-hover);
+  box-shadow: 0 8px 22px rgba(47,73,179,0.28);
+}
+
+.hero-cta.secondary:hover,
+.hero-cta-secondary:hover {
+  background: var(--accent-color-soft);
+}
+
+.hero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  color: #3A4268;
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero-trust-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-trust-row span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lp-highlight-marker-color, var(--orange));
+  flex: 0 0 6px;
+}
+
+.hero-trust-row + .hero-author-bar {
+  margin-top: 0;
+}
+
+.hero-author-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: var(--border-top-subtle);
+  transform: translateY(2px);
+}
+
+.hero-author-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.hero-author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: var(--border-avatar);
+  box-shadow: var(--shadow-avatar);
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-author-name {
+  font-size: var(--text-ui-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--gray-800);
+}
+
+.hero-author-role {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.hero-author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+  border-left: var(--border-left-card);
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--gray-500);
+  font-weight: var(--font-weight-regular);
+}
+
+.hero-meta-item svg {
+  color: var(--accent-color-text);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 48px 5vw 40px;
+  }
+
+  .hero-author-meta {
+    padding-left: 0;
+    border-left: var(--border-none);
+    padding-top: 12px;
+    border-top: var(--border-top-dashed);
+    width: 100%;
+  }
+}

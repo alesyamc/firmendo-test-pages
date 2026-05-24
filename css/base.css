@@ -1,0 +1,126 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--gray-800);
+  background: var(--gray-50);
+  line-height: var(--base-line-height, 1.7);
+}
+
+.u-accent-text,
+.u-accent-blue-text {
+  color: var(--accent-color-text) !important;
+}
+
+.u-accent-bg,
+.u-accent-blue-bg {
+  background: var(--accent-color-bg) !important;
+  color: #fff !important;
+}
+
+.u-accent-soft,
+.u-accent-blue-soft {
+  background: var(--accent-color-soft) !important;
+  color: var(--accent-color-text) !important;
+}
+
+.u-accent-border,
+.u-accent-blue-border {
+  border-color: var(--accent-color-border) !important;
+}
+
+.u-accent-orange-text {
+  color: var(--accent-orange-text) !important;
+}
+
+.u-accent-orange-bg {
+  background: var(--accent-orange-bg) !important;
+  color: #fff !important;
+}
+
+.u-accent-orange-soft {
+  background: var(--accent-orange-soft) !important;
+  color: var(--accent-orange-text) !important;
+}
+
+.u-accent-orange-border {
+  border-color: var(--accent-orange-border) !important;
+}
+
+.editorial-link,
+.text-body p a,
+.text-body li a,
+.text-body .content-highlight a:not(.btn-cta):not(.btn-cta-secondary),
+.text-body .post-checklist a,
+.text-body .post-cta-box p a,
+.text-body .post-compare-table td a,
+.content-body p a,
+.content-body li a,
+.content-body .content-paragraph a,
+.content-body .guide-text a,
+.summary-box a,
+.faq-a-inner a {
+  color: var(--accent-color-text);
+  font-weight: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent-color-underline);
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: auto;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.editorial-link:hover,
+.editorial-link:focus-visible,
+.text-body p a:hover,
+.text-body p a:focus-visible,
+.text-body li a:hover,
+.text-body li a:focus-visible,
+.text-body .content-highlight a:not(.btn-cta):not(.btn-cta-secondary):hover,
+.text-body .content-highlight a:not(.btn-cta):not(.btn-cta-secondary):focus-visible,
+.text-body .post-checklist a:hover,
+.text-body .post-checklist a:focus-visible,
+.text-body .post-cta-box p a:hover,
+.text-body .post-cta-box p a:focus-visible,
+.text-body .post-compare-table td a:hover,
+.text-body .post-compare-table td a:focus-visible,
+.content-body p a:hover,
+.content-body p a:focus-visible,
+.content-body li a:hover,
+.content-body li a:focus-visible,
+.content-body .content-paragraph a:hover,
+.content-body .content-paragraph a:focus-visible,
+.content-body .guide-text a:hover,
+.content-body .guide-text a:focus-visible,
+.summary-box a:hover,
+.summary-box a:focus-visible,
+.faq-a-inner a:hover,
+.faq-a-inner a:focus-visible {
+  color: var(--accent-color-text);
+  text-decoration-color: currentColor;
+}
+
+div[id] {
+  scroll-margin-top: var(--anchor-scroll-margin-top, 110px);
+}
+
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-color-bg) 0%, var(--accent-color-bg-hover) 55%, var(--orange) 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.55), 0 2px 8px rgba(34, 68, 232, 0.16);
+  z-index: 999;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}

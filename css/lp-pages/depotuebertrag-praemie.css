@@ -1,0 +1,154 @@
+/* Page-specific additions for Depotuebertrag Praemie. Shared LP layout lives in css/lp-*.css. */
+
+body.lp-comparison-page {
+  --depot-blue-surface: #F4F7FF;
+  --depot-blue-surface-strong: #EAF0FF;
+  --depot-blue-border-soft: rgba(47,73,179,0.12);
+  --depot-blue-border-medium: rgba(47,73,179,0.18);
+  --depot-blue-shadow-soft: rgba(47,73,179,0.06);
+  --depot-blue-shadow-medium: rgba(47,73,179,0.10);
+  --depot-blue-shadow-strong: rgba(47,73,179,0.16);
+  --depot-violet: #6773CF;
+  --depot-violet-light: #EEF1FF;
+}
+
+body.lp-comparison-page .depot-table .th-col-anbieter { width: 276px; min-width: 276px; }
+body.lp-comparison-page .depot-table .th-col-fee { width: 126px; min-width: 126px; text-align: center; }
+body.lp-comparison-page .depot-table .th-col-praemie { width: 166px; min-width: 166px; text-align: center; }
+body.lp-comparison-page .depot-table .th-col-type { width: 136px; min-width: 136px; text-align: center; }
+body.lp-comparison-page .depot-table .th-col-minvol { width: 154px; min-width: 154px; }
+body.lp-comparison-page .depot-table .th-col-haltefrist { width: 126px; min-width: 126px; }
+body.lp-comparison-page .depot-table .th-col-ziel { width: 150px; min-width: 150px; }
+body.lp-comparison-page .depot-table .th-col-etf { width: 132px; min-width: 132px; text-align: center; }
+body.lp-comparison-page .depot-table .th-col-order { width: 112px; min-width: 112px; text-align: center; }
+body.lp-comparison-page .depot-table .th-col-cta { width: 170px; min-width: 170px; }
+body.lp-comparison-page .brand-logo-text { font-weight: 900; font-size: 13px; line-height: 1; }
+body.lp-comparison-page .brand-logo-text.comdirect { color: #0066B3; }
+body.lp-comparison-page .brand-logo-text.consorsbank { color: #E5690A; }
+body.lp-comparison-page .brand-logo-text.targobank { color: #0B3D91; }
+body.lp-comparison-page .brand-logo-text.wuestenrot { color: #5B2D8E; }
+body.lp-comparison-page .brand-logo-text.direkt1822 { color: #008800; }
+body.lp-comparison-page .brand-logo-text.lynx { color: #C00; }
+body.lp-comparison-page .brand-logo-text.scalable { color: #1A6FFF; }
+body.lp-comparison-page .mini-anbieter-logo.comdirect { color: #0066B3; }
+body.lp-comparison-page .mini-anbieter-logo.consorsbank { color: #E5690A; }
+body.lp-comparison-page .mini-anbieter-logo.targobank { color: #0B3D91; }
+body.lp-comparison-page .mini-anbieter-logo.wuestenrot { color: #5B2D8E; }
+body.lp-comparison-page .mini-stat-val.blue-small { color: var(--blue); font-size: var(--text-card-body-size); }
+body.lp-comparison-page .table-note-wrap { max-width: 1200px; margin: 0 auto; }
+body.lp-comparison-page .table-note { margin-top: var(--space-lg); font-size: var(--text-caption-size); line-height: 1.55; color: var(--gray-300); }
+body.lp-comparison-page .hero-trust-row { font-size: 14px; }
+body.lp-comparison-page .hero-eyebrow,
+body.lp-comparison-page .section-eyebrow { color: #46527A; }
+body.lp-comparison-page .hero-stat-card { box-shadow: 0 4px 14px var(--depot-blue-shadow-soft); }
+
+body.lp-comparison-page .filter-section {
+  background: linear-gradient(180deg, rgba(248,250,254,0.98) 0%, var(--depot-blue-surface) 46%, var(--gray-50) 100%);
+  border-top: 1px solid rgba(47,73,179,0.08);
+}
+
+body.lp-comparison-page .filter-title-pill {
+  border-color: rgba(47,73,179,0.14);
+}
+
+body.lp-comparison-page .filter-select:focus,
+body.lp-comparison-page .fd.open .fd-trigger {
+  box-shadow: 0 0 0 3px rgba(47,73,179,0.12);
+}
+
+body.lp-comparison-page .filter-select.has-value,
+body.lp-comparison-page .fd.has-value .fd-trigger,
+body.lp-comparison-page .fd-option.selected {
+  background: var(--depot-blue-surface-strong);
+}
+
+body.lp-comparison-page .fd-menu {
+  box-shadow: 0 12px 40px rgba(47,73,179,0.12), 0 4px 12px rgba(17,24,69,0.05);
+}
+
+body.lp-comparison-page .fd-option:hover { background: var(--depot-blue-surface); }
+body.lp-comparison-page .fd-option.selected::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%232F49B3' stroke-width='3' stroke-linecap='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+
+body.lp-comparison-page .toggle-btn:hover,
+body.lp-comparison-page .filter-reset:hover {
+  background: var(--depot-blue-surface-strong);
+}
+
+body.lp-comparison-page .toggle-btn.active {
+  box-shadow: 0 2px 8px rgba(47,73,179,0.20);
+}
+
+body.lp-comparison-page .filter-count-badge {
+  border-color: rgba(47,73,179,0.16);
+}
+
+body.lp-comparison-page .mc-cta {
+  box-shadow: 0 3px 10px rgba(47,73,179,0.18);
+}
+
+body.lp-comparison-page .table-disclaimer-inner {
+  background: rgba(47,73,179,0.05);
+  border: 1px solid rgba(47,73,179,0.14);
+}
+
+body.lp-comparison-page .trust-bar {
+  border-bottom: 1px solid rgba(47,73,179,0.08);
+}
+
+.methodik-intro { max-width: none; margin: 0 0 36px; }
+.methodik-section { padding: 0; background: transparent; border-top: none; }
+.methodik-inner { max-width: none; margin: 0; }
+.methodik-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3xl); margin-bottom: var(--space-5xl); align-items: stretch; }
+.methodik-card {
+  --card-accent: var(--blue);
+  position: relative;
+  overflow: hidden;
+  min-height: 238px;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--depot-blue-surface) 100%);
+  border: 1px solid var(--depot-blue-border-soft);
+  border-radius: 24px;
+  padding: 18px 26px 24px;
+  box-shadow: 0 18px 42px var(--depot-blue-shadow-soft);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.methodik-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--card-accent) 0%, rgba(47,73,179,0.18) 100%); }
+.methodik-card:hover { transform: translateY(-4px); border-color: var(--depot-blue-border-medium); box-shadow: 0 22px 48px var(--depot-blue-shadow-medium); }
+.methodik-card.audit { --card-accent: var(--blue-dark); }
+.methodik-card.cost { --card-accent: #0F766E; }
+.methodik-card.transparency { --card-accent: #D44E10; }
+.methodik-card.quality { --card-accent: var(--depot-violet); }
+.methodik-card-head { position: relative; z-index: 1; display: flex; align-items: center; justify-content: flex-end; margin-bottom: var(--space-lg); min-height: 18px; }
+.methodik-step { font-size: var(--text-eyebrow-size); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--card-accent); line-height: 1; }
+.methodik-card strong { position: relative; z-index: 1; display: block; max-width: 18ch; font-size: var(--text-cta-title-size); font-weight: 650; color: var(--gray-800); line-height: 1.14; letter-spacing: -0.03em; margin-bottom: var(--space-lg); }
+.methodik-card p { position: relative; z-index: 1; font-size: 15px; color: var(--gray-500); line-height: 1.72; margin: 0; max-width: 54ch; }
+.methodik-note { font-size: var(--text-card-body-size); color: var(--gray-500); max-width: 720px; margin: var(--space-lg) 0 0; line-height: 1.7; }
+.eignung-wrap .content-list li { font-size: 15px; }
+.praemien-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 28px 0; align-items: stretch; }
+.praemien-card { --praemie-accent: var(--blue); position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F7F9FF 100%); border: 1px solid var(--depot-blue-border-soft); border-radius: var(--radius-card-xl); padding: 18px 20px 20px; min-height: 190px; display: flex; flex-direction: column; gap: var(--space-lg); box-shadow: 0 12px 30px rgba(47,73,179,0.05); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.praemien-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--praemie-accent) 0%, rgba(47,73,179,0.18) 100%); }
+.praemien-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(47,73,179,0.09); border-color: var(--depot-blue-border-medium); }
+.praemien-card.cash { --praemie-accent: var(--green); }
+.praemien-card.interest { --praemie-accent: var(--blue); }
+.praemien-card.percent { --praemie-accent: var(--orange); }
+.praemien-card.trades { --praemie-accent: var(--depot-violet); }
+.praemien-card-head { display: flex; align-items: center; gap: var(--space-lg); }
+.praemien-card-icon { width: 42px; height: 42px; border-radius: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.praemien-card-icon.green { background: var(--green-light); color: var(--green); }
+.praemien-card-icon.blue { background: var(--blue-light); color: var(--blue); }
+.praemien-card-icon.orange { background: var(--orange-light); color: var(--orange); }
+.praemien-card-icon.purple { background: var(--depot-violet-light); color: var(--depot-violet); }
+.praemien-card-icon svg { width: 20px; height: 20px; stroke-width: 2.1; }
+.praemien-card-title { font-size: 18px; font-weight: 650; color: var(--gray-800); line-height: 1.14; letter-spacing: -0.03em; max-width: 14ch; }
+.praemien-card-desc { font-size: 15px; color: var(--gray-500); line-height: 1.62; max-width: 42ch; }
+@media (max-width: 768px) {
+  .methodik-grid { grid-template-columns: 1fr; }
+  .methodik-intro { margin-bottom: 28px; }
+  .methodik-card { min-height: auto; padding: var(--space-2xl) var(--space-3xl) var(--space-3xl); border-radius: var(--radius-card-lg); }
+  .methodik-card strong { font-size: var(--text-method-card-title-size); max-width: none; }
+  .praemien-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .praemien-card { min-height: auto; padding: var(--space-2xl) 18px 18px; border-radius: var(--radius-3xl); }
+  .praemien-card-title,
+  .praemien-card-desc { max-width: none; }
+}

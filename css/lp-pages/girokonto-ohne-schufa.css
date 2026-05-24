@@ -1,0 +1,122 @@
+/* Girokonto ohne Schufa: page-specific additions. Shared filter/table chrome lives in lp-comparison-table.css. */
+
+/* Girokonto ohne Schufa table: page-specific column sizing only. */
+body.lp-comparison-page .girokonto-schufa-table { min-width: 1238px; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-anbieter { width: 286px; min-width: 286px; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-price { width: 142px; min-width: 142px; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-schufa { width: 156px; min-width: 156px; text-align: center; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-kontoart { width: 142px; min-width: 142px; text-align: center; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-iban { width: 112px; min-width: 112px; text-align: center; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-card { width: 116px; min-width: 116px; text-align: center; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-security { width: 198px; min-width: 198px; text-align: center; }
+body.lp-comparison-page .girokonto-schufa-table .th-col-cta { width: 186px; min-width: 186px; }
+body.lp-comparison-page .girokonto-schufa-table .td-price-period {
+  max-width: 118px;
+  margin: 2px auto 0;
+  white-space: normal;
+  line-height: 1.2;
+}
+body.lp-comparison-page .girokonto-schufa-table .icon-yes,
+body.lp-comparison-page .girokonto-schufa-table .icon-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+body.lp-comparison-page .girokonto-schufa-table .icon-yes { background: var(--green-light); }
+body.lp-comparison-page .girokonto-schufa-table .icon-no { background: #FEE2E2; color: var(--red); }
+body.lp-comparison-page .girokonto-schufa-table .icon-yes svg,
+body.lp-comparison-page .girokonto-schufa-table .icon-no svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* MAIN CONTENT LAYOUT */
+body.lp-comparison-page .content-layout {
+  width: min(1200px, calc(100% - 10vw));
+  max-width: 1200px; margin: 0 auto;
+  padding: 48px 0;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  align-items: start;
+  box-sizing: border-box;
+}
+body.lp-comparison-page .content-layout .text-body > .content-section {
+  padding: 0;
+  background: transparent;
+}
+@media (max-width: 1024px) { body.lp-comparison-page .content-layout { grid-template-columns: 1fr; } }
+
+body.lp-comparison-page #basiskonto .editorial-table {
+  min-width: 0;
+}
+body.lp-comparison-page #basiskonto .editorial-table th,
+body.lp-comparison-page #basiskonto .editorial-table td {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+body.lp-comparison-page #basiskonto .editorial-table th:nth-child(1),
+body.lp-comparison-page #basiskonto .editorial-table td:nth-child(1) { width: 28%; }
+body.lp-comparison-page #basiskonto .editorial-table th:nth-child(2),
+body.lp-comparison-page #basiskonto .editorial-table td:nth-child(2) { width: 18%; }
+body.lp-comparison-page #basiskonto .editorial-table th:nth-child(3),
+body.lp-comparison-page #basiskonto .editorial-table td:nth-child(3) { width: 25%; }
+body.lp-comparison-page #basiskonto .editorial-table th:nth-child(4),
+body.lp-comparison-page #basiskonto .editorial-table td:nth-child(4) {
+  width: 29%;
+  overflow-wrap: break-word;
+}
+body.lp-comparison-page #basiskonto .editorial-table td:nth-child(4) {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+/* RATGEBER */
+.content-highlight strong { font-weight: 700; }
+
+/* VERGLEICH BOXES */
+.vergleich-3col { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 18px 0; }
+@media (max-width: 680px) { .vergleich-3col { grid-template-columns: 1fr; } }
+body.lp-comparison-page .vergleich-2col-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 680px) { body.lp-comparison-page .vergleich-2col-layout { grid-template-columns: 1fr; } }
+.vergleich-col {
+  border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 16px;
+  background: #fff;
+}
+.vergleich-col.yes { border-color: rgba(34,68,232,0.2); background: var(--blue-ultra); }
+.vergleich-col-title { font-size: var(--text-ui-size); font-weight: 800; color: var(--gray-800); margin-bottom: 12px; }
+.vergleich-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.vergleich-col li { font-size:var(--text-inline-percent-small-size); color: var(--gray-500); padding-left: 14px; position: relative; }
+.vergleich-col li::before { content: '·'; position: absolute; left: 4px; color: var(--gray-300); font-size: var(--text-cta-title-size); line-height: 1; top: -1px; }
+body.lp-comparison-page .vergleich-col-round-bullets li {
+  padding-left: 30px;
+}
+body.lp-comparison-page .vergleich-col-round-bullets li::before {
+  content: '';
+  left: 9px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  font-size: 0;
+  line-height: 0;
+}
+body.lp-comparison-page .vergleich-col-checks li {
+  padding-left: 28px;
+}
+body.lp-comparison-page .vergleich-col-checks li::before {
+  content: '';
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232244E8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}

@@ -1,0 +1,745 @@
+/* Page-specific additions for Firmentagesgeld. Shared LP layout lives in css/lp-*.css. */
+
+body.lp-comparison-page .tagesgeld-table .th-col-anbieter { width: 278px; min-width: 278px; }
+body.lp-comparison-page .tagesgeld-table .th-col-zins { width: 162px; min-width: 162px; text-align: center; }
+body.lp-comparison-page .tagesgeld-table .th-col-duration { width: 170px; min-width: 170px; text-align: center; }
+body.lp-comparison-page .tagesgeld-table .th-col-suitable { width: 210px; min-width: 210px; text-align: center; }
+body.lp-comparison-page .tagesgeld-table .th-col-deposit { width: 152px; min-width: 152px; text-align: center; }
+body.lp-comparison-page .tagesgeld-table .th-col-gk { width: 220px; min-width: 220px; text-align: center; }
+body.lp-comparison-page .tagesgeld-table .th-col-security { width: 250px; min-width: 250px; text-align: center; }
+body.lp-comparison-page .tagesgeld-table .th-col-cta { width: 170px; min-width: 170px; }
+
+body.lp-comparison-page .filter-subtitle a {
+  color: var(--blue);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+body.lp-comparison-page .filter-subtitle a:hover {
+  text-decoration: underline;
+}
+
+body.lp-comparison-page .zins-badge-td {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
+  padding: 5px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .zins-badge-td.dauernd {
+  color: var(--green);
+  background: var(--green-light);
+}
+
+body.lp-comparison-page .tagesgeld-table tbody td:nth-child(2) {
+  text-align: center;
+}
+
+body.lp-comparison-page .tagesgeld-table tbody td:nth-child(2) .price-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.lp-comparison-page .td-deposit,
+body.lp-comparison-page .td-security {
+  font-weight: 400;
+  color: var(--gray-700);
+  text-align: center;
+}
+
+body.lp-comparison-page .td-deposit {
+  font-size: 15px;
+}
+
+body.lp-comparison-page .td-security {
+  font-size: var(--text-caption-size);
+}
+
+body.lp-comparison-page .tagesgeld-table tbody td.u-fs-caption,
+body.lp-comparison-page .tagesgeld-table tbody td.u-cell-center-gray-700-600,
+body.lp-comparison-page .tagesgeld-table tbody td.u-nowrap-muted-center {
+  font-size: 14px;
+  font-weight: 400;
+}
+body.lp-comparison-page .tagesgeld-table tbody td:nth-child(5) {
+  font-size: 15px;
+}
+body.lp-comparison-page .tagesgeld-table tbody td:nth-child(3),
+body.lp-comparison-page .tagesgeld-table tbody td:nth-child(7) {
+  font-size: 15px;
+}
+body.lp-comparison-page .tagesgeld-table tbody td.u-fs-caption.u-text-gray-700 {
+  font-size: 15px !important;
+}
+
+body.lp-comparison-page .rf-wrap { min-width: 0; position: relative; }
+body.lp-comparison-page .rf-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+body.lp-comparison-page .rf-tag {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  border-radius: 20px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+body.lp-comparison-page .rf-wrap[data-rf-tooltip] {
+  cursor: default;
+}
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]::before {
+  content: attr(data-rf-tooltip);
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  z-index: 35;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 48px));
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--gray-800);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  white-space: normal;
+  box-shadow: 0 10px 28px rgba(17,24,69,0.22);
+}
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]::after {
+  content: '';
+  display: none;
+  position: absolute;
+  left: 16px;
+  bottom: calc(100% + 4px);
+  z-index: 35;
+  border: 6px solid transparent;
+  border-top-color: var(--gray-800);
+}
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]:hover::before,
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]:hover::after {
+  display: block;
+}
+
+body.lp-comparison-page .price-wrap { position: relative; display: inline-block; }
+body.lp-comparison-page .price-wrap::after {
+  margin-left: 1px;
+}
+body.lp-comparison-page .price-tooltip {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 7px);
+  z-index: 12;
+  width: 220px;
+  background: var(--gray-800);
+  color: #fff;
+  font-size: var(--text-badge-size);
+  font-weight: 500;
+  line-height: 1.45;
+  padding: 8px 12px;
+  border-radius: 9px;
+  box-shadow: 0 10px 28px rgba(17,24,69,0.22);
+  white-space: normal;
+}
+body.lp-comparison-page .tagesgeld-table .price-wrap:hover {
+  z-index: 30;
+}
+body.lp-comparison-page .tagesgeld-table .price-tooltip {
+  top: auto;
+  bottom: calc(100% + 10px);
+  left: 0;
+  width: min(260px, calc(100vw - 48px));
+}
+body.lp-comparison-page .tagesgeld-table .price-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  border: 6px solid transparent;
+  border-top-color: var(--gray-800);
+}
+body.lp-comparison-page .price-wrap:hover .price-tooltip { display: block; }
+
+body.lp-comparison-page .rechner-section {
+  padding: 34px 5vw 22px;
+  background: linear-gradient(180deg, #fff 0%, var(--gray-50) 100%);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+body.lp-comparison-page .rechner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body.lp-comparison-page .rechner-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  gap: 28px;
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow-card);
+}
+
+body.lp-comparison-page .rechner-title {
+  font-size: var(--text-cta-title-size);
+  font-weight: 850;
+  color: var(--gray-800);
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+body.lp-comparison-page .rechner-sub {
+  max-width: 560px;
+  font-size: var(--text-card-body-size);
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+body.lp-comparison-page .rechner-field {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+body.lp-comparison-page .rechner-field label {
+  font-size: var(--text-caption-size);
+  font-weight: 800;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+body.lp-comparison-page .rechner-input-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+body.lp-comparison-page .rechner-input-wrap input,
+body.lp-comparison-page .rechner-input-wrap select {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--text-ui-size);
+  font-weight: 650;
+  color: var(--gray-800);
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 11px 38px 11px 14px;
+  outline: none;
+  appearance: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+body.lp-comparison-page .rechner-input-wrap select {
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236672A8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+body.lp-comparison-page .rechner-input-wrap input:focus,
+body.lp-comparison-page .rechner-input-wrap select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(34,68,232,0.12);
+}
+
+body.lp-comparison-page .rechner-input-suffix {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-300);
+  font-weight: 750;
+  pointer-events: none;
+}
+
+body.lp-comparison-page .rechner-disclaimer {
+  max-width: 650px;
+  margin-top: 16px;
+  font-size: var(--text-caption-size);
+  color: var(--gray-300);
+  line-height: 1.55;
+}
+
+body.lp-comparison-page .rechner-result {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--blue-ultra) 0%, #fff 100%);
+  border: 1px solid rgba(34,68,232,0.12);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+body.lp-comparison-page .rechner-result-label {
+  font-size: var(--text-caption-size);
+  font-weight: 800;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+body.lp-comparison-page .rechner-result-big {
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+  font-weight: 800;
+  color: var(--accent-color-text);
+  letter-spacing: -0.06em;
+  margin: 10px 0 8px;
+}
+
+body.lp-comparison-page .rechner-result-sub {
+  color: var(--gray-500);
+  font-size: var(--text-card-body-size);
+  line-height: 1.45;
+}
+
+body.lp-comparison-page .rechner-result-rows {
+  margin-top: 22px;
+  border-top: 1px solid rgba(34,68,232,0.12);
+}
+
+body.lp-comparison-page .rechner-result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(34,68,232,0.08);
+  font-size: var(--text-caption-size);
+  color: var(--gray-500);
+}
+
+body.lp-comparison-page .rechner-result-row strong {
+  font-size: 15px;
+  color: var(--gray-800);
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .rechner-result-row #r-end {
+  font-size: 16px;
+}
+
+body.lp-comparison-page .tagesgeld-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 18px;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 20px 20px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+body.lp-comparison-page .tagesgeld-compare-card.is-tagesgeld {
+  border-color: rgba(13,148,136,0.16);
+  background: rgba(13,148,136,0.045);
+}
+
+body.lp-comparison-page .tagesgeld-compare-card.is-festgeld {
+  border-color: rgba(124,58,237,0.14);
+  background: rgba(124,58,237,0.045);
+}
+
+body.lp-comparison-page .tagesgeld-compare-card-head {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+body.lp-comparison-page .tagesgeld-compare-card-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gray-800);
+  line-height: 1.3;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card.is-tagesgeld .tagesgeld-compare-card-title {
+  color: #0F766E;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card.is-festgeld .tagesgeld-compare-card-title {
+  color: #5B21B6;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card-title svg {
+  flex: 0 0 auto;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card-note {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--gray-500);
+}
+
+body.lp-comparison-page .tagesgeld-compare-card .mini-pros-list {
+  gap: 10px;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card .mini-pros-list li {
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+body.lp-comparison-page .tagesgeld-compare-card .mini-pros-list li::before {
+  width: 9px;
+  height: 5px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  body.lp-comparison-page .tagesgeld-compare-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body.lp-comparison-page .tagesgeld-compare-card {
+    padding: 18px 18px 16px;
+    border-radius: 14px;
+  }
+}
+
+body.lp-comparison-page .tax-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 18px;
+}
+
+body.lp-comparison-page .tax-card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+body.lp-comparison-page .tax-card.is-capital {
+  border-color: rgba(194,76,18,0.18);
+  background: rgba(245,158,11,0.045);
+}
+
+body.lp-comparison-page .tax-card.is-sole {
+  border-color: var(--accent-color-border-muted);
+  background: rgba(47,73,179,0.035);
+}
+
+body.lp-comparison-page .tax-card.is-freelance {
+  border-color: rgba(13,148,136,0.16);
+  background: rgba(13,148,136,0.04);
+}
+
+body.lp-comparison-page .tax-card-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+body.lp-comparison-page .tax-card.is-capital .tax-card-badge {
+  color: #B45309;
+  background: rgba(245,158,11,0.12);
+}
+
+body.lp-comparison-page .tax-card.is-sole .tax-card-badge {
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
+}
+
+body.lp-comparison-page .tax-card.is-freelance .tax-card-badge {
+  color: #0F766E;
+  background: rgba(13,148,136,0.1);
+}
+
+body.lp-comparison-page .tax-card-title {
+  margin: 0 0 5px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--gray-800);
+}
+
+body.lp-comparison-page .tax-card-note {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--gray-500);
+}
+
+body.lp-comparison-page .tax-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+body.lp-comparison-page .tax-card-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--gray-700);
+}
+
+body.lp-comparison-page .tax-card-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+body.lp-comparison-page .tax-card.is-capital .tax-card-title,
+body.lp-comparison-page .tax-card.is-capital .tax-card-list li::before {
+  color: #B45309;
+}
+
+body.lp-comparison-page .tax-card.is-sole .tax-card-title,
+body.lp-comparison-page .tax-card.is-sole .tax-card-list li::before {
+  color: var(--accent-color-text);
+}
+
+body.lp-comparison-page .tax-card.is-freelance .tax-card-title,
+body.lp-comparison-page .tax-card.is-freelance .tax-card-list li::before {
+  color: #0F766E;
+}
+
+@media (max-width: 900px) {
+  body.lp-comparison-page .tax-card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+body.lp-comparison-page .rechner-share-wrap {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+body.lp-comparison-page .rechner-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--text-caption-size);
+  font-weight: 650;
+  color: var(--accent-color-text);
+  background: rgba(255,255,255,0.96);
+  border: 1px solid var(--accent-color-border-muted);
+  border-radius: 50px;
+  padding: 6px 13px;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(17,24,69,0.08);
+}
+
+body.lp-comparison-page .rechner-share-btn:hover {
+  background: var(--accent-color-soft);
+  border-color: var(--accent-color-border);
+  box-shadow: 0 10px 24px rgba(47,73,179,0.16);
+}
+
+body.lp-comparison-page .rechner-share-btn.copied {
+  color: var(--green);
+  background: var(--green-light);
+  border-color: var(--green);
+}
+
+body.lp-comparison-page .rechner-share-tooltip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-badge-size);
+  font-weight: 500;
+  background: var(--gray-800);
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 11px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .18s, transform .18s;
+}
+
+body.lp-comparison-page .rechner-share-tooltip svg {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.6);
+}
+
+body.lp-comparison-page .rechner-share-wrap:hover .rechner-share-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.lp-comparison-page .deposit-protection-table-wrap {
+  margin: 22px 0 18px;
+  border: 1px solid rgba(224,231,255,0.95);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(34,68,232,0.04);
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.lp-comparison-page .deposit-protection-table {
+  width: 100%;
+  min-width: 760px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+body.lp-comparison-page .deposit-protection-table th {
+  position: static;
+  background: #1b2358;
+  padding: 11px 14px;
+  text-align: left;
+  font-size: var(--text-ui-size);
+  font-weight: 750;
+  color: #fff;
+  border-bottom: none;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+body.lp-comparison-page .deposit-protection-table th:nth-child(1) { width: 24%; }
+body.lp-comparison-page .deposit-protection-table th:nth-child(2) { width: 28%; }
+body.lp-comparison-page .deposit-protection-table th:nth-child(3) { width: 18%; }
+body.lp-comparison-page .deposit-protection-table th:nth-child(4) { width: 30%; }
+
+body.lp-comparison-page .deposit-protection-table td {
+  padding: 10px 14px;
+  font-size: var(--text-ui-size);
+  color: var(--gray-800);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+  background: #fff;
+  line-height: 1.42;
+}
+
+body.lp-comparison-page .deposit-protection-table td:first-child,
+body.lp-comparison-page .deposit-protection-table .td-strong {
+  font-weight: 750;
+}
+
+body.lp-comparison-page .deposit-protection-table .td-accent {
+  color: var(--green);
+  font-weight: 750;
+}
+
+body.lp-comparison-page .deposit-protection-table tr:last-child td {
+  border-bottom: none;
+  padding-bottom: 18px;
+}
+
+body.lp-comparison-page .deposit-protection-table tr:hover td { background: var(--gray-50); }
+
+@media (max-width: 860px) {
+  body.lp-comparison-page .rechner-box {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  body.lp-comparison-page .rechner-share-wrap {
+    position: static;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.lp-comparison-page .rechner-section { padding: 24px 5vw 18px; }
+
+  body.lp-comparison-page .rechner-box {
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  body.lp-comparison-page .rechner-field {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  body.lp-comparison-page .rechner-share-tooltip { display: none; }
+}
+
+@media (max-width: 720px) {
+  body.lp-comparison-page .deposit-protection-table thead { display: none; }
+  body.lp-comparison-page .deposit-protection-table,
+  body.lp-comparison-page .deposit-protection-table tbody,
+  body.lp-comparison-page .deposit-protection-table tr,
+  body.lp-comparison-page .deposit-protection-table td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.lp-comparison-page .deposit-protection-table-wrap { overflow: hidden; }
+  body.lp-comparison-page .deposit-protection-table { min-width: 0; }
+  body.lp-comparison-page .deposit-protection-table tr { border-top: 1px solid rgba(224,231,255,0.95); }
+  body.lp-comparison-page .deposit-protection-table td {
+    padding: 13px 15px;
+    border-bottom: none;
+    text-align: left !important;
+  }
+
+  body.lp-comparison-page .deposit-protection-table td::before {
+    display: block;
+    content: attr(data-label);
+    margin-bottom: 10px;
+    font-size: var(--text-caption-size);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+  }
+}
+
+body.lp-comparison-page .rechner-share-label { white-space: nowrap; }

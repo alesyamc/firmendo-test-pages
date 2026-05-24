@@ -1,0 +1,161 @@
+@import url("./hero.css");
+
+/* LP-specific hero extensions. Shared hero primitives live in css/hero.css. */
+body.lp-comparison-page {
+  --lp-highlight-marker-color: var(--accent-orange-bg);
+  --border-blue: 2px solid var(--accent-color-border);
+  --border-blue-soft: 1px solid var(--accent-color-soft);
+  --border-blue-soft-strong: 1.5px solid var(--accent-color-soft);
+  --border-left-blue: 3px solid var(--accent-color-border);
+  --border-left-blue-wide: 4px solid var(--accent-color-border);
+  --shadow-cta: 0 4px 16px rgba(47,73,179,0.24);
+  --shadow-table-cta: 0 4px 12px rgba(47,73,179,0.2);
+}
+
+body.lp-comparison-page .hero .hero-stat-card.accent {
+  background: var(--accent-color-bg) !important;
+  border-color: var(--accent-color-border) !important;
+}
+
+.hero-visual {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  width: 300px;
+}
+
+.hero-stat-row,
+.hero-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hero-stat-row--clipped {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.hero-stat-card {
+  background: #fff;
+  border: var(--border-card);
+  border-radius: 14px;
+  padding: 20px 14px;
+  min-height: 118px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(34,68,232,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hero-stat-card--clipped {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.hero-stat-card.accent {
+  padding: 30px 20px;
+  min-height: 152px;
+}
+
+.hero-stat-num {
+  font-size: var(--text-wordmark-large-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-color-text);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.6px;
+}
+
+.hero-stat-card.accent .hero-stat-num {
+  color: #fff;
+  font-size: var(--text-wordmark-xl-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.3px;
+}
+
+.hero-stat-num--lg {
+  font-size: var(--text-wordmark-xl-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.3px;
+}
+
+.hero-stat-card.accent .hero-stat-num--lg {
+  font-size: 40px;
+}
+
+.hero-stat-num--md,
+.hero-stat-num--sm {
+  font-size: 22px;
+}
+
+.hero-stat-num--compact {
+  font-size: var(--text-wordmark-size);
+}
+
+.hero-stat-num--sm-lg {
+  font-size: var(--text-highlight-size);
+}
+
+.hero-stat-num--sm-tight {
+  font-size: var(--text-logo-size);
+}
+
+.hero-stat-num--xs-lg {
+  font-size: var(--text-cta-title-size);
+}
+
+.hero-stat-num--xs {
+  font-size: var(--text-inline-logo-size);
+}
+
+.hero-stat-num--xxs,
+.hero-stat-num--micro {
+  font-size: var(--text-ui-size);
+}
+
+.hero-stat-num--wrap {
+  word-break: break-word;
+}
+
+.hero-stat-symbol {
+  font-size: var(--text-icon-3xl-size);
+  font-weight: var(--font-weight-bold);
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-stat-icon {
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-stat-label {
+  font-size: var(--text-badge-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-500);
+  letter-spacing: var(--letter-spacing-subtle);
+  line-height: var(--line-height-compact);
+}
+
+.hero-stat-card.accent .hero-stat-label {
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 900px) {
+  .hero-visual {
+    display: none;
+  }
+}
+
+body.lp-comparison-page .section-eyebrow {
+  color: #46527A;
+}
+
+body.lp-comparison-page .section-eyebrow::before {
+  background: var(--lp-highlight-marker-color, var(--accent-orange-bg));
+}
