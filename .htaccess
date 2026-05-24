@@ -1,0 +1,17 @@
+# Affiliate redirects
+# Generated from tools/affiliate-links.json by tools/generate-affiliate-redirects.rb
+# Requires Apache with mod_alias and AllowOverride enabled.
+
+Redirect 302 /go/finom-solo/ https://www.financeads.net/tc.php?t=20082C354266780T
+Redirect 302 /go/kontist-free/ https://www.financeads.net/tc.php?t=20082C254046648T
+Redirect 302 /go/n26-business-standard/ https://n26-eu.c2nwa3.net/c/5457383/670577/10375
+Redirect 302 /go/ing-geschaeftskonto/ https://www.financeads.net/tc.php?t=20082C12493452T
+Redirect 302 /go/qonto-starter/ https://www.financeads.net/tc.php?t=20082C2334135056T
+Redirect 302 /go/fyrst-base/ https://www.financeads.net/tc.php?t=20082C270652778T
+Redirect 302 /go/postbank-business-giro-aktiv/ https://www.financeads.net/tc.php?t=20082C42627824T
+Redirect 302 /go/commerzbank-klassikgeschaeftskonto/ https://www.financeads.net/tc.php?t=20082C304058060T
+Redirect 302 /go/holvi-lite/ https://www.financeads.net/tc.php?t=20082C105136956T
+Redirect 302 /go/wise-business/ https://wise.prf.hn/click/camref:1100l3AJkQ
+Redirect 302 /go/deutsche-bank-business-basickonto/ https://www.financeads.net/tc.php?t=20082C472101928T
+Redirect 302 /go/vivid-business-free/ https://www.financeads.net/tc.php?t=20082C3448121124T
+Redirect 302 /go/revolut-business-basic/ https://revolutbusiness.ngih.net/c/5515456/1705219/9943
