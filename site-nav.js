@@ -146,27 +146,27 @@
     if (!trigger || !overlay || !closeBtn || !input || !results || overlay.dataset.ready === "true") return;
 
     const defaultItems = [
-      { title: "Geschäftskonto Vergleich", subtitle: "Passende Konten nach Rechtsform, Bedarf und Kostenmodell", tag: "Banking", href: "/geschaeftskonto-vergleich/" },
-      { title: "Kostenloses Geschäftskonto", subtitle: "Kostenfreie Geschäftskonten im Überblick", tag: "Vergleich", href: "/geschaeftskonto-kostenlos/" },
-      { title: "Geschäftskonto ohne Schufa", subtitle: "Optionen für Kontoeröffnung ohne SCHUFA-Prüfung", tag: "Banking", href: "/geschaeftskonto-ohne-schufa/" },
-      { title: "Girokonto für Selbstständige", subtitle: "Konten für Freiberufler und Einzelunternehmer", tag: "Selbstständige", href: "/girokonto-fuer-selbststaendige-und-freiberufler/" },
-      { title: "Finom", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/finom-geschaeftskonto/" },
-      { title: "FYRST", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/fyrst-geschaeftskonto/" },
-      { title: "Qonto", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/qonto-geschaeftskonto/" },
-      { title: "Vivid", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/vivid-geschaeftskonto/" },
-      { title: "Commerzbank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/commerzbank-geschaeftskonto/", keywords: "comm kommerzbank filialbank klassik premium" },
-      { title: "Deutsche Bank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/deutsche-bank-geschaeftskonto/", keywords: "db deutschebank filialbank" },
-      { title: "Postbank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/postbank-geschaeftskonto/" },
-      { title: "DKB", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/dkb-geschaeftskonto/" },
-      { title: "ING", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/ing-geschaeftskonto/" },
-      { title: "HypoVereinsbank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/hypovereinsbank-geschaeftskonto/", keywords: "hvb unicredit hypo vereinsbank" },
-      { title: "Kontist", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/kontist-geschaeftskonto/" },
-      { title: "Holvi", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/holvi-geschaeftskonto/" },
-      { title: "Kredit für Selbstständige", subtitle: "Finanzierungslösungen für Selbstständige", tag: "Kredit", href: "/kredit-fuer-selbststaendige/" },
-      { title: "Rechnungen schreiben", subtitle: "Leitfaden für Selbstständige", tag: "Ratgeber", href: "/rechnungen-schreiben-selbststaendige/" },
-      { title: "Krankenversicherung für Selbstständige", subtitle: "Wichtige Grundlagen kompakt erklärt", tag: "Ratgeber", href: "/krankenversicherung-selbststaendige/" },
-      { title: "5 Finanzfehler für Einzelunternehmer", subtitle: "Typische Stolperfallen vermeiden", tag: "Ratgeber", href: "/5-finanzfehler-einzelunternehmer/" },
-      { title: "Ratgeber", subtitle: "Alle Ratgeber und Grundlagen im Überblick", tag: "Wissen", href: "/ratgeber/" }
+      { title: "Geschäftskonto Vergleich", subtitle: "Passende Konten nach Rechtsform, Bedarf und Kostenmodell", tag: "Banking", href: "/firmendo-test-pages/geschaeftskonto-vergleich/" },
+      { title: "Kostenloses Geschäftskonto", subtitle: "Kostenfreie Geschäftskonten im Überblick", tag: "Vergleich", href: "/firmendo-test-pages/geschaeftskonto-kostenlos/" },
+      { title: "Geschäftskonto ohne Schufa", subtitle: "Optionen für Kontoeröffnung ohne SCHUFA-Prüfung", tag: "Banking", href: "/firmendo-test-pages/geschaeftskonto-ohne-schufa/" },
+      { title: "Girokonto für Selbstständige", subtitle: "Konten für Freiberufler und Einzelunternehmer", tag: "Selbstständige", href: "/firmendo-test-pages/girokonto-fuer-selbststaendige-und-freiberufler/" },
+      { title: "Finom", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/finom-geschaeftskonto/" },
+      { title: "FYRST", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/fyrst-geschaeftskonto/" },
+      { title: "Qonto", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/qonto-geschaeftskonto/" },
+      { title: "Vivid", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/vivid-geschaeftskonto/" },
+      { title: "Commerzbank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/commerzbank-geschaeftskonto/", keywords: "comm kommerzbank filialbank klassik premium" },
+      { title: "Deutsche Bank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/deutsche-bank-geschaeftskonto/", keywords: "db deutschebank filialbank" },
+      { title: "Postbank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/postbank-geschaeftskonto/" },
+      { title: "DKB", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/dkb-geschaeftskonto/" },
+      { title: "ING", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/ing-geschaeftskonto/" },
+      { title: "HypoVereinsbank", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/hypovereinsbank-geschaeftskonto/", keywords: "hvb unicredit hypo vereinsbank" },
+      { title: "Kontist", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/kontist-geschaeftskonto/" },
+      { title: "Holvi", subtitle: "Geschäftskonto im Detailtest", tag: "Anbieter", href: "/firmendo-test-pages/holvi-geschaeftskonto/" },
+      { title: "Kredit für Selbstständige", subtitle: "Finanzierungslösungen für Selbstständige", tag: "Kredit", href: "/firmendo-test-pages/kredit-fuer-selbststaendige/" },
+      { title: "Rechnungen schreiben", subtitle: "Leitfaden für Selbstständige", tag: "Ratgeber", href: "/firmendo-test-pages/rechnungen-schreiben-selbststaendige/" },
+      { title: "Krankenversicherung für Selbstständige", subtitle: "Wichtige Grundlagen kompakt erklärt", tag: "Ratgeber", href: "/firmendo-test-pages/krankenversicherung-selbststaendige/" },
+      { title: "5 Finanzfehler für Einzelunternehmer", subtitle: "Typische Stolperfallen vermeiden", tag: "Ratgeber", href: "/firmendo-test-pages/5-finanzfehler-einzelunternehmer/" },
+      { title: "Ratgeber", subtitle: "Alle Ratgeber und Grundlagen im Überblick", tag: "Wissen", href: "/firmendo-test-pages/ratgeber/" }
     ];
     let items = defaultItems;
 
