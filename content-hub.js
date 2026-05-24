@@ -1,26 +1,18 @@
 async function nlSubmit(){
-  const email = document.getElementById('nlEmail').value.trim();
-  const btn = document.getElementById('nlBtn');
   const msg = document.getElementById('nlMsg');
+  const btn = document.getElementById('nlBtn');
 
-  function showNlMsg(type, text) {
-    msg.classList.remove('nl-msg-success', 'nl-msg-error');
-    msg.classList.add(`nl-msg-${type}`);
-    msg.textContent = text;
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = 'Anmelden ->';
+  }
+
+  if (msg) {
+    msg.classList.remove('nl-msg-success');
+    msg.classList.add('nl-msg-error');
+    msg.textContent = 'Newsletter-Anmeldung ist in der Testversion deaktiviert.';
     msg.hidden = false;
   }
-
-  if(!email || !email.includes('@')){
-    showNlMsg('error', 'Bitte geben Sie eine gültige E-Mail-Adresse ein.');
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Wird angemeldet…';
-
-  showNlMsg('error', 'Newsletter-Anmeldung ist in der Testversion deaktiviert.');
-  btn.disabled = false;
-  btn.textContent = 'Anmelden →';
 }
 
 document.getElementById('nlEmail').addEventListener('keydown', e => {
