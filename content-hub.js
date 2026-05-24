@@ -1,17 +1,54 @@
 async function nlSubmit(){
-  const msg = document.getElementById('nlMsg');
+  const email = document.getElementById('nlEmail').value.trim();
   const btn = document.getElementById('nlBtn');
+  const msg = document.getElementById('nlMsg');
+  const endpoint = window.FIRMENDO_NEWSLETTER_ENDPOINT ||
+    document.querySelector('meta[name="firmendo-newsletter-endpoint"]')?.content;
 
-  if (btn) {
-    btn.disabled = false;
-    btn.textContent = 'Anmelden ->';
+  function showNlMsg(type, text) {
+    msg.classList.remove('nl-msg-success', 'nl-msg-error');
+    msg.classList.add(`nl-msg-${type}`);
+    msg.textContent = text;
+    msg.hidden = false;
   }
 
-  if (msg) {
-    msg.classList.remove('nl-msg-success');
-    msg.classList.add('nl-msg-error');
-    msg.textContent = 'Newsletter-Anmeldung ist in der Testversion deaktiviert.';
-    msg.hidden = false;
+  if(!email || !email.includes('@')){
+    showNlMsg('error', 'Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+    return;
+  }
+
+  if(!endpoint){
+    showNlMsg('error', 'Newsletter-Anmeldung ist in der Testversion noch nicht verbunden.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Wird angemeldet…';
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email
+      })
+    });
+
+    if(res.ok || res.status === 204){
+      document.getElementById('nlForm').innerHTML = '';
+      showNlMsg('success', '✓ Fast geschafft! Bitte bestätigen Sie Ihre Anmeldung per E-Mail.');
+    } else {
+      const data = await res.json().catch(() => ({}));
+      showNlMsg('error', data.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
+      btn.disabled = false;
+      btn.textContent = 'Anmelden →';
+    }
+  } catch(e) {
+    showNlMsg('error', 'Verbindungsfehler. Bitte versuchen Sie es erneut.');
+    btn.disabled = false;
+    btn.textContent = 'Anmelden →';
   }
 }
 
