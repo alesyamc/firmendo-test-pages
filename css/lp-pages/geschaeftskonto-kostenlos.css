@@ -105,6 +105,24 @@ body.lp-kostenlos-page .td-total-col .u-text-green-xstrong {
   font-weight: 700;
 }
 
+body.lp-kostenlos-page .kostenlos-table .total-breakdown-tooltip {
+  top: calc(100% + 10px);
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-22%);
+  width: min(280px, 72vw);
+  white-space: normal;
+  text-align: left;
+}
+
+body.lp-kostenlos-page .kostenlos-table .total-breakdown-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  left: 22%;
+  border-top-color: transparent;
+  border-bottom-color: var(--gray-800);
+}
+
 body.lp-kostenlos-page .icon-no {
   color: var(--red);
 }

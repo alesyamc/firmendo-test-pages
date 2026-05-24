@@ -967,6 +967,42 @@ function totalMarkup(total) {
   return `<span class="td-total">${formatEuro(total)}</span>`;
 }
 
+function monthlyWithdrawalInputs() {
+  const abhebungen = parseInt(document.getElementById('inp-abhebungen')?.value, 10) || 4;
+  const betrag = parseFloat(document.getElementById('inp-betrag')?.value) || 200;
+  return { abhebungen, betrag };
+}
+
+function monthlyWithdrawalTotal(p) {
+  const { abhebungen, betrag } = monthlyWithdrawalInputs();
+  const chargeableWithdrawals = Math.max(0, abhebungen - (p.abhebeFree || 0));
+  return chargeableWithdrawals * betrag;
+}
+
+function withdrawalLimitExceeded(p) {
+  const { abhebungen, betrag } = monthlyWithdrawalInputs();
+  return p.abhebeCap > 0 && abhebungen * betrag > p.abhebeCap;
+}
+
+function totalBreakdownMarkup(p) {
+  const buchungen = parseInt(document.getElementById('inp-buchungen')?.value, 10) || 30;
+  const base = p.base || 0;
+  const tx = (p.txCost || 0) * Math.max(0, buchungen - (p.txFree || 0));
+  const { abhebungen } = monthlyWithdrawalInputs();
+  const chargeableWithdrawals = Math.max(0, abhebungen - (p.abhebeFree || 0));
+  const abhebeTotal = monthlyWithdrawalTotal(p);
+  let abhebeFee = 0;
+  if (p.abhebeFixed) {
+    abhebeFee += chargeableWithdrawals * p.abhebeFixed;
+  } else if (p.abhebePct > 0) {
+    abhebeFee += Math.max(p.abhebeMin || 0, abhebeTotal * p.abhebePct);
+  }
+  if (withdrawalLimitExceeded(p)) {
+    return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Limit beachten</span><span class="price-tooltip total-breakdown-tooltip">Grundgeb&uuml;hr ${formatEuro(base)} &middot; Transaktionen ${formatEuro(tx)} &middot; Abhebungen ${formatEuro(abhebeFee)} &middot; Anbieterlimit ${formatEuro(p.abhebeCap)} / Monat</span></span>`;
+  }
+  return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Kosten ansehen</span><span class="price-tooltip total-breakdown-tooltip">Grundgeb&uuml;hr ${formatEuro(base)} &middot; Transaktionen ${formatEuro(tx)} &middot; Abhebungen ${formatEuro(abhebeFee)}</span></span>`;
+}
+
 function toggleFilter(key, btn) {
   activeFilters[key] = !activeFilters[key];
   btn.classList.toggle('active', activeFilters[key]);
@@ -1129,7 +1165,7 @@ function renderTable() {
         </div>
       </td>
       <td class="td-price">${baseMarkup(p)}</td>
-      <td class="td-total-col u-text-center">${totalMarkup(p._total)}</td>
+      <td class="td-total-col u-text-center">${totalBreakdownMarkup(p)}</td>
       <td class="td-bool">${!p.schufa ? YES : NO}</td>
       <td><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
       <td class="u-text-center">${p.cashback !== '—' ? `<span class="u-text-green-strong">${p.cashback}</span>` : '<span class="u-text-gray-300">—</span>'}</td>
