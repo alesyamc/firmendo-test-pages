@@ -414,14 +414,14 @@
             <th class="th-col-price">
               <span class="th-tooltip">Grundgeb&uuml;hr<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Monatliche Kontof&uuml;hrungsgeb&uuml;hr des kostenlosen Tarifs. Kosten entstehen hier vor allem durch Nutzung.</span></span>
             </th>
-            <th class="sortable th-total th-col-total" data-key="total">
-              <span class="th-tooltip">Gesamtkosten*<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Grundgeb&uuml;hr plus Transaktionskosten und Abhebungsgeb&uuml;hren gem&auml;&szlig; Eingaben im Echtkostenrechner.</span></span>
-              <span class="sort-arrow"></span>
-            </th>
             <th class="th-col-schufa">
               <span class="th-tooltip">Ohne Schufa<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Zeigt, ob die Kontoer&ouml;ffnung typischerweise ohne klassische Schufa-Pr&uuml;fung m&ouml;glich ist.</span></span>
             </th>
             <th class="th-col-rf">Rechtsformen</th>
+            <th class="sortable th-total th-col-total" data-key="total">
+              <span class="th-tooltip">Gesamtkosten*<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Grundgeb&uuml;hr plus Transaktionskosten und Abhebungsgeb&uuml;hren gem&auml;&szlig; Eingaben im Echtkostenrechner.</span></span>
+              <span class="sort-arrow"></span>
+            </th>
             <th class="sortable th-col-cashback" data-key="cashbackSort">
               <span class="th-tooltip">Cashback<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">R&uuml;ckverg&uuml;tung auf Kartenums&auml;tze, wenn im kostenlosen Tarif vorgesehen. H&auml;ufig gelten Bedingungen.</span></span>
               <span class="sort-arrow"></span>
@@ -1165,9 +1165,9 @@ function renderTable() {
         </div>
       </td>
       <td class="td-price">${baseMarkup(p)}</td>
-      <td class="td-total-col u-text-center">${totalBreakdownMarkup(p)}</td>
       <td class="td-bool">${!p.schufa ? YES : NO}</td>
       <td><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
+      <td class="td-total-col u-text-center">${totalBreakdownMarkup(p)}</td>
       <td class="u-text-center">${p.cashback !== '—' ? `<span class="u-text-green-strong">${p.cashback}</span>` : '<span class="u-text-gray-300">—</span>'}</td>
       <td class="td-bool">${p.datev ? YES : NO}</td>
       <td class="td-bool">${p.accounting ? YES : NO}</td>
