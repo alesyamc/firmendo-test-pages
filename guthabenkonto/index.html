@@ -80,7 +80,7 @@
 <link rel="stylesheet" href="../css/content-blocks.css?v=10">
 <link rel="stylesheet" href="../css/lp-comparison-table.css?v=10">
 <link rel="stylesheet" href="../css/lp-content-components.css?v=3">
-<link rel="stylesheet" href="../css/lp-pages/guthabenkonto.css?v=4">
+<link rel="stylesheet" href="../css/lp-pages/guthabenkonto.css?v=5">
 </head>
 <body class="lp-comparison-page">
 
@@ -237,7 +237,7 @@
       </div>
       <div class="hero-trust-row" aria-label="Vorteile des Vergleichs">
         <span>Kostenlos &amp; ohne Anmeldung</span>
-        <span>7 Anbieter verglichen</span>
+        <span>6 Anbieter verglichen</span>
       </div>
       <div class="hero-author-bar">
         <div class="hero-author-main">
@@ -380,7 +380,7 @@
     <div class="counter-meta">
       <div class="counter-text">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong id="cnt">7</strong> von <span id="cntTotal">7</span> Konten
+        <strong id="cnt">6</strong> von <span id="cntTotal">6</span> Konten
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -416,11 +416,11 @@
             <th class="sortable th-col-anbieter" data-key="name">Anbieter</th>
             <th class="sortable th-col-fee" data-key="gebuehr">Monatl. Gebühr</th>
             <th class="th-col-basis">Einordnung</th>
+            <th class="th-total">Besonderheit</th>
             <th class="th-col-card">Karte</th>
             <th class="th-col-cash">Geldabhebung</th>
             <th class="th-col-type">Nutzertyp</th>
             <th class="th-col-interest">Zinsen</th>
-            <th class="th-total">Besonderheit</th>
             <th class="th-col-cta">Weiter</th>
           </tr>
         </thead>
@@ -1106,20 +1106,6 @@ const products = [
     affiliateUrl: 'https://www.c24.de/?ref=firmendo'
   },
   {
-    name: 'Revolut Standard', cat: 'Internationale Neo-Bank',
-    logo: '<img class="provider-logo-img" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async" width="700" height="700">',
-    gebuehr: 0, karte: 'Visa Debit', abhebung: '5x gratis/Monat',
-    gebuehrText: '0 € / Mon.',
-    nutzertyp: ['Privatperson', 'Selbstständiger'],
-    zinsen: false, guthabenbasis: true,
-    kostenlos: true,
-    highlight: false, label: 'International',
-    einordnung: 'Debit/Guthaben',
-    footerNote: 'Als Debitkonto ohne klassischen Dispo einordnen',
-    besonderheit: 'Mehrwährungskonto',
-    affiliateUrl: 'https://www.revolut.com/de/?ref=firmendo'
-  },
-  {
     name: 'Norisbank Girokonto', cat: 'Direktbank',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/norisbank.svg" alt="Norisbank Logo" loading="lazy" decoding="async" width="256" height="256">',
     gebuehr: 0, karte: 'Girocard + Visa', abhebung: 'kostenlos (Commerzbank-Netz)',
@@ -1145,7 +1131,7 @@ const products = [
     einordnung: 'Guthaben-/Basiskonto',
     footerNote: 'Offiziell auf Guthabenbasis',
     besonderheit: 'Kein Minus möglich',
-    affiliateUrl: 'https://www.sparkasse.de/?ref=firmendo'
+    ctaNote: 'Regional prüfen'
   }
 ];
 
@@ -1181,6 +1167,19 @@ function resetFilters() {
   const defaultTh = document.querySelector('th.sortable[data-key="gebuehr"]');
   if (defaultTh) defaultTh.classList.add('asc');
   renderTable();
+}
+
+function providerCtaMarkup(p, mode = 'table') {
+  if (!p.affiliateUrl) {
+    const note = p.ctaNote || 'Kein Direktlink';
+    return mode === 'mobile'
+      ? `<span class="mc-cta mc-cta--disabled" aria-label="${note}">${note}</span>`
+      : `<span class="btn-table btn-table--disabled" aria-label="${note}">${note}</span>`;
+  }
+  const icon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+  return mode === 'mobile'
+    ? `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter ${icon}</a>`
+    : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">Zum Anbieter ${icon}</a>`;
 }
 
 function updateFilterCount() {
@@ -1258,17 +1257,14 @@ function renderTable() {
       </td>
       <td class="${p.gebuehr === 0 ? 'u-cell-center-green-800' : 'u-cell-center-gray-800-800'}">${p.gebuehrText || (p.gebuehr === 0 ? '0 € / Mon.' : p.gebuehr.toFixed(2).replace('.',',') + ' € / Mon.')}</td>
       <td class="td-total-col"><span class="u-fs-caption u-title-blue-800">${p.einordnung}</span></td>
+      <td class="td-total-col"><span class="u-fs-caption u-title-blue-800">${p.besonderheit}</span></td>
       <td class="u-fs-card-body u-table-cell-heading">${p.karte}</td>
       <td class="u-fs-card-body u-text-gray-700">${p.abhebung}</td>
       <td><div class="tag-group">${tags}</div></td>
       <td class="td-bool">${p.zinsen ? YES : NO}</td>
-      <td class="td-total-col"><span class="u-fs-caption u-title-blue-800">${p.besonderheit}</span></td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">
-            Zum Anbieter
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          ${providerCtaMarkup(p)}
         </div>
       </td>
     </tr>`;
@@ -1312,10 +1308,7 @@ function renderMobileCards(data) {
       </div>
       <div class="mc-footer">
         <div class="mc-footer-note">${p.footerNote || (p.guthabenbasis ? 'Auf Guthabenbasis nutzbar' : 'Konditionen individuell prüfen')}</div>
-        <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">
-          Zum Anbieter
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        ${providerCtaMarkup(p, 'mobile')}
       </div>
     </article>`).join('');
 }

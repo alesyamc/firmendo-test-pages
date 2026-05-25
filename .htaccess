@@ -1,5 +1,5 @@
 # Affiliate redirects
-# Generated from tools/affiliate-links.json by tools/generate-affiliate-redirects.rb
+# Generated from tools/affiliate-links.txt by tools/generate-affiliate-redirects.rb
 # Requires Apache with mod_alias and AllowOverride enabled.
 
 Redirect 302 /go/finom-solo/ https://www.financeads.net/tc.php?t=20082C354266780T

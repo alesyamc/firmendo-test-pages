@@ -6,13 +6,28 @@ body.lp-comparison-page .guthaben-table .th-col-card { width: 158px; min-width: 
 body.lp-comparison-page .guthaben-table .th-col-cash { width: 170px; min-width: 170px; }
 body.lp-comparison-page .guthaben-table .th-col-type { width: 190px; min-width: 190px; }
 body.lp-comparison-page .guthaben-table .th-col-interest { width: 104px; min-width: 104px; text-align: center; }
-body.lp-comparison-page .guthaben-table .th-col-basis { width: 136px; min-width: 136px; text-align: center; }
+body.lp-comparison-page .guthaben-table .th-col-basis { width: 176px; min-width: 176px; text-align: center; }
 body.lp-comparison-page .guthaben-table .th-total { width: 178px; min-width: 178px; }
 body.lp-comparison-page .guthaben-table .th-col-cta { width: 176px; min-width: 176px; }
 body.lp-comparison-page .guthaben-table thead th {
   text-align: center;
 }
 body.lp-comparison-page .guthaben-table .td-bool { text-align: center; }
+body.lp-comparison-page .guthaben-table .u-cell-center-green-800,
+body.lp-comparison-page .guthaben-table .u-cell-center-gray-800-800 {
+  font-weight: 600;
+}
+body.lp-comparison-page .guthaben-table td:nth-child(3) .u-title-blue-800 {
+  display: inline-block;
+  max-width: 150px;
+  font-size: 15px !important;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+body.lp-comparison-page .guthaben-table td:nth-child(4) .u-title-blue-800 {
+  font-size: 15px !important;
+}
 body.lp-comparison-page .guthaben-table .th-total {
   background: var(--gray-100) !important;
   color: var(--gray-500) !important;

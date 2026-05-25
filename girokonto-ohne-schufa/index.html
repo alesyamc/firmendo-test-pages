@@ -431,7 +431,7 @@
     <div class="counter-meta">
       <div class="counter-text">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong id="cnt">8</strong> von <span id="cntTotal">8</span> Anbietern
+        <strong id="cnt">7</strong> von <span id="cntTotal">7</span> Anbietern
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -441,13 +441,14 @@
     <div class="counter-actions">
       <div class="sort-wrap">
         <span class="sort-label">Sortieren</span>
-        <div class="fd fd-sort" id="fd-sort" data-value="monatspreis-asc">
+        <div class="fd fd-sort" id="fd-sort" data-value="orderRank-asc">
           <button type="button" class="fd-trigger" aria-haspopup="listbox" aria-expanded="false">
-            <span class="fd-trigger-text">Preis: aufsteigend</span>
+            <span class="fd-trigger-text">Empfehlung</span>
             <svg class="fd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="fd-menu" role="listbox">
-            <button type="button" class="fd-option selected" data-value="monatspreis-asc">Preis: aufsteigend</button>
+            <button type="button" class="fd-option selected" data-value="orderRank-asc">Empfehlung</button>
+            <button type="button" class="fd-option" data-value="monatspreis-asc">Preis: aufsteigend</button>
             <button type="button" class="fd-option" data-value="monatspreis-desc">Preis: absteigend</button>
             <button type="button" class="fd-option" data-value="name-asc">Name: A &rarr; Z</button>
           </div>
@@ -542,10 +543,7 @@
       <td class="u-fs-caption u-nowrap-muted">FR (FGDR), bis 100.000 €</td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="https://www.bforbank.de/" target="_blank" rel="noopener sponsored" class="btn-table">
-            Zum Anbieter
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
+          <span class="btn-table btn-table--disabled" aria-label="Konditionen prüfen">Konditionen prüfen</span>
         </div>
       </td>
     </tr>
@@ -618,7 +616,7 @@
         <div class="td-anbieter">
           <div class="td-logo"><img class="provider-logo-img" src="../images/mini-logos/ing.svg" alt="ING Logo" loading="lazy" decoding="async" width="340" height="340"></div>
           <div>
-            <div class="td-name">Basiskonto ING</div>
+            <div class="td-name">ING Basiskonto</div>
             <div class="td-cat">Direktbank</div>
             
             
@@ -638,10 +636,7 @@
       <td class="u-fs-caption u-nowrap-muted">DE, bis 100.000 €</td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="https://www.ing.de/girokonto/" target="_blank" rel="noopener sponsored" class="btn-table">
-            Zum Anbieter
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
+          <span class="btn-table btn-table--disabled" aria-label="Konditionen prüfen">Konditionen prüfen</span>
         </div>
       </td>
     </tr>
@@ -650,7 +645,7 @@
         <div class="td-anbieter">
           <div class="td-logo"><img class="provider-logo-img" src="../images/mini-logos/postbank.svg" alt="Postbank Logo" loading="lazy" decoding="async" width="16" height="16"></div>
           <div>
-            <div class="td-name">Basiskonto Postbank</div>
+            <div class="td-name">Postbank Basiskonto</div>
             <div class="td-cat">Filialbank</div>
             
             
@@ -670,41 +665,7 @@
       <td class="u-fs-caption u-nowrap-muted">DE, bis 100.000 €</td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="https://www.postbank.de/girokonto/" target="_blank" rel="noopener sponsored" class="btn-table">
-            Zum Anbieter
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
-        </div>
-      </td>
-    </tr>
-    <tr class="">
-      <td>
-        <div class="td-anbieter">
-          <div class="td-logo"><img class="provider-logo-img" src="../images/mini-logos/trade-republic.svg" alt="Trade Republic Logo" loading="lazy" decoding="async" width="77" height="65"></div>
-          <div>
-            <div class="td-name">Trade Republic</div>
-            <div class="td-cat">Broker + Konto</div>
-            
-          </div>
-        </div>
-      </td>
-      <td class="td-price">
-        <div>
-          <span class="td-price-amount free">0 €/Monat</span>
-          <div class="td-price-period">mit Zinsen 2 % p.a.</div>
-        </div>
-      </td>
-      <td class="u-fs-caption u-text-green-strong">Keine / minimal</td>
-      <td class="u-fs-caption u-text-gray-700">Broker-Konto</td>
-      <td class="td-bool"><span class="icon-yes" aria-label="Ja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg></span></td>
-      <td class="td-bool"><span class="icon-yes" aria-label="Ja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg></span></td>
-      <td class="u-fs-caption u-nowrap-muted">DE, bis 100.000 €</td>
-      <td class="td-cta">
-        <div class="td-cta-stack">
-          <a href="https://www.traderepublic.com/" target="_blank" rel="noopener sponsored" class="btn-table">
-            Zum Anbieter
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
+          <span class="btn-table btn-table--disabled" aria-label="Konditionen prüfen">Konditionen prüfen</span>
         </div>
       </td>
     </tr>
@@ -1261,7 +1222,7 @@ const products = [
     rating: 4.6, schufaAbfrage: 'Keine', schufaClass: 'green',
     kontoart: 'neobank', kontoartLabel: 'Neobank',
     dtIBAN: false, debitkarte: true, sicherung: 'LT, bis 100.000 €', sicherType: 'EU',
-    highlight: true,
+    highlight: true, orderRank: 1,
     affiliateUrl: 'https://www.revolut.com/de-DE/'
   },
   {
@@ -1270,8 +1231,8 @@ const products = [
     rating: 4.3, schufaAbfrage: 'Keine', schufaClass: 'green',
     kontoart: 'guthabenkonto', kontoartLabel: 'Guthabenkonto',
     dtIBAN: true, debitkarte: true, sicherung: 'FR (FGDR), bis 100.000 €', sicherType: 'EU',
-    highlight: false,
-    affiliateUrl: 'https://www.bforbank.de/'
+    highlight: false, orderRank: 6,
+    ctaNote: 'Konditionen prüfen'
   },
   {
     name: 'bunq Core', cat: 'Neobank', logo: '<img class="provider-logo-img" src="../images/mini-logos/bunq.avif" alt="bunq Logo" loading="lazy" decoding="async" width="512" height="512">',
@@ -1279,7 +1240,7 @@ const products = [
     rating: 4.2, schufaAbfrage: 'Keine', schufaClass: 'green',
     kontoart: 'neobank', kontoartLabel: 'Neobank',
     dtIBAN: true, debitkarte: true, sicherung: 'NL, bis 100.000 €', sicherType: 'EU',
-    highlight: false,
+    highlight: false, orderRank: 2,
     affiliateUrl: 'https://www.bunq.com/de/'
   },
   {
@@ -1288,35 +1249,26 @@ const products = [
     rating: 4.1, schufaAbfrage: 'Automatisch', schufaClass: 'orange',
     kontoart: 'guthabenkonto', kontoartLabel: 'Guthabenkonto',
     dtIBAN: true, debitkarte: true, sicherung: 'DE, bis 100.000 €', sicherType: 'DE',
-    highlight: false,
+    highlight: false, orderRank: 4,
     affiliateUrl: 'https://n26.com/de-de/'
   },
   {
-    name: 'Basiskonto ING', cat: 'Direktbank', logo: '<img class="provider-logo-img" src="../images/mini-logos/ing.svg" alt="ING Logo" loading="lazy" decoding="async" width="340" height="340">',
+    name: 'ING Basiskonto', cat: 'Direktbank', logo: '<img class="provider-logo-img" src="../images/mini-logos/ing.svg" alt="ING Logo" loading="lazy" decoding="async" width="340" height="340">',
     monatspreis: 6.99, preisBadge: 'ab 6,99 €/Monat', preisClass: '', preisNote: 'gesetzliches Basiskonto',
     rating: 4.0, schufaAbfrage: 'Ja (nur Prüfzweck)', schufaClass: '',
     kontoart: 'basiskonto', kontoartLabel: 'Basiskonto',
     dtIBAN: true, debitkarte: true, sicherung: 'DE, bis 100.000 €', sicherType: 'DE',
-    highlight: false,
-    affiliateUrl: 'https://www.ing.de/girokonto/'
+    highlight: false, orderRank: 8,
+    ctaNote: 'Konditionen prüfen'
   },
   {
-    name: 'Basiskonto Postbank', cat: 'Filialbank', logo: '<img class="provider-logo-img" src="../images/mini-logos/postbank.svg" alt="Postbank Logo" loading="lazy" decoding="async" width="16" height="16">',
+    name: 'Postbank Basiskonto', cat: 'Filialbank', logo: '<img class="provider-logo-img" src="../images/mini-logos/postbank.svg" alt="Postbank Logo" loading="lazy" decoding="async" width="16" height="16">',
     monatspreis: 5.90, preisBadge: '5,90 €/Monat', preisClass: '', preisNote: 'Giro Basis',
     rating: 3.8, schufaAbfrage: 'Ja (nur Prüfzweck)', schufaClass: '',
     kontoart: 'basiskonto', kontoartLabel: 'Basiskonto',
     dtIBAN: true, debitkarte: true, sicherung: 'DE, bis 100.000 €', sicherType: 'DE',
-    highlight: false,
-    affiliateUrl: 'https://www.postbank.de/girokonto/'
-  },
-  {
-    name: 'Trade Republic', cat: 'Broker + Konto', logo: '<img class="provider-logo-img" src="../images/mini-logos/trade-republic.svg" alt="Trade Republic Logo" loading="lazy" decoding="async" width="77" height="65">',
-    monatspreis: 0, preisBadge: '0 €/Monat', preisClass: 'gratis', preisNote: 'mit Zinsen 2 % p.a.',
-    rating: 4.4, schufaAbfrage: 'Keine / minimal', schufaClass: 'green',
-    kontoart: 'neobank', kontoartLabel: 'Broker-Konto',
-    dtIBAN: true, debitkarte: true, sicherung: 'DE, bis 100.000 €', sicherType: 'DE',
-    highlight: false,
-    affiliateUrl: 'https://www.traderepublic.com/'
+    highlight: false, orderRank: 7,
+    ctaNote: 'Konditionen prüfen'
   },
   {
     name: 'MeineGiroKarte', cat: 'P-Konto', logo: '<img class="provider-logo-img" src="../images/mini-logos/meinegirokarte.svg" alt="MeineGiroKarte Logo" loading="lazy" decoding="async" width="378" height="167">',
@@ -1324,13 +1276,13 @@ const products = [
     rating: 3.9, schufaAbfrage: 'Keine', schufaClass: 'green',
     kontoart: 'guthabenkonto', kontoartLabel: 'P-Konto-fähig',
     dtIBAN: true, debitkarte: true, sicherung: 'DE', sicherType: 'DE',
-    highlight: false,
+    highlight: false, orderRank: 3,
     affiliateUrl: 'https://www.meinegirokarte.de/'
   }
 ];
 
 let activeFilters = { gratis: false, keineschufa: false, deutsch: false };
-let sortKey = 'monatspreis';
+let sortKey = 'orderRank';
 let sortAsc = true;
 function toggleFilter(key, btn) {
   activeFilters[key] = !activeFilters[key];
@@ -1341,7 +1293,7 @@ function toggleFilter(key, btn) {
 function applyFilters() { renderTable(); }
 
 function applySort() {
-  const val = fdGetValue('fd-sort') || 'monatspreis-asc';
+  const val = fdGetValue('fd-sort') || 'orderRank-asc';
   const [key, dir] = val.split('-');
   sortKey = key;
   sortAsc = dir === 'asc';
@@ -1357,13 +1309,24 @@ function resetFilters() {
   document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
   fdSetValue('fd-type', '', 'Alle Kontoarten');
   fdSetValue('fd-sicher', '', 'Alle Sicherungen');
-  fdSetValue('fd-sort', 'monatspreis-asc', 'Preis: aufsteigend');
-  sortKey = 'monatspreis';
+  fdSetValue('fd-sort', 'orderRank-asc', 'Empfehlung');
+  sortKey = 'orderRank';
   sortAsc = true;
   document.querySelectorAll('th.sortable').forEach(t => t.classList.remove('asc','desc'));
-  const defaultTh = document.querySelector('th.sortable[data-key="monatspreis"]');
-  if (defaultTh) defaultTh.classList.add('asc');
   renderTable();
+}
+
+function providerCtaMarkup(p, mode = 'table') {
+  if (!p.affiliateUrl) {
+    const note = p.ctaNote || 'Konditionen prüfen';
+    return mode === 'mobile'
+      ? `<span class="mc-cta mc-cta--disabled" aria-label="${note}">${note}</span>`
+      : `<span class="btn-table btn-table--disabled" aria-label="${note}">${note}</span>`;
+  }
+  const icon = `<svg ${mode === 'table' ? 'width="11" height="11"' : ''} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+  return mode === 'mobile'
+    ? `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter ${icon}</a>`
+    : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">Zum Anbieter ${icon}</a>`;
 }
 
 function updateFilterCount() {
@@ -1447,10 +1410,7 @@ function renderTable() {
       <td class="u-fs-caption u-nowrap-muted">${p.sicherung}</td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">
-            Zum Anbieter
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          ${providerCtaMarkup(p)}
         </div>
       </td>
     </tr>`;
@@ -1496,10 +1456,7 @@ function renderMobileCards(data) {
       </div>
       <div class="mc-footer">
         <div class="mc-footer-note">${p.debitkarte ? 'Debitkarte verfügbar' : 'Keine Debitkarte enthalten'}</div>
-        <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">
-          Zum Anbieter
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        ${providerCtaMarkup(p, 'mobile')}
       </div>
     </article>`;
   }).join('');
@@ -1530,8 +1487,6 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTable();
     });
   });
-  const defaultTh = document.querySelector('th.sortable[data-key="monatspreis"]');
-  if (defaultTh) defaultTh.classList.add('asc');
   const tableWrap = document.getElementById('tableWrap');
   if (tableWrap) tableWrap.addEventListener('scroll', updateScrollState, { passive: true });
   window.addEventListener('resize', updateScrollState, { passive: true });
