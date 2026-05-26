@@ -18,7 +18,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: true, belegerfassung: true,
-    affiliateUrl: 'https://finom.co/?ref=firmendo',
+    affiliateUrl: '/go/finom-prime-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async">'
   },
   {
@@ -29,7 +29,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'bis 50', employeeCardsSort: 50,
     datev: false, belegerfassung: true,
-    affiliateUrl: 'https://vivid.money/de-de/business/?ref=firmendo',
+    affiliateUrl: '/go/vivid-business-firmenkarte/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
@@ -40,7 +40,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'ja', employeeCardsSort: 10,
     datev: false, belegerfassung: true,
-    affiliateUrl: 'https://www.revolut.com/business/?ref=firmendo',
+    affiliateUrl: '/go/revolut-business-debit-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async">'
   },
   {
@@ -51,7 +51,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'bis 30', employeeCardsSort: 30,
     datev: true, belegerfassung: true,
-    affiliateUrl: 'https://qonto.com/de?ref=firmendo',
+    affiliateUrl: '/go/qonto-business-credit-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
   },
   {
@@ -62,7 +62,7 @@ const products = [
     limit: 'variabel',
     employeeCards: 'Corporate Cards', employeeCardsSort: 999,
     datev: false, belegerfassung: false,
-    affiliateUrl: 'https://americanexpress.com/de/?ref=firmendo',
+    affiliateUrl: '/go/american-express-business-gold-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/american-express.svg" alt="American Express Logo" loading="lazy" decoding="async">'
   },
   {
@@ -73,7 +73,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: false, belegerfassung: false,
-    affiliateUrl: 'https://n26.com/de-de/business?ref=firmendo',
+    affiliateUrl: '/go/n26-business-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async">'
   },
   {
@@ -84,7 +84,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: true, belegerfassung: true,
-    affiliateUrl: 'https://kontist.com/?ref=firmendo',
+    affiliateUrl: '/go/kontist-premium-karte/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/kontist.png" alt="Kontist Logo" loading="lazy" decoding="async">'
   }
 ];
