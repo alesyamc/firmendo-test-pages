@@ -1035,7 +1035,8 @@ const products = [
     cashback: '3 % (6 Monate)', zins: '3 % p.a. 6 Monate',
     kostenlos: true, noEingang: true, praemieArt: 'cashback',
     highlight: false,
-    ctaNote: 'Konditionen prüfen',
+    ctaDisabled: true,
+    ctaLabel: 'Konditionen prüfen',
     reviewUrl: '/bbva-girokonto/',
     priceNote: 'Dauerhaft kostenlos ohne Bedingungen'
   }
@@ -1086,9 +1087,11 @@ function formatEuro(value) {
 }
 
 function providerCtaMarkup(p, mode = 'table') {
-  if (!p.affiliateUrl) {
-    const note = p.ctaNote || 'Konditionen prüfen';
-    return `<span class="btn-table btn-table--disabled" aria-label="${note}">${note}</span>`;
+  if (p.ctaDisabled || !p.affiliateUrl) {
+    const label = p.ctaLabel || 'Konditionen prüfen';
+    return mode === 'mobile'
+      ? `<span class="mc-cta mc-cta--disabled" aria-label="${label}">${label}</span>`
+      : `<span class="btn-table btn-table--disabled" aria-label="${label}">${label}</span>`;
   }
 
   const icon = `<svg ${mode === 'table' ? 'width="11" height="11"' : ''} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
