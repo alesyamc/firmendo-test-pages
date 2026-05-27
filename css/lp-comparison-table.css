@@ -934,6 +934,16 @@ body.lp-comparison-page .btn-table.btn-table--disabled:hover {
   box-shadow: none;
   transform: none;
 }
+body.lp-comparison-page .btn-table.btn-table--muted,
+body.lp-comparison-page .btn-table.btn-table--muted:hover {
+  background: var(--gray-100);
+  color: var(--gray-500);
+  box-shadow: none;
+}
+body.lp-comparison-page .btn-table.btn-table--muted:hover {
+  background: var(--gray-200);
+  transform: translateY(-1px);
+}
 body.lp-comparison-page .btn-table.highlighted {
   background: var(--orange);
   box-shadow: 0 3px 10px rgba(212,78,16,0.28);
@@ -1257,6 +1267,17 @@ body.lp-comparison-page .mc-cta.mc-cta--disabled:active {
     color: var(--gray-500);
     cursor: default;
     box-shadow: none;
+  }
+  body.lp-comparison-page .mc-cta.mc-cta--muted,
+body.lp-comparison-page .mc-cta.mc-cta--muted:hover,
+body.lp-comparison-page .mc-cta.mc-cta--muted:active {
+    background: var(--gray-100);
+    color: var(--gray-500);
+    box-shadow: none;
+  }
+  body.lp-comparison-page .mc-cta.mc-cta--muted:hover,
+body.lp-comparison-page .mc-cta.mc-cta--muted:active {
+    background: var(--gray-200);
   }
   body.lp-comparison-page .mc-card.highlight .mc-cta { background: var(--orange); box-shadow: 0 3px 10px rgba(212,78,16,0.28); }
   body.lp-comparison-page .mc-card.highlight .mc-cta:hover,

@@ -1627,12 +1627,30 @@ p.mini-anbieter-desc {
   transform: none;
 }
 
+.mini-anbieter-cta--muted,
+.mini-anbieter-cta--muted:hover {
+  background: var(--gray-200);
+  color: var(--gray-500);
+  box-shadow: none;
+}
+
+.mini-anbieter-cta--muted:hover {
+  background: var(--gray-300);
+  transform: translateY(-1px);
+}
+
 .text-body a.mini-anbieter-cta,
 .text-body a.mini-anbieter-cta:hover,
 .text-body a.mini-anbieter-cta:focus-visible {
   color: #fff;
   text-decoration: none;
   text-decoration-color: transparent;
+}
+
+.text-body a.mini-anbieter-cta.mini-anbieter-cta--muted,
+.text-body a.mini-anbieter-cta.mini-anbieter-cta--muted:hover,
+.text-body a.mini-anbieter-cta.mini-anbieter-cta--muted:focus-visible {
+  color: var(--gray-500);
 }
 
 .mini-pros-cons {
