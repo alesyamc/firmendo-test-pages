@@ -252,6 +252,27 @@ body.lp-comparison-page .kredit-table .td-cta-stack { align-items: center; }
 body.lp-comparison-page .kredit-table .td-cta-stack .btn-table,
 body.lp-comparison-page .kredit-table .td-cta-stack .u-cta-note-muted { margin-inline: auto; }
 body.lp-comparison-page .u-cta-note-muted { color: var(--gray-300); font-weight: 600; }
+body.lp-comparison-page .btn-table.btn-table--muted,
+body.lp-comparison-page .btn-table.btn-table--muted:hover {
+  background: var(--gray-100);
+  color: var(--gray-500);
+  box-shadow: none;
+}
+body.lp-comparison-page .btn-table.btn-table--muted:hover {
+  background: var(--gray-200);
+  transform: translateY(-1px);
+}
+body.lp-comparison-page .mc-cta.mc-cta--muted,
+body.lp-comparison-page .mc-cta.mc-cta--muted:hover,
+body.lp-comparison-page .mc-cta.mc-cta--muted:active {
+  background: var(--gray-100);
+  color: var(--gray-500);
+  box-shadow: none;
+}
+body.lp-comparison-page .mc-cta.mc-cta--muted:hover,
+body.lp-comparison-page .mc-cta.mc-cta--muted:active {
+  background: var(--gray-200);
+}
 body.lp-comparison-page .table-disclaimer { margin-top: 20px; }
 body.lp-comparison-page .mc-kredit-rate { color: var(--blue); }
 

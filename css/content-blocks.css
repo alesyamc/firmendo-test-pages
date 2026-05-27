@@ -1618,6 +1618,15 @@ p.mini-anbieter-desc {
   transform: translateY(-1px);
 }
 
+.mini-anbieter-cta--disabled,
+.mini-anbieter-cta--disabled:hover {
+  background: var(--gray-200);
+  color: var(--gray-500);
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
 .text-body a.mini-anbieter-cta,
 .text-body a.mini-anbieter-cta:hover,
 .text-body a.mini-anbieter-cta:focus-visible {
