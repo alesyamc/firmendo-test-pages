@@ -1,6 +1,17 @@
 const products = [
   {
-    name: 'moss Free', priceNote: 'Kostenlos · Echter Kreditrahmen bis 2,5 Mio. € · 60 Tage Zahlungsziel', base: 0, cat: 'Fintech', highlight: true,
+    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos · Visa Debitkarte · bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: true,
+    suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
+    cardType: 'Debitkarte', rating: 4.8,
+    cashbackRate: 4, cashbackLabel: 'bis 4 %',
+    limit: 'Debit',
+    employeeCards: 'bis 50', employeeCardsSort: 50,
+    datev: false, belegerfassung: true,
+    affiliateUrl: '/go/vivid-business-firmenkarte/',
+    logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
+  },
+  {
+    name: 'moss Free', priceNote: 'Kostenlos · Echter Kreditrahmen bis 2,5 Mio. € · 60 Tage Zahlungsziel', base: 0, cat: 'Fintech', highlight: false,
     suitable: ['GmbH & UG','AG','GbR','eK','Gründer'],
     cardType: 'Kreditkarte', rating: 4.7,
     cashbackRate: 0, cashbackLabel: '—',
@@ -20,17 +31,6 @@ const products = [
     datev: true, belegerfassung: true,
     affiliateUrl: '/go/finom-prime-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async">'
-  },
-  {
-    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos · Visa Debitkarte · bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: false,
-    suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
-    cardType: 'Debitkarte', rating: 4.8,
-    cashbackRate: 4, cashbackLabel: 'bis 4 %',
-    limit: 'Debit',
-    employeeCards: 'bis 50', employeeCardsSort: 50,
-    datev: false, belegerfassung: true,
-    affiliateUrl: '/go/vivid-business-firmenkarte/',
-    logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
     name: 'Revolut Business Debit Card', priceNote: 'Kostenlos · Mastercard Debitkarte · Multi-Währung', base: 0, cat: 'Fintech', highlight: false,

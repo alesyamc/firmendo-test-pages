@@ -948,6 +948,19 @@
 // PRODUCT DATA
 const products = [
   {
+    id: 'comdirect', name: 'comdirect Girokonto Aktiv', brand: 'comdirect', cat: 'Direktbank',
+    logo: '<img class="provider-logo-img" src="../images/mini-logos/comdirect.png" alt="comdirect Logo" loading="lazy" decoding="async" width="192" height="192">',
+    base: 0, rating: 4.4,
+    praemie: 100, praemieLabel: '100 € Prämie',
+    bedingung: '5 Transaktionen > 25 € in 3 Monaten',
+    cashback: '—', zins: '3 % p.a. 6 Monate (Tagesgeld)',
+    kostenlos: true, noEingang: false, praemieArt: 'cash',
+    highlight: true,
+    affiliateUrl: '/go/comdirect-girokonto/',
+    reviewUrl: '/comdirect-girokonto/',
+    priceNote: 'Kostenlos bei aktiver Nutzung'
+  },
+  {
     id: 'bbva', name: 'BBVA Girokonto', cat: 'Direktbank',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/bbva.avif" alt="BBVA Logo" loading="lazy" decoding="async" width="512" height="512">',
     base: 0, rating: 4.8,
@@ -955,7 +968,7 @@ const products = [
     bedingung: 'Neukunde + Karteneinsatz in 90 Tagen',
     cashback: '3 % (6 Monate)', zins: '3 % p.a. 6 Monate',
     kostenlos: true, noEingang: true, praemieArt: 'cashback',
-    highlight: true,
+    highlight: false,
     affiliateUrl: 'https://www.bbva.de/?ref=firmendo',
     reviewUrl: '/bbva-girokonto/',
     priceNote: 'Dauerhaft kostenlos ohne Bedingungen'
@@ -972,19 +985,6 @@ const products = [
     affiliateUrl: '/go/c24-smart-konto/',
     reviewUrl: '/c24-girokonto/',
     priceNote: 'Kostenlos ohne Mindesteingang'
-  },
-  {
-    id: 'comdirect', name: 'comdirect Girokonto Aktiv', brand: 'comdirect', cat: 'Direktbank',
-    logo: '<img class="provider-logo-img" src="../images/mini-logos/comdirect.png" alt="comdirect Logo" loading="lazy" decoding="async" width="192" height="192">',
-    base: 0, rating: 4.4,
-    praemie: 100, praemieLabel: '100 € Prämie',
-    bedingung: '5 Transaktionen > 25 € in 3 Monaten',
-    cashback: '—', zins: '3 % p.a. 6 Monate (Tagesgeld)',
-    kostenlos: true, noEingang: false, praemieArt: 'cash',
-    highlight: false,
-    affiliateUrl: '/go/comdirect-girokonto/',
-    reviewUrl: '/comdirect-girokonto/',
-    priceNote: 'Kostenlos bei aktiver Nutzung'
   },
   {
     id: 'ing', name: 'ING Girokonto', brand: 'ING', cat: 'Direktbank',
