@@ -11,7 +11,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/moss.svg" alt="moss Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Finom Solo', priceNote: 'Kostenlos · Visa Debitkarte · bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false,
+    name: 'Finom Prime Card', priceNote: 'Kostenlos · Visa Debitkarte · bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     cardType: 'Debitkarte', rating: 4.5,
     cashbackRate: 3, cashbackLabel: 'bis 3 %',
@@ -22,7 +22,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Vivid Business', priceNote: 'Kostenlos · Visa Debitkarte · bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: false,
+    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos · Visa Debitkarte · bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.8,
     cashbackRate: 4, cashbackLabel: 'bis 4 %',
@@ -33,7 +33,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Revolut Business Free', priceNote: 'Kostenlos · Mastercard Debitkarte · Multi-Währung', base: 0, cat: 'Fintech', highlight: false,
+    name: 'Revolut Business Debit Card', priceNote: 'Kostenlos · Mastercard Debitkarte · Multi-Währung', base: 0, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.4,
     cashbackRate: 0, cashbackLabel: '—',
@@ -44,7 +44,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Qonto Business', priceNote: 'Ab 9 €/Monat · Mastercard Debitkarte · DATEV-Export', base: 9, cat: 'Fintech', highlight: false,
+    name: 'Qonto Business Credit Card', priceNote: 'Ab 9 €/Monat · Mastercard Debitkarte · DATEV-Export', base: 9, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR','Gründer'],
     cardType: 'Debitkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: '—',
@@ -55,7 +55,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'American Express Business Gold', priceNote: '216 €/Jahr · Charge-Karte · Membership Rewards', base: 216, cat: 'Kreditkarten-Anbieter', highlight: false,
+    name: 'American Express Business Gold Card', priceNote: '216 €/Jahr · Charge-Karte · Membership Rewards', base: 216, cat: 'Kreditkarten-Anbieter', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR'],
     cardType: 'Kreditkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: 'Membership Rewards',
@@ -66,7 +66,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/american-express.svg" alt="American Express Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'N26 Business', priceNote: 'Kostenlos · Mastercard Debitkarte · 0,1% Cashback', base: 0, cat: 'Online-Bank', highlight: false,
+    name: 'N26 Business Card', priceNote: 'Kostenlos · Mastercard Debitkarte · 0,1% Cashback', base: 0, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen'],
     cardType: 'Debitkarte', rating: 4.2,
     cashbackRate: 0.1, cashbackLabel: '0,1 %',
@@ -77,7 +77,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Kontist Premium', priceNote: '9 €/Monat · Visa Debitkarte · Steuerautomatisierung', base: 9, cat: 'Fintech', highlight: false,
+    name: 'Kontist Premium Karte', priceNote: '9 €/Monat · Visa Debitkarte · Steuerautomatisierung', base: 9, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen'],
     cardType: 'Debitkarte', rating: 4.3,
     cashbackRate: 0, cashbackLabel: '—',
