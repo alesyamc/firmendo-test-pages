@@ -1533,6 +1533,8 @@ function getFilteredData() {
   }).map(p => ({ ...p, _total: calcTotal(p) }));
 
   data.sort((a, b) => {
+    const highlightCompare = compareHighlightFirst(a, b);
+    if (highlightCompare) return highlightCompare;
     if (!a.affiliateUrl && b.affiliateUrl) return 1;
     if (a.affiliateUrl && !b.affiliateUrl) return -1;
     const featuredA = getFeaturedOrder(a);
