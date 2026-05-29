@@ -220,7 +220,7 @@ function fShowResult() {
     html += '<div class="finder-result-header">' + logoHtml + '<div><div class="finder-result-name">' + r.name + '</div><div class="finder-result-tag">' + r.tag + '</div></div></div>';
     html += '<ul class="finder-result-pros">' + r.pros.map(function(p) { return '<li>' + p + '</li>'; }).join('') + '</ul>';
     html += '<div class="finder-result-price">Preis: <strong>' + r.price + '</strong></div>';
-    html += '<div class="finder-result-trust"><span>Redaktionell geprüft</span><span>Stand: März 2026</span><span>Kriterienbasiert</span></div>';
+    html += '<div class="finder-result-trust"><span>Redaktionell geprüft</span><span>Stand: Mai 2026</span><span>Kriterienbasiert</span></div>';
     html += '<div class="finder-result-links">';
     html += '<a href="' + r.affiliate + '" class="finder-link-primary" target="_blank" rel="noopener">Jetzt testen →</a>';
     html += '<a href="' + r.review + '" class="finder-link-secondary">Detailtest lesen</a>';
