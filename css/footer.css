@@ -96,6 +96,13 @@ footer {
   color: #fff;
 }
 
+.footer-logo-img {
+  display: block;
+  width: 193px;
+  height: 42px;
+  object-fit: contain;
+}
+
 .footer-logo-mark {
   position: relative;
   display: grid;

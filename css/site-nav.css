@@ -53,6 +53,14 @@
   flex-shrink: 0;
 }
 
+#site-nav .sn-logo-img {
+  display: block;
+  width: 193px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 #site-nav .sn-logo-mark {
   position: relative;
   display: grid;
@@ -828,6 +836,11 @@
 
   #site-nav .sn-logo {
     gap: 10px;
+  }
+
+  #site-nav .sn-logo-img {
+    width: 172px;
+    height: 38px;
   }
 
   #site-nav .sn-logo-word {
