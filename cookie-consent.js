@@ -66,7 +66,7 @@
 
     var text = document.createElement('p');
     text.className = 'cookie-consent-text';
-    text.innerHTML = 'Wir nutzen Hotjar nur mit Ihrer Einwilligung, um die Nutzung unserer Website zu analysieren und Firmendo zu verbessern. Details finden Sie in der <a href="/firmendo-test-pages/datenschutz/">Datenschutzerklärung</a>.';
+    text.innerHTML = 'Wir verwenden Cookies und ähnliche Technologien. Einige sind technisch notwendig, andere helfen uns, unsere Website zu analysieren und zu verbessern. Weitere Informationen finden Sie in der <a href="/firmendo-test-pages/datenschutz/">Datenschutzerklärung</a>.';
 
     var actions = document.createElement('div');
     actions.className = 'cookie-consent-actions';
