@@ -67,20 +67,20 @@
   all: unset;
   box-sizing: border-box;
   position: fixed;
-  left: 12px;
-  bottom: 12px;
+  left: 14px;
+  bottom: 14px;
   z-index: 999;
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(22, 34, 52, 0.12);
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(22, 34, 52, 0.16);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 6px 18px rgba(22, 34, 52, 0.10);
-  color: rgba(22, 34, 52, 0.72);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 24px rgba(22, 34, 52, 0.14);
+  color: rgba(22, 34, 52, 0.78);
   cursor: pointer;
-  opacity: 0.58;
+  opacity: 0.76;
 }
 
 .cookie-settings-button:hover,
@@ -96,6 +96,8 @@
 
 .cookie-settings-icon {
   display: block;
+  width: 22px;
+  height: 22px;
 }
 
 @media (max-width: 640px) {
@@ -117,7 +119,7 @@
   }
 
   .cookie-settings-button {
-    left: 10px;
-    bottom: 10px;
+    left: 12px;
+    bottom: 12px;
   }
 }
