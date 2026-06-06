@@ -633,7 +633,7 @@
                 <h5>Vorteile</h5>
                 <ul class="mini-pros-list">
                   <li>Automatische Steuerrücklagen</li>
-                  <li>DATEV-Export inklusive</li>
+                  <li>DATEV-Format-Export mit Belegen</li>
                   <li>Speziell für Freelancer optimiert</li>
                   <li>Einfache App-Bedienung</li>
                 </ul>
@@ -642,7 +642,7 @@
                 <h5>Nachteile</h5>
                 <ul class="mini-cons-list">
                   <li>Nur für Einzelunternehmer &amp; Freelancer</li>
-                  <li>Steuerautomatik im Basic eingeschränkt</li>
+                  <li>Nur 5 SEPA-Transaktionen im Free-Tarif</li>
                 </ul>
               </div>
             </div>
@@ -660,7 +660,7 @@
               <div class="mini-stat"><div class="mini-stat-val green">0 €</div><div class="mini-stat-label">Grundgebühr</div></div>
               <div class="mini-stat"><div class="mini-stat-val">Ja</div><div class="mini-stat-label">Bargeld</div></div>
             </div>
-            <p class="mini-anbieter-desc">Das einzige kostenlose Konto mit regulärem Bargeldservice über Sparkassen-Automaten — dafür eingeschränkte Funktionen und Schufa-Abfrage bei Eröffnung.</p>
+            <p class="mini-anbieter-desc">Kostenloses Freelancer-Konto mit virtueller Debitkarte, 0,1 % Cashback und 2 kostenlosen EUR-Abhebungen pro Monat. Physische Karte optional gegen einmalige Gebühr; Schufa-Abfrage bei Eröffnung.</p>
             <a href="/firmendo-test-pages/go/n26-business-standard/" target="_blank" rel="noopener sponsored nofollow" class="mini-anbieter-cta">Jetzt eröffnen →</a>
           </div>
           <div class="mini-anbieter-right">
@@ -668,7 +668,7 @@
               <div class="mini-pros-cons-col mini-pros-col">
                 <h5>Vorteile</h5>
                 <ul class="mini-pros-list">
-                  <li>Bargeldabhebungen an Sparkassen-ATMs</li>
+                  <li>2 EUR-Abhebungen pro Monat inklusive</li>
                   <li>Etablierte Direktbank (seit 2013)</li>
                   <li>Übersichtliche App</li>
                 </ul>
@@ -925,14 +925,14 @@ const products = [
     logo: '<img class="provider-logo-img" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async" width="700" height="700">'
   },
   {
-    name: 'N26 Business Standard', priceNote: 'Standard · 0,1% Cashback · 2 gratis Abhebungen/Monat', base: 0, txCost: 0, txFree: 999, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', price: 0, highlight: false,
+    name: 'N26 Business Standard', priceNote: 'Standard · 0 €/Monat · virtuelle Debitkarte inkl. · physische Karte 10 € optional · 0,1% Cashback · 2 gratis EUR-Abhebungen/Monat, danach 2 €', base: 0, txCost: 0, txFree: 999, abhebeFree: 2, abhebeFixed: 2, abhebePct: 0, abhebeMin: 0, cat: 'Online-Bank', price: 0, highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','eK'],
     schufa: true, rating: 4.1, cashback: '0,1% möglich', cashbackSort: 0.1, intl: false, datev: false, accounting: false,
     affiliateUrl: '/go/n26-business-standard/', reviewUrl: '',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async" width="46" height="32">'
   },
   {
-    name: 'Kontist Free', priceNote: 'Free · 5 SEPA-Transaktionen inkl. · 0,25 €/weitere · Abhebungen im Free-Plan 2 €', base: 0, txCost: 0.25, txFree: 5, abhebePct: 0, abhebeMin: 2, cat: 'Fintech', price: 0, highlight: false,
+    name: 'Kontist Free', priceNote: 'Free · 0 €/Monat · 5 SEPA-Transaktionen inkl. · 0,25 €/weitere · physische Visa Debitkarte inkl. · Abhebungen im Free-Plan 2 € zzgl. USt.', base: 0, txCost: 0.25, txFree: 5, abhebeFixed: 2, abhebePct: 0, abhebeMin: 0, cat: 'Fintech', price: 0, highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen'],
     schufa: false, rating: 4.3, cashback: '—', cashbackSort: 0, intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/kontist-free/', reviewUrl: '/kontist-geschaeftskonto/',

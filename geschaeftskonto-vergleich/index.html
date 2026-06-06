@@ -1272,24 +1272,24 @@ const products = [
     logo: '<img class="provider-logo-img" src="../images/mini-logos/holvi.webp" alt="Holvi Logo" loading="lazy" decoding="async" width="192" height="192">'
   },
   {
-    // verified May 2026
-    name: 'Kontist Free', priceNote: 'Free · 5 SEPA-Transaktionen inkl. · 0,25 €/weitere · Abhebungen im Free-Plan 2 €', base: 0, txCost: 0.25, txFree: 5, abhebePct: 0, abhebeMin: 2, cat: 'Fintech', highlight: false,
+    // verified June 2026
+    name: 'Kontist Free', priceNote: 'Free · 0 €/Monat · 5 SEPA-Transaktionen inkl. · 0,25 €/weitere · physische Visa Debitkarte inkl. · Abhebungen im Free-Plan 2 € zzgl. USt.', base: 0, txCost: 0.25, txFree: 5, abhebeFixed: 2, abhebePct: 0, abhebeMin: 0, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen'],
     schufa: false, rating: 4.3, cashback: '—', intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/kontist-free/', reviewUrl: '/kontist-geschaeftskonto/',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/kontist.png" alt="Kontist Logo" loading="lazy" decoding="async" width="550" height="551">'
   },
   {
-    // verified May 2026
-    name: 'N26 Business Standard', priceNote: 'Standard · 0,1% Cashback · 2 gratis Abhebungen/Monat', base: 0, txCost: 0, txFree: 999, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
+    // verified June 2026
+    name: 'N26 Business Standard', priceNote: 'Standard · 0 €/Monat · virtuelle Debitkarte inkl. · physische Karte 10 € optional · 0,1% Cashback · 2 gratis EUR-Abhebungen/Monat, danach 2 €', base: 0, txCost: 0, txFree: 999, abhebeFreeCount: 2, abhebeFixed: 2, abhebePct: 0, abhebeMin: 0, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','eK'],
     schufa: true, rating: 4.0, cashback: '0,1% möglich', intl: false, datev: false, accounting: false,
     affiliateUrl: '/go/n26-business-standard/',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async" width="46" height="32">'
   },
   {
-    // verified May 2026
-    name: 'Wise Business', priceNote: '0 €/Monat · variable Transfer-/Wechselgebühren · Kostenrechner nutzt Beispielwert', base: 0, txCost: 0.3, txLabel: 'variable', txFree: 0, abhebePct: 0.015, abhebeMin: 1.5, cat: 'Fintech', highlight: false,
+    // verified June 2026
+    name: 'Wise Business', priceNote: '0 €/Monat · 45 € einmalig für Business-Funktionen/Kontodaten · Transfers/Wechsel ab 0,47% · 250 € ATM/Monat frei, danach 2,69%', base: 0, txCost: 0.3, txLabel: 'variable', txFree: 0, abhebeFree: 250, abhebePct: 0.0269, abhebeMin: 0, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','OHG','Internationales'],
     schufa: false, rating: 4.3, cashback: '—', intl: true, datev: false, accounting: false,
     affiliateUrl: '/go/wise-business/',
@@ -1377,6 +1377,15 @@ function abhebungMarkup(p) {
   if (/(\d+)\s+gratis Abhebungen\/Monat/i.test(p.priceNote)) {
     return `<span class="table-text">${p.priceNote.match(/(\d+)\s+gratis Abhebungen\/Monat/i)[1]} gratis / Monat</span>`;
   }
+  if (p.abhebeFreeCount > 0 && p.abhebeFixed > 0) {
+    return `<span class="table-text">${p.abhebeFreeCount}x frei, danach ${formatEuro(p.abhebeFixed)}</span>`;
+  }
+  if (p.abhebeFixed > 0) {
+    return `<span class="table-text">${formatEuro(p.abhebeFixed)}</span>`;
+  }
+  if (p.abhebeFree > 0 && p.abhebePct > 0) {
+    return `<span class="table-text">bis ${formatEuro(p.abhebeFree)} frei, dann ${formatPct(p.abhebePct)}</span>`;
+  }
   if (/bis\s+(\d+)\s*€\/Mon\.\s+gratis abheben\s+·\s+danach\s+(\d+)%/i.test(p.priceNote)) {
     const match = p.priceNote.match(/bis\s+(\d+)\s*€\/Mon\.\s+gratis abheben\s+·\s+danach\s+(\d+)%/i);
     return `<span class="table-text">bis ${match[1]} € frei, dann ${match[2]} %</span>`;
@@ -1418,9 +1427,11 @@ function totalBreakdownMarkup(p) {
   const buchungen = parseInt(document.getElementById('inp-buchungen')?.value, 10) || 30;
   const base = p.base || 0;
   const tx = (p.txCost || 0) * Math.max(0, buchungen - (p.txFree || 0));
+  const abhebungen = parseInt(document.getElementById('inp-abhebungen')?.value, 10) || 4;
   const abhebeTotal = monthlyWithdrawalTotal();
+  const chargeableWithdrawals = Math.max(0, abhebungen - (p.abhebeFreeCount || 0));
   const billableAbhebeTotal = Math.max(0, abhebeTotal - (p.abhebeFree || 0));
-  const abhebeFee = p.abhebePct > 0 && billableAbhebeTotal > 0 ? Math.max(p.abhebeMin || 0, billableAbhebeTotal * p.abhebePct) : 0;
+  const abhebeFee = p.abhebeFixed ? chargeableWithdrawals * p.abhebeFixed : (p.abhebePct > 0 && billableAbhebeTotal > 0 ? Math.max(p.abhebeMin || 0, billableAbhebeTotal * p.abhebePct) : 0);
   if (withdrawalLimitExceeded(p)) {
     return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Limit beachten</span><span class="price-tooltip total-breakdown-tooltip">Grundgebühr ${formatEuro(base)} · Transaktionen ${formatEuro(tx)} · Abhebungen ${formatEuro(abhebeFee)} · Anbieterlimit ${formatEuro(p.abhebeCap)} / Monat</span></span>`;
   }
@@ -1491,9 +1502,11 @@ function calcTotal(p) {
   const buchungen = parseInt(document.getElementById('inp-buchungen')?.value, 10) || 30;
   const base = p.base || 0;
   const tx = (p.txCost || 0) * Math.max(0, buchungen - (p.txFree || 0));
+  const abhebungen = parseInt(document.getElementById('inp-abhebungen')?.value, 10) || 4;
   const abhebeTotal = monthlyWithdrawalTotal();
+  const chargeableWithdrawals = Math.max(0, abhebungen - (p.abhebeFreeCount || 0));
   const billableAbhebeTotal = Math.max(0, abhebeTotal - (p.abhebeFree || 0));
-  const abhebeFee = p.abhebePct > 0 && billableAbhebeTotal > 0 ? Math.max(p.abhebeMin || 0, billableAbhebeTotal * p.abhebePct) : 0;
+  const abhebeFee = p.abhebeFixed ? chargeableWithdrawals * p.abhebeFixed : (p.abhebePct > 0 && billableAbhebeTotal > 0 ? Math.max(p.abhebeMin || 0, billableAbhebeTotal * p.abhebePct) : 0);
   return base + tx + abhebeFee;
 }
 
