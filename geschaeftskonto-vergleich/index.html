@@ -1321,9 +1321,9 @@ const products = [
   },
   {
     // verified May 2026
-    name: 'ING Geschäftskonto', priceNote: '6 Monate kostenlos · Gründer 12 Monate kostenlos · danach Bestpreis ab 0 € + 0,30 €/Transaktion · 3 gratis Abhebungen/Monat', base: 0, txCost: 0.30, txFree: 0, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
-    suitable: ['Freiberufler','Einzelunternehmen'],
-    schufa: true, rating: 4.0, cashback: '—', intl: false, datev: false, accounting: false,
+    name: 'ING Geschäftskonto', priceNote: '6 Monate kostenlos · Gründer 12 Monate kostenlos · bis zu 200 € Gutschrift bis 30.06.2026 · danach Bestpreis ab 0 € + 0,30 €/Transaktion · 3 gratis Abhebungen/Monat', base: 0, txCost: 0.30, txFree: 0, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
+    suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','OHG'],
+    schufa: true, rating: 4.0, cashback: '—', intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/ing-geschaeftskonto/', reviewUrl: '/ing-geschaeftskonto/',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/ing.svg" alt="ING Logo" loading="lazy" decoding="async" width="340" height="340">'
   },
@@ -1465,7 +1465,7 @@ function basePriceMarkup(p, zeroText = '0 €') {
     return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">Temporäre Aktion: 0 € Grundpreis bis 31.12.2026 · danach 12,90 €/Monat.</span></span>';
   }
   if (p.name === 'ING Geschäftskonto' && p.base === 0) {
-    return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">Kostenlose Anfangszeit: 6 Monate ohne Grundpreis und Transaktionskosten · Gründer im ersten Geschäftsjahr 12 Monate.</span></span>';
+    return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">Kostenlose Anfangszeit: 6 Monate ohne Grundpreis und Transaktionskosten · Gründer im ersten Geschäftsjahr 12 Monate · bis zu 200 € Gutschrift bis 30.06.2026.</span></span>';
   }
   if (p.name === 'FYRST Base' && p.base === 0) {
     return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Hinweis</span><span class="price-tooltip">0 € dauerhaft für natürliche Personen · juristische Personen 6 Monate kostenlos, danach 6 €/Monat.</span></span>';
