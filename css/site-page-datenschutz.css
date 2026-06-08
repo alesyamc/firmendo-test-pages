@@ -1,19 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --orange: #F05E18;
-  --orange-dark: #D44E10;
-  --orange-light: #FBF0E8;
-  --green: #16A34A;
-  --green-light: #DCFCE7;
   --white: #fff;
-  --gray-50: #F8FAFE;
-  --gray-100: #F4F6FD;
-  --gray-200: #E4E9F8;
-  --gray-300: #8A95C0;
-  --gray-500: #3A4270;
-  --gray-700: #1E2A52;
-  --gray-800: #111845;
   --shadow-sm: 0 2px 12px color-mix(in srgb, var(--accent-color-text) 6%, transparent);
   --shadow-card: 0 4px 32px color-mix(in srgb, var(--accent-color-text) 9%, transparent);
   --radius: 16px;
