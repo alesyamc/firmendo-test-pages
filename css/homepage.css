@@ -3,25 +3,14 @@
 :root {
   --blue: var(--accent-color-bg);
   --blue-dark: var(--accent-color-bg-hover);
-  --blue-mid: #3A57C7;
+  --blue-mid: color-mix(in srgb, var(--accent-color-bg) 82%, var(--gray-800));
   --blue-light: var(--accent-color-soft);
-  --blue-ultra-light: #F3F6FF;
-  --orange: #F05E18;
-  --orange-dark: #D44E10;
-  --orange-light: #FBF0E8;
-  --green: #22C55E;
+  --blue-ultra-light: var(--blue-ultra);
+  --orange: var(--brand-warm-accent, #B7791F);
+  --orange-dark: #8F5B16;
+  --orange-light: #F7EFE2;
   --white: #FFFFFF;
-  --gray-50: #F8FAFE;
-  --gray-100: #F4F6FD;
-  --gray-200: #E4E9F8;
-  --gray-300: #CDD4EE;
-  --gray-500: #6672A8;
-  --gray-700: #384872;
-  --gray-800: #111845;
-  --shadow-sm: 0 2px 12px rgba(47,73,179,0.06);
-  --shadow-card: 0 4px 32px rgba(47,73,179,0.09);
-  --shadow-hover: 0 12px 48px rgba(47,73,179,0.15);
-  --shadow-orange: 0 8px 32px rgba(240,94,24,0.20);
+  --shadow-orange: 0 8px 32px rgba(183,121,31,0.18);
 }
 
 html { scroll-behavior: smooth; }

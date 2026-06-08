@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 84" role="img" aria-labelledby="aktiendepot24-logo-white-title">
+  <title id="aktiendepot24-logo-white-title">Aktiendepot24</title>
+  <rect width="84" height="84" rx="21" fill="#0B7A75"/>
+  <path d="M24 55L37 42l11 8 17-24" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 26h6v6" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="108" y="55" fill="#FFFFFF" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="42" font-weight="800">aktiendepot<tspan fill="#7DD3C7">24</tspan></text>
+</svg>
