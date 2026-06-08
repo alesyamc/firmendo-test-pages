@@ -110,7 +110,7 @@ footer {
   width: 42px;
   height: 42px;
   border-radius: 13px;
-  background: var(--accent-color-bg);
+  background: #EC5A1C;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: 22px;
@@ -142,7 +142,7 @@ footer {
 }
 
 .footer-logo-word em {
-  color: var(--accent-color-soft-strong);
+  color: #FF7A3C;
   font-style: normal;
 }
 
