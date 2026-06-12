@@ -280,7 +280,7 @@
       </div>
       <div class="hero-trust-row" aria-label="Vorteile des Vergleichs">
         <span>Kostenlos &amp; ohne Anmeldung</span>
-        <span>9 Geschäftskonten verglichen</span>
+        <span>10 Geschäftskonten verglichen</span>
       </div>
       <div class="hero-author-bar">
         <div class="hero-author-main">
@@ -425,7 +425,7 @@
     <div class="counter-meta">
       <div class="counter-text">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong id="cnt">9</strong> von <span id="cntTotal">9</span> Geschäftskonten
+        <strong id="cnt">10</strong> von <span id="cntTotal">10</span> Geschäftskonten
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -461,6 +461,9 @@
             <th class="sortable th-col-anbieter" data-key="name">Anbieter</th>
             <th class="sortable th-col-price" data-key="preis">
               <span class="th-tooltip">Preis/Monat<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Monatliche Kontoführungsgebühr des gezeigten Einstiegstarifs. Zusatzkosten für Buchungen, Karten oder Premiumfunktionen können je nach Anbieter anfallen.</span></span>
+            </th>
+            <th class="th-col-promo">
+              <span class="th-tooltip">Aktion<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Aktuelle zeitlich begrenzte Neukundenaktionen oder Zinsangebote, sofern für den gezeigten Tarif verfügbar.</span></span>
             </th>
             <th class="th-col-booking">
               <span class="th-tooltip">Buchungsmodell<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Zeigt, ob Buchungen im Tarif enthalten sind oder ob Kosten pro belegloser Buchung entstehen.</span></span>
@@ -1223,6 +1226,8 @@ const products = [
     preis: 0,
     preisLabel: '0 €',
     preisNote: '350 € Bonus möglich · 5 % p.a. Zinsen für 5 Monate',
+    promo: '350 € + 5 % p.a.',
+    promoNote: 'Aktionszeitraum 02.06.–19.07.2026. 350 € Willkommensbonus bei jeweils mindestens 1.000 € gültigen Kartentransaktionen im 1. und 2. Monat nach Kontoaktivierung; 5 % p.a. Zinsen für die ersten 5 Monate auf dem Zinskonto.',
     rating: 4.7,
     buchung: 'Unbegrenzt inkl.',
     suitable: ['Freiberufler', 'Einzelunternehmen', 'GbR'],
@@ -1290,6 +1295,8 @@ const products = [
     preis: 0,
     preisLabel: '0 €',
     preisNote: '0 € für natürliche Personen · juristische Personen 6 Monate kostenlos',
+    promo: '0 € + 3,5 %',
+    promoNote: 'FYRST BASE ist für natürliche Personen dauerhaft ohne Grundpreis; für juristische Personen 6 Monate kostenlos. Zusätzlich Tagesgeld mit 3,5 % p.a. für die ersten 3 Monate bei teilnahmeberechtigtem Neukundenangebot.',
     rating: 4.3,
     buchung: '50 inkl., 0,19 € danach',
     suitable: ['Freiberufler', 'Einzelunternehmen', 'GbR', 'GmbH'],
@@ -1335,12 +1342,33 @@ const products = [
     reviewUrl: '/deutsche-bank-geschaeftskonto/'
   },
   {
+    name: 'Deutsche Bank Gründerkonto',
+    cat: 'Gründerkonto',
+    logo: '<img class="provider-logo-img" src="../images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32">',
+    preis: 0,
+    preisLabel: '0 €',
+    preisNote: 'Für Neugründer im ersten Jahr ohne Kontoführungsgebühr',
+    promo: '1 Jahr 0 €',
+    promoNote: 'Deutsche Bank Gründerkonto für Neugründer: 0 € Kontoführungsgebühr im ersten Jahr; danach gelten die Konditionen des Geschäftskontos.',
+    rating: 4.0,
+    buchung: 'variabel',
+    suitable: ['Freiberufler', 'Einzelunternehmen', 'GbR', 'GmbH', 'AG'],
+    datev: true,
+    steuer: true,
+    typ: 'Filialbank',
+    highlight: false,
+    affiliateUrl: '/go/deutsche-bank-gruenderkonto/',
+    reviewUrl: '/deutsche-bank-geschaeftskonto/'
+  },
+  {
     name: 'Vivid Business Free Start',
     cat: 'Free',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async" width="256" height="256">',
     preis: 0,
     preisLabel: '0 €',
     preisNote: 'Free Start · 0 €/Monat · SEPA Instant kostenlos · bis 100 €/Mon. gratis abheben · danach 2% · 0,1% Cashback',
+    promo: '4 % p.a.',
+    promoNote: 'Aktionszins auf EUR-Guthaben für die ersten 4 Monate im Vivid Business Free Start Angebot; Konditionen können je nach Währung und Verfügbarkeit abweichen.',
     rating: 4.4,
     buchung: 'Inkl.',
     suitable: ['Freiberufler', 'Einzelunternehmen', 'GbR', 'GmbH'],
@@ -1422,6 +1450,12 @@ function updateFilterCount() {
   badge.classList.toggle('hidden', count === 0);
 }
 
+function promoMarkup(p) {
+  if (!p.promo) return '<span class="promo-empty">—</span>';
+  const note = p.promoNote ? `<span class="price-tooltip promo-tooltip">${p.promoNote}</span>` : '';
+  return `<span class="price-wrap promo-wrap"><span class="promo-badge ${p.highlight ? 'promo-badge--hot' : ''}">${p.promo}</span><span class="price-hint">Details</span>${note}</span>`;
+}
+
 function renderTable() {
   const rf = fdGetValue('fd-rf');
   const typ = fdGetValue('fd-typ');
@@ -1454,7 +1488,7 @@ function renderTable() {
   const tbody = document.getElementById('tbody');
 
   if (data.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state">
+    tbody.innerHTML = `<tr><td colspan="9"><div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div></td></tr>`;
     renderMobileCards(data);
@@ -1488,6 +1522,7 @@ function renderTable() {
           ${p.preisNote ? `<div class="price-tooltip">${p.preisNote}</div>` : ''}
         </div>
       </td>
+      <td class="td-promo">${promoMarkup(p)}</td>
       <td class="td-booking">${p.buchung}</td>
       <td><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
       <td class="td-bool">${p.datev ? YES_ICON : NO_ICON}</td>
@@ -1540,8 +1575,9 @@ function renderMobileCards(data) {
           <div class="mc-price-period">pro Monat</div>
         </div>
       </div>
-      <div class="mc-specs">
-        <div class="mc-spec"><span class="mc-spec-label">Buchungen</span><span class="mc-spec-value blue">${p.buchung}</span></div>
+	      <div class="mc-specs">
+	        <div class="mc-spec"><span class="mc-spec-label">Aktion</span><span class="mc-spec-value blue">${p.promo || '—'}</span></div>
+	        <div class="mc-spec"><span class="mc-spec-label">Buchungen</span><span class="mc-spec-value blue">${p.buchung}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Geeignet für</span><span class="mc-spec-value muted">${p.suitable.slice(0, 2).join(', ')}${p.suitable.length > 2 ? ' +' + (p.suitable.length - 2) : ''}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Steuer-Feature</span><span class="mc-spec-value ${p.steuer ? 'green' : 'muted'}">${p.steuer ? 'Ja' : 'Nein'}</span></div>

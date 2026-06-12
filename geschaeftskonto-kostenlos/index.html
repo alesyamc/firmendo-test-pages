@@ -415,6 +415,9 @@
             <th class="th-col-price">
               <span class="th-tooltip">Grundgeb&uuml;hr<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Monatliche Kontof&uuml;hrungsgeb&uuml;hr des kostenlosen Tarifs. Kosten entstehen hier vor allem durch Nutzung.</span></span>
             </th>
+            <th class="th-col-promo">
+              <span class="th-tooltip">Aktion<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Aktuelle zeitlich begrenzte Neukundenaktionen oder Zinsangebote, sofern f&uuml;r den gezeigten Tarif verf&uuml;gbar.</span></span>
+            </th>
             <th class="th-col-schufa">
               <span class="th-tooltip">Ohne Schufa<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Zeigt, ob die Kontoer&ouml;ffnung typischerweise ohne klassische Schufa-Pr&uuml;fung m&ouml;glich ist.</span></span>
             </th>
@@ -907,6 +910,7 @@
 const products = [
   {
     name: 'Finom Solo', priceNote: 'Solo · 0 €/Monat · 350 € Bonus möglich · 5 % p.a. Zinsen für 5 Monate · SEPA-Zahlungsausgänge bis 2.500 €/Monat ohne Zusatzgebühr', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', price: 0, highlight: true,
+    promo: '350 € + 5 % p.a.', promoNote: 'Aktionszeitraum 02.06.–19.07.2026. 350 € Willkommensbonus bei jeweils mindestens 1.000 € gültigen Kartentransaktionen im 1. und 2. Monat nach Kontoaktivierung; 5 % p.a. Zinsen für die ersten 5 Monate auf dem Zinskonto.',
     suitable: ['Freiberufler','Einzelunternehmen','Gründer','eK'],
     schufa: false, rating: 4.5, cashback: '—', cashbackSort: 0, intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/finom-solo/', reviewUrl: '/finom-geschaeftskonto/',
@@ -914,6 +918,7 @@ const products = [
   },
   {
     name: 'Vivid Business Free Start', priceNote: 'Free Start · 0 €/Monat · SEPA Instant kostenlos · bis 100 €/Mon. gratis abheben · danach 2% · 0,1% Cashback', base: 0, txCost: 0, txFree: 999, abhebePct: 0.02, abhebeFreeAmount: 100, abhebeMin: 0, cat: 'Online-Bank', price: 0, highlight: false,
+    promo: '4 % p.a.', promoNote: 'Aktionszins auf EUR-Guthaben für die ersten 4 Monate im Vivid Business Free Start Angebot; Konditionen können je nach Währung und Verfügbarkeit abweichen.',
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','Verein / NGO'],
     schufa: false, rating: 4.8, cashback: '0,1% garantiert', cashbackSort: 0.1, intl: false, datev: false, accounting: true,
     affiliateUrl: '/go/vivid-business-free/', reviewUrl: '/vivid-geschaeftskonto/',
@@ -963,6 +968,12 @@ function baseMarkup(p) {
   return p.base === 0
     ? '<span class="price-green">0 €</span>'
     : `<span class="price-blue">${formatEuro(p.base)}</span>`;
+}
+
+function promoMarkup(p) {
+  if (!p.promo) return '<span class="promo-empty">—</span>';
+  const note = p.promoNote ? `<span class="price-tooltip promo-tooltip">${p.promoNote}</span>` : '';
+  return `<span class="price-wrap promo-wrap"><span class="promo-badge ${p.highlight ? 'promo-badge--hot' : ''}">${p.promo}</span><span class="price-hint">Details</span>${note}</span>`;
 }
 
 function totalMarkup(total) {
@@ -1122,6 +1133,7 @@ function renderMobileCards(data) {
       </div>
       <div class="mc-specs">
         <div class="mc-spec"><span class="mc-spec-label">Grundgebühr</span><span class="mc-spec-value ${p.base === 0 ? 'green' : 'blue'}">${p.base === 0 ? '0 €' : formatEuro(p.base)}</span></div>
+        <div class="mc-spec"><span class="mc-spec-label">Aktion</span><span class="mc-spec-value blue">${p.promo || '—'}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Ohne Schufa</span><span class="mc-spec-value ${p.schufa ? 'muted' : 'green'}">${p.schufa ? 'Nein' : 'Ja'}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Cashback</span><span class="mc-spec-value blue">${p.cashback}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
@@ -1146,7 +1158,7 @@ function renderTable() {
 
   const tbody = document.getElementById('tbody');
   if (data.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="10"><div class="empty-state">
+    tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div></td></tr>`;
     renderMobileCards(data);
@@ -1171,6 +1183,7 @@ function renderTable() {
         </div>
       </td>
       <td class="td-price">${baseMarkup(p)}</td>
+      <td class="td-promo">${promoMarkup(p)}</td>
       <td class="td-bool">${!p.schufa ? YES : NO}</td>
       <td><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
       <td class="td-total-col u-text-center">${totalBreakdownMarkup(p)}</td>

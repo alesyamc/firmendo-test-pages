@@ -231,7 +231,7 @@
       </div>
       <div class="hero-trust-row" aria-label="Vorteile des Vergleichs">
         <span>Kostenlos &amp; ohne Anmeldung</span>
-        <span>14 Anbieter getestet</span>
+        <span>15 Anbieter getestet</span>
       </div>
       <div class="hero-author-bar">
         <div class="hero-author-main">
@@ -414,7 +414,7 @@
     <div class="counter-meta">
       <div class="counter-text">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong id="cnt">14</strong> von <span id="cntTotal">14</span> Geschäftskonten
+        <strong id="cnt">15</strong> von <span id="cntTotal">15</span> Geschäftskonten
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -451,6 +451,9 @@
               <th class="sortable th-col-anbieter" data-key="name">Anbieter</th>
               <th class="sortable th-col-price" data-key="base">
                 <span class="th-tooltip">Grundgebühr<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Monatliche Kontoführungsgebühr des Tarifs. Zusätzliche Nutzungskosten werden separat in den Gesamtkosten berechnet.</span></span>
+              </th>
+              <th class="th-col-promo">
+                <span class="th-tooltip">Aktion<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Aktuelle Bonus-, Zins- oder Gebührenaktionen. Bedingungen und Laufzeiten können je Anbieter variieren.</span></span>
               </th>
               <th class="th-col-schufa">
                 <span class="th-tooltip">Ohne Schufa<span class="th-tooltip-icon">i</span><span class="th-tooltip-text">Zeigt, ob die Kontoeröffnung typischerweise ohne klassische Schufa-Prüfung möglich ist.</span></span>
@@ -1235,7 +1238,7 @@
 const products = [
   {
     // verified June 2026
-    name: 'Finom Solo', priceNote: 'Solo · 0 €/Monat · 350 € Bonus möglich · 5 % p.a. Zinsen für 5 Monate · SEPA-Zahlungsausgänge bis 2.500 €/Monat ohne Zusatzgebühr', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
+    name: 'Finom Solo', priceNote: 'Solo · 0 €/Monat · 350 € Bonus möglich · 5 % p.a. Zinsen für 5 Monate · SEPA-Zahlungsausgänge bis 2.500 €/Monat ohne Zusatzgebühr', promo: '350 € + 5 % p.a.', promoNote: 'Aktionszeitraum 02.06.–19.07.2026. Bonus bei jeweils mindestens 1.000 € gültigen Kartentransaktionen im 1. und 2. Monat nach Kontoaktivierung.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer','eK'],
     schufa: false, rating: 4.8, cashback: '—', intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/finom-solo/', reviewUrl: '/finom-geschaeftskonto/',
@@ -1251,7 +1254,7 @@ const products = [
   },
   {
     // verified June 2026
-    name: 'Vivid Business Free Start', priceNote: 'Free Start · 0 €/Monat · SEPA Instant kostenlos · bis 100 €/Mon. gratis abheben · danach 2% · 0,1% Cashback', base: 0, txCost: 0, txFree: 999, abhebePct: 0.02, abhebeFree: 100, abhebeMin: 0, cat: 'Online-Bank', highlight: false,
+    name: 'Vivid Business Free Start', priceNote: 'Free Start · 0 €/Monat · SEPA Instant kostenlos · bis 100 €/Mon. gratis abheben · danach 2% · 0,1% Cashback', promo: '4 % p.a.', promoNote: 'Anfänglicher fester Zinssatz: 4 % p.a. in EUR für 4 Monate; danach im Free-Start-Tarif 0,1 % p.a. laut Vivid.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.02, abhebeFree: 100, abhebeMin: 0, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','Verein / NGO'],
     schufa: false, rating: 4.4, cashback: '0,1% garantiert', intl: false, datev: false, accounting: true,
     affiliateUrl: '/go/vivid-business-free/', reviewUrl: '/vivid-geschaeftskonto/',
@@ -1314,8 +1317,16 @@ const products = [
     logo: '<img class="provider-logo-img" src="../images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32">'
   },
   {
+    // verified June 2026
+    name: 'Deutsche Bank Gründerkonto', priceNote: 'Gründerkonto · 0 € Grundpreis im 1. Jahr · für Gründungen bis 12 Monate · Geschäftskonto, Buchhaltung und persönliche Beratung', promo: '1 Jahr 0 €', promoNote: 'Für Neugründer, deren Gründung nicht länger als 12 Monate zurückliegt: 0 € Grundpreis im ersten Jahr. Buchungsgebühren hängen vom gewählten Kontomodell ab.', base: 0, txCost: 0.30, txLabel: 'variable', txFree: 0, abhebePct: 0, abhebeMin: 0, cat: 'Filialbank', highlight: false,
+    suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','AG','OHG'],
+    schufa: true, rating: 3.8, cashback: '—', intl: true, datev: true, accounting: true,
+    affiliateUrl: '/go/deutsche-bank-business-basickonto/', reviewUrl: '/deutsche-bank-geschaeftskonto/',
+    logo: '<img class="provider-logo-img" src="../images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32">'
+  },
+  {
     // verified May 2026
-    name: 'Postbank Business Giro', priceNote: '0 € Grundpreis bis 31.12.2026 · danach 12,90 €/Monat · 0,28 € pro belegloser SEPA-Transaktion', base: 0, txCost: 0.28, txFree: 0, abhebePct: 0, abhebeMin: 0, cat: 'Filialbank', highlight: false,
+    name: 'Postbank Business Giro', priceNote: '0 € Grundpreis bis 31.12.2026 · danach 12,90 €/Monat · 0,28 € pro belegloser SEPA-Transaktion', promo: '0 € + 3,5 %', promoNote: '0 € monatlicher Grundpreis bis 31.12.2026. Zusätzlich wird für kurze Zeit ein Business-Tagesgeldzins von 3,5 % p.a. beworben.', base: 0, txCost: 0.28, txFree: 0, abhebePct: 0, abhebeMin: 0, cat: 'Filialbank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG'],
     schufa: true, rating: 3.6, cashback: '—', intl: false, datev: false, accounting: false,
     affiliateUrl: '/go/postbank-business-giro-aktiv/', reviewUrl: '/postbank-geschaeftskonto/',
@@ -1323,7 +1334,7 @@ const products = [
   },
   {
     // verified May 2026
-    name: 'ING Geschäftskonto', priceNote: '6 Monate kostenlos · Gründer 12 Monate kostenlos · bis zu 200 € Gutschrift bis 30.06.2026 · danach Bestpreis ab 0 € + 0,30 €/Transaktion · 3 gratis Abhebungen/Monat', base: 0, txCost: 0.30, txFree: 0, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
+    name: 'ING Geschäftskonto', priceNote: '6 Monate kostenlos · Gründer 12 Monate kostenlos · bis zu 200 € Gutschrift bis 30.06.2026 · danach Bestpreis ab 0 € + 0,30 €/Transaktion · 3 gratis Abhebungen/Monat', promo: '200 € + 6 Mon. 0 €', promoNote: 'Aktionszeitraum bis 30.06.2026: bis zu 200 € Gutschrift. Zusätzlich 6 Monate ohne Grundpreis und Transaktionskosten; Gründer im ersten Geschäftsjahr 12 Monate.', base: 0, txCost: 0.30, txFree: 0, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','OHG'],
     schufa: true, rating: 4.0, cashback: '—', intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/ing-geschaeftskonto/', reviewUrl: '/ing-geschaeftskonto/',
@@ -1331,7 +1342,7 @@ const products = [
   },
   {
     // verified May 2026
-    name: 'FYRST Base', priceNote: '0 € für natürliche Personen · juristische Personen 6 Monate kostenlos, danach 6 €/Monat · 50 Transaktionen inkl. · 0,19 €/weitere', base: 0, txCost: 0.19, txFree: 50, abhebePct: 0.015, abhebeMin: 1.5, cat: 'Online-Bank', highlight: false,
+    name: 'FYRST Base', priceNote: '0 € für natürliche Personen · juristische Personen 6 Monate kostenlos, danach 6 €/Monat · 50 Transaktionen inkl. · 0,19 €/weitere', promo: '0 € + 3,5 %', promoNote: 'Für juristische Personen 6 Monate ohne Grundpreis, danach 6 €/Monat. Natürliche Personen zahlen dauerhaft 0 €. Zusätzlich 3,5 % p.a. Tagesgeldzins für die ersten 3 Monate bei Neueröffnung mit Tagesgeldkonto.', base: 0, txCost: 0.19, txFree: 50, abhebePct: 0.015, abhebeMin: 1.5, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     schufa: true, rating: 4.1, cashback: '—', intl: false, datev: true, accounting: false,
     affiliateUrl: '/go/fyrst-base/', reviewUrl: '/fyrst-geschaeftskonto/',
@@ -1441,7 +1452,10 @@ function totalBreakdownMarkup(p) {
     return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Beispielwert</span><span class="price-tooltip total-breakdown-tooltip">Regionale Konditionen: Grundgebühr und Buchungspreise unterscheiden sich je Sparkasse. Kalkulation mit Beispielwert ${formatEuro(base)} Grundgebühr.</span></span>`;
   }
   if (p.txLabel === 'variable') {
-    return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Beispielwert</span><span class="price-tooltip total-breakdown-tooltip">Variable Gebühren: Wise berechnet Transfer- und Wechselgebühren je nach Zahlung. Kalkulation mit Beispielwert ${formatEuro(p.txCost || 0)} pro Transaktion.</span></span>`;
+    const txLabel = p.name === 'Wise Business'
+      ? `Variable Gebühren: Wise berechnet Transfer- und Wechselgebühren je nach Zahlung. Kalkulation mit Beispielwert ${formatEuro(p.txCost || 0)} pro Transaktion.`
+      : `Variable Gebühren: Buchungs- und Kontomodellkosten können je nach gewähltem Paket abweichen. Kalkulation mit Beispielwert ${formatEuro(p.txCost || 0)} pro Transaktion.`;
+    return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Beispielwert</span><span class="price-tooltip total-breakdown-tooltip">${txLabel}</span></span>`;
   }
   return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Kosten ansehen</span><span class="price-tooltip total-breakdown-tooltip">Grundgebühr ${formatEuro(base)} · Transaktionen ${formatEuro(tx)} · Abhebungen ${formatEuro(abhebeFee)}</span></span>`;
 }
@@ -1472,9 +1486,18 @@ function basePriceMarkup(p, zeroText = '0 €') {
   if (p.name === 'FYRST Base' && p.base === 0) {
     return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Hinweis</span><span class="price-tooltip">0 € dauerhaft für natürliche Personen · juristische Personen 6 Monate kostenlos, danach 6 €/Monat.</span></span>';
   }
+  if (p.name === 'Deutsche Bank Gründerkonto' && p.base === 0) {
+    return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">0 € Grundpreis im ersten Jahr für Neugründer, deren Gründung nicht länger als 12 Monate zurückliegt. Buchungsgebühren können je nach Kontomodell anfallen.</span></span>';
+  }
   return p.base === 0
     ? `<span class="price-green">${zeroText}</span>`
     : `<span class="price-blue">${p.base.toFixed(2).replace('.',',')} €</span>`;
+}
+
+function promoMarkup(p) {
+  if (!p.promo) return '<span class="promo-empty">—</span>';
+  const note = p.promoNote ? `<span class="price-tooltip promo-tooltip">${p.promoNote}</span>` : '';
+  return `<span class="price-wrap promo-wrap"><span class="promo-badge ${p.highlight ? 'promo-badge--hot' : ''}">${p.promo}</span><span class="price-hint">Details</span>${note}</span>`;
 }
 
 function toggleFilter(key, btn) {
@@ -1592,6 +1615,7 @@ function renderMobileCards(data) {
       </div>
       <div class="mc-specs">
         <div class="mc-spec"><span class="mc-spec-label">Grundgebühr</span><span class="mc-spec-value ${p.base === 0 ? 'green' : 'blue'}">${basePriceMarkup(p, formatEuro(p.base))}</span></div>
+        <div class="mc-spec"><span class="mc-spec-label">Aktion</span><span class="mc-spec-value ${p.promo ? 'orange' : 'muted'}">${p.promo || '—'}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Ohne Schufa</span><span class="mc-spec-value ${p.schufa ? 'muted' : 'green'}">${p.schufa ? 'Nein' : 'Ja'}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Cashback</span><span class="mc-spec-value ${p.cashback !== '—' ? 'blue' : 'muted'}">${p.cashback}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
@@ -1616,7 +1640,7 @@ function renderTable() {
 
   const tbody = document.getElementById('tbody');
   if (data.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state">
+    tbody.innerHTML = `<tr><td colspan="12"><div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div></td></tr>`;
     renderMobileCards(data);
@@ -1642,6 +1666,7 @@ function renderTable() {
         </div>
       </td>
       <td class="td-price">${baseStr}</td>
+      <td class="td-promo">${promoMarkup(p)}</td>
       <td class="td-bool">${!p.schufa ? YES : NO}</td>
       <td class="td-rf"><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
       <td class="td-abhebung u-text-center">${abhebungMarkup(p)}</td>

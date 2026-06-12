@@ -73,9 +73,10 @@ body.lp-kostenlos-page .rechner-field input:focus {
   background: #fff;
 }
 
-body.lp-kostenlos-page .kostenlos-table { min-width: 1640px; }
+body.lp-kostenlos-page .kostenlos-table { min-width: 1794px; }
 body.lp-kostenlos-page .kostenlos-table .th-col-anbieter { width: 292px; min-width: 292px; }
 body.lp-kostenlos-page .kostenlos-table .th-col-price { width: 132px; min-width: 132px; text-align: center; }
+body.lp-kostenlos-page .kostenlos-table .th-col-promo { width: 154px; min-width: 154px; text-align: center; padding-left: 16px; padding-right: 16px; }
 body.lp-kostenlos-page .kostenlos-table .th-col-schufa { width: 132px; min-width: 132px; text-align: center; }
 body.lp-kostenlos-page .kostenlos-table .th-col-rf { width: 170px; min-width: 170px; }
 body.lp-kostenlos-page .kostenlos-table .th-col-cashback { width: 138px; min-width: 138px; text-align: center; }
@@ -87,6 +88,76 @@ body.lp-kostenlos-page .td-total {
   color: var(--gray-800);
   font-weight: 700;
   white-space: nowrap;
+}
+
+body.lp-kostenlos-page .td-promo {
+  text-align: center;
+}
+
+body.lp-kostenlos-page .promo-wrap {
+  max-width: 132px;
+}
+
+body.lp-kostenlos-page .promo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 91, 42, 0.28);
+  background: rgba(255, 248, 244, 0.94);
+  color: var(--gray-800);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+}
+
+body.lp-kostenlos-page .promo-badge--hot {
+  border-color: rgba(232, 91, 42, 0.42);
+  background: #fff5ef;
+  box-shadow: 0 1px 0 rgba(232, 91, 42, 0.08);
+}
+
+body.lp-kostenlos-page .promo-wrap .price-hint {
+  color: #3f5195;
+  font-weight: 600;
+}
+
+body.lp-kostenlos-page .promo-wrap .price-hint::before {
+  background: var(--gray-100);
+  color: #6877ad;
+}
+
+body.lp-kostenlos-page .promo-wrap:hover .price-hint {
+  color: var(--blue);
+}
+
+body.lp-kostenlos-page .promo-empty {
+  color: var(--gray-300);
+  font-weight: 500;
+}
+
+body.lp-kostenlos-page .promo-tooltip {
+  top: calc(100% + 10px);
+  bottom: auto;
+  left: 50%;
+  width: min(300px, 74vw);
+  transform: translateX(-50%);
+  white-space: normal;
+  text-align: left;
+}
+
+body.lp-kostenlos-page .promo-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: transparent;
+  border-bottom-color: var(--gray-800);
 }
 
 body.lp-kostenlos-page .th-total {

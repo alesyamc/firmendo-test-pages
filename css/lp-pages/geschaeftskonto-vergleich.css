@@ -74,9 +74,10 @@ body.lp-comparison-page #inp-abhebungen {
   padding-right: 24px;
 }
 
-body.lp-comparison-page .geschaeftskonto-table { min-width: 1368px; }
+body.lp-comparison-page .geschaeftskonto-table { min-width: 1522px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-anbieter { width: 252px; min-width: 252px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-price { width: 148px; min-width: 148px; text-align: center; padding-left: 18px; padding-right: 18px; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-promo { width: 154px; min-width: 154px; text-align: center; padding-left: 16px; padding-right: 16px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-abhebung { width: 154px; min-width: 154px; text-align: center; padding-left: 18px; padding-right: 18px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-schufa { width: 146px; min-width: 146px; text-align: center; padding-left: 18px; padding-right: 18px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-rf { width: 170px; min-width: 170px; }
@@ -102,6 +103,97 @@ body.lp-comparison-page .td-total {
 
 body.lp-comparison-page .td-total-col .u-text-green-xstrong {
   font-weight: 600;
+}
+
+body.lp-comparison-page .td-promo {
+  text-align: center;
+}
+
+body.lp-comparison-page .promo-wrap {
+  max-width: 132px;
+}
+
+body.lp-comparison-page .promo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 91, 42, 0.28);
+  background: rgba(255, 248, 244, 0.94);
+  color: var(--gray-800);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+}
+
+body.lp-comparison-page .promo-badge--hot {
+  border-color: rgba(232, 91, 42, 0.42);
+  background: #fff5ef;
+  box-shadow: 0 1px 0 rgba(232, 91, 42, 0.08);
+}
+
+body.lp-comparison-page .promo-wrap .price-hint {
+  color: #3f5195;
+  font-weight: 600;
+}
+
+body.lp-comparison-page .promo-wrap .price-hint::before {
+  background: var(--gray-100);
+  color: #6877ad;
+}
+
+body.lp-comparison-page .promo-wrap:hover .price-hint {
+  color: var(--blue);
+}
+
+body.lp-comparison-page .td-price .price-hint {
+  color: #3f5195;
+}
+
+body.lp-comparison-page .td-price .price-hint::before {
+  background: var(--gray-100);
+  color: #6877ad;
+}
+
+body.lp-comparison-page .td-price .price-tooltip {
+  top: calc(100% + 10px);
+  bottom: auto;
+}
+
+body.lp-comparison-page .td-price .price-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--gray-800);
+}
+
+body.lp-comparison-page .promo-empty {
+  color: var(--gray-300);
+  font-weight: 500;
+}
+
+body.lp-comparison-page .promo-tooltip {
+  top: calc(100% + 10px);
+  bottom: auto;
+  width: min(300px, 74vw);
+  white-space: normal;
+  text-align: left;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.lp-comparison-page .promo-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: transparent;
+  border-bottom-color: var(--gray-800);
 }
 
 body.lp-comparison-page .geschaeftskonto-table .u-text-green-strong {
@@ -270,9 +362,10 @@ body.lp-comparison-page .table-wrap {
   body.lp-comparison-page .vergleich-filter-primary { grid-template-columns: 1fr; }
   body.lp-comparison-page .vergleich-rechner-inline { gap: 10px; }
   body.lp-comparison-page .geschaeftskonto-table {
-    min-width: 1448px;
+    min-width: 1606px;
   }
   body.lp-comparison-page .geschaeftskonto-table .th-col-price { width: 156px; min-width: 156px; padding-left: 20px; padding-right: 20px; }
+  body.lp-comparison-page .geschaeftskonto-table .th-col-promo { width: 158px; min-width: 158px; padding-left: 18px; padding-right: 18px; }
   body.lp-comparison-page .geschaeftskonto-table .th-col-abhebung { width: 168px; min-width: 168px; padding-left: 20px; padding-right: 20px; }
   body.lp-comparison-page .geschaeftskonto-table .th-col-total { width: 188px; min-width: 188px; padding-left: 24px; padding-right: 24px; }
   body.lp-comparison-page .geschaeftskonto-table .th-col-schufa { width: 154px; min-width: 154px; padding-left: 20px; padding-right: 20px; }
