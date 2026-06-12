@@ -11,7 +11,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Finom Prime Card', priceNote: 'Kostenlos · Visa Debitkarte · bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
+    name: 'Finom Prime Card', priceNote: 'Kostenlos · Visa Debitkarte · 350 € Bonus möglich · bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     cardType: 'Debitkarte', rating: 4.5,
     cashbackRate: 3, cashbackLabel: 'bis 3 %',

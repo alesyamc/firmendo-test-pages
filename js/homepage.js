@@ -82,44 +82,44 @@ var fQ1Labels = {
 var fDB = {
   einzelunternehmer: {
     kostenlos: [
-      { name:'Finom', tag:'Konto & Buchhaltung in einer App', pros:['Solo-Tarif dauerhaft kostenlos','Sofort-IBAN in wenigen Minuten','Rechnungsstellung inklusive'], price:'Solo-Tarif kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['Solo-Tarif dauerhaft kostenlos','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Kontist', tag:'Speziell für Selbstständige', pros:['Steuervorauszahlungen automatisch berechnet','IBAN sofort – Konto in 8 Minuten','Visa Business Debitkarte inklusive'], price:'Kostenlos im Free-Tarif', affiliate:'https://kontist.com/?ref=firmendo', review:'/kontist-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
-      { name:'Finom', tag:'Konto & Buchhaltung in einer App', pros:['DATEV & Lexoffice-Integration','Rechnungsstellung inklusive','Sofort-IBAN in wenigen Minuten'], price:'Solo-Tarif kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'Konto, Buchhaltung & Neukundenbonus', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Kontist', tag:'Automatische Steuerberechnung', pros:['DATEV & Lexoffice inklusive','Steuervorauszahlungen automatisch','Visa Business Debitkarte'], price:'Kostenlos im Free-Tarif', affiliate:'https://kontist.com/?ref=firmendo', review:'/kontist-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Finom', tag:'Konto & Buchhaltung in einer App', pros:['Rechnungsstellung inklusive','DATEV & Lexoffice-Integration','Sofort-IBAN in wenigen Minuten'], price:'Solo-Tarif kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'All-in-One mit Neukundenaktion', pros:['Rechnungsstellung inklusive','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Holvi', tag:'All-in-One für Selbstständige', pros:['Buchhaltung & Belege integriert','Rechnungsstellung aus dem Konto','Mehrere Währungen möglich'], price:'Kostenlos im Flex-Tarif', affiliate:'https://holvi.com/?ref=firmendo', review:'/holvi-geschaeftskonto/', top:false }
     ],
     cashback: [
-      { name:'Finom', tag:'1 % Cashback auf Kartenzahlungen', pros:['1 % Cashback ab Basic-Tarif','Visa Business Karte inklusive','Sofort-IBAN in wenigen Minuten'], price:'Solo kostenlos · Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'350 € Bonus bei Kartenumsätzen', pros:['350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif'], price:'Solo kostenlos · Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Kontist', tag:'Visa Business Debitkarte', pros:['Visa Business Debitkarte','Steuerberechnung automatisch','IBAN sofort verfügbar'], price:'Kostenlos im Free-Tarif', affiliate:'https://kontist.com/?ref=firmendo', review:'/kontist-geschaeftskonto/', top:false }
     ]
   },
   gruender: {
     kostenlos: [
       { name:'FYRST', tag:'Deutsche Bank Tochter – 1. Jahr gratis', pros:['1. Jahr komplett kostenlos','Deutsches IBAN & Bankgarantie','DATEV-Schnittstelle inklusive'], price:'Gratis im 1. Jahr', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'Sofort startklar für Gründer', pros:['Solo-Tarif dauerhaft kostenlos','Sofort-IBAN in wenigen Minuten','Rechnungsstellung inklusive'], price:'Solo-Tarif kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['Solo-Tarif dauerhaft kostenlos','350 € Willkommensbonus möglich','Rechnungsstellung inklusive'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
       { name:'FYRST', tag:'DATEV & Buchhaltungs-Integration', pros:['DATEV-Schnittstelle inklusive','Deutsche-Bank-Infrastruktur','Online + Filiale kombinierbar'], price:'Gratis im 1. Jahr', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'Buchhaltung in einer App', pros:['DATEV & Lexoffice-Integration','Rechnungsstellung inklusive','Belege erfassen & kategorisieren'], price:'Solo-Tarif kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'Buchhaltung + Neukundenaktion', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Finom', tag:'All-in-One für Startups & Gründer', pros:['Rechnungsstellung inklusive','Buchhaltung & Belege in einer App','Sofort-IBAN in wenigen Minuten'], price:'Solo-Tarif kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'All-in-One mit 350 € Bonus', pros:['Rechnungsstellung inklusive','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'FYRST', tag:'Deutsch, sicher und vollständig', pros:['1. Jahr kostenlos','DATEV inklusive','Online + Filiale kombinierbar'], price:'Gratis im 1. Jahr', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:false }
     ],
     cashback: [
       { name:'Vivid Business', tag:'Cashback & moderne Features', pros:['Cashback auf Kartenzahlungen','Unterkonten für Budgets','Virtuelle Karten verfügbar'], price:'Start-Tarif kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/vivid-business/', top:true },
-      { name:'Finom', tag:'1 % Cashback ab Basic', pros:['1 % Cashback auf Kartenzahlungen','Visa Business Karte','Sofort-IBAN in wenigen Minuten'], price:'Solo kostenlos · Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'350 € Bonus bei Kartenumsätzen', pros:['350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif'], price:'Solo kostenlos · Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ]
   },
   gmbh: {
     kostenlos: [
       { name:'FYRST', tag:'Deutsche Bank Tochter für GmbH & UG', pros:['Stammkapital-Einzahlung möglich','Deutsche-Bank-Infrastruktur','DATEV-Schnittstelle inklusive'], price:'Ab 6 €/Monat für juristische Personen', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'Für GmbH, UG & Startups', pros:['2 Nutzer im Basic-Tarif','1 % Cashback auf Kartenzahlungen','Sofort-IBAN in wenigen Minuten'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'Für GmbH, UG & Startups', pros:['2 Nutzer im Basic-Tarif','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
       { name:'Qonto', tag:'DATEV-Integration für GmbH & UG', pros:['DATEV ab höheren Tarifen','Für alle deutschen Rechtsformen','Echtzeit-Benachrichtigungen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
@@ -127,28 +127,28 @@ var fDB = {
     ],
     komplett: [
       { name:'Qonto', tag:'Ideal für GmbH & UG', pros:['Stammkapital-Einzahlung möglich','Echtzeit-Benachrichtigungen','DATEV ab höheren Tarifen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'All-in-One für GmbH', pros:['Buchhaltung & Belege integriert','2 Nutzer im Basic-Tarif','Visa Business Karte inklusive'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'All-in-One mit Neukundenaktion', pros:['Buchhaltung & Belege integriert','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     cashback: [
-      { name:'Finom', tag:'1 % Cashback für GmbH & UG', pros:['1 % Cashback auf Kartenzahlungen','2 Nutzer im Basic-Tarif inklusive','Visa Business Karte inklusive'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'350 € Bonus bei Kartenumsätzen', pros:['350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Qonto', tag:'Vollständig für GmbH', pros:['Stammkapital-Einzahlung möglich','DATEV-fähig','Strukturierte Kontoführung'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:false }
     ]
   },
   teams: {
     kostenlos: [
       { name:'Vivid Business', tag:'Flexibel für Budgets und Teams', pros:['Start-Tarif dauerhaft kostenlos','Unterkonten für Teambudgets','Virtuelle Karten verfügbar'], price:'Start-Tarif kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/vivid-business/', top:true },
-      { name:'Finom', tag:'2 Nutzer im Basic-Tarif', pros:['2 Nutzer im Basic-Tarif inklusive','1 % Cashback auf Kartenzahlungen','Echtzeit-Benachrichtigungen'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['2 Nutzer im Basic-Tarif inklusive','350 € Willkommensbonus möglich','Echtzeit-Benachrichtigungen'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
       { name:'Qonto', tag:'DATEV & Teamzugänge', pros:['DATEV inklusive ab Smart-Tarif','Admin- und Teamzugänge','1 Unterkonto inklusive'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'Buchhaltung für kleine Teams', pros:['DATEV & Lexoffice-Integration','Buchhaltung & Belege inklusive','2 Nutzer im Basic-Tarif'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'Buchhaltung + Neukundenaktion', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     komplett: [
       { name:'Qonto', tag:'Stark für strukturierte Teams', pros:['Ausgabenrichtlinien & Budgets','Admin- und Teamzugänge','DATEV inklusive ab Smart'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
       { name:'Vivid Business', tag:'Unterkonten & virtuelle Karten', pros:['Unterkonten für Teambudgets','Virtuelle Karten verfügbar','Start-Tarif kostenlos'], price:'Start-Tarif kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/vivid-business/', top:false }
     ],
     cashback: [
-      { name:'Finom', tag:'Cashback für Teams', pros:['1 % Cashback auf Kartenzahlungen','Mehrere Nutzer inklusive','Echtzeit-Benachrichtigungen'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'350 € Bonus bei Kartenumsätzen', pros:['350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Vivid Business', tag:'Cashback & Unterkonten', pros:['Cashback ab Prime-Tarif','Unterkonten für Budgets','Virtuelle Karten verfügbar'], price:'Start-Tarif kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/vivid-business/', top:false }
     ]
   }
