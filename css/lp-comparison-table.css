@@ -458,8 +458,8 @@ body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) thead th.th-col-
   z-index: 6;
 }
 body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr:hover td:first-child { background: var(--blue-ultra); }
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr.highlight td:first-child { background: linear-gradient(90deg, #FFF4E8 0%, #FFFBF5 100%); }
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr.highlight:hover td:first-child { background: linear-gradient(90deg, #FFE8D1 0%, #FFF5EC 100%); }
+body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr.highlight td:first-child { background: #FFFBF5; }
+body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr.highlight:hover td:first-child { background: #FFF5EC; }
 
 /* Right shadow on sticky Anbieter column. */
 
@@ -516,8 +516,8 @@ body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta::befo
 body.lp-comparison-page .table-wrap thead th.th-col-cta,
 body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta { position: sticky; }
 body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr:hover td.td-cta { background: var(--blue-ultra); }
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr.highlight td.td-cta { background: linear-gradient(90deg, #fff 0%, #FFFBF5 100%); }
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr.highlight:hover td.td-cta { background: linear-gradient(90deg, #fff 0%, #FFF5EC 100%); }
+body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr.highlight td.td-cta { background: #FFFBF5; }
+body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr.highlight:hover td.td-cta { background: #FFF5EC; }
 
 /* Header tooltips */
 
@@ -580,13 +580,13 @@ body.lp-comparison-page .table-wrap tbody tr:last-child { border-bottom: none; }
 body.lp-comparison-page .table-wrap tbody tr:hover { background: var(--blue-ultra); }
 /* Single source for highlighted LP table rows. Do not add page-level border-left duplicates. */
 body.lp-comparison-page .table-wrap tbody tr.highlight {
-  background: linear-gradient(90deg, #FFF4E8 0%, #FFFBF5 60%, #fff 100%);
+  background: #FFFBF5;
   position: relative;
 }
 body.lp-comparison-page .table-wrap tbody tr.highlight td:first-child {
   box-shadow: inset var(--lp-highlight-marker-width) 0 0 0 var(--lp-highlight-marker-color);
 }
-body.lp-comparison-page .table-wrap tbody tr.highlight:hover { background: linear-gradient(90deg, #FFE8D1 0%, #FFF5EC 60%, #fff 100%); }
+body.lp-comparison-page .table-wrap tbody tr.highlight:hover { background: #FFF5EC; }
 body.lp-comparison-page .table-wrap td { padding: 17px 12px; vertical-align: middle; font-size: var(--text-ui-size); line-height: 1.45; }
 body.lp-comparison-page .table-wrap td:first-child { padding-left: 20px; }
 body.lp-comparison-page .table-wrap td:last-child { padding-right: 18px; }
