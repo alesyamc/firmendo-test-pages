@@ -90,6 +90,28 @@ body.lp-kostenlos-page .td-total {
   white-space: nowrap;
 }
 
+body.lp-kostenlos-page .price-wrap--base-action .price-hint {
+  color: #3f5195;
+  font-weight: 600;
+}
+
+body.lp-kostenlos-page .price-wrap--base-action .price-hint::before {
+  background: var(--gray-100);
+  color: #6877ad;
+}
+
+body.lp-kostenlos-page .price-wrap--base-action .price-tooltip {
+  top: calc(100% + 10px);
+  bottom: auto;
+}
+
+body.lp-kostenlos-page .price-wrap--base-action .price-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--gray-800);
+}
+
 body.lp-kostenlos-page .td-promo {
   text-align: center;
 }
