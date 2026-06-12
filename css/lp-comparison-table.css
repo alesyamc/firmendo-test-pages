@@ -880,6 +880,13 @@ body.lp-comparison-page .rf-tag {
   color: var(--accent-blue); background: var(--accent-blue-light);
   padding: 2px 7px; border-radius: 20px; white-space: nowrap;
 }
+body.lp-comparison-page .rf-tag-more {
+  background: var(--gray-100);
+  color: #6877ad;
+  font-weight: 700;
+  padding-left: 6px;
+  padding-right: 6px;
+}
 body.lp-comparison-page .rf-tooltip {
   display: none;
   position: absolute;
@@ -907,7 +914,8 @@ body.lp-comparison-page .rf-tooltip::before {
   border: 5px solid transparent;
   border-bottom-color: var(--gray-800);
 }
-body.lp-comparison-page .rf-wrap:hover .rf-tooltip { display: block; }
+body.lp-comparison-page .rf-wrap:hover .rf-tooltip,
+body.lp-comparison-page .rf-wrap:focus-visible .rf-tooltip { display: block; }
 
 body.lp-comparison-page .td-cta { white-space: nowrap; text-align: center; }
 body.lp-comparison-page .table-wrap tbody td.td-cta { padding-left: 14px; padding-right: 14px; }

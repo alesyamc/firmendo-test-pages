@@ -99,32 +99,36 @@ body.lp-comparison-page .rf-wrap[data-rf-tooltip]::before {
   display: none;
   position: absolute;
   left: 0;
-  bottom: calc(100% + 10px);
-  z-index: 35;
-  width: max-content;
-  max-width: min(280px, calc(100vw - 48px));
-  padding: 8px 12px;
-  border-radius: 10px;
+  top: calc(100% + 10px);
+  z-index: 70;
+  width: 220px;
+  padding: 9px 13px;
+  border-radius: 8px;
   background: var(--gray-800);
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1.45;
   white-space: normal;
-  box-shadow: 0 10px 28px rgba(17,24,69,0.22);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  pointer-events: none;
+  text-align: left;
 }
 body.lp-comparison-page .rf-wrap[data-rf-tooltip]::after {
   content: '';
   display: none;
   position: absolute;
-  left: 16px;
-  bottom: calc(100% + 4px);
-  z-index: 35;
-  border: 6px solid transparent;
-  border-top-color: var(--gray-800);
+  bottom: auto;
+  top: calc(100% + 1px);
+  left: 18px;
+  z-index: 70;
+  border: 5px solid transparent;
+  border-bottom-color: var(--gray-800);
 }
 body.lp-comparison-page .rf-wrap[data-rf-tooltip]:hover::before,
-body.lp-comparison-page .rf-wrap[data-rf-tooltip]:hover::after {
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]:hover::after,
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]:focus-visible::before,
+body.lp-comparison-page .rf-wrap[data-rf-tooltip]:focus-visible::after {
   display: block;
 }
 

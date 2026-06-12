@@ -1650,7 +1650,8 @@ function renderTable() {
 
   tbody.innerHTML = data.map(p => {
     const rfTags = p.suitable.slice(0,3).map(r => `<span class="rf-tag">${r}</span>`).join('');
-    const moreRf = p.suitable.length > 3 ? `<span class="rf-tag">+${p.suitable.length - 3}</span>` : '';
+    const moreRf = p.suitable.length > 3 ? `<span class="rf-tag rf-tag-more">+${p.suitable.length - 3}</span>` : '';
+    const rfTooltip = p.suitable.join(', ');
     const baseStr = basePriceMarkup(p);
     const reviewLink = p.reviewUrl ? `<a href="${p.reviewUrl}" class="btn-table-ghost btn-table-detail">Detailtest</a>` : '';
     return `
@@ -1668,7 +1669,7 @@ function renderTable() {
       <td class="td-price">${baseStr}</td>
       <td class="td-promo">${promoMarkup(p)}</td>
       <td class="td-bool">${!p.schufa ? YES : NO}</td>
-      <td class="td-rf"><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
+      <td class="td-rf"><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: ${rfTooltip}"><div class="rf-tags">${rfTags}${moreRf}</div><div class="rf-tooltip">${rfTooltip}</div></div></td>
       <td class="td-abhebung u-text-center">${abhebungMarkup(p)}</td>
       <td class="td-total-col u-text-center">${totalBreakdownMarkup(p)}</td>
       <td class="u-text-center">${p.cashback !== '—' ? `<span class="u-text-green-strong">${p.cashback}</span>` : `<span class="u-text-gray-300">—</span>`}</td>

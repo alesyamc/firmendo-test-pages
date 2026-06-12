@@ -571,7 +571,7 @@
         </div>
       </td>
       <td class="u-fs-caption u-text-gray-700">4 Monate (Neukunden)</td>
-      <td><div class="rf-wrap" data-rf-tooltip="Freiberufler, Einzelunternehmen, Gründer, GmbH"><div class="rf-tags"><span class="rf-tag">Freiberufler</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">Gründer</span><span class="rf-tag">+1</span></div></div></td>
+      <td><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: Freiberufler, Einzelunternehmen, Gründer, GmbH" data-rf-tooltip="Freiberufler, Einzelunternehmen, Gründer, GmbH"><div class="rf-tags"><span class="rf-tag">Freiberufler</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">Gründer</span><span class="rf-tag rf-tag-more">+1</span></div></div></td>
       <td class="u-fs-caption u-cell-center-gray-700-600">10 Mio. €</td>
       <td class="td-bool"><span class="td-badge badge-ja"><span>Ja</span></span></td>
       <td class="u-fs-caption u-nowrap-muted-center">Niederlande · 20.000 € / Sondervermögen</td>
@@ -602,7 +602,7 @@
         </div>
       </td>
       <td class="u-fs-caption u-text-gray-700">3 Monate (Neugeld)</td>
-      <td><div class="rf-wrap" data-rf-tooltip="Freiberufler, Einzelunternehmen, Gründer, GmbH"><div class="rf-tags"><span class="rf-tag">Freiberufler</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">Gründer</span><span class="rf-tag">+1</span></div></div></td>
+      <td><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: Freiberufler, Einzelunternehmen, Gründer, GmbH" data-rf-tooltip="Freiberufler, Einzelunternehmen, Gründer, GmbH"><div class="rf-tags"><span class="rf-tag">Freiberufler</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">Gründer</span><span class="rf-tag rf-tag-more">+1</span></div></div></td>
       <td class="u-fs-caption u-cell-center-gray-700-600">250.000 €</td>
       <td class="td-bool"><span class="td-badge badge-ja"><span>Ja</span></span></td>
       <td class="u-fs-caption u-nowrap-muted-center">Deutschland · Sicherungsverbund</td>
@@ -695,7 +695,7 @@
         </div>
       </td>
       <td class="u-fs-caption u-text-gray-700">4 Monate</td>
-      <td><div class="rf-wrap" data-rf-tooltip="Freiberufler, Einzelunternehmen, Gründer, GmbH, AG"><div class="rf-tags"><span class="rf-tag">Freiberufler</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">Gründer</span><span class="rf-tag">+2</span></div></div></td>
+      <td><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: Freiberufler, Einzelunternehmen, Gründer, GmbH, AG" data-rf-tooltip="Freiberufler, Einzelunternehmen, Gründer, GmbH, AG"><div class="rf-tags"><span class="rf-tag">Freiberufler</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">Gründer</span><span class="rf-tag rf-tag-more">+2</span></div></div></td>
       <td class="u-fs-caption u-cell-center-gray-700-600">1.000.000 €</td>
       <td class="td-bool"><span class="td-badge badge-nein"><span>Nein</span></span></td>
       <td class="u-fs-caption u-nowrap-muted-center">Deutschland · erweiterter Schutz</td>
@@ -726,7 +726,7 @@
         </div>
       </td>
       <td class="u-fs-caption u-text-gray-700">Variabel</td>
-      <td><div class="rf-wrap" data-rf-tooltip="GmbH, AG, Einzelunternehmen, Gründer"><div class="rf-tags"><span class="rf-tag">GmbH</span><span class="rf-tag">AG</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag">+1</span></div></div></td>
+      <td><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: GmbH, AG, Einzelunternehmen, Gründer" data-rf-tooltip="GmbH, AG, Einzelunternehmen, Gründer"><div class="rf-tags"><span class="rf-tag">GmbH</span><span class="rf-tag">AG</span><span class="rf-tag">Einzelunternehmen</span><span class="rf-tag rf-tag-more">+1</span></div></div></td>
       <td class="u-fs-caption u-cell-center-gray-700-600">Auf Anfrage</td>
       <td class="td-bool"><span class="td-badge badge-ja"><span>Ja</span></span></td>
       <td class="u-fs-caption u-nowrap-muted-center">Deutschland · Einlagensicherungsfonds</td>
@@ -1505,7 +1505,7 @@ function renderTable() {
   tbody.innerHTML = data.map(p => {
     const rfTooltip = p.suitable.join(', ');
     const rfTags = p.suitable.slice(0,3).map(r => `<span class="rf-tag">${r}</span>`).join('');
-    const moreRf = p.suitable.length > 3 ? `<span class="rf-tag">+${p.suitable.length-3}</span>` : '';
+    const moreRf = p.suitable.length > 3 ? `<span class="rf-tag rf-tag-more">+${p.suitable.length-3}</span>` : '';
     const isDauernd = p.zinsDauer.toLowerCase().includes('dauerh') || p.zinsDauer.toLowerCase().includes('kein aktionszins');
 
     return `
@@ -1527,7 +1527,7 @@ function renderTable() {
         </div>
       </td>
       <td class="u-fs-caption u-text-gray-700">${p.zinsDauer}</td>
-      <td><div class="rf-wrap" data-rf-tooltip="${rfTooltip}"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
+      <td><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: ${rfTooltip}" data-rf-tooltip="${rfTooltip}"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
       <td class="td-deposit">${p.maxEinlage}</td>
       <td class="td-bool">${renderGkState(p.ohneGK)}</td>
       <td class="td-security">${p.sicherung}</td>

@@ -1510,7 +1510,8 @@ function renderTable() {
 
   tbody.innerHTML = data.map(p => {
     const rfTags = p.suitable.slice(0,3).map(r => `<span class="rf-tag">${r}</span>`).join('');
-    const moreRf = p.suitable.length > 3 ? `<span class="rf-tag">+${p.suitable.length-3}</span>` : '';
+    const moreRf = p.suitable.length > 3 ? `<span class="rf-tag rf-tag-more">+${p.suitable.length-3}</span>` : '';
+    const rfTooltip = p.suitable.join(', ');
     const isKostenlos = p.preis === 0;
     const reviewLink = p.reviewUrl
       ? `<a href="${p.reviewUrl}" class="btn-table-ghost btn-table-detail">Detailtest</a>`
@@ -1533,7 +1534,7 @@ function renderTable() {
       </td>
       <td class="td-promo">${promoMarkup(p)}</td>
       <td class="td-booking">${p.buchung}</td>
-      <td><div class="rf-wrap"><div class="rf-tags">${rfTags}${moreRf}</div></div></td>
+      <td><div class="rf-wrap" tabindex="0" aria-label="Rechtsformen: ${rfTooltip}"><div class="rf-tags">${rfTags}${moreRf}</div><div class="rf-tooltip">${rfTooltip}</div></div></td>
       <td class="td-bool">${p.datev ? YES_ICON : NO_ICON}</td>
       <td class="td-bool">${p.steuer ? YES_ICON : NO_ICON}</td>
       <td class="td-provider">${p.typ}</td>
