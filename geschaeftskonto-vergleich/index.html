@@ -1318,7 +1318,7 @@ const products = [
   },
   {
     // verified June 2026
-    name: 'Deutsche Bank Gründerkonto', priceNote: 'Gründerkonto · 0 € Grundpreis im 1. Jahr · für Gründungen bis 12 Monate · Geschäftskonto, Buchhaltung und persönliche Beratung', promo: '1 Jahr 0 €', promoNote: 'Für Neugründer, deren Gründung nicht länger als 12 Monate zurückliegt: 0 € Grundpreis im ersten Jahr. Buchungsgebühren hängen vom gewählten Kontomodell ab.', base: 0, txCost: 0.30, txLabel: 'variable', txFree: 0, abhebePct: 0, abhebeMin: 0, cat: 'Filialbank', highlight: false,
+    name: 'Deutsche Bank Gründerkonto', priceNote: 'Gründerkonto · 0 € Grundpreis im 1. Jahr · für Gründungen bis 12 Monate · Geschäftskonto, Buchhaltung und persönliche Beratung', promo: '1 Jahr 0 €', promoNote: 'Für Neugründer, deren Gründung nicht länger als 12 Monate zurückliegt: 0 € Grundpreis im ersten Jahr. Buchungsgebühren hängen vom gewählten Kontomodell ab.', baseAction: true, baseActionNote: '0 € Grundpreis im ersten Jahr für Neugründer, deren Gründung nicht länger als 12 Monate zurückliegt. Buchungsgebühren können je nach Kontomodell anfallen.', base: 0, txCost: 0.30, txLabel: 'variable', txFree: 0, abhebePct: 0, abhebeMin: 0, cat: 'Filialbank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','AG','OHG'],
     schufa: true, rating: 3.8, cashback: '—', intl: true, datev: true, accounting: true,
     affiliateUrl: '/go/deutsche-bank-business-basickonto/', reviewUrl: '/deutsche-bank-geschaeftskonto/',
@@ -1486,8 +1486,8 @@ function basePriceMarkup(p, zeroText = '0 €') {
   if (p.name === 'FYRST Base' && p.base === 0) {
     return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Hinweis</span><span class="price-tooltip">0 € dauerhaft für natürliche Personen · juristische Personen 6 Monate kostenlos, danach 6 €/Monat.</span></span>';
   }
-  if (p.name === 'Deutsche Bank Gründerkonto' && p.base === 0) {
-    return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">0 € Grundpreis im ersten Jahr für Neugründer, deren Gründung nicht länger als 12 Monate zurückliegt. Buchungsgebühren können je nach Kontomodell anfallen.</span></span>';
+  if (p.baseAction && p.base === 0) {
+    return `<span class="price-wrap price-wrap--base-action"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">${p.baseActionNote}</span></span>`;
   }
   return p.base === 0
     ? `<span class="price-green">${zeroText}</span>`

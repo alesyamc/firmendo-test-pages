@@ -1350,6 +1350,8 @@ const products = [
     preisNote: 'Für Neugründer im ersten Jahr ohne Kontoführungsgebühr',
     promo: '1 Jahr 0 €',
     promoNote: 'Deutsche Bank Gründerkonto für Neugründer: 0 € Kontoführungsgebühr im ersten Jahr; danach gelten die Konditionen des Geschäftskontos.',
+    baseAction: true,
+    baseActionNote: '0 € Kontoführungsgebühr im ersten Jahr für Neugründer; danach gelten die Konditionen des Geschäftskontos.',
     rating: 4.0,
     buchung: 'variabel',
     suitable: ['Freiberufler', 'Einzelunternehmen', 'GbR', 'GmbH', 'AG'],
@@ -1456,6 +1458,16 @@ function promoMarkup(p) {
   return `<span class="price-wrap promo-wrap"><span class="promo-badge ${p.highlight ? 'promo-badge--hot' : ''}">${p.promo}</span><span class="price-hint">Details</span>${note}</span>`;
 }
 
+function priceMarkup(p, isKostenlos) {
+  const hint = p.baseAction ? '<span class="price-hint">Aktion</span>' : '';
+  const tooltip = p.baseActionNote || p.preisNote;
+  return `<div class="price-wrap price-wrap--base-action">
+          <span class="preis-badge-td${isKostenlos ? ' kostenlos' : ''}">${p.preisLabel}</span>
+          ${hint}
+          ${tooltip ? `<div class="price-tooltip">${tooltip}</div>` : ''}
+        </div>`;
+}
+
 function renderTable() {
   const rf = fdGetValue('fd-rf');
   const typ = fdGetValue('fd-typ');
@@ -1517,10 +1529,7 @@ function renderTable() {
         </div>
       </td>
       <td>
-        <div class="price-wrap">
-          <span class="preis-badge-td${isKostenlos ? ' kostenlos' : ''}">${p.preisLabel}</span>
-          ${p.preisNote ? `<div class="price-tooltip">${p.preisNote}</div>` : ''}
-        </div>
+        ${priceMarkup(p, isKostenlos)}
       </td>
       <td class="td-promo">${promoMarkup(p)}</td>
       <td class="td-booking">${p.buchung}</td>
