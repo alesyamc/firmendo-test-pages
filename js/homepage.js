@@ -122,11 +122,11 @@ var fDB = {
       { name:'Finom', tag:'Für GmbH, UG & Startups', pros:['2 Nutzer im Basic-Tarif','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
-      { name:'Qonto', tag:'DATEV-Integration für GmbH & UG', pros:['DATEV ab höheren Tarifen','Für alle deutschen Rechtsformen','Echtzeit-Benachrichtigungen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
+      { name:'Qonto', tag:'6 Monate Buchhaltung gratis', pros:['Qonto Buchhaltung bis 30.06.2026 gratis testen','Für alle deutschen Rechtsformen','Echtzeit-Benachrichtigungen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
       { name:'FYRST', tag:'DATEV & Filiale kombinierbar', pros:['DATEV-Schnittstelle inklusive','Stammkapital-Einzahlung möglich','Online + Filiale kombinierbar'], price:'Ab 6 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Qonto', tag:'Ideal für GmbH & UG', pros:['Stammkapital-Einzahlung möglich','Echtzeit-Benachrichtigungen','DATEV ab höheren Tarifen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
+      { name:'Qonto', tag:'Ideal für GmbH & UG', pros:['Stammkapital-Einzahlung möglich','6 Monate Buchhaltung gratis','DATEV & Integrationen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
       { name:'Finom', tag:'All-in-One mit Neukundenaktion', pros:['Buchhaltung & Belege integriert','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     cashback: [
@@ -140,11 +140,11 @@ var fDB = {
       { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['2 Nutzer im Basic-Tarif inklusive','350 € Willkommensbonus möglich','Echtzeit-Benachrichtigungen'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
-      { name:'Qonto', tag:'DATEV & Teamzugänge', pros:['DATEV inklusive ab Smart-Tarif','Admin- und Teamzugänge','1 Unterkonto inklusive'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
+      { name:'Qonto', tag:'DATEV & Teamzugänge', pros:['6 Monate Buchhaltung gratis','Admin- und Teamzugänge','1 Unterkonto inklusive'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
       { name:'Finom', tag:'Buchhaltung + Neukundenaktion', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Basic ab 10,99 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Qonto', tag:'Stark für strukturierte Teams', pros:['Ausgabenrichtlinien & Budgets','Admin- und Teamzugänge','DATEV inklusive ab Smart'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
+      { name:'Qonto', tag:'Stark für strukturierte Teams', pros:['Ausgabenrichtlinien & Budgets','Admin- und Teamzugänge','6 Monate Buchhaltung gratis'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/qonto-geschaeftskonto/', top:true },
       { name:'Vivid Business', tag:'Unterkonten & virtuelle Karten', pros:['Unterkonten für Teambudgets','Virtuelle Karten verfügbar','Start-Tarif kostenlos'], price:'Start-Tarif kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/vivid-business/', top:false }
     ],
     cashback: [
