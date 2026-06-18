@@ -877,15 +877,17 @@ body.lp-comparison-page .rf-wrap { max-width: 180px; position: relative; }
 body.lp-comparison-page .rf-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 body.lp-comparison-page .rf-tag {
   font-size: var(--text-caption-size); font-weight: 600;
-  color: var(--accent-blue); background: var(--accent-blue-light);
+  color: #2f49b3; background: #dfe8ff;
   padding: 2px 7px; border-radius: 20px; white-space: nowrap;
 }
 body.lp-comparison-page .rf-tag-more {
-  background: var(--gray-100);
-  color: #6877ad;
+  background: #dfe8ff;
+  color: #2f49b3;
   font-weight: 700;
+  min-width: 26px;
   padding-left: 6px;
   padding-right: 6px;
+  text-align: center;
 }
 body.lp-comparison-page .rf-tooltip {
   display: none;
