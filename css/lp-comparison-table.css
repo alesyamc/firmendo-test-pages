@@ -247,23 +247,36 @@ body.lp-comparison-page .toggle-btn {
   display: flex; align-items: center; gap: 6px;
   white-space: nowrap;
 }
-body.lp-comparison-page .toggle-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+body.lp-comparison-page .toggle-btn:focus { outline: none; }
+body.lp-comparison-page .toggle-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(47,73,179,0.14);
+}
+body.lp-comparison-page .toggle-btn:hover {
+  border-color: var(--accent-color-border-muted);
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
+}
 body.lp-comparison-page .toggle-btn.active {
-  background: var(--blue); border-color: var(--blue); color: #fff;
-  box-shadow: 0 2px 8px rgba(34,68,232,0.22);
+  background: var(--accent-color-soft-strong);
+  border-color: rgba(47,73,179,0.36);
+  color: var(--accent-color-text);
+  box-shadow: 0 3px 10px rgba(47,73,179,0.14);
+}
+body.lp-comparison-page .toggle-btn.active:focus-visible {
+  box-shadow: 0 3px 10px rgba(47,73,179,0.14), 0 0 0 3px rgba(47,73,179,0.12);
 }
 body.lp-comparison-page .toggle-btn svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--gray-300); transition: color .18s; }
-body.lp-comparison-page .toggle-btn:hover svg { color: var(--blue); }
+body.lp-comparison-page .toggle-btn:hover svg { color: var(--accent-color-text); }
 body.lp-comparison-page .toggle-btn.active svg,
-body.lp-comparison-page .toggle-btn.active:hover svg { color: #fff; }
+body.lp-comparison-page .toggle-btn.active:hover svg { color: var(--accent-color-text); }
 
 /* Reset button with counter */
 
 body.lp-comparison-page .filter-reset-wrap { display: flex; align-items: center; gap: 10px; }
 body.lp-comparison-page .filter-count-badge {
   display: inline-flex; align-items: center; gap: 5px;
-  font-size: var(--text-caption-size); font-weight: 700; color: var(--blue);
-  background: var(--blue-light); border: 1px solid rgba(34,68,232,0.18);
+  font-size: var(--text-caption-size); font-weight: 700; color: var(--gray-700);
+  background: var(--gray-50); border: 1px solid var(--gray-200);
   padding: 4px 10px; border-radius: 20px;
 }
 body.lp-comparison-page .filter-count-badge.hidden { display: none; }
