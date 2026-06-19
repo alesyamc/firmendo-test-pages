@@ -1561,9 +1561,11 @@ function updateFilterCount() {
   Object.values(activeFilters).forEach(active => { if (active) count += 1; });
   const badge = document.getElementById('filterCountBadge');
   const countNode = document.getElementById('filterCount');
+  const resetButton = document.querySelector('.filter-reset');
   if (!badge || !countNode) return;
   countNode.textContent = count;
   badge.classList.toggle('hidden', count === 0);
+  if (resetButton) resetButton.classList.toggle('active', count > 0);
 }
 
 function getFilteredData() {

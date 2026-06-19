@@ -289,7 +289,17 @@ body.lp-comparison-page .filter-reset {
   transition: all .2s;
   display: inline-flex; align-items: center; gap: 5px;
 }
-body.lp-comparison-page .filter-reset:hover { color: var(--blue); border-color: var(--blue); background: var(--blue-light); }
+body.lp-comparison-page .filter-reset.active {
+  color: var(--accent-color-text);
+  background: var(--gray-50);
+  border-color: var(--gray-200);
+}
+body.lp-comparison-page .filter-reset:hover,
+body.lp-comparison-page .filter-reset.active:hover {
+  color: var(--accent-color-text);
+  border-color: var(--accent-color-border-muted);
+  background: var(--accent-color-soft);
+}
 body.lp-comparison-page .filter-reset svg { width: 13px; height: 13px; }
 
 /* COUNTER */
