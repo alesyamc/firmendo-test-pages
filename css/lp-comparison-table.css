@@ -446,25 +446,25 @@ body.lp-comparison-page tr:hover .td-total-col { background: color-mix(in srgb, 
 
 /* Sticky first column remains visible during horizontal scroll. */
 
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) thead th.th-col-anbieter,
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody td:first-child {
+body.lp-comparison-page .table-wrap thead th.th-col-anbieter,
+body.lp-comparison-page .table-wrap tbody td:first-child {
   position: sticky;
   left: 0;
   z-index: 4;
   background: #fff;
 }
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) thead th.th-col-anbieter {
+body.lp-comparison-page .table-wrap thead th.th-col-anbieter {
   background: var(--gray-100);
   z-index: 6;
 }
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr:hover td:first-child { background: var(--blue-ultra); }
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr.highlight td:first-child { background: #FFFBF5; }
-body.lp-comparison-page .table-wrap table:has(.th-col-anbieter) tbody tr.highlight:hover td:first-child { background: #FFF5EC; }
+body.lp-comparison-page .table-wrap tbody tr:hover td:first-child { background: var(--blue-ultra); }
+body.lp-comparison-page .table-wrap tbody tr.highlight td:first-child { background: #FFFBF5; }
+body.lp-comparison-page .table-wrap tbody tr.highlight:hover td:first-child { background: #FFF5EC; }
 
 /* Right shadow on sticky Anbieter column. */
 
-body.lp-comparison-page .table-scroll-wrap.scrollable .table-wrap table:has(.th-col-anbieter) thead th.th-col-anbieter::after,
-body.lp-comparison-page .table-scroll-wrap.scrollable .table-wrap table:has(.th-col-anbieter) tbody td:first-child::after {
+body.lp-comparison-page .table-scroll-wrap.scrollable .table-wrap thead th.th-col-anbieter::after,
+body.lp-comparison-page .table-scroll-wrap.scrollable .table-wrap tbody td:first-child::after {
   content: ''; position: absolute;
   top: 0; bottom: 0; left: 100%;
   width: 14px;
@@ -472,8 +472,8 @@ body.lp-comparison-page .table-scroll-wrap.scrollable .table-wrap table:has(.th-
   pointer-events: none;
   transition: opacity .25s;
 }
-body.lp-comparison-page .table-scroll-wrap.at-start .table-wrap table:has(.th-col-anbieter) thead th.th-col-anbieter::after,
-body.lp-comparison-page .table-scroll-wrap.at-start .table-wrap table:has(.th-col-anbieter) tbody td:first-child::after {
+body.lp-comparison-page .table-scroll-wrap.at-start .table-wrap thead th.th-col-anbieter::after,
+body.lp-comparison-page .table-scroll-wrap.at-start .table-wrap tbody td:first-child::after {
   opacity: 0;
 }
 body.lp-comparison-page .th-col-price { width: 136px; min-width: 136px; text-align: center; padding-left: 16px; padding-right: 16px; }
@@ -487,7 +487,7 @@ body.lp-comparison-page .th-col-cta { width: 186px; min-width: 186px; text-align
 /* Sticky last column keeps CTA visible during horizontal scroll */
 
 body.lp-comparison-page .table-wrap thead th.th-col-cta,
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta {
+body.lp-comparison-page .table-wrap tbody td.td-cta {
   position: sticky;
   right: 0;
   z-index: 7;
@@ -501,10 +501,10 @@ body.lp-comparison-page .table-wrap thead th.th-col-cta {
   padding-left: 14px;
   padding-right: 14px;
 }
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta {}
+body.lp-comparison-page .table-wrap tbody td.td-cta {}
 /* Soft fade before sticky CTA shows table continues behind */
 body.lp-comparison-page .table-wrap thead th.th-col-cta::before,
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta::before {
+body.lp-comparison-page .table-wrap tbody td.td-cta::before {
   content: ''; position: absolute;
   top: 0; bottom: 0; right: 100%;
   width: 16px;
@@ -514,10 +514,10 @@ body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta::befo
   opacity: 1;
 }
 body.lp-comparison-page .table-wrap thead th.th-col-cta,
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody td.td-cta { position: sticky; }
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr:hover td.td-cta { background: var(--blue-ultra); }
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr.highlight td.td-cta { background: #FFFBF5; }
-body.lp-comparison-page .table-wrap table:has(.th-col-cta) tbody tr.highlight:hover td.td-cta { background: #FFF5EC; }
+body.lp-comparison-page .table-wrap tbody td.td-cta { position: sticky; }
+body.lp-comparison-page .table-wrap tbody tr:hover td.td-cta { background: var(--blue-ultra); }
+body.lp-comparison-page .table-wrap tbody tr.highlight td.td-cta { background: #FFFBF5; }
+body.lp-comparison-page .table-wrap tbody tr.highlight:hover td.td-cta { background: #FFF5EC; }
 
 /* Header tooltips */
 

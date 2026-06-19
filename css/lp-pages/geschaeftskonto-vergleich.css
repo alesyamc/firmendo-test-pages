@@ -74,7 +74,7 @@ body.lp-comparison-page #inp-abhebungen {
   padding-right: 24px;
 }
 
-body.lp-comparison-page .geschaeftskonto-table { min-width: 1522px; }
+body.lp-comparison-page .geschaeftskonto-table { min-width: 1624px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-anbieter { width: 252px; min-width: 252px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-price { width: 148px; min-width: 148px; text-align: center; padding-left: 18px; padding-right: 18px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-promo { width: 154px; min-width: 154px; text-align: center; padding-left: 16px; padding-right: 16px; }
@@ -82,7 +82,7 @@ body.lp-comparison-page .geschaeftskonto-table .th-col-abhebung { width: 154px; 
 body.lp-comparison-page .geschaeftskonto-table .th-col-schufa { width: 146px; min-width: 146px; text-align: center; padding-left: 18px; padding-right: 18px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-rf { width: 170px; min-width: 170px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-cashback { width: 122px; min-width: 122px; text-align: center; }
-body.lp-comparison-page .geschaeftskonto-table .th-col-feature { width: 116px; min-width: 116px; text-align: center; }
+body.lp-comparison-page .geschaeftskonto-table .th-col-feature { width: 150px; min-width: 150px; text-align: center; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-total { width: 176px; min-width: 176px; text-align: center; padding-left: 20px; padding-right: 20px; }
 body.lp-comparison-page .geschaeftskonto-table .th-col-cta { width: 168px; min-width: 168px; }
 
