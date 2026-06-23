@@ -63,20 +63,21 @@ body.lp-comparison-page .praemie-table .price-info-icon {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--blue);
-  color: #fff;
+  background: rgba(34,68,232,0.1);
+  color: var(--blue);
   font-size: 10px;
   font-style: italic;
   font-weight: 800;
   line-height: 1;
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(34,68,232,0.18);
+  box-shadow: none;
 }
 
 body.lp-comparison-page .praemie-table .price-wrap--with-info:hover .price-info-icon,
 body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible .price-info-icon {
-  background: var(--blue-dark);
+  background: var(--blue);
   color: #fff;
+  box-shadow: 0 3px 8px rgba(34,68,232,0.18);
 }
 
 body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible {
