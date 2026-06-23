@@ -41,6 +41,53 @@ body.lp-comparison-page .td-praemie-col {
   text-align: center;
 }
 
+body.lp-comparison-page .praemie-table .price-wrap--with-info {
+  flex-direction: row;
+  justify-content: center;
+  gap: 6px;
+  outline: none;
+}
+
+body.lp-comparison-page .praemie-table .price-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  line-height: 1;
+}
+
+body.lp-comparison-page .praemie-table .price-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(34,68,232,0.18);
+}
+
+body.lp-comparison-page .praemie-table .price-wrap--with-info:hover .price-info-icon,
+body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible .price-info-icon {
+  background: var(--blue-dark);
+  color: #fff;
+}
+
+body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible {
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(34,68,232,0.16);
+}
+
+body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible .price-tooltip {
+  display: block;
+}
+
 body.lp-comparison-page .tooltip-icon {
   display: inline-flex;
   align-items: center;

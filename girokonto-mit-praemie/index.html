@@ -1322,7 +1322,10 @@ function renderTable() {
         </div>
       </td>
       <td class="td-price">
-        <div class="price-wrap">${priceStr}${p.priceNote ? `<div class="price-tooltip">${p.priceNote}</div>` : ''}</div>
+        <div class="price-wrap price-wrap--with-info"${p.priceNote ? ' tabindex="0"' : ''}>
+          <span class="price-main">${priceStr}${p.priceNote ? '<span class="price-info-icon" aria-hidden="true">i</span>' : ''}</span>
+          ${p.priceNote ? `<div class="price-tooltip">${p.priceNote}</div>` : ''}
+        </div>
       </td>
       <td class="td-praemie td-praemie-col"><span class="${praemieClass}">${p.praemieLabel}</span></td>
       <td class="td-condition">${p.bedingung}</td>
