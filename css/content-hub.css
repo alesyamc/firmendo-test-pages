@@ -28,7 +28,10 @@
 .blog-main { max-width: 1160px; margin: 0 auto; padding: 52px 24px 80px; }
 
 /* FILTER */
-.filter-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 44px; padding-bottom: 24px; border-bottom: var(--border-bottom-subtle); }
+.filter-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; padding-bottom: 24px; border-bottom: var(--border-bottom-subtle); }
+.hub-intro-links { margin: 0 0 44px; font-size: 15px; line-height: 1.7; color: var(--gray-600); }
+.hub-intro-links a { color: var(--blue); font-weight: 700; text-decoration: none; }
+.hub-intro-links a:hover { text-decoration: underline; }
 .filter-label { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-300); letter-spacing: var(--letter-spacing-label); text-transform: uppercase; margin-right: 4px; flex-shrink: 0; }
 .filter-btn { padding: 8px 20px; border-radius: 50px; border: var(--border-card); background: #fff; color: var(--gray-500); font-family: 'Poppins', sans-serif; font-size: var(--text-card-body-size); font-weight: var(--font-weight-semibold); cursor: pointer; transition: var(--transition-all-fast); display: flex; align-items: center; gap: 6px; }
 .filter-btn:hover { border-color: var(--accent-color-border); color: var(--accent-color-text); background: var(--accent-color-soft); }
