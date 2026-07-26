@@ -23,7 +23,7 @@ body.lp-comparison-page .td-praemie-value {
   justify-content: center;
   min-height: 24px;
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(34,68,232,0.1);
   color: var(--blue);
   font-size: 15px;
