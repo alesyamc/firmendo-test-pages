@@ -82,15 +82,15 @@ var fQ1Labels = {
 var fDB = {
   einzelunternehmer: {
     kostenlos: [
-      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['Solo-Tarif dauerhaft kostenlos','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['Solo-Tarif dauerhaft kostenlos','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 31.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Kontist', tag:'Speziell für Selbstständige', pros:['Steuervorauszahlungen automatisch berechnet','IBAN sofort – Konto in 8 Minuten','Visa Business Debitkarte inklusive'], price:'Kostenlos im Free-Tarif', affiliate:'https://kontist.com/?ref=firmendo', review:'/kontist-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
-      { name:'Finom', tag:'Konto, Buchhaltung & Neukundenbonus', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'Konto, Buchhaltung & Neukundenbonus', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 31.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Kontist', tag:'Automatische Steuerberechnung', pros:['DATEV & Lexoffice inklusive','Steuervorauszahlungen automatisch','Visa Business Debitkarte'], price:'Kostenlos im Free-Tarif', affiliate:'https://kontist.com/?ref=firmendo', review:'/kontist-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Finom', tag:'All-in-One mit Neukundenaktion', pros:['Rechnungsstellung inklusive','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'All-in-One mit Neukundenaktion', pros:['Rechnungsstellung inklusive','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 31.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Holvi', tag:'All-in-One für Selbstständige', pros:['Buchhaltung & Belege integriert','Rechnungsstellung aus dem Konto','Mehrere Währungen möglich'], price:'Kostenlos im Flex-Tarif', affiliate:'https://holvi.com/?ref=firmendo', review:'/holvi-geschaeftskonto/', top:false }
     ],
     cashback: [
@@ -101,14 +101,14 @@ var fDB = {
   gruender: {
     kostenlos: [
       { name:'FYRST', tag:'Deutsche Bank Tochter – 1. Jahr gratis', pros:['1. Jahr komplett kostenlos','Deutsches IBAN & Bankgarantie','DATEV-Schnittstelle inklusive'], price:'Gratis im 1. Jahr', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['Solo-Tarif dauerhaft kostenlos','350 € Willkommensbonus möglich','Rechnungsstellung inklusive'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'350 € Bonus + 5 % p.a. Zinsen', pros:['Solo-Tarif dauerhaft kostenlos','350 € Willkommensbonus möglich','Rechnungsstellung inklusive'], price:'Solo kostenlos · Aktion bis 31.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
       { name:'FYRST', tag:'DATEV & Buchhaltungs-Integration', pros:['DATEV-Schnittstelle inklusive','Deutsche-Bank-Infrastruktur','Online + Filiale kombinierbar'], price:'Gratis im 1. Jahr', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:true },
-      { name:'Finom', tag:'Buchhaltung + Neukundenaktion', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'Buchhaltung + Neukundenaktion', pros:['DATEV & Lexoffice-Integration','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 31.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Finom', tag:'All-in-One mit 350 € Bonus', pros:['Rechnungsstellung inklusive','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 19.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'All-in-One mit 350 € Bonus', pros:['Rechnungsstellung inklusive','350 € Willkommensbonus möglich','5 % p.a. Zinsen für 5 Monate'], price:'Solo kostenlos · Aktion bis 31.07.2026', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'FYRST', tag:'Deutsch, sicher und vollständig', pros:['1. Jahr kostenlos','DATEV inklusive','Online + Filiale kombinierbar'], price:'Gratis im 1. Jahr', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/fyrst-geschaeftskonto/', top:false }
     ],
     cashback: [
@@ -220,7 +220,7 @@ function fShowResult() {
     html += '<div class="finder-result-header">' + logoHtml + '<div><div class="finder-result-name">' + r.name + '</div><div class="finder-result-tag">' + r.tag + '</div></div></div>';
     html += '<ul class="finder-result-pros">' + r.pros.map(function(p) { return '<li>' + p + '</li>'; }).join('') + '</ul>';
     html += '<div class="finder-result-price">Preis: <strong>' + r.price + '</strong></div>';
-    html += '<div class="finder-result-trust"><span>Redaktionell geprüft</span><span>Stand: Mai 2026</span><span>Kriterienbasiert</span></div>';
+    html += '<div class="finder-result-trust"><span>Redaktionell geprüft</span><span>Stand: Juli 2026</span><span>Kriterienbasiert</span></div>';
     html += '<div class="finder-result-links">';
     html += '<a href="' + r.affiliate + '" class="finder-link-primary" target="_blank" rel="noopener">Jetzt testen →</a>';
     html += '<a href="' + r.review + '" class="finder-link-secondary">Detailtest lesen</a>';
