@@ -236,7 +236,7 @@
       </div>
       <div class="hero-trust-row" aria-label="Vorteile des Vergleichs">
         <span>Kostenlos &amp; ohne Anmeldung</span>
-        <span>10 Prämien-Konten verglichen</span>
+        <span>12 Prämien-Konten verglichen</span>
       </div>
       <div class="hero-author-bar">
         <div class="hero-author-main">
@@ -373,7 +373,7 @@
     <div class="counter-meta">
       <div class="counter-text">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong id="cnt">10</strong> von <span id="cntTotal">10</span> Girokonten mit Prämie
+        <strong id="cnt">12</strong> von <span id="cntTotal">12</span> Girokonten mit Prämie
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
@@ -1121,7 +1121,31 @@ const products = [
     priceNote: '0 € bei erfüllten Bedingungen'
   },
   {
-    id: 'deutsche-bank', name: 'Deutsche Bank Girokonto', brand: 'Deutsche Bank', cat: 'Filialbank',
+    id: 'deutsche-bank-aktiv', name: 'Deutsche Bank AktivKonto', brand: 'Deutsche Bank', cat: 'Filialbank',
+    logo: '<img class="provider-logo-img" src="../images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32">',
+    base: 6.90, rating: 4.0,
+    praemie: 100, praemieLabel: '100 € Gutschrift',
+    bedingung: 'Antrag bis 31.07.2026 + 2 Gehaltseingänge à mind. 1.000 € in 3 Monaten',
+    cashback: '—', zins: '—',
+    kostenlos: false, noEingang: false, praemieArt: 'cash',
+    highlight: false,
+    affiliateUrl: '/go/deutsche-bank-girokonto/',
+    priceNote: '6,90 € monatlicher Grundpreis'
+  },
+  {
+    id: 'deutsche-bank-best', name: 'Deutsche Bank BestKonto', brand: 'Deutsche Bank', cat: 'Filialbank',
+    logo: '<img class="provider-logo-img" src="../images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32">',
+    base: 13.90, rating: 4.0,
+    praemie: 100, praemieLabel: '100 € Gutschrift',
+    bedingung: 'Antrag bis 31.07.2026 + 2 Gehaltseingänge à mind. 1.000 € in 3 Monaten',
+    cashback: '—', zins: '—',
+    kostenlos: false, noEingang: false, praemieArt: 'cash',
+    highlight: false,
+    affiliateUrl: '/go/deutsche-bank-girokonto/',
+    priceNote: '13,90 € monatlicher Grundpreis'
+  },
+  {
+    id: 'deutsche-bank-jung', name: 'Deutsche Bank Das Junge Konto', brand: 'Deutsche Bank', cat: 'Filialbank',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32">',
     base: 0, rating: 4.0,
     praemie: 100, praemieLabel: '100 € Gutschrift',
@@ -1130,7 +1154,7 @@ const products = [
     kostenlos: true, noEingang: false, praemieArt: 'cash',
     highlight: false,
     affiliateUrl: '/go/deutsche-bank-girokonto/',
-    priceNote: 'Das Junge Konto 0 € für Berechtigte bis 30 Jahre; AktivKonto 6,90 €, BestKonto 13,90 € monatlich'
+    priceNote: '0 € für Schüler, Azubis, Studierende und Bundesfreiwilligendienstleistende bis 30 Jahre'
   },
   {
     id: 'dkb', name: 'DKB Girokonto', brand: 'DKB', cat: 'Direktbank',
@@ -1353,9 +1377,9 @@ function renderTable() {
   }
 
   tbody.innerHTML = data.map(p => {
-    const priceStr = p.base === 0
-      ? '<span class="price-green">0 €</span>'
-      : `<span class="u-fw-800">${formatEuro(p.base)}</span>`;
+    const priceStr = p.priceLabel ? `<span class="price-green">${p.priceLabel}</span>` : (p.base === 0
+      ? `<span class="price-green">${p.noEingang ? '0 €' : 'ab 0 €'}</span>`
+      : `<span class="u-fw-800">${formatEuro(p.base)}</span>`);
     const praemieClass = p.praemie > 0 ? 'td-praemie-value' : 'td-praemie-value td-praemie-value--muted';
     return `
     <tr class="${p.highlight ? 'highlight' : ''}">
@@ -1412,7 +1436,7 @@ function renderMobileCards(data) {
         </div>
       </div>
       <div class="mc-spec-grid">
-        <div><span>Grundgebühr</span><strong>${formatEuro(p.base)}</strong></div>
+        <div><span>Grundgebühr</span><strong>${p.priceLabel || (p.base === 0 ? (p.noEingang ? '0 €' : 'ab 0 €') : formatEuro(p.base))}</strong></div>
         <div><span>Prämie</span><strong>${p.praemieLabel}</strong></div>
         <div><span>Bedingung</span><strong>${p.bedingung}</strong></div>
         <div><span>Cashback</span><strong>${p.cashback}</strong></div>
