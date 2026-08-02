@@ -157,3 +157,65 @@ function updateTableScrollState(options = {}) {
     (scrollable && !atEnd);
   scrollHint.classList.toggle('visible', hintVisible);
 }
+
+/* Keep price notes readable above horizontal table scroll containers. */
+(() => {
+  let trigger = null;
+  let tooltip = null;
+
+  const hide = () => {
+    tooltip?.remove();
+    tooltip = null;
+    trigger = null;
+  };
+
+  const isInside = (element, target) => target instanceof Node && element?.contains(target);
+
+  const place = () => {
+    if (!trigger || !tooltip) return;
+    const rect = trigger.getBoundingClientRect();
+    const margin = 16;
+    const left = Math.min(Math.max(rect.left, margin), window.innerWidth - tooltip.offsetWidth - margin);
+    let top = rect.bottom + 12;
+    const opensAbove = top + tooltip.offsetHeight > window.innerHeight - margin;
+
+    if (opensAbove) top = Math.max(margin, rect.top - tooltip.offsetHeight - 12);
+    tooltip.classList.toggle('floating-table-tooltip--above', opensAbove);
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+  };
+
+  const show = nextTrigger => {
+    const source = nextTrigger.querySelector('.price-tooltip');
+    if (!source || trigger === nextTrigger) return;
+
+    hide();
+    trigger = nextTrigger;
+    tooltip = document.createElement('div');
+    tooltip.className = 'floating-table-tooltip';
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.textContent = source.textContent.trim();
+    document.body.append(tooltip);
+    place();
+  };
+
+  document.documentElement.classList.add('floating-table-tooltip-ready');
+  document.addEventListener('mouseover', event => {
+    if (!(event.target instanceof Element)) return;
+    const nextTrigger = event.target.closest('.table-wrap .price-wrap');
+    if (nextTrigger && !isInside(nextTrigger, event.relatedTarget)) show(nextTrigger);
+  });
+  document.addEventListener('mouseout', event => {
+    if (trigger && !isInside(trigger, event.relatedTarget)) hide();
+  });
+  document.addEventListener('focusin', event => {
+    if (!(event.target instanceof Element)) return;
+    const nextTrigger = event.target.closest('.table-wrap .price-wrap');
+    if (nextTrigger) show(nextTrigger);
+  });
+  document.addEventListener('focusout', event => {
+    if (trigger && !isInside(trigger, event.relatedTarget)) hide();
+  });
+  document.addEventListener('scroll', hide, true);
+  window.addEventListener('resize', place);
+})();

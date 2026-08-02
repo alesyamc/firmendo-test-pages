@@ -724,6 +724,41 @@ body.lp-comparison-page .total-breakdown-tooltip::after {
 }
 body.lp-comparison-page .price-wrap:hover .price-tooltip,
 body.lp-comparison-page .total-breakdown:hover .total-breakdown-tooltip { display: block; }
+
+/* Table popovers live in a fixed layer so horizontal scroll containers cannot
+   crop them. The shared table utility supplies this layer for every table. */
+html.floating-table-tooltip-ready body.lp-comparison-page .table-wrap .price-wrap:hover .price-tooltip,
+html.floating-table-tooltip-ready body.lp-comparison-page .table-wrap .price-wrap:focus-visible .price-tooltip {
+  display: none;
+}
+body.lp-comparison-page .floating-table-tooltip {
+  position: fixed;
+  z-index: 1000;
+  max-width: min(380px, calc(100vw - 32px));
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--gray-800);
+  color: #fff;
+  font-size: var(--text-caption-size);
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+}
+body.lp-comparison-page .floating-table-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 18px;
+  border: 6px solid transparent;
+  border-bottom-color: var(--gray-800);
+}
+body.lp-comparison-page .floating-table-tooltip--above::before {
+  top: 100%;
+  bottom: auto;
+  border-top-color: var(--gray-800);
+  border-bottom-color: transparent;
+}
 body.lp-comparison-page .td-price-amount { font-weight: 600; color: var(--gray-800); font-size: 16px; }
 body.lp-comparison-page .td-price-amount.free { color: var(--green); }
 body.lp-comparison-page .td-price-period { font-size: 12px; color: var(--gray-500); font-weight: 500; margin-left: 3px; }
