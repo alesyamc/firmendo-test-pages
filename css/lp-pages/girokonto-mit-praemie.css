@@ -24,16 +24,16 @@ body.lp-comparison-page .td-praemie-value {
   min-height: 24px;
   padding: 3px 10px;
   border-radius: 8px;
-  background: rgba(34,68,232,0.1);
-  color: var(--blue);
+  background: rgba(47,73,179,0.1);
+  color: var(--accent-color-text);
   font-size: 15px;
   font-weight: 600;
   line-height: 1.2;
 }
 
 body.lp-comparison-page .td-praemie-value--muted {
-  background: rgba(34,68,232,0.1);
-  color: var(--blue);
+  background: rgba(47,73,179,0.1);
+  color: var(--accent-color-text);
 }
 
 body.lp-comparison-page .td-praemie,
@@ -63,8 +63,8 @@ body.lp-comparison-page .praemie-table .price-info-icon {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: rgba(34,68,232,0.1);
-  color: var(--blue);
+  background: rgba(47,73,179,0.1);
+  color: var(--accent-color-text);
   font-size: 10px;
   font-style: italic;
   font-weight: 800;
@@ -75,14 +75,14 @@ body.lp-comparison-page .praemie-table .price-info-icon {
 
 body.lp-comparison-page .praemie-table .price-wrap--with-info:hover .price-info-icon,
 body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible .price-info-icon {
-  background: var(--blue);
+  background: var(--accent-color-bg);
   color: #fff;
-  box-shadow: 0 3px 8px rgba(34,68,232,0.18);
+  box-shadow: 0 3px 8px rgba(47,73,179,0.18);
 }
 
 body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible {
   border-radius: 999px;
-  box-shadow: 0 0 0 3px rgba(34,68,232,0.16);
+  box-shadow: 0 0 0 3px rgba(47,73,179,0.16);
 }
 
 body.lp-comparison-page .praemie-table .price-wrap--with-info:focus-visible .price-tooltip {
@@ -170,8 +170,8 @@ body.lp-comparison-page .td-positive {
   color: var(--green);
   font-weight: 600;
 }
-body.lp-comparison-page .td-blue {
-  color: var(--blue);
+body.lp-comparison-page .praemie-table .td-blue {
+  color: var(--accent-color-text);
   font-weight: 600;
 }
 body.lp-comparison-page .td-muted { color: var(--gray-300); }

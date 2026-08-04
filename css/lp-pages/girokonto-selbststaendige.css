@@ -206,8 +206,8 @@ body.lp-comparison-page .preis-badge-td {
   min-width: 56px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--blue);
-  background: var(--blue-light);
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
   padding: 5px 10px;
   border-radius: 20px;
   white-space: nowrap;

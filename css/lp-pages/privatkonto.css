@@ -203,8 +203,8 @@ body.lp-comparison-page .privatkonto-table .td-conditions {
   text-align: left;
 }
 body.lp-comparison-page .privatkonto-table .card-badge {
-  color: var(--blue);
-  background: var(--blue-light);
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
 }
 body.lp-comparison-page .privatkonto-table .green-badge-td {
   display: inline-flex;

@@ -59,8 +59,8 @@ body.lp-comparison-page .guthaben-table .tag {
   width: fit-content;
   font-size: var(--text-mini-label-size);
   font-weight: 650;
-  color: var(--blue);
-  background: var(--blue-light);
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
   border-radius: 20px;
   padding: 3px 8px;
   line-height: 1.2;
@@ -72,8 +72,8 @@ body.lp-comparison-page .guthaben-table .yes-badge {
   justify-content: center;
   width: 24px;
   height: 24px;
-  color: var(--blue);
-  background: var(--blue-light);
+  color: var(--accent-color-text);
+  background: var(--accent-color-soft);
   border-radius: 50%;
 }
 body.lp-comparison-page .guthaben-table .yes-badge svg {
