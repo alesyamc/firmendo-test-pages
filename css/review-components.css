@@ -406,6 +406,141 @@
   border-radius: var(--radius-card-lg);
 }
 
+.review-plan-tabs {
+  padding: var(--space-2xl);
+  border-bottom: 1px solid var(--gray-200);
+  background: linear-gradient(180deg, #f8faff 0%, #fff 100%);
+}
+
+.review-plan-tabs__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: var(--space-lg);
+  color: var(--gray-800);
+}
+
+.review-plan-tabs__intro strong {
+  font-size: 17px;
+}
+
+.review-plan-tabs__intro span {
+  color: var(--gray-600);
+  font-size: 14px;
+}
+
+.review-plan-tablist {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  background: var(--gray-100);
+}
+
+.review-plan-tab {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--gray-600);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+
+.review-plan-tab span,
+.review-plan-tab small {
+  display: block;
+}
+
+.review-plan-tab span {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+}
+
+.review-plan-tab small {
+  margin-top: 3px;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-plan-tab[aria-selected="true"] {
+  background: #fff;
+  color: var(--gray-900);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-plan-tab:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
+}
+
+.review-plan-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.review-plan-panel[hidden] {
+  display: none;
+}
+
+.review-plan-card {
+  min-width: 0;
+  padding: var(--space-xl);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.review-plan-card.is-featured {
+  border-color: rgba(37, 99, 235, 0.35);
+  background: linear-gradient(145deg, #eff6ff 0%, #f5f3ff 100%);
+}
+
+.review-plan-card__name {
+  color: var(--gray-900);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+}
+
+.review-plan-card__price {
+  margin-top: var(--space-sm);
+  color: var(--gray-900);
+  font-size: 25px;
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.15;
+}
+
+.review-plan-card__price span {
+  color: var(--gray-500);
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.review-plan-card p {
+  margin: var(--space-md) 0 0;
+  color: var(--gray-600);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.review-plan-panel__note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--gray-500);
+  font-size: 12px;
+  text-align: right;
+}
+
 .kondi-table-wrap {
   overflow-x: auto;
 }
@@ -1269,6 +1404,19 @@
 }
 
 @media (max-width: 720px) {
+  .review-plan-tablist,
+  .review-plan-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .review-plan-tab small {
+    white-space: normal;
+  }
+
+  .review-plan-panel__note {
+    text-align: left;
+  }
+
   .rechtsformen-table thead {
     display: none;
   }
