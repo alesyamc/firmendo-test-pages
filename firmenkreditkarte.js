@@ -46,12 +46,12 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Qonto Business Credit Card', priceNote: 'Ab 9 €/Monat, Mastercard Debitkarte, DATEV-Export', base: 9, cat: 'Fintech', highlight: false, sortRank: 5,
+    name: 'Qonto Business Credit Card', priceNote: 'Tarifabhängig: Basic ab 9 €/Monat mit 1 physischer Karte; bis 30 physische Karten im Enterprise-Tarif', base: 9, cat: 'Fintech', highlight: false, sortRank: 5,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR','Gründer'],
     cardType: 'Debitkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: '—',
     limit: 'Debit',
-    employeeCards: 'bis 30', employeeCardsSort: 30,
+    employeeCards: '1–30 physische (tarifabhängig)', employeeCardsSort: 30,
     datev: true, belegerfassung: true,
     affiliateUrl: '/go/qonto-business-credit-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
