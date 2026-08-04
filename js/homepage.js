@@ -94,7 +94,7 @@ var fDB = {
       { name:'Holvi', tag:'All-in-One für Selbstständige', pros:['Buchhaltung & Belege integriert','Rechnungsstellung aus dem Konto','Mehrere Währungen möglich'], price:'Kostenlos im Flex-Tarif', affiliate:'https://holvi.com/?ref=firmendo', review:'/holvi-geschaeftskonto/', top:false }
     ],
     cashback: [
-      { name:'Finom', tag:'Cashback & Zinskonto', pros:['5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif','Solo-Tarif dauerhaft kostenlos'], price:'Solo kostenlos · Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
+      { name:'Finom', tag:'Cashback & Zinskonto', pros:['5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif','Solo-Tarif dauerhaft kostenlos'], price:'Solo kostenlos, Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:true },
       { name:'Kontist', tag:'Visa Business Debitkarte', pros:['Visa Business Debitkarte','Steuerberechnung automatisch','IBAN sofort verfügbar'], price:'Kostenlos im Free-Tarif', affiliate:'https://kontist.com/?ref=firmendo', review:'/kontist-geschaeftskonto/', top:false }
     ]
   },
@@ -113,7 +113,7 @@ var fDB = {
     ],
     cashback: [
       { name:'Vivid Business', tag:'Cashback & moderne Features', pros:['Cashback auf Kartenzahlungen','Unterkonten für Budgets','Virtuelle Karten verfügbar'], price:'Start-Tarif kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/vivid-business/', top:true },
-      { name:'Finom', tag:'Cashback & Zinskonto', pros:['5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif','Solo-Tarif dauerhaft kostenlos'], price:'Solo kostenlos · Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
+      { name:'Finom', tag:'Cashback & Zinskonto', pros:['5 % p.a. Zinsen für 5 Monate','Cashback je nach Tarif','Solo-Tarif dauerhaft kostenlos'], price:'Solo kostenlos, Basic ab 10,99 €/Monat', affiliate:'https://finom.co/?ref=firmendo', review:'/finom-geschaeftskonto/', top:false }
     ]
   },
   gmbh: {

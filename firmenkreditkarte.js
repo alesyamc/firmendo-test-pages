@@ -1,6 +1,6 @@
 const products = [
   {
-    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos · Visa Debitkarte · bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
+    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos, Visa Debitkarte, bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.8,
     cashbackRate: 4, cashbackLabel: 'bis 4 %',
@@ -11,7 +11,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Finom Prime Card', priceNote: 'Kostenlos · Visa Debitkarte · bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
+    name: 'Finom Prime Card', priceNote: 'Kostenlos, Visa Debitkarte, bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     cardType: 'Debitkarte', rating: 4.5,
     cashbackRate: 3, cashbackLabel: 'bis 3 %',
@@ -22,7 +22,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'moss Free', priceNote: 'Kostenlos · Echter Kreditrahmen bis 2,5 Mio. € · 60 Tage Zahlungsziel', base: 0, cat: 'Fintech', highlight: false, sortRank: 3,
+    name: 'moss Free', priceNote: 'Kostenlos, Echter Kreditrahmen bis 2,5 Mio. €, 60 Tage Zahlungsziel', base: 0, cat: 'Fintech', highlight: false, sortRank: 3,
     suitable: ['GmbH & UG','AG','GbR','eK','Gründer'],
     cardType: 'Kreditkarte', rating: 4.7,
     cashbackRate: 0, cashbackLabel: '—',
@@ -35,7 +35,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/moss.svg" alt="moss Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Revolut Business Debit Card', priceNote: 'Kostenlos · Mastercard Debitkarte · Multi-Währung', base: 0, cat: 'Fintech', highlight: false, sortRank: 4,
+    name: 'Revolut Business Debit Card', priceNote: 'Kostenlos, Mastercard Debitkarte, Multi-Währung', base: 0, cat: 'Fintech', highlight: false, sortRank: 4,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.4,
     cashbackRate: 0, cashbackLabel: '—',
@@ -46,7 +46,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Qonto Business Credit Card', priceNote: 'Ab 9 €/Monat · Mastercard Debitkarte · DATEV-Export', base: 9, cat: 'Fintech', highlight: false, sortRank: 5,
+    name: 'Qonto Business Credit Card', priceNote: 'Ab 9 €/Monat, Mastercard Debitkarte, DATEV-Export', base: 9, cat: 'Fintech', highlight: false, sortRank: 5,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR','Gründer'],
     cardType: 'Debitkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: '—',
@@ -57,7 +57,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'American Express Business Gold Card', priceNote: '216 €/Jahr · Charge-Karte · Membership Rewards', base: 216, cat: 'Kreditkarten-Anbieter', highlight: false, sortRank: 8,
+    name: 'American Express Business Gold Card', priceNote: '216 €/Jahr, Charge-Karte, Membership Rewards', base: 216, cat: 'Kreditkarten-Anbieter', highlight: false, sortRank: 8,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR'],
     cardType: 'Kreditkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: 'Membership Rewards',
@@ -68,7 +68,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/american-express.svg" alt="American Express Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'N26 Business Card', priceNote: 'Kostenlos · Mastercard Debitkarte · 0,1% Cashback', base: 0, cat: 'Online-Bank', highlight: false, sortRank: 6,
+    name: 'N26 Business Card', priceNote: 'Kostenlos, Mastercard Debitkarte, 0,1% Cashback', base: 0, cat: 'Online-Bank', highlight: false, sortRank: 6,
     suitable: ['Freiberufler','Einzelunternehmen'],
     cardType: 'Debitkarte', rating: 4.2,
     cashbackRate: 0.1, cashbackLabel: '0,1 %',
@@ -79,7 +79,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Kontist Premium Karte', priceNote: '9 €/Monat · Visa Debitkarte · Steuerautomatisierung', base: 9, cat: 'Fintech', highlight: false, sortRank: 7,
+    name: 'Kontist Premium Karte', priceNote: '9 €/Monat, Visa Debitkarte, Steuerautomatisierung', base: 9, cat: 'Fintech', highlight: false, sortRank: 7,
     suitable: ['Freiberufler','Einzelunternehmen'],
     cardType: 'Debitkarte', rating: 4.3,
     cashbackRate: 0, cashbackLabel: '—',
