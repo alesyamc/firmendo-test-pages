@@ -65,6 +65,7 @@ const products = [
     employeeCards: 'Corporate Cards', employeeCardsSort: 999,
     datev: false, belegerfassung: false,
     affiliateUrl: '/go/american-express-business-gold-card/',
+    ctaDisabled: true,
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/american-express.svg" alt="American Express Logo" loading="lazy" decoding="async">'
   },
   {
@@ -263,10 +264,12 @@ function renderDesktopTable(data) {
       <td class="td-center">${buchhaltungCell}</td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table${p.highlight ? ' highlighted' : ''}${p.mutedCta ? ' btn-table--muted' : ''}">
-            ${p.ctaLabel || 'Zum Anbieter'}
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          ${p.ctaDisabled
+            ? '<span class="btn-table btn-table--muted" aria-disabled="true">Zum Anbieter</span>'
+            : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table${p.highlight ? ' highlighted' : ''}${p.mutedCta ? ' btn-table--muted' : ''}">
+                ${p.ctaLabel || 'Zum Anbieter'}
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>`}
         </div>
       </td>
     </tr>`;
@@ -347,10 +350,12 @@ function renderMobileCards(data) {
 
       <div class="mc-footer">
         <div class="mc-footer-note">${p.priceNote || ''}</div>
-        <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
-          ${p.ctaLabel || 'Zum Anbieter'}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        ${p.ctaDisabled
+          ? '<span class="mc-cta mc-cta--disabled" aria-disabled="true">Zum Anbieter</span>'
+          : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
+              ${p.ctaLabel || 'Zum Anbieter'}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>`}
       </div>
     </div>`;
   }).join('');
