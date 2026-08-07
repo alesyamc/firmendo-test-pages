@@ -63,6 +63,39 @@ body.lp-comparison-page .td-security {
   font-size: var(--text-caption-size);
 }
 
+body.lp-comparison-page .td-security .security-country,
+body.lp-comparison-page .mc-spec-security .security-country {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body.lp-comparison-page .td-security .security-label,
+body.lp-comparison-page .mc-spec-security .security-label {
+  display: block;
+  margin-top: 6px;
+  color: var(--gray-700);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+body.lp-comparison-page .mc-spec-security .mc-spec-value {
+  display: block;
+}
+
+body.lp-comparison-page .mc-spec-security .security-label {
+  font-size: 13px;
+}
+
 body.lp-comparison-page .tagesgeld-table tbody td.u-fs-caption,
 body.lp-comparison-page .tagesgeld-table tbody td.u-cell-center-gray-700-600,
 body.lp-comparison-page .tagesgeld-table tbody td.u-nowrap-muted-center {
