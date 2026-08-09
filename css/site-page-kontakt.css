@@ -247,7 +247,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--accent-color-soft); color: var(--accent-color-text);
   font-size: var(--text-caption-size); font-weight: 600;
-  border-radius: 50px; padding: 5px 12px;
+  border-radius: 8px; padding: 5px 12px;
   cursor: pointer; border: 1.5px solid transparent;
   transition: background .2s, border-color .2s;
   user-select: none;
