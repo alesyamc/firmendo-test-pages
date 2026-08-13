@@ -246,7 +246,7 @@
       <div class="hero-author-meta">
         <div class="hero-meta-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          Zuletzt aktualisiert: 10. August 2026
+          Zuletzt aktualisiert: 4. August 2026
         </div>
         <div class="hero-meta-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -383,7 +383,7 @@
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Stand: 10. August 2026 · Alle Preise zzgl. MwSt.
+        Stand: 4. August 2026 · Alle Preise zzgl. MwSt.
       </div>
     </div>
     <div class="counter-actions">
@@ -595,7 +595,7 @@
               <div class="mini-stat"><div class="mini-stat-val">6 €</div><div class="mini-stat-label">ab Monat 7 für juristische Personen</div></div>
               <div class="mini-stat"><div class="mini-stat-val">50</div><div class="mini-stat-label">Buchungen inkl.</div></div>
             </div>
-            <p class="mini-anbieter-desc">FYRST Base ist für Gewerbetreibende und Freiberufler ohne Kontoführungsgebühr verfügbar. Für andere Rechtsformen kostet das erste BASE Konto 6 € monatlich. Enthalten sind 50 beleglose Buchungsposten, eine Debit Mastercard und Bargeldzugang über Cash Group und Postbank.</p>
+            <p class="mini-anbieter-desc">FYRST Base ist für natürliche Personen ohne Kontoführungsgebühr verfügbar. Juristische Personen erhalten den Tarif 6 Monate kostenlos, danach kostet er 6 € monatlich. Enthalten sind 50 beleglose Buchungsposten, eine Debit Mastercard und Bargeldzugang über Cash Group und Postbank.</p>
             <a href="/firmendo-test-pages/go/fyrst-base/" target="_blank" rel="noopener sponsored nofollow" class="mini-anbieter-cta">Jetzt eröffnen →</a>
           </div>
           <div class="mini-anbieter-right">
@@ -965,16 +965,18 @@ const products = [
     logo: '<img class="provider-logo-img" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async" width="256" height="256">'
   },
   {
-    name: 'FYRST Base', priceNote: 'Base, 0 €/Monat für Gewerbetreibende und Freiberufler, 50 beleglose Buchungsposten inkl., 0,19 €/weitere, Debit Mastercard inkl.', base: 0, txCost: 0.19, txFree: 50, abhebeFree: 999, abhebePct: 0, abhebeMin: 0, cat: 'Direktbank', price: 0, highlight: false,
+    name: 'FYRST Base', priceNote: 'Base, 0 €/Monat für natürliche Personen, 50 beleglose Buchungsposten inkl., 0,19 €/weitere, Debit Mastercard inkl.', base: 0, txCost: 0.19, txFree: 50, abhebeFree: 999, abhebePct: 0, abhebeMin: 0, cat: 'Direktbank', price: 0, highlight: false,
     targetGroup: 'natürliche Personen',
+    promo: '3,5 % p.a.', promoNote: '3,5 % Zinsen p.a. für 3 Monate auf das FYRST Tagesgeldkonto.',
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     schufa: true, rating: 4.3, cashback: '—', cashbackSort: 0, intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/fyrst-base/', reviewUrl: '/fyrst-geschaeftskonto/',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/fyrst.svg" alt="FYRST Logo" loading="lazy" decoding="async" width="16" height="16">'
   },
   {
-    name: 'FYRST Base', priceNote: 'Base für andere Rechtsformen: 6 €/Monat, 50 beleglose Buchungsposten inkl., 0,19 €/weitere, Debit Mastercard inkl.', base: 6, txCost: 0.19, txFree: 50, abhebeFree: 999, abhebePct: 0, abhebeMin: 0, cat: 'Direktbank', price: 6, highlight: false,
+    name: 'FYRST Base', priceNote: 'Base für juristische Personen: 6 Monate ohne Grundpreis, danach 6 €/Monat, 50 beleglose Buchungsposten inkl., 0,19 €/weitere, Debit Mastercard inkl.', base: 6, baseIntroLabel: '6 Mon. 0 €', baseIntroNote: '6 Monate ohne Grundpreis, danach 6 €/Monat.', txCost: 0.19, txFree: 50, abhebeFree: 999, abhebePct: 0, abhebeMin: 0, cat: 'Direktbank', price: 6, highlight: false,
     targetGroup: 'juristische Personen',
+    promo: '6 Mon. 0 € + 3,5 %', promoNote: '6 Monate ohne Grundpreis, danach 6 €/Monat. Zusätzlich 3,5 % Zinsen p.a. für 3 Monate auf das FYRST Tagesgeldkonto.',
     suitable: ['GmbH & UG','Gründer'],
     schufa: true, rating: 4.3, cashback: '—', cashbackSort: 0, intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/fyrst-base/', reviewUrl: '/fyrst-geschaeftskonto/',
