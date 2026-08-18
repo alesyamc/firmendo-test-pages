@@ -14,7 +14,7 @@ body.lp-comparison-page {
 
 body.lp-comparison-page .depot-table .th-col-anbieter { width: 276px; min-width: 276px; }
 body.lp-comparison-page .depot-table .th-col-fee { width: 126px; min-width: 126px; text-align: center; }
-body.lp-comparison-page .depot-table .th-col-praemie { width: 166px; min-width: 166px; text-align: center; }
+body.lp-comparison-page .depot-table .th-col-praemie { width: 220px; min-width: 220px; text-align: center; }
 body.lp-comparison-page .depot-table .th-col-type { width: 136px; min-width: 136px; text-align: center; }
 body.lp-comparison-page .depot-table .th-col-minvol { width: 154px; min-width: 154px; }
 body.lp-comparison-page .depot-table .th-col-haltefrist { width: 126px; min-width: 126px; }
@@ -22,11 +22,84 @@ body.lp-comparison-page .depot-table .th-col-ziel { width: 150px; min-width: 150
 body.lp-comparison-page .depot-table .th-col-etf { width: 132px; min-width: 132px; text-align: center; }
 body.lp-comparison-page .depot-table .th-col-order { width: 112px; min-width: 112px; text-align: center; }
 body.lp-comparison-page .depot-table .th-col-cta { width: 170px; min-width: 170px; }
+
+body.lp-comparison-page .depot-table .td-praemie-col { text-align: center; }
+
+body.lp-comparison-page .depot-table .price-wrap--with-info {
+  flex-direction: row;
+  justify-content: center;
+  gap: 6px;
+  outline: none;
+}
+
+body.lp-comparison-page .depot-table .price-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  line-height: 1;
+}
+
+body.lp-comparison-page .depot-table .td-praemie-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: rgba(47,73,179,0.1);
+  color: var(--accent-color-text);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+body.lp-comparison-page .depot-table .td-praemie-value--muted {
+  background: var(--gray-100);
+  color: var(--gray-500);
+}
+
+body.lp-comparison-page .depot-table .price-info-icon {
+  display: inline-flex;
+  flex: 0 0 16px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(47,73,179,0.1);
+  color: var(--accent-color-text);
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+body.lp-comparison-page .depot-table .price-wrap--with-info:hover .price-info-icon,
+body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible .price-info-icon {
+  background: var(--accent-color-bg);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(47,73,179,0.18);
+}
+
+body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible {
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(47,73,179,0.16);
+}
+
+body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible .price-tooltip {
+  display: block;
+}
 body.lp-comparison-page .brand-logo-text { font-weight: 900; font-size: 13px; line-height: 1; }
 body.lp-comparison-page .brand-logo-text.comdirect { color: #0066B3; }
 body.lp-comparison-page .brand-logo-text.consorsbank { color: #E5690A; }
 body.lp-comparison-page .brand-logo-text.targobank { color: #0B3D91; }
 body.lp-comparison-page .brand-logo-text.wuestenrot { color: #5B2D8E; }
+body.lp-comparison-page .brand-logo-text.maxblue { color: #0077B5; font-size: 12px; }
+body.lp-comparison-page .brand-logo-text.fidelity { color: #2F704D; font-size: 11px; }
 body.lp-comparison-page .brand-logo-text.direkt1822 { color: #008800; }
 body.lp-comparison-page .brand-logo-text.lynx { color: #C00; }
 body.lp-comparison-page .brand-logo-text.scalable { color: #1A6FFF; }
