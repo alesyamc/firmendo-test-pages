@@ -260,7 +260,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 17. August 2026
+            Zuletzt aktualisiert: 10. August 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -420,7 +420,7 @@
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Stand: 17. August 2026
+        Stand: 10. August 2026
       </div>
     </div>
     <div class="counter-actions">
@@ -1387,7 +1387,7 @@ const products = [
   },
   {
     // verified July 2026
-    name: 'ING Geschäftskonto', priceNote: '6 Monate ohne Grundpreis und Transaktionskosten, Gründer im ersten Geschäftsjahr 12 Monate, danach Bestpreis ab 0 € + 0,30 €/Transaktion, 3 gratis Abhebungen/Monat', promo: '6–12 Mon. 0 €', promoNote: '6 Monate ohne Grundpreis und Transaktionskosten; Gründer im ersten Geschäftsjahr 12 Monate.', base: 0, txCost: 0.30, txFree: 0, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
+    name: 'ING Geschäftskonto', priceNote: '6 Monate kostenlos, Gründer 12 Monate kostenlos, bis zu 200 € Gutschrift bis 16.08.2026, danach Bestpreis ab 0 € + 0,30 €/Transaktion, 3 gratis Abhebungen/Monat', promo: '200 € + 6 Mon. 0 €', promoNote: 'Bis 16.08.2026 bis zu 200 € Gutschrift bei aktiver Nutzung. Zusätzlich 6 Monate ohne Grundpreis und Transaktionskosten; Gründer im ersten Geschäftsjahr 12 Monate.', base: 0, txCost: 0.30, txFree: 0, abhebePct: 0, abhebeMin: 2, cat: 'Online-Bank', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','OHG'],
     schufa: true, rating: 4.0, cashback: '—', intl: false, datev: true, accounting: true,
     affiliateUrl: '/go/ing-geschaeftskonto/', reviewUrl: '/ing-geschaeftskonto/',
@@ -1547,7 +1547,7 @@ function basePriceMarkup(p, zeroText = '0 €') {
     return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">Temporäre Aktion: 0 € Grundpreis bis 31.03.2027, danach 12,90 €/Monat.</span></span>';
   }
   if (p.name === 'ING Geschäftskonto' && p.base === 0) {
-    return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">Kostenlose Anfangszeit: 6 Monate ohne Grundpreis und Transaktionskosten, Gründer im ersten Geschäftsjahr 12 Monate.</span></span>';
+    return '<span class="price-wrap"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">Kostenlose Anfangszeit: 6 Monate ohne Grundpreis und Transaktionskosten, Gründer im ersten Geschäftsjahr 12 Monate, bis zu 200 € Gutschrift bis 16.08.2026.</span></span>';
   }
   if (p.baseAction && p.base === 0) {
     return `<span class="price-wrap price-wrap--base-action"><span class="price-green">0 €</span><span class="price-hint">Aktion</span><span class="price-tooltip">${p.baseActionNote}</span></span>`;
