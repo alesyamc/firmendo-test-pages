@@ -246,7 +246,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 2. September 2026
+            Zuletzt aktualisiert: 11. September 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -372,7 +372,7 @@
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Stand: 2. September 2026
+        Stand: 11. September 2026
       </div>
     </div>
     <div class="counter-actions">
@@ -480,9 +480,9 @@
     </div>
   </td>
   <td class="td-center"><span class="price-green">0 €</span></td>
-  <td class="td-praemie-col"><div class="price-wrap price-wrap--with-info" tabindex="0" aria-label="Prämienbedingungen anzeigen"><span class="price-main"><span class="td-praemie-value">Bis 100 €</span><span class="price-info-icon" aria-hidden="true">i</span></span><div class="price-tooltip">Depoteröffnung + Bedingungen</div></div></td>
+  <td class="td-praemie-col"><div class="price-wrap price-wrap--with-info" tabindex="0" aria-label="Prämienbedingungen anzeigen"><span class="price-main"><span class="td-praemie-value">Bis 300 €</span><span class="price-info-icon" aria-hidden="true">i</span></span><div class="price-tooltip">Depoteröffnung, Sparplan &amp; Trades; keine Depotübertrag-Prämie</div></div></td>
   <td class="td-center"><span class="td-badge badge-blue">Barprämie</span></td>
-  <td><span class="table-text">Depoteröffnung + Bedingungen</span></td>
+  <td><span class="table-text">Depoteröffnung, Sparplan &amp; Trades; keine Depotübertrag-Prämie</span></td>
   <td><span class="table-text">—</span></td>
   <td><span class="table-text">Neukunden</span></td>
   <td class="td-bool"><span class="td-badge badge-ja"><svg class="td-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Ja</span></td>
@@ -585,7 +585,7 @@
     <div class="mobile-cards" id="mobileCards"></div>
   </div>
   <div class="table-note-wrap">
-    <p class="table-note">*Maßgeblich sind immer die aktuellen Aktionsbedingungen des jeweiligen Anbieters. Stand: 2. September 2026. Aktionen können zeitlich befristet sein und an Mindestvolumen, Haltefristen, Neukundenstatus oder weitere Bedingungen geknüpft sein. Bei Eröffnung über unsere Links können wir eine Provision erhalten.</p>
+    <p class="table-note">*Maßgeblich sind immer die aktuellen Aktionsbedingungen des jeweiligen Anbieters. Stand: 11. September 2026. Aktionen können zeitlich befristet sein und an Mindestvolumen, Haltefristen, Neukundenstatus oder weitere Bedingungen geknüpft sein. Bei Eröffnung über unsere Links können wir eine Provision erhalten.</p>
   </div>
 </div>
 
@@ -1056,8 +1056,9 @@ const products = [
   {
     name: '1822direkt', fullname: '1822direkt Depot', cat: 'Online-Bank',
     logo: '<img class="provider-logo-img" src="../images/mini-logos/1822direkt.png" alt="1822direkt Logo" loading="lazy" decoding="async" width="180" height="180">',
-    praemie: 100, praemieLabel: 'Bis 100 €', typ: 'bar',
-    minvol: 0, minvolLabel: 'Depoteröffnung + Bedingungen', haltefrist: '—',
+    praemie: 300, praemieLabel: 'Bis 300 €', typ: 'bar',
+    praemieNote: 'Depoteröffnung, Sparplan & Trades; keine Depotübertrag-Prämie',
+    minvol: 0, minvolLabel: 'Depoteröffnung, Sparplan & Trades', haltefrist: '—',
     zielgruppe: 'neukunde', zielLabel: 'Neukunden',
     etf: true, orderAb: '9,90 €',
     highlight: false,
