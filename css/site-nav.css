@@ -910,6 +910,11 @@
     align-items: flex-start;
     gap: 4px;
     padding: 16px 5vw 20px;
+    max-height: calc(100dvh - var(--shell-nav-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
     background: #fff;
     border-bottom: var(--border-bottom-nav);
     box-shadow: 0 8px 24px rgba(34, 68, 232, 0.08);
@@ -975,10 +980,12 @@
 
   #site-nav .sn-links.open .sn-submenu {
     position: static;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
-    margin: 4px 0 0 10px;
+    margin: 4px 0 0;
     padding: 0;
+    box-sizing: border-box;
     background: transparent;
     border: var(--border-none);
     border-radius: 0;
@@ -990,8 +997,12 @@
   }
 
   #site-nav .sn-links.open .sn-submenu a {
+    width: 100%;
+    min-width: 0;
     min-height: 58px;
     padding: 10px 14px !important;
+    box-sizing: border-box;
+    white-space: normal;
     color: var(--gray-800, #111845);
     font-size: 1rem;
     font-weight: var(--font-weight-semibold);
@@ -1012,11 +1023,15 @@
   }
 
   #site-nav .sn-links.open .sn-submenu-tabs {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding: 0;
   }
 
   #site-nav .sn-links.open .sn-submenu-tabs-inner {
     display: block;
+    min-width: 0;
   }
 
   #site-nav .sn-links.open .sn-submenu-nav {
@@ -1049,6 +1064,10 @@
     grid-template-rows: none;
     gap: 10px;
     min-height: 0;
+  }
+
+  #site-nav .sn-links.open .sn-submenu-list li {
+    min-width: 0;
   }
 
   #site-nav .sn-links.open .sn-dropdown-tests .sn-submenu-list li:last-child {
