@@ -537,6 +537,7 @@
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
   gap: 12px;
+  min-width: 0;
 }
 
 #site-nav .sn-dropdown-banking .sn-submenu-tabs {
@@ -606,6 +607,7 @@
 
 #site-nav .sn-submenu-panel {
   display: none;
+  min-width: 0;
 }
 
 #site-nav .sn-submenu-panel.is-active {
@@ -629,7 +631,12 @@
   display: grid;
   grid-template-rows: repeat(4, minmax(54px, auto));
   gap: 6px;
+  min-width: 0;
   min-height: calc(4 * 54px + 3 * 6px);
+}
+
+#site-nav .sn-submenu-list li {
+  min-width: 0;
 }
 
 #site-nav .sn-dropdown-banking .sn-submenu-list {
@@ -656,8 +663,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
+  min-width: 0;
   min-height: 54px;
   padding: 13px 14px !important;
+  box-sizing: border-box;
+  white-space: normal;
   border-radius: 12px !important;
   background: #ffffff;
   border: 1px solid transparent;
@@ -716,6 +727,7 @@
 
 #site-nav .sn-submenu-list a::after {
   content: "→";
+  flex-shrink: 0;
   color: rgba(34, 68, 232, 0.82);
   font-size: 1.2rem;
   font-weight: var(--font-weight-bold);
