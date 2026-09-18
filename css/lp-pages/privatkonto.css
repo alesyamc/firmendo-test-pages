@@ -187,10 +187,9 @@ body.lp-comparison-page .privatkonto-table .th-col-conditions { width: 250px; mi
 body.lp-comparison-page .privatkonto-table .th-col-type { width: 148px; min-width: 148px; text-align: center; }
 body.lp-comparison-page .privatkonto-table .th-col-card,
 body.lp-comparison-page .privatkonto-table .th-col-dispo { width: 104px; min-width: 104px; text-align: center; }
-body.lp-comparison-page .privatkonto-table .th-col-suitable { width: 168px; min-width: 168px; text-align: center; }
+body.lp-comparison-page .privatkonto-table .th-col-suitable { width: 200px; min-width: 200px; text-align: left; }
 body.lp-comparison-page .privatkonto-table .th-col-cta { width: 174px; min-width: 174px; text-align: center; }
-body.lp-comparison-page .privatkonto-table td:nth-child(2),
-body.lp-comparison-page .privatkonto-table td:nth-child(4),
+body.lp-comparison-page .privatkonto-table td:nth-child(3),
 body.lp-comparison-page .privatkonto-table td:nth-child(5),
 body.lp-comparison-page .privatkonto-table td:nth-child(6),
 body.lp-comparison-page .privatkonto-table td:nth-child(7) {
@@ -201,6 +200,8 @@ body.lp-comparison-page .privatkonto-table .td-conditions {
   line-height: 1.45;
   color: var(--gray-500);
   text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 body.lp-comparison-page .privatkonto-table .card-badge {
   color: var(--accent-color-text);
@@ -257,13 +258,7 @@ body.lp-comparison-page .privatkonto-table .td-price .gray-badge-td {
   border-radius: 0;
 }
 
-body.lp-comparison-page .privatkonto-table td:nth-child(4) .card-badge {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-body.lp-comparison-page .privatkonto-table td:nth-child(7) .green-badge-td,
-body.lp-comparison-page .privatkonto-table td:nth-child(7) .gray-badge-td {
+body.lp-comparison-page .privatkonto-table .td-center .card-badge {
   font-size: 14px;
   font-weight: 600;
 }
