@@ -1,6 +1,6 @@
 const products = [
   {
-    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos, Visa Debitkarte, bis 1 % Cashback auf alle Einkäufe', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
+    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos, Visa Debitkarte, bis 1 % Cashback auf Einkäufe außer Bargeldabhebungen und SEPA-Überweisungen', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.8,
     cashbackRate: 1, cashbackLabel: 'bis 1 %',
@@ -12,7 +12,7 @@ const products = [
   },
   {
     name: 'Finom Business-Karte', priceNote: 'Solo kostenlos mit virtueller Visa-Debitkarte; Solo 0 %, Basic 1 %, Smart 3 %, Core 4 % Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
-    suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
+    suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.5,
     cashbackRate: 4, cashbackLabel: 'bis 4 %',
     limit: 'Debit',
@@ -57,7 +57,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'American Express Business Gold Card', priceNote: '175 €/Jahr, Charge-Karte, Membership Rewards, bis zu 99 Zusatzkarten', base: 175, cat: 'Kreditkarten-Anbieter', highlight: false, sortRank: 8,
+    name: 'American Express Business Gold Card', priceNote: '175 €/Jahr, Charge-Karte, Membership Rewards, bis zu 99 Zusatzkarten inklusive; Zahlungsziel auf Antrag 20 Tage nach Zugang der Abrechnung', base: 175, cat: 'Kreditkarten-Anbieter', highlight: false, sortRank: 8,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR'],
     cardType: 'Kreditkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: 'Membership Rewards',
@@ -81,7 +81,7 @@ const products = [
   },
   {
     name: 'Kontist Start Karte', priceNote: '11 €/Monat zzgl. USt., physische und virtuelle Visa Debitkarten, automatische Steuerberechnung', base: 11, cat: 'Fintech', highlight: false, sortRank: 7,
-    suitable: ['Freiberufler','Einzelunternehmen'],
+    suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','GbR','Gründer'],
     cardType: 'Debitkarte', rating: 4.3,
     cashbackRate: 0, cashbackLabel: '—',
     limit: 'Debit',
