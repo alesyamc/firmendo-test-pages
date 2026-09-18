@@ -1,9 +1,9 @@
 const products = [
   {
-    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos, Visa Debitkarte, bis 4% Cashback', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
+    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos, Visa Debitkarte, bis 1 % Cashback auf alle Einkäufe', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.8,
-    cashbackRate: 4, cashbackLabel: 'bis 4 %',
+    cashbackRate: 1, cashbackLabel: 'bis 1 %',
     limit: 'Debit',
     employeeCards: 'bis 50', employeeCardsSort: 50,
     datev: false, belegerfassung: true,
@@ -11,10 +11,10 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Finom Prime Card', priceNote: 'Kostenlos, Visa Debitkarte, bis 3% Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
+    name: 'Finom Business-Karte', priceNote: 'Solo kostenlos mit virtueller Visa-Debitkarte; Solo 0 %, Basic 1 %, Smart 3 %, Core 4 % Cashback', base: 0, cat: 'Fintech', highlight: false, sortRank: 2,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     cardType: 'Debitkarte', rating: 4.5,
-    cashbackRate: 3, cashbackLabel: 'bis 3 %',
+    cashbackRate: 4, cashbackLabel: 'bis 4 %',
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: true, belegerfassung: true,
@@ -22,20 +22,20 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'moss Free', priceNote: 'Kostenlos, Echter Kreditrahmen bis 2,5 Mio. €, 60 Tage Zahlungsziel', base: 0, cat: 'Fintech', highlight: false, sortRank: 3,
+    name: 'moss Free', priceNote: 'Kostenloses Debit-Paket bis 3 Nutzer mit unbegrenzten Karten; Kredit-Finanzierung in kostenpflichtigen Paketen', base: 0, cat: 'Fintech', highlight: false, sortRank: 3,
     suitable: ['GmbH & UG','AG','GbR','eK','Gründer'],
-    cardType: 'Kreditkarte', rating: 4.7,
+    cardType: 'Debitkarte', rating: 4.7,
     cashbackRate: 0, cashbackLabel: '—',
-    limit: 'bis 2,5 Mio. €',
+    limit: 'Debit',
     employeeCards: 'unbegrenzt', employeeCardsSort: 999,
-    datev: true, belegerfassung: true,
+    datev: false, belegerfassung: true,
     affiliateUrl: 'https://getmoss.com/?ref=firmendo',
     ctaLabel: 'Konditionen prüfen',
     mutedCta: true,
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/moss.svg" alt="moss Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Revolut Business Debit Card', priceNote: 'Kostenlos, Mastercard Debitkarte, Multi-Währung', base: 0, cat: 'Fintech', highlight: false, sortRank: 4,
+    name: 'Revolut Business Debit Card', priceNote: 'Basic ab 10 €/Monat, Debitkarte, Multi-Währung', base: 10, cat: 'Fintech', highlight: false, sortRank: 4,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.4,
     cashbackRate: 0, cashbackLabel: '—',
@@ -46,7 +46,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Qonto Business Credit Card', priceNote: 'Tarifabhängig: Basic ab 9 €/Monat mit 1 physischer Karte; bis 30 physische Karten im Enterprise-Tarif', base: 9, cat: 'Fintech', highlight: false, sortRank: 5,
+    name: 'Qonto Business Credit Card', priceNote: 'Tarifabhängig: Basic 9 €/Monat bei jährlicher Abrechnung zzgl. USt. mit 1 physischer und 2 virtuellen Karten; bis 30 physische Karten im Enterprise-Tarif', base: 9, cat: 'Fintech', highlight: false, sortRank: 5,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR','Gründer'],
     cardType: 'Debitkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: '—',
@@ -57,19 +57,19 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'American Express Business Gold Card', priceNote: '216 €/Jahr, Charge-Karte, Membership Rewards', base: 216, cat: 'Kreditkarten-Anbieter', highlight: false, sortRank: 8,
+    name: 'American Express Business Gold Card', priceNote: '175 €/Jahr, Charge-Karte, Membership Rewards, bis zu 99 Zusatzkarten', base: 175, cat: 'Kreditkarten-Anbieter', highlight: false, sortRank: 8,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','AG','GbR'],
     cardType: 'Kreditkarte', rating: 4.6,
     cashbackRate: 0, cashbackLabel: 'Membership Rewards',
     limit: 'variabel',
-    employeeCards: 'Corporate Cards', employeeCardsSort: 999,
+    employeeCards: 'bis 99 inklusive', employeeCardsSort: 99,
     datev: false, belegerfassung: false,
     affiliateUrl: '/go/american-express-business-gold-card/',
     ctaDisabled: true,
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/american-express.svg" alt="American Express Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'N26 Business Card', priceNote: 'Kostenlos, Mastercard Debitkarte, 0,1% Cashback', base: 0, cat: 'Online-Bank', highlight: false, sortRank: 6,
+    name: 'N26 Business Card', priceNote: 'Standard kostenlos mit virtueller Mastercard Debitkarte, 0,1 % Cashback', base: 0, cat: 'Online-Bank', highlight: false, sortRank: 6,
     suitable: ['Freiberufler','Einzelunternehmen'],
     cardType: 'Debitkarte', rating: 4.2,
     cashbackRate: 0.1, cashbackLabel: '0,1 %',
@@ -80,7 +80,7 @@ const products = [
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async">'
   },
   {
-    name: 'Kontist Premium Karte', priceNote: '9 €/Monat, Visa Debitkarte, Steuerautomatisierung', base: 9, cat: 'Fintech', highlight: false, sortRank: 7,
+    name: 'Kontist Start Karte', priceNote: '11 €/Monat zzgl. USt., physische und virtuelle Visa Debitkarten, automatische Steuerberechnung', base: 11, cat: 'Fintech', highlight: false, sortRank: 7,
     suitable: ['Freiberufler','Einzelunternehmen'],
     cardType: 'Debitkarte', rating: 4.3,
     cashbackRate: 0, cashbackLabel: '—',
@@ -163,14 +163,15 @@ function renderTable() {
   const budget = fdGetValue('fd-budget');
 
   let data = products.filter(p => {
+    const monthlyBase = p.name === 'American Express Business Gold Card' ? p.base / 12 : p.base;
     if (suit && !p.suitable.includes(suit)) return false;
     if (type === 'Debitkarte' && p.cardType !== 'Debitkarte') return false;
     if (type === 'Kreditkarte' && p.cardType !== 'Kreditkarte') return false;
     if (type === 'Prepaid' && p.cardType !== 'Prepaid') return false;
-    if (budget === 'free' && p.base > 0) return false;
-    if (budget === 'low' && (p.base <= 0 || p.base > 10)) return false;
-    if (budget === 'mid' && (p.base <= 10 || p.base > 50)) return false;
-    if (budget === 'premium' && p.base < 50) return false;
+    if (budget === 'free' && monthlyBase > 0) return false;
+    if (budget === 'low' && (monthlyBase <= 0 || monthlyBase > 10)) return false;
+    if (budget === 'mid' && (monthlyBase <= 10 || monthlyBase > 50)) return false;
+    if (budget === 'premium' && monthlyBase < 50) return false;
     if (activeFilters.cashback && !(p.cashbackRate > 0)) return false;
     if (activeFilters.employees && (p.employeeCardsSort <= 1 || p.employeeCards === 'solo')) return false;
     if (activeFilters.datev && !p.datev) return false;
@@ -184,6 +185,10 @@ function renderTable() {
       if (highlightOrder) return highlightOrder;
       let av = a[sortKey];
       let bv = b[sortKey];
+      if (sortKey === 'base') {
+        if (a.name === 'American Express Business Gold Card') av /= 12;
+        if (b.name === 'American Express Business Gold Card') bv /= 12;
+      }
       if (typeof av === 'string') av = av.toLowerCase();
       if (typeof bv === 'string') bv = bv.toLowerCase();
       if (av === bv) return (a.sortRank || 999) - (b.sortRank || 999);
