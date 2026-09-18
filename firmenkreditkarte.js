@@ -6,7 +6,7 @@ const products = [
     cashbackRate: 1, cashbackLabel: 'bis 1 %',
     limit: 'Debit',
     employeeCards: 'bis 50', employeeCardsSort: 50,
-    datev: false, belegerfassung: true,
+    datev: true, belegerfassung: true,
     affiliateUrl: '/go/vivid-business-firmenkarte/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
