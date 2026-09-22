@@ -60,6 +60,11 @@ body.lp-comparison-page .depot-table .td-praemie-value--muted {
   color: var(--gray-500);
 }
 
+body.lp-comparison-page .depot-table .td-praemie-value--voucher {
+  flex-direction: column;
+  white-space: normal;
+}
+
 body.lp-comparison-page .depot-table .price-info-icon {
   display: inline-flex;
   flex: 0 0 16px;
