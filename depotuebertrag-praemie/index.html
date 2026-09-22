@@ -680,8 +680,8 @@
     </div>
   </td>
   <td class="td-center"><span class="price-green">0 €</span></td>
-  <td class="td-praemie-col"><div class="price-wrap price-wrap--with-info" tabindex="0" aria-label="Prämienbedingungen anzeigen"><span class="price-main"><span class="td-praemie-value">25 € WUNSCHGUTSCHEIN</span><span class="price-info-icon" aria-hidden="true">i</span></span><div class="price-tooltip">Erstes Direkt-Depot bis 30.10.2026 eröffnen · mindestens 100 € investieren · Wertpapiere 3 Monate halten · keine Depotübertrag-Prämie</div></div></td>
-  <td class="td-center"><span class="td-badge badge-blue">Gutschein</span></td>
+  <td class="td-praemie-col"><span class="td-praemie-value">25 € WUNSCHGUTSCHEIN</span></td>
+  <td class="td-center"><div class="price-wrap price-wrap--with-info" tabindex="0" aria-label="Gutscheinbedingungen anzeigen"><span class="price-main"><span class="td-badge badge-blue">Gutschein</span><span class="price-info-icon" aria-hidden="true">i</span></span><div class="price-tooltip">Erstes Direkt-Depot bis 30.10.2026 eröffnen · mindestens 100 € investieren · Wertpapiere 3 Monate halten · keine Depotübertrag-Prämie</div></div></td>
   <td><span class="table-text">100 € Anlage</span></td>
   <td><span class="table-text">3 Monate</span></td>
   <td><span class="table-text">Erstes ING-Depot</span></td>
@@ -1547,13 +1547,13 @@ function renderTable() {
       </td>
       <td class="td-center"><span class="${p.depotFeeLabel && !p.depotFeeLabel.startsWith('0 €') ? 'table-text' : 'price-green'}">${p.depotFeeLabel || '0 €'}</span></td>
       <td class="td-praemie-col">
-        ${p.praemieLabel !== 'ohne konkrete Prämie' ? `
+        ${p.typ === 'gutschein' ? `<span class="td-praemie-value">${p.praemieLabel}</span>` : p.praemieLabel !== 'ohne konkrete Prämie' ? `
         <div class="price-wrap price-wrap--with-info" tabindex="0" aria-label="Prämienbedingungen anzeigen">
           <span class="price-main"><span class="td-praemie-value">${p.praemieLabel}</span><span class="price-info-icon" aria-hidden="true">i</span></span>
           <div class="price-tooltip">${p.praemieNote || `${p.minvolLabel !== '—' ? p.minvolLabel : `Orderpreis ab ${p.orderAb}`}${p.haltefrist !== '—' ? ` · ${p.haltefrist}` : ''}`}</div>
         </div>` : `<span class="td-praemie-value td-praemie-value--muted">${p.praemieLabel}</span>`}
       </td>
-      <td class="td-center"><span class="td-badge badge-blue">${{bar:'Barprämie',zins:'Tagesgeld',freetrades:'Free Trades',prozent:'% Prämie',fondsanteile:'Fondsanteile',gutschein:'Gutschein'}[p.typ]}</span></td>
+      <td class="td-center">${p.typ === 'gutschein' ? `<div class="price-wrap price-wrap--with-info" tabindex="0" aria-label="Gutscheinbedingungen anzeigen"><span class="price-main"><span class="td-badge badge-blue">Gutschein</span><span class="price-info-icon" aria-hidden="true">i</span></span><div class="price-tooltip">${p.praemieNote}</div></div>` : `<span class="td-badge badge-blue">${{bar:'Barprämie',zins:'Tagesgeld',freetrades:'Free Trades',prozent:'% Prämie',fondsanteile:'Fondsanteile'}[p.typ]}</span>`}</td>
       <td><span class="table-text">${p.minvolLabel}</span></td>
       <td><span class="table-text">${p.haltefrist}</span></td>
       <td><span class="table-text">${p.zielLabel}</span></td>
