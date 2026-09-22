@@ -25,6 +25,14 @@ body.lp-comparison-page .depot-table .th-col-cta { width: 170px; min-width: 170p
 
 body.lp-comparison-page .depot-table .td-praemie-col { text-align: center; }
 
+body.lp-comparison-page .depot-table .badge-orange {
+  background: #FFF0E2;
+  color: #8F4109;
+  font-size: var(--text-caption-size);
+  font-weight: 700;
+  padding: 4px 10px;
+}
+
 body.lp-comparison-page .depot-table .price-wrap--with-info {
   flex-direction: row;
   justify-content: center;
