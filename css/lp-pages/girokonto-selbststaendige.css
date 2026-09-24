@@ -93,13 +93,11 @@ body.lp-comparison-page #kriterien + .content-section .vergleich-col li {
 body.lp-comparison-page #kriterien + .content-section .vergleich-col ul li::before {
   content: '\2022';
   left: 0;
-  top: 0.75em;
-  transform: translateY(-50%);
   width: 16px;
   color: var(--blue-dark);
   font-size: 14px;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -147,33 +145,13 @@ body.lp-comparison-page #kosten + .content-section .editorial-table td:nth-child
 }
 
 body.lp-comparison-page #gmbh + .content-section .editorial-table {
-  min-width: 980px;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 body.lp-comparison-page #gmbh + .content-section .editorial-table th:first-child,
 body.lp-comparison-page #gmbh + .content-section .editorial-table td:first-child {
-  width: 25%;
-}
-
-body.lp-comparison-page #gmbh + .content-section .editorial-table th:nth-child(2),
-body.lp-comparison-page #gmbh + .content-section .editorial-table td:nth-child(2) {
-  width: 15%;
-}
-
-body.lp-comparison-page #gmbh + .content-section .editorial-table th:nth-child(3),
-body.lp-comparison-page #gmbh + .content-section .editorial-table td:nth-child(3) {
-  width: 23%;
-}
-
-body.lp-comparison-page #gmbh + .content-section .editorial-table th:nth-child(4),
-body.lp-comparison-page #gmbh + .content-section .editorial-table td:nth-child(4) {
-  width: 25%;
-}
-
-body.lp-comparison-page #gmbh + .content-section .editorial-table th:nth-child(5),
-body.lp-comparison-page #gmbh + .content-section .editorial-table td:nth-child(5) {
-  width: 12%;
+  width: 1%;
+  min-width: 0;
 }
 
 /* Vergleichstabelle: align this page with the current LP comparison component. */
