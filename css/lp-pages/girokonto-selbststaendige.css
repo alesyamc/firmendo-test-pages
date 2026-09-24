@@ -115,6 +115,15 @@ body.lp-comparison-page #kosten + .content-section .editorial-table td:first-chi
   min-width: 0;
 }
 
+body.lp-comparison-page #kosten + .content-section .editorial-table-item-copy {
+  min-width: 0;
+}
+
+body.lp-comparison-page #kosten + .content-section .editorial-table-item strong {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
 body.lp-comparison-page #kosten + .content-section .editorial-table th:nth-child(2),
 body.lp-comparison-page #kosten + .content-section .editorial-table td:nth-child(2) {
   width: 14%;
