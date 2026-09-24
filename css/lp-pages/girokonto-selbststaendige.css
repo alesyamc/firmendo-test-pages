@@ -93,11 +93,13 @@ body.lp-comparison-page #kriterien + .content-section .vergleich-col li {
 body.lp-comparison-page #kriterien + .content-section .vergleich-col ul li::before {
   content: '\2022';
   left: 0;
+  top: 0.75em;
+  transform: translateY(-50%);
   width: 16px;
   color: var(--blue-dark);
   font-size: 14px;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1;
   text-align: center;
 }
 
