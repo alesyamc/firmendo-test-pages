@@ -151,33 +151,6 @@ body.lp-comparison-page #gmbh + .content-section .editorial-table {
   table-layout: fixed;
 }
 
-body.lp-comparison-page #gmbh + .content-section .editorial-table-scroll-hint {
-  max-width: none;
-  min-height: 18px;
-  margin: 0 0 6px;
-  color: var(--gray-500);
-}
-
-body.lp-comparison-page #gmbhTableWrap {
-  scrollbar-width: thin;
-  scrollbar-color: var(--blue) var(--gray-200);
-}
-
-body.lp-comparison-page #gmbhTableWrap::-webkit-scrollbar {
-  height: 10px;
-}
-
-body.lp-comparison-page #gmbhTableWrap::-webkit-scrollbar-track {
-  background: var(--gray-200);
-  border-radius: 999px;
-}
-
-body.lp-comparison-page #gmbhTableWrap::-webkit-scrollbar-thumb {
-  background: var(--blue);
-  border: 2px solid var(--gray-200);
-  border-radius: 999px;
-}
-
 body.lp-comparison-page #gmbh + .content-section .editorial-table th:first-child,
 body.lp-comparison-page #gmbh + .content-section .editorial-table td:first-child {
   width: 25%;
