@@ -39,6 +39,8 @@ body.lp-comparison-page .editorial-table td {
   font-size: 15px;
   line-height: 1.45;
   white-space: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
   background: rgba(255, 255, 255, 0.84);
 }
 
@@ -126,12 +128,20 @@ body.lp-comparison-page .editorial-table-item-meta {
 body.lp-comparison-page .editorial-table-price {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 6px 10px;
   border-radius: 999px;
   background: rgba(34, 68, 232, 0.08);
   color: var(--blue-dark);
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
   margin: 0 auto;
 }
 
