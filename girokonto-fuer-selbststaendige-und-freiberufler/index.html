@@ -133,19 +133,19 @@
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/breadcrumbs.css">
 <link rel="stylesheet" href="../css/content-layout.css">
-<link rel="stylesheet" href="../css/inline-utilities.css?v=20260924-1">
+<link rel="stylesheet" href="../css/inline-utilities.css">
 <link rel="stylesheet" href="../css/toc.css">
 <link rel="stylesheet" href="../css/headings.css?v=7">
 <link rel="stylesheet" href="../css/summary-box.css?v=3">
-<link rel="stylesheet" href="../css/highlight-boxes.css?v=20260924-1">
+<link rel="stylesheet" href="../css/highlight-boxes.css?v=3">
 <link rel="stylesheet" href="../css/internal-links.css?v=3">
 <link rel="stylesheet" href="../css/faq.css">
 <link rel="stylesheet" href="../css/lp-hero.css?v=9">
-<link rel="stylesheet" href="../css/content-blocks.css?v=20260924-1">
+<link rel="stylesheet" href="../css/content-blocks.css?v=10">
 <link rel="stylesheet" href="../css/lp-comparison-table.css?v=14">
 <link rel="stylesheet" href="../css/lp-content-components.css?v=3">
-<link rel="stylesheet" href="../css/editorial-table.css?v=20260924-1">
-<link rel="stylesheet" href="../css/lp-pages/girokonto-selbststaendige.css?v=17">
+<link rel="stylesheet" href="../css/editorial-table.css">
+<link rel="stylesheet" href="../css/lp-pages/girokonto-selbststaendige.css?v=9">
 <link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20260606-9">
 <script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
 </head>
@@ -321,7 +321,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 24. September 2026
+            Zuletzt aktualisiert: 18. September 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -507,9 +507,10 @@
         <div class="td-anbieter">
           <div class="td-logo"><img class="provider-logo-img" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async" width="144" height="144"></div>
           <div>
-            <span class="highlight-badge">Empfehlung Freelancer</span>
             <div class="td-name">Finom Solo</div>
             <div class="td-cat">Fintech</div>
+
+            <span class="highlight-badge">Empfehlung Freelancer</span>
           </div>
         </div>
       </td>
@@ -1375,13 +1376,8 @@
 
         <p>Für die GmbH-Kontoeröffnung benötigen Sie: Handelsregisterauszug, Gesellschaftsvertrag (notariell beglaubigt), Gesellschafterliste, Ausweise aller wirtschaftlich Berechtigten sowie Transparenzregisternachweis. Die meisten Fintechs ermöglichen die Kontoeröffnung vollständig digital — lediglich bei Filialbanken ist ggf. ein Termin erforderlich.</p>
 
-        <div class="scroll-hint editorial-table-scroll-hint" id="gmbhScrollHint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-          Tabelle nach rechts scrollen für alle Spalten
-        </div>
-        <div class="table-scroll-wrap" id="gmbhTableScrollWrap">
-          <div class="editorial-table-wrap" id="gmbhTableWrap">
-            <table class="editorial-table">
+        <div class="editorial-table-wrap">
+          <table class="editorial-table">
             <thead>
               <tr>
                 <th>Anbieter</th>
@@ -1442,8 +1438,7 @@
                 <td><span class="editorial-table-status-pill editorial-table-status-pill--bad" aria-label="DATEV nicht verfügbar"></span></td>
               </tr>
             </tbody>
-            </table>
-          </div>
+          </table>
         </div>
       </div>
 
@@ -2095,10 +2090,10 @@ function renderTable() {
         <div class="td-anbieter">
           <div class="td-logo">${p.logo}</div>
           <div>
-            ${p.highlight ? '<span class="highlight-badge">Empfehlung Freelancer</span>' : ''}
             <div class="td-name">${tariffName(p)}</div>
             <div class="td-cat">${p.typ}</div>
             ${p.targetGroup ? `<span class="tariff-group-text">Tarif für ${p.targetGroup.replace(' & ', ', ')}</span>` : ''}
+            ${p.highlight ? '<span class="highlight-badge">Empfehlung Freelancer</span>' : ''}
           </div>
         </div>
       </td>
@@ -2147,11 +2142,11 @@ function renderMobileCards(data) {
       <div class="mc-head">
         <div class="mc-logo">${p.logo}</div>
         <div class="mc-head-text">
-          ${p.highlight ? '<span class="mc-badge">Empfehlung Freelancer</span>' : ''}
           <div class="mc-name">${tariffName(p)}</div>
           <div class="mc-meta">
             <span class="mc-cat">${p.typ}</span>
             ${p.targetGroup ? `<span class="tariff-group-text">Tarif für ${p.targetGroup.replace(' & ', ', ')}</span>` : ''}
+            ${p.highlight ? '<span class="mc-badge">Empfehlung Freelancer</span>' : ''}
           </div>
         </div>
         <div class="mc-price-main">
@@ -2182,11 +2177,6 @@ function renderMobileCards(data) {
 
 function updateScrollState() {
   updateTableScrollState();
-  updateTableScrollState({
-    tableId: 'gmbhTableWrap',
-    shellId: 'gmbhTableScrollWrap',
-    hintId: 'gmbhScrollHint'
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -2214,8 +2204,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (defaultTh) defaultTh.classList.add('asc');
   const tableWrap = document.getElementById('tableWrap');
   if (tableWrap) tableWrap.addEventListener('scroll', updateScrollState, { passive: true });
-  const gmbhTableWrap = document.getElementById('gmbhTableWrap');
-  if (gmbhTableWrap) gmbhTableWrap.addEventListener('scroll', updateScrollState, { passive: true });
   window.addEventListener('resize', updateScrollState, { passive: true });
   renderTable();
   setTimeout(updateScrollState, 50);
