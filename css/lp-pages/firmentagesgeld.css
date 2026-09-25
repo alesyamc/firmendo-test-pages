@@ -708,7 +708,9 @@ body.lp-comparison-page .deposit-protection-table th {
   font-weight: 750;
   color: #fff;
   border-bottom: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
   line-height: 1.35;
 }
 
@@ -725,6 +727,8 @@ body.lp-comparison-page .deposit-protection-table td {
   vertical-align: middle;
   background: #fff;
   line-height: 1.42;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 body.lp-comparison-page .deposit-protection-table td:first-child,
