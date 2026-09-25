@@ -1,5 +1,46 @@
 /* Vergleich: page-specific additions. Shared filter/table chrome lives in lp-comparison-table.css. */
 
+body.lp-gruender-page .post-checklist {
+  background: #fff;
+  border: var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+body.lp-gruender-page .post-checklist .check-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: var(--gray-800);
+  font-size: var(--text-ui-large-size);
+  font-weight: var(--font-weight-bold);
+}
+
+body.lp-gruender-page .post-checklist ul { list-style: none; padding: 0; margin: 0; }
+body.lp-gruender-page .post-checklist li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: var(--border-bottom-muted); color: var(--gray-700); font-size: var(--text-ui-size); }
+body.lp-gruender-page .post-checklist li:last-child { border-bottom: var(--border-none); padding-bottom: 0; }
+body.lp-gruender-page .post-checklist .check-item { width: 100%; border: 0; border-radius: 12px; background: transparent; padding: 10px 0; gap: 12px; }
+body.lp-gruender-page .post-checklist .check-item:hover { background: rgba(34, 68, 232, 0.04); }
+body.lp-gruender-page .post-checklist .check-item input[type="checkbox"] { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+body.lp-gruender-page .post-checklist .check-box { border-color: var(--green); }
+body.lp-gruender-page .post-checklist .check-text { flex: 1; }
+body.lp-gruender-page .post-checklist-compact { padding: 16px 18px; }
+body.lp-gruender-page .post-checklist-compact .check-title { margin-bottom: 10px; }
+body.lp-gruender-page .post-checklist-compact li { padding: 3px 0; }
+body.lp-gruender-page .post-checklist-compact .check-item { border-radius: 8px; gap: 10px; padding: 5px 0; }
+body.lp-gruender-page .post-checklist-compact .check-box { width: 18px; height: 18px; border-radius: 5px; }
+body.lp-gruender-page .post-checklist-compact .check-box::after { width: 4px; height: 8px; }
+body.lp-gruender-page .post-checklist-compact .check-text { font-size: 16px; line-height: 1.4; }
+body.lp-gruender-page .anbieter-section-actions { display: flex; justify-content: flex-start; margin: 22px 0 30px; }
+body.lp-gruender-page .anbieter-section-actions .hero-cta.secondary { width: auto; max-width: 100%; box-shadow: none; }
+
+@media (max-width: 640px) {
+  body.lp-gruender-page .anbieter-section-actions .hero-cta.secondary { width: 100%; justify-content: center; }
+}
+
 body.lp-comparison-page .vergleich-filter-primary {
   display: grid;
   grid-template-columns: minmax(180px, 0.7fr) minmax(180px, 0.7fr) minmax(520px, 1.6fr);

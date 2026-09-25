@@ -630,6 +630,7 @@ body.lp-comparison-page .td-logo {
 }
 body.lp-comparison-page .td-logo svg { max-width: 55px; max-height: 40px; }
 body.lp-comparison-page .provider-logo-img { max-width: 55px; max-height: 40px; object-fit: contain; }
+body.lp-comparison-page .provider-logo-text { font-weight: 800; line-height: 1; }
 /* Highlight row logo treatment. */
 body.lp-comparison-page .table-wrap tr.highlight .td-logo {
   background: #fff;
@@ -685,6 +686,7 @@ body.lp-comparison-page .total-breakdown {
   gap: 4px;
   cursor: help;
 }
+body.lp-comparison-page .price-wrap--base-action { position: relative; }
 body.lp-comparison-page .price-hint,
 body.lp-comparison-page .total-breakdown-hint {
   display: inline-flex;

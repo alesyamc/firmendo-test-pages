@@ -2,6 +2,10 @@
   padding-top: 42px;
 }
 
+.author-section {
+  position: relative;
+}
+
 .author-header-inner {
   align-items: center;
 }
