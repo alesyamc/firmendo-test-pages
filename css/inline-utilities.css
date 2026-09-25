@@ -457,7 +457,7 @@
 .u-method-criteria { display:flex; flex-wrap:wrap; gap:6px 18px; flex:1; min-width:280px; }
 .u-method-note { margin-top:14px; background:rgba(255,255,255,0.65); border:var(--border-subtle); border-radius:10px; padding:9px 14px; display:flex; align-items:center; gap:8px; }
 .u-method-note-text { color:var(--gray-400); line-height: var(--line-height-ui); }
-.u-float-img-right { float:right; width:280px; max-width:45%; border-radius:16px; object-fit:cover; margin:4px 0 20px 32px; box-shadow:0 4px 24px rgba(34,68,232,0.10); }
+.u-float-img-right { float:right; width:280px; height:auto; max-width:45%; border-radius:16px; object-fit:cover; margin:4px 0 20px 32px; box-shadow:0 4px 24px rgba(34,68,232,0.10); }
 .u-clear-both { clear:both; }
 .u-compare-table-shell { background:#fff; border:1.5px solid var(--gray-200); border-radius:14px; overflow:hidden; margin:20px 0 24px; }
 .u-grid-3-border-strong { display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:2px solid var(--gray-200); }

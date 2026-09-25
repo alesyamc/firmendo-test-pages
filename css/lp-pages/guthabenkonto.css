@@ -121,6 +121,10 @@ body.lp-comparison-page .pc-title.pc-title-no-icon::before {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   body.lp-comparison-page #was-ist + .content-section .u-float-img-right {
-    margin-top: 18px;
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 18px 0 24px;
   }
 }
