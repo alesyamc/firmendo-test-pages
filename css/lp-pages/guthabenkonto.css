@@ -107,7 +107,7 @@ body.lp-comparison-page .editorial-table-basiskonto td:first-child {
 section.content-section { background: var(--gray-50); padding: 64px 5vw 80px; border-bottom: 1px solid var(--gray-200); }
 .content-body { min-width: 0; }
 body.lp-comparison-page #was-ist + .content-section .u-float-img-right {
-  margin-top: 4px;
+  margin-top: 96px;
 }
 
 body.lp-comparison-page .pc-title.pc-title-no-icon {
