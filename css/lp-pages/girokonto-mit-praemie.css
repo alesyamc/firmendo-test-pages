@@ -21,6 +21,9 @@ body.lp-comparison-page .td-praemie-value {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
+  max-width: calc(100% - 23px);
+  box-sizing: border-box;
   min-height: 24px;
   padding: 3px 10px;
   border-radius: 8px;
@@ -29,7 +32,10 @@ body.lp-comparison-page .td-praemie-value {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.2;
-  white-space: nowrap;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 body.lp-comparison-page .td-praemie-value--muted {
@@ -45,6 +51,8 @@ body.lp-comparison-page .td-praemie-col {
 body.lp-comparison-page .praemie-table .price-wrap--with-info {
   flex-direction: row;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
   gap: 6px;
   outline: none;
 }
@@ -53,6 +61,9 @@ body.lp-comparison-page .praemie-table .price-main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   gap: 7px;
   line-height: 1;
 }
