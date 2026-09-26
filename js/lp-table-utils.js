@@ -80,6 +80,12 @@ function fdInitControls(options = {}) {
     const menu = fd.querySelector('.fd-menu');
     if (!trigger || !menu) return;
 
+    if (!menu.hasAttribute('aria-label') && !menu.hasAttribute('aria-labelledby')) {
+      const filterLabel = fd.closest('.filter-group')?.querySelector('.filter-label')?.textContent.trim();
+      const fallbackLabel = trigger.getAttribute('aria-label') || trigger.textContent.trim();
+      menu.setAttribute('aria-label', filterLabel || fallbackLabel || 'Auswahl');
+    }
+
     trigger.addEventListener('click', event => {
       event.stopPropagation();
       const willOpen = !fd.classList.contains('open');

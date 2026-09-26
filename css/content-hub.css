@@ -32,7 +32,7 @@
 .hub-intro-links { margin: 0 0 44px; font-size: 15px; line-height: 1.7; color: var(--gray-600); }
 .hub-intro-links a { color: var(--blue); font-weight: 700; text-decoration: none; }
 .hub-intro-links a:hover { text-decoration: underline; }
-.filter-label { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-300); letter-spacing: var(--letter-spacing-label); text-transform: uppercase; margin-right: 4px; flex-shrink: 0; }
+.filter-label { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-500); letter-spacing: var(--letter-spacing-label); text-transform: uppercase; margin-right: 4px; flex-shrink: 0; }
 .filter-btn { padding: 8px 20px; border-radius: 50px; border: var(--border-card); background: #fff; color: var(--gray-500); font-family: 'Poppins', sans-serif; font-size: var(--text-card-body-size); font-weight: var(--font-weight-semibold); cursor: pointer; transition: var(--transition-all-fast); display: flex; align-items: center; gap: 6px; }
 .filter-btn:hover { border-color: var(--accent-color-border); color: var(--accent-color-text); background: var(--accent-color-soft); }
 .filter-btn.active { border-color: var(--accent-color-border); color: #fff; background: var(--accent-color-bg); }
@@ -40,9 +40,9 @@
 
 /* SECTION DIVIDER */
 .sec-div { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; margin-top: 10px; }
-.sec-div-title { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-300); letter-spacing: var(--letter-spacing-eyebrow); text-transform: uppercase; white-space: nowrap; }
+.sec-div-title { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-500); letter-spacing: var(--letter-spacing-eyebrow); text-transform: uppercase; white-space: nowrap; }
 .sec-div-line { flex: 1; height: 1px; background: var(--gray-200); }
-.sec-div-pill { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-300); background: var(--gray-100); border: var(--border-subtle); padding: 3px 12px; border-radius: 50px; white-space: nowrap; }
+.sec-div-pill { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--gray-500); background: var(--gray-100); border: var(--border-subtle); padding: 3px 12px; border-radius: 50px; white-space: nowrap; }
 
 /* === HERO POST (full-width photo + overlay) === */
 .hero-post {
@@ -227,7 +227,7 @@
 .empty[hidden],
 .nl-msg[hidden] { display: none !important; }
 .btn-load:hover { background: var(--accent-color-bg); color: #fff; }
-.prog-text { font-size: var(--text-caption-size); color: var(--gray-300); margin-top: 12px; }
+.prog-text { font-size: var(--text-caption-size); color: var(--gray-500); margin-top: 12px; }
 
 /* EMPTY */
 .empty { text-align: center; padding: 80px 24px; }

@@ -1,4 +1,18 @@
 (() => {
+  document.querySelectorAll('.author-pop-trigger').forEach((trigger) => {
+    if (!trigger.matches('button, a, input, select, textarea, [role="button"]')) {
+      trigger.setAttribute('role', 'button');
+      trigger.setAttribute('tabindex', '0');
+    }
+  });
+
+  document.querySelectorAll('.kondi-table-wrap').forEach((tableWrap) => {
+    tableWrap.setAttribute('tabindex', '0');
+    if (!tableWrap.hasAttribute('aria-label')) {
+      tableWrap.setAttribute('aria-label', 'Tabelle horizontal scrollen');
+    }
+  });
+
   function closeAuthorPopovers(exceptPopover) {
     document.querySelectorAll('.author-popover.visible').forEach((popover) => {
       if (popover !== exceptPopover) {

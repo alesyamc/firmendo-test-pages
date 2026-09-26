@@ -1671,7 +1671,7 @@ p.mini-anbieter-desc {
   border-top: 1px solid var(--gray-200);
 }
 
-.mini-pros-cons-col h5 {
+.mini-pros-cons-col h4 {
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1679,11 +1679,11 @@ p.mini-anbieter-desc {
   margin-bottom: 8px;
 }
 
-.mini-pros-col h5 {
+.mini-pros-col h4 {
   color: var(--green);
 }
 
-.mini-cons-col h5 {
+.mini-cons-col h4 {
   color: var(--red);
 }
 

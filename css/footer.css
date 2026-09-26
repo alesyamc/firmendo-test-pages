@@ -26,7 +26,7 @@ footer {
 .footer-col-title {
   font-size: var(--text-eyebrow-size);
   font-weight: var(--font-weight-extrabold);
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
   margin-bottom: var(--space-2xl);
@@ -63,7 +63,7 @@ footer {
 
 .footer-copy {
   font-size: var(--text-caption-size);
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.65);
 }
 
 .footer-links {
@@ -73,7 +73,7 @@ footer {
 
 .footer-links a {
   font-size: var(--text-caption-size);
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
   transition: var(--transition-color);
 }
@@ -82,7 +82,7 @@ footer {
 
 .affiliate-note {
   font-size: var(--text-caption-size);
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.65);
   margin-top: var(--space-xs);
 }
 
