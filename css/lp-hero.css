@@ -2,7 +2,7 @@
 
 /* LP-specific hero extensions. Shared hero primitives live in css/hero.css. */
 body.lp-comparison-page {
-  --lp-highlight-marker-color: var(--accent-orange-bg);
+  --lp-highlight-marker-color: var(--accent-orange-display);
   --border-blue: 2px solid var(--accent-color-border);
   --border-blue-soft: 1px solid var(--accent-color-soft);
   --border-blue-soft-strong: 1.5px solid var(--accent-color-soft);

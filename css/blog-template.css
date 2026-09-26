@@ -31,7 +31,7 @@
   letter-spacing: -0.8px; line-height: var(--line-height-heading);
   margin-bottom: 16px;
 }
-.post-hero h1 .accent { color: var(--orange); }
+.post-hero h1 .accent { color: var(--accent-orange-display); }
 .post-hero .subtitle {
   font-size: 18px; color: var(--gray-500); line-height: var(--line-height-body);
   margin-bottom: 28px;

@@ -1,6 +1,6 @@
 body.lp-comparison-page {
   --lp-highlight-marker-width: 4px;
-  --lp-highlight-marker-color: var(--accent-orange-bg);
+  --lp-highlight-marker-color: var(--accent-orange-display);
 }
 
 /* FILTER BAR */

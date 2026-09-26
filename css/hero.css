@@ -1,6 +1,6 @@
 /* Shared hero primitives for LP and review pages. Page-specific hero CSS may extend these rules. */
 .hero {
-  --lp-highlight-marker-color: var(--accent-orange-bg);
+  --lp-highlight-marker-color: var(--accent-orange-display);
   --border-blue: 2px solid var(--accent-color-border);
   --shadow-cta: 0 4px 16px rgba(47,73,179,0.24);
   background: linear-gradient(180deg, #F8FAFF 0%, #F2F5FC 52%, #EDF1F8 100%);

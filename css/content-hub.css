@@ -12,7 +12,7 @@
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 11px; color: #46527A; font-size: var(--text-eyebrow-size); font-weight: var(--font-weight-semibold); line-height: 1.2; background: transparent; border: 0; border-radius: 0; padding: 0; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
 .hero-eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lp-highlight-marker-color, var(--accent-orange-bg)); flex: 0 0 7px; margin-top: 1px; }
 .hero-h1 { font-size: var(--text-page-hero-title-size); font-weight: var(--font-weight-black); color: var(--gray-800); letter-spacing: var(--letter-spacing-brand-tight); line-height: 1.1; margin-bottom: 18px; }
-.hero-h1 em { font-style: italic; color: var(--accent-orange-text); }
+.hero-h1 em { font-style: italic; color: var(--accent-orange-display); }
 .hero-sub { font-size: var(--text-body-size); color: var(--gray-500); line-height: var(--line-height-body); margin-bottom: 40px; max-width: 540px; margin-left: auto; margin-right: auto; }
 .search-wrap { position: relative; max-width: 480px; margin: 0 auto 28px; }
 .search-wrap svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-300); pointer-events: none; }
