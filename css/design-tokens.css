@@ -16,6 +16,8 @@
   --accent-color-underline: var(--accent-color-soft-strong);
   --heading-accent-blue: var(--accent-blue);
   --accent-orange-display: #EC5A1C;
+  --accent-orange-action: #CF4A10;
+  --accent-orange-action-hover: #B4410C;
   --accent-orange-text: var(--orange);
   --accent-orange-bg: var(--orange);
   --accent-orange-bg-hover: var(--orange-dark);

@@ -1024,16 +1024,16 @@ body.lp-comparison-page .btn-table.btn-table--muted:hover {
   transform: translateY(-1px);
 }
 body.lp-comparison-page .btn-table.highlighted {
-  background: var(--orange);
+  background: var(--accent-orange-action);
   box-shadow: 0 3px 10px rgba(212,78,16,0.28);
 }
-body.lp-comparison-page .btn-table.highlighted:hover { background: var(--orange-dark); box-shadow: 0 6px 16px rgba(212,78,16,0.38); }
+body.lp-comparison-page .btn-table.highlighted:hover { background: var(--accent-orange-action-hover); box-shadow: 0 6px 16px rgba(212,78,16,0.38); }
 body.lp-comparison-page .table-wrap tbody tr.highlight .btn-table {
-  background: var(--orange);
+  background: var(--accent-orange-action);
   box-shadow: 0 3px 10px rgba(212,78,16,0.28);
 }
 body.lp-comparison-page .table-wrap tbody tr.highlight .btn-table:hover {
-  background: var(--orange-dark);
+  background: var(--accent-orange-action-hover);
   box-shadow: 0 6px 16px rgba(212,78,16,0.38);
 }
 body.lp-comparison-page .btn-table-ghost {
@@ -1359,9 +1359,9 @@ body.lp-comparison-page .mc-cta.mc-cta--muted:active {
 body.lp-comparison-page .mc-cta.mc-cta--muted:active {
     background: var(--gray-200);
   }
-  body.lp-comparison-page .mc-card.highlight .mc-cta { background: var(--orange); box-shadow: 0 3px 10px rgba(212,78,16,0.28); }
+  body.lp-comparison-page .mc-card.highlight .mc-cta { background: var(--accent-orange-action); box-shadow: 0 3px 10px rgba(212,78,16,0.28); }
   body.lp-comparison-page .mc-card.highlight .mc-cta:hover,
-body.lp-comparison-page .mc-card.highlight .mc-cta:active { background: var(--orange-dark); }
+body.lp-comparison-page .mc-card.highlight .mc-cta:active { background: var(--accent-orange-action-hover); }
   body.lp-comparison-page .mc-cta svg { width: 12px; height: 12px; }
 
   /* Empty state mobile */
