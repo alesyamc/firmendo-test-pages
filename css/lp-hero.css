@@ -1,4 +1,4 @@
-@import url("./hero.css?v=20260926-1");
+@import url("/firmendo-test-pages/css/hero.css?v=20260926-1");
 
 /* LP-specific hero extensions. Shared hero primitives live in css/hero.css. */
 body.lp-comparison-page {

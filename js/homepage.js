@@ -19,7 +19,7 @@ var heroFinder = document.querySelector('[data-hero-finder]');
 if (!heroFinder) return;
 
 var hQ1 = null;
-var hContinueBtn = heroFinder.querySelector('[data-hero-action="continue"]');
+var hContinueBtn = heroFinder.querySelector('[data-hero-action="/firmendo-test-pages/js/continue"]');
 
 function setHeroProgressSelected() {
   var dot1 = heroFinder.querySelector('[data-hero-step-dot="1"]');
@@ -57,7 +57,7 @@ heroFinder.addEventListener('click', function(event) {
     return;
   }
 
-  var actionButton = event.target.closest('[data-hero-action="continue"]');
+  var actionButton = event.target.closest('[data-hero-action="/firmendo-test-pages/js/continue"]');
   if (actionButton) handOffToMainFinder();
 });
 })();
@@ -226,7 +226,7 @@ function fShowResult() {
     html += '<a href="' + r.review + '" class="finder-link-secondary">Detailtest lesen</a>';
     html += '</div></div>';
   });
-  html += '</div><button class="finder-restart" data-finder-action="restart">← Neu starten</button>';
+  html += '</div><button class="finder-restart" data-finder-action="/firmendo-test-pages/js/restart">← Neu starten</button>';
   var rv = document.getElementById('fresult');
   rv.innerHTML = html;
   rv.hidden = false;
