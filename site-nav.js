@@ -70,12 +70,15 @@
       });
     }
 
-    const syncScrolled = () => {
-      nav.classList.toggle("scrolled", window.scrollY > 20);
-    };
-
-    syncScrolled();
-    window.addEventListener("scroll", syncScrolled, { passive: true });
+    // Observe the 20px scroll boundary without synchronously reading page geometry.
+    const scrollMarker = document.createElement("div");
+    scrollMarker.setAttribute("aria-hidden", "true");
+    scrollMarker.style.cssText = "position:absolute;top:0;left:0;width:1px;height:20px;pointer-events:none;visibility:hidden";
+    document.body.prepend(scrollMarker);
+    const navObserver = new IntersectionObserver(([entry]) => {
+      nav.classList.toggle("scrolled", entry.boundingClientRect.bottom < 0);
+    });
+    navObserver.observe(scrollMarker);
 
     if (links && burger) {
       const closeMenu = () => {
