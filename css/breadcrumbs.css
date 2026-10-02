@@ -33,3 +33,10 @@
 .breadcrumb a:hover { color: var(--accent-color-text); }
 .breadcrumb .sep { color: var(--gray-200); }
 .breadcrumb .current { color: var(--gray-500); font-weight: var(--font-weight-semibold); }
+
+/* Reserve the second row before the web font loads to keep the hero stationary. */
+@media (max-width: 600px) {
+  .breadcrumb > .current:nth-child(n+5) {
+    flex-basis: 100%;
+  }
+}
