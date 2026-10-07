@@ -220,7 +220,7 @@
 
       results.innerHTML = filtered.length
         ? filtered.slice(0, 8).map((item) => `
-            <a class="sn-search-link" href="${item.href}">
+            <a class="sn-search-link" href="/firmendo-test-pages/${item.href}">
               <span class="sn-search-link-main">
                 <span class="sn-search-link-title">${item.title}</span>
                 <span class="sn-search-link-subtitle">${item.subtitle}</span>

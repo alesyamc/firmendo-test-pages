@@ -1561,7 +1561,7 @@ function renderTable(data) {
       <td class="td-center"><span class="card-badge debit">${a.typLabel}</span></td>
       <td class="td-bool">${a.visa ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="icon-yes"><polyline points="20 6 9 17 4 12"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-no"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'}</td>
       <td class="td-bool">${a.dispo ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="icon-yes"><polyline points="20 6 9 17 4 12"/></svg>${a.dispoNote ? `<div class="u-fs-caption u-text-gray-400-mt2">${a.dispoNote}</div>` : ''}` : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-no"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'}</td>
-      <td class="td-cta"><a href="${a.cta}" target="_blank" rel="noopener sponsored" class="btn-table">Zum Anbieter<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+      <td class="td-cta"><a href="/firmendo-test-pages/privatkonto-als-geschaeftskonto/${a.cta}" target="_blank" rel="noopener sponsored" class="btn-table">Zum Anbieter<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
     </tr>
   `).join('');
   renderMobileCards(data);
@@ -1603,7 +1603,7 @@ function renderMobileCards(data) {
       </div>
       <div class="mc-footer">
         <div class="mc-footer-note">${a.freiberufler ? 'Berufliche Umsätze bei überwiegend privater Nutzung erlaubt.' : 'Geschäftliche Nutzung vor der Eröffnung klären.'}</div>
-        <a href="${a.cta}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter</a>
+        <a href="/firmendo-test-pages/privatkonto-als-geschaeftskonto/${a.cta}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter</a>
       </div>
     </article>
   `).join('');
