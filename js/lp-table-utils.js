@@ -225,3 +225,35 @@ function updateTableScrollState(options = {}) {
   document.addEventListener('scroll', hide, true);
   window.addEventListener('resize', place);
 })();
+
+// Optional physical-card costs for comparisons that model cash withdrawals.
+function lpComparisonUsage() {
+  const read = (id, fallback) => {
+    const value = Number.parseFloat(document.getElementById(id)?.value);
+    return Number.isFinite(value) ? Math.max(0, value) : fallback;
+  };
+  return { transactions: Math.floor(read('inp-buchungen', 30)), withdrawals: Math.floor(read('inp-abhebungen', 4)), amount: read('inp-betrag', 200) };
+}
+
+function lpCardCashCosts(product, usage) {
+  const plan = product.cashWithdrawal;
+  const count = usage.amount > 0 ? usage.withdrawals : 0;
+  const base = product.base || 0;
+  const transactions = Math.max(0, usage.transactions - (product.txFree || 0)) * (product.txCost || 0);
+  const card = count > 0 ? plan.cardMonthly : 0;
+  const withdrawals = Math.max(0, count - plan.freeCount) * plan.fee;
+  const exceedsLimit = count * usage.amount > plan.monthlyLimit;
+  return { base, transactions, card, withdrawals, exceedsLimit, total: base + transactions + card + withdrawals };
+}
+
+function lpCardCashWithdrawalMarkup(product) {
+  const plan = product.cashWithdrawal;
+  const extra = plan.cardMonthly ? `<br>Physische Karte +${formatEuro(plan.cardMonthly)}/Monat` : '';
+  return `<span class="table-text">${plan.freeCount}×/Monat frei, danach ${formatEuro(plan.fee)}${extra}</span>`;
+}
+
+function lpCardCashBreakdownMarkup(product) {
+  const costs = lpCardCashCosts(product, lpComparisonUsage());
+  const limit = costs.exceedsLimit ? `, Kartenlimit ${formatEuro(product.cashWithdrawal.monthlyLimit)} / Monat überschritten` : '';
+  return `<span class="price-wrap total-breakdown">${totalMarkup(costs.total)}<span class="price-hint total-breakdown-hint">${costs.exceedsLimit ? 'Limit beachten' : 'Kosten ansehen'}</span><span class="price-tooltip total-breakdown-tooltip">Grundgebühr ${formatEuro(costs.base)}, Transaktionen ${formatEuro(costs.transactions)}, physische Karte ${formatEuro(costs.card)}, Abhebungen ${formatEuro(costs.withdrawals)}${limit}. Netto; eine One Card. Ohne Abhebungen keine optionale physische Karte eingerechnet.</span></span>`;
+}
