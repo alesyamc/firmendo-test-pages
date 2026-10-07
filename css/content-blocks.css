@@ -1898,3 +1898,95 @@ p.mini-anbieter-desc {
     gap: 22px;
   }
 }
+
+/* Status-Kennzeichnung in Tabellen (Ja / Bedingt / Nein), eingeführt 07.10.2026 auf /einnahmenueberschussrechnung/ */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px 5px 7px;
+  text-align: left;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.status-pill svg {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+}
+
+.post-compare-table th.status-cell,
+.post-compare-table td.status-cell {
+  text-align: center;
+}
+
+.status-pill--yes {
+  color: var(--green);
+  background: var(--green-light);
+}
+
+.status-pill--partial {
+  color: var(--amber);
+  background: var(--amber-light);
+}
+
+.status-pill--no {
+  color: #B42318;
+  background: var(--red-light);
+}
+
+/* Tabelle mobil als kompakte Zeilen (Name, Status, Hinweis untereinander), eingeführt 07.10.2026 auf /einnahmenueberschussrechnung/.
+   Doppelte Klasse, weil blog-template.css nach dieser Datei geladen wird und .post-compare-table td sonst gewinnt. */
+@media (max-width: 640px) {
+  .post-compare-table.post-compare-table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .post-compare-table.post-compare-table--stack,
+  .post-compare-table.post-compare-table--stack tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .post-compare-table.post-compare-table--stack tbody tr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 14px;
+  }
+
+  .post-compare-table.post-compare-table--stack td {
+    padding: 0;
+    line-height: 1.4;
+  }
+
+  .post-compare-table.post-compare-table--stack td.status-cell {
+    text-align: left;
+  }
+
+  .post-compare-table.post-compare-table--stack .status-pill {
+    padding: 2px 9px 2px 7px;
+    font-size: 13px;
+  }
+
+  .post-compare-table.post-compare-table--stack td:last-child {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--gray-500);
+  }
+
+  .post-compare-table.post-compare-table--stack tbody tr:last-child td:first-child,
+  .post-compare-table.post-compare-table--stack tbody tr:last-child td:last-child {
+    border-radius: 0;
+  }
+}
