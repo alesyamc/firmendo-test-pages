@@ -1850,3 +1850,51 @@ p.mini-anbieter-desc {
     gap: 8px;
   }
 }
+
+/* Nummerierte Punkte (z. B. „Typische Fehler“), eingeführt 07.10.2026 auf /einnahmenueberschussrechnung/ */
+.numbered-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+  margin: 28px 0;
+  counter-reset: numbered-points;
+}
+
+.numbered-points__item {
+  border-top: 2px solid var(--gray-200);
+  padding-top: 14px;
+  counter-increment: numbered-points;
+}
+
+.numbered-points__item::before {
+  content: counter(numbered-points, decimal-leading-zero);
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent-orange-display);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.numbered-points__title {
+  margin: 0 0 6px;
+  color: var(--gray-800);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.numbered-points__text {
+  margin: 0;
+  color: var(--gray-500);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .numbered-points {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
