@@ -34,8 +34,7 @@
 .breadcrumb .sep { color: var(--gray-200); }
 .breadcrumb .current { color: var(--gray-500); font-weight: var(--font-weight-semibold); }
 
-/* Keep three-level mobile breadcrumbs on two rows before and after Poppins loads.
-   Otherwise the last item can wrap late and move the entire hero below it. */
+/* Reserve the second row before the web font loads to keep the hero stationary. */
 @media (max-width: 600px) {
   .breadcrumb > .current:nth-child(n+5) {
     flex-basis: 100%;
