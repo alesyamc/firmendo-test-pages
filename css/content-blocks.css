@@ -1990,3 +1990,210 @@ p.mini-anbieter-desc {
     border-radius: 0;
   }
 }
+
+
+/* Quellen-Box für Ratgeber-Seiten, eingeführt 08.10.2026 auf /einnahmenueberschussrechnung/.
+   Basisregeln 1:1 aus review-components.css übernommen (dort weiterhin vorhanden, identisch, damit Review-Seiten unverändert bleiben). */
+.quellen-box {
+  background: var(--gray-100);
+  border: var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 18px 22px;
+  box-shadow: 0 6px 24px rgba(34, 68, 232, 0.06);
+}
+
+.quellen-header {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-badge-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-color-text);
+}
+
+.quellen-header svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.quellen-stand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  margin: 0 0 14px;
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-500);
+  letter-spacing: 0.02em;
+}
+
+.quellen-stand svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.quellen-header + .quellen-stand {
+  margin-left: 6px;
+}
+
+.quellen-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.quellen-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  font-size: var(--text-caption-size);
+}
+
+.quellen-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-color-bg);
+  flex-shrink: 0;
+  opacity: 0.45;
+  margin-top: 0.48rem;
+}
+
+.quellen-box .quellen-link,
+.quellen-item .quellen-link {
+  color: var(--gray-700);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: 14px;
+  line-height: 1.55;
+  transition: color .22s ease, transform .22s ease, text-decoration-color .22s ease;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.18em;
+}
+
+.quellen-box .quellen-link:hover,
+.quellen-box .quellen-link:focus-visible,
+.quellen-item .quellen-link:hover,
+.quellen-item .quellen-link:focus-visible {
+  color: var(--accent-color-text);
+  transform: translateX(2px);
+  text-decoration-color: currentColor;
+}
+
+.quellen-group + .quellen-group {
+  margin-top: 12px;
+}
+
+.quellen-box:has(.quellen-group) .quellen-group-title {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--gray-800);
+}
+
+.quellen-box:has(.quellen-group) .quellen-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quellen-chips li {
+  margin: 0;
+  padding: 0;
+}
+
+.quellen-chips li::before {
+  display: none;
+}
+
+.quellen-box:has(.quellen-group) .quellen-chip {
+  display: inline-block;
+  padding: 2px 9px;
+  border: var(--border-subtle);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--gray-700);
+  font-size: 12.5px;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s, border-color .2s;
+}
+
+.quellen-box:has(.quellen-group) a.quellen-chip:hover,
+.quellen-box:has(.quellen-group) a.quellen-chip:focus-visible {
+  color: var(--accent-color-text);
+  border-color: var(--accent-color-border-muted);
+}
+
+.quellen-box:has(.quellen-group) .quellen-list--columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 24px;
+}
+
+.quellen-box:has(.quellen-group) .quellen-list--columns .quellen-link {
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.quellen-box:has(.quellen-group) .quellen-list--columns .quellen-dot {
+  margin-top: 0.45rem;
+}
+
+.quellen-box:has(.quellen-group) .quellen-list .quellen-item {
+  margin: 0;
+  padding: 0;
+}
+
+.quellen-box:has(.quellen-group) .quellen-list .quellen-item::before {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .quellen-box:has(.quellen-group) .quellen-list--columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* In Ratgeber-Artikeln (.text-body) Absatz- und Listenstile des Fließtexts neutralisieren */
+.quellen-box:has(.quellen-group) .quellen-stand {
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+  color: var(--gray-500);
+  margin: 0 0 10px;
+}
+
+.text-body .quellen-box:has(.quellen-group) {
+  padding: 14px 18px;
+}
+
+.text-body .quellen-box:has(.quellen-group) .quellen-header {
+  margin-bottom: 4px;
+}
+
+.quellen-box:has(.quellen-group) .quellen-list {
+  padding-left: 0;
+  margin: 0;
+}
+
+.quellen-box:has(.quellen-group) .quellen-chips-link {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
