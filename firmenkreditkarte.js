@@ -271,7 +271,7 @@ function renderDesktopTable(data) {
         <div class="td-cta-stack">
           ${p.ctaDisabled
             ? '<span class="btn-table btn-table--muted" aria-disabled="true">Zum Anbieter</span>'
-            : `<a href="/firmendo-test-pages/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table${p.highlight ? ' highlighted' : ''}${p.mutedCta ? ' btn-table--muted' : ''}">
+            : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table${p.highlight ? ' highlighted' : ''}${p.mutedCta ? ' btn-table--muted' : ''}">
                 ${p.ctaLabel || 'Zum Anbieter'}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>`}
@@ -357,7 +357,7 @@ function renderMobileCards(data) {
         <div class="mc-footer-note">${p.priceNote || ''}</div>
         ${p.ctaDisabled
           ? '<span class="mc-cta mc-cta--disabled" aria-disabled="true">Zum Anbieter</span>'
-          : `<a href="/firmendo-test-pages/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
+          : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
               ${p.ctaLabel || 'Zum Anbieter'}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>`}

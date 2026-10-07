@@ -91,7 +91,7 @@ function getFiltered() {
 
 function photoZone(p, extraClass) {
   if (p.image) {
-    return `<div class="card-photo ${extraClass||''}"><img src="/firmendo-test-pages/${p.image}" alt="${p.title}" loading="lazy"></div>`;
+    return `<div class="card-photo ${extraClass||''}"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>`;
   }
   return `<div class="card-photo card-photo-fallback v-${p.category} ${extraClass||''}">${p.icon}</div>`;
 }
@@ -101,9 +101,9 @@ function footer(p){ return `<div class="card-footer"><div class="card-author"><d
 
 function heroCard(p){
   const visual = p.image
-    ? `<div class="hp-visual"><img src="/firmendo-test-pages/${p.image}" alt="${p.title}"></div>`
+    ? `<div class="hp-visual"><img src="${p.image}" alt="${p.title}"></div>`
     : `<div class="hp-visual hp-visual-fallback v-${p.category}"><div class="hp-fallback-icon">${p.icon}</div></div>`;
-  return `<a href="/firmendo-test-pages/${p.href}" class="hero-post">
+  return `<a href="${p.href}" class="hero-post">
     ${visual}
     <div class="hp-overlay"></div>
     <div class="hp-content">
@@ -119,7 +119,7 @@ function heroCard(p){
 }
 
 function stdCard(p){
-  return `<a href="/firmendo-test-pages/${p.href}" class="post-card">
+  return `<a href="${p.href}" class="post-card">
     ${photoZone(p)}
     <div class="card-body">${catBadge(p)}<div class="card-title">${p.title}</div><div class="card-excerpt">${p.excerpt}</div>${footer(p)}</div>
   </a>`;
@@ -127,9 +127,9 @@ function stdCard(p){
 
 function listCard(p){
   const photo = p.image
-    ? `<div class="list-photo"><img src="/firmendo-test-pages/${p.image}" alt="${p.title}" loading="lazy"></div>`
+    ? `<div class="list-photo"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>`
     : `<div class="list-photo list-photo-fallback v-${p.category}">${p.icon}</div>`;
-  return `<a href="/firmendo-test-pages/${p.href}" class="list-card">
+  return `<a href="${p.href}" class="list-card">
     ${photo}
     <div class="list-body">
       <div class="list-title">${p.title}</div>
@@ -142,7 +142,7 @@ function listCard(p){
 }
 
 function filterCard(p){
-  return `<a href="/firmendo-test-pages/${p.href}" class="fcard">
+  return `<a href="${p.href}" class="fcard">
     ${photoZone(p, 'fcard-photo')}
     <div class="fcard-top">
       <span class="fcard-cat c-${p.category}">${p.catLabel}</span>
