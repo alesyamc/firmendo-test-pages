@@ -1776,8 +1776,8 @@ const products = [
     steuer: true,
     typ: 'Fintech',
     highlight: true,
-    affiliateUrl: '/go/finom-solo/',
-    reviewUrl: '/finom-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/finom-solo/',
+    reviewUrl: '/firmendo-test-pages/finom-geschaeftskonto/'
   },
   {
     name: 'Kontist Free',
@@ -1793,8 +1793,8 @@ const products = [
     steuer: true,
     typ: 'Fintech',
     highlight: false,
-    affiliateUrl: '/go/kontist-free/',
-    reviewUrl: '/kontist-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/kontist-free/',
+    reviewUrl: '/firmendo-test-pages/kontist-geschaeftskonto/'
   },
   {
     name: 'ING Business Konto',
@@ -1812,8 +1812,8 @@ const products = [
     steuer: false,
     typ: 'Direktbank',
     highlight: false,
-    affiliateUrl: '/go/ing-geschaeftskonto/',
-    reviewUrl: '/ing-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/ing-geschaeftskonto/',
+    reviewUrl: '/firmendo-test-pages/ing-geschaeftskonto/'
   },
   {
     name: 'N26 Business Standard',
@@ -1829,7 +1829,7 @@ const products = [
     steuer: false,
     typ: 'Fintech',
     highlight: false,
-    affiliateUrl: '/go/n26-business-standard/'
+    affiliateUrl: '/firmendo-test-pages/go/n26-business-standard/'
   },
   {
     name: 'Qonto Starter',
@@ -1848,8 +1848,8 @@ const products = [
     steuer: true,
     typ: 'Fintech',
     highlight: false,
-    affiliateUrl: '/go/qonto-starter/',
-    reviewUrl: '/qonto-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/qonto-starter/',
+    reviewUrl: '/firmendo-test-pages/qonto-geschaeftskonto/'
   },
   {
     name: 'FYRST Base',
@@ -1866,8 +1866,8 @@ const products = [
     steuer: false,
     typ: 'Direktbank',
     highlight: false,
-    affiliateUrl: '/go/fyrst-base/',
-    reviewUrl: '/fyrst-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/fyrst-base/',
+    reviewUrl: '/firmendo-test-pages/fyrst-geschaeftskonto/'
   },
   {
     name: 'FYRST Base',
@@ -1884,8 +1884,8 @@ const products = [
     steuer: false,
     typ: 'Direktbank',
     highlight: false,
-    affiliateUrl: '/go/fyrst-base/',
-    reviewUrl: '/fyrst-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/fyrst-base/',
+    reviewUrl: '/firmendo-test-pages/fyrst-geschaeftskonto/'
   },
   {
     name: 'Commerzbank Premium&shy;Geschäftskonto',
@@ -1901,8 +1901,8 @@ const products = [
     steuer: false,
     typ: 'Filialbank',
     highlight: false,
-    affiliateUrl: '/go/commerzbank-klassikgeschaeftskonto/',
-    reviewUrl: '/commerzbank-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/commerzbank-klassikgeschaeftskonto/',
+    reviewUrl: '/firmendo-test-pages/commerzbank-geschaeftskonto/'
   },
   {
     name: 'Deutsche Bank Business BasicKonto',
@@ -1918,8 +1918,8 @@ const products = [
     steuer: false,
     typ: 'Filialbank',
     highlight: false,
-    affiliateUrl: '/go/deutsche-bank-business-basickonto/',
-    reviewUrl: '/deutsche-bank-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/deutsche-bank-business-basickonto/',
+    reviewUrl: '/firmendo-test-pages/deutsche-bank-geschaeftskonto/'
   },
   {
     name: 'Deutsche Bank Gründerkonto',
@@ -1939,8 +1939,8 @@ const products = [
     steuer: true,
     typ: 'Filialbank',
     highlight: false,
-    affiliateUrl: '/go/deutsche-bank-gruenderkonto/',
-    reviewUrl: '/deutsche-bank-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/deutsche-bank-gruenderkonto/',
+    reviewUrl: '/firmendo-test-pages/deutsche-bank-geschaeftskonto/'
   },
   {
     name: 'Vivid Business Free Start',
@@ -1958,8 +1958,8 @@ const products = [
     steuer: false,
     typ: 'Fintech',
     highlight: false,
-    affiliateUrl: '/go/vivid-business-free/',
-    reviewUrl: '/vivid-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/vivid-business-free/',
+    reviewUrl: '/firmendo-test-pages/vivid-geschaeftskonto/'
   },
   {
     name: 'FYRST Complete',
@@ -1975,8 +1975,8 @@ const products = [
     steuer: false,
     typ: 'Direktbank',
     highlight: false,
-    affiliateUrl: '/go/fyrst-base/',
-    reviewUrl: '/fyrst-geschaeftskonto/'
+    affiliateUrl: '/firmendo-test-pages/go/fyrst-base/',
+    reviewUrl: '/firmendo-test-pages/fyrst-geschaeftskonto/'
   }
 ];
 
@@ -2094,7 +2094,7 @@ function renderTable() {
     const rfTooltip = p.suitable.join(', ');
     const isKostenlos = p.preis === 0;
     const reviewLink = p.reviewUrl
-      ? `<a href="/firmendo-test-pages/girokonto-fuer-selbststaendige-und-freiberufler/${p.reviewUrl}" class="btn-table-ghost btn-table-detail">Detailtest</a>`
+      ? `<a href="${p.reviewUrl}" class="btn-table-ghost btn-table-detail">Detailtest</a>`
       : `<span class="btn-table-ghost btn-table-detail btn-table-ghost--disabled">Detailtest folgt</span>`;
 
     return `
@@ -2121,7 +2121,7 @@ function renderTable() {
       <td class="td-provider">${p.typ}</td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="/firmendo-test-pages/girokonto-fuer-selbststaendige-und-freiberufler/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">
+          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">
             Zum Anbieter
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
@@ -2148,7 +2148,7 @@ function renderMobileCards(data) {
   mobileCards.innerHTML = data.map(p => {
     const isKostenlos = p.preis === 0;
     const reviewLink = p.reviewUrl
-      ? `<a href="/firmendo-test-pages/girokonto-fuer-selbststaendige-und-freiberufler/${p.reviewUrl}" class="mc-secondary">Detailtest</a>`
+      ? `<a href="${p.reviewUrl}" class="mc-secondary">Detailtest</a>`
       : `<span class="mc-secondary disabled">Detailtest folgt</span>`;
     return `
     <article class="mc-card ${p.highlight ? 'highlight' : ''}">
@@ -2177,7 +2177,7 @@ function renderMobileCards(data) {
       <div class="mc-footer">
         <div class="mc-footer-note">${p.typ}</div>
         <div class="mc-actions">
-          <a href="/firmendo-test-pages/girokonto-fuer-selbststaendige-und-freiberufler/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">
+          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">
             Zum Anbieter
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>

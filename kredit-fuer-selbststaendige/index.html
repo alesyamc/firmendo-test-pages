@@ -1497,8 +1497,8 @@ const products = [
     kreditart: 'Betriebsmittel',
     schnell: true, foerder: false, eigenkapital: true,
     highlight: true, label: 'Empfehlung',
-    affiliateUrl: '/go/iwoca-firmenkredit/',
-    reviewUrl: '/iwoca-test/'
+    affiliateUrl: '/firmendo-test-pages/go/iwoca-firmenkredit/',
+    reviewUrl: '/firmendo-test-pages/iwoca-test/'
   },
   {
     name: 'Qonto Kredit', logoBg: '#fff', cat: 'Fintech',
@@ -1509,8 +1509,8 @@ const products = [
     kreditart: 'Betriebsmittel',
     schnell: true, foerder: false, eigenkapital: false,
     highlight: false, label: 'Für Unternehmen',
-    affiliateUrl: '/go/qonto-starter/',
-    reviewUrl: '/qonto-kredit-test/'
+    affiliateUrl: '/firmendo-test-pages/go/qonto-starter/',
+    reviewUrl: '/firmendo-test-pages/qonto-kredit-test/'
   },
   {
     name: 'smava Kreditvergleich', brand: 'smava', logoBg: '#fff', cat: 'Vergleichsportal',
@@ -1523,7 +1523,7 @@ const products = [
     highlight: false, label: 'Vergleich',
     mutedCta: true,
     affiliateUrl: 'https://www.smava.de/?ref=firmendo',
-    reviewUrl: '/smava-test/'
+    reviewUrl: '/firmendo-test-pages/smava-test/'
   },
   {
     name: 'ING Geschäftskredit', brand: 'ING', logoBg: '#fff', cat: 'Online-Bank',
@@ -1536,7 +1536,7 @@ const products = [
     highlight: false, label: 'Mit ING Geschäftskonto',
     mutedCta: true,
     affiliateUrl: 'https://www.ing.de/geschaeftskunden/?ref=firmendo',
-    reviewUrl: '/ing-kredit-test/'
+    reviewUrl: '/firmendo-test-pages/ing-kredit-test/'
   },
   {
     name: 'TARGOBANK Privatkredit für Selbstständige', brand: 'TARGOBANK', logoBg: '#fff', cat: 'Bank',
@@ -1547,8 +1547,8 @@ const products = [
     kreditart: 'Privatkredit',
     schnell: false, foerder: false, eigenkapital: false,
     highlight: false, label: 'Für Selbstständige',
-    affiliateUrl: '/go/targobank-privatkredit-selbststaendige/',
-    reviewUrl: '/targobank-kredit-test/'
+    affiliateUrl: '/firmendo-test-pages/go/targobank-privatkredit-selbststaendige/',
+    reviewUrl: '/firmendo-test-pages/targobank-kredit-test/'
   },
   {
     name: 'Finanzcheck Kreditvergleich', brand: 'Finanzcheck', logoBg: '#fff', cat: 'Vergleichsportal',
@@ -1561,7 +1561,7 @@ const products = [
     highlight: false, label: 'Vergleichsportal',
     mutedCta: true,
     affiliateUrl: 'https://www.finanzcheck.de/?ref=firmendo',
-    reviewUrl: '/finanzcheck-test/'
+    reviewUrl: '/firmendo-test-pages/finanzcheck-test/'
   },
   {
     name: 'KfW ERP-Gründerkredit StartGeld', brand: 'KfW', logoBg: '#fff', cat: 'Förderbank',
@@ -1574,7 +1574,7 @@ const products = [
     highlight: false, label: 'Staatlich gefördert',
     mutedCta: true,
     affiliateUrl: 'https://www.kfw.de/067',
-    reviewUrl: '/kfw-kredit-test/'
+    reviewUrl: '/firmendo-test-pages/kfw-kredit-test/'
   },
   {
     name: 'auxmoney', brand: 'auxmoney', logoBg: '#fff', cat: 'Crowdlending',
@@ -1587,7 +1587,7 @@ const products = [
     highlight: false, label: 'auch bei schwierigerem Profil prüfbar',
     mutedCta: true,
     affiliateUrl: 'https://www.auxmoney.com/?ref=firmendo',
-    reviewUrl: '/auxmoney-test/'
+    reviewUrl: '/firmendo-test-pages/auxmoney-test/'
   }
 ];
 
@@ -1743,7 +1743,7 @@ function renderTable() {
       <td class="td-total-col">${rateStr}<div class="u-fs-mini-label u-month-note">/Monat</div></td>
       <td class="td-cta">
         <div class="td-cta-stack">
-          <a href="/firmendo-test-pages/kredit-fuer-selbststaendige/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table u-fs-card-body u-btn-table-prominent${p.mutedCta ? ' btn-table--muted' : ''}">
+          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table u-fs-card-body u-btn-table-prominent${p.mutedCta ? ' btn-table--muted' : ''}">
             Kredit prüfen
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
@@ -1798,7 +1798,7 @@ function renderMobileCards(data) {
       <div class="rf-tags">${tags}${more}</div>
       <div class="mc-footer">
         <div class="mc-footer-note">${p.geeignetAb}</div>
-        <a href="/firmendo-test-pages/kredit-fuer-selbststaendige/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">Prüfen
+        <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">Prüfen
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>

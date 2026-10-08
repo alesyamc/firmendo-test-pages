@@ -1340,7 +1340,7 @@ const products = [
     einordnung: 'Dispo möglich',
     footerNote: 'Kein reines Guthabenkonto',
     besonderheit: '0 € ab 700 € Eingang oder unter 28, sonst 4,50 €',
-    affiliateUrl: '/go/dkb-girokonto/'
+    affiliateUrl: '/firmendo-test-pages/go/dkb-girokonto/'
   },
   {
     name: 'N26 Standard',
@@ -1359,7 +1359,7 @@ const products = [
     einordnung: 'Dispo nur auf Antrag',
     footerNote: 'Bonitätsprüfung; sonst ggf. N26 Flex (8,90 €)',
     besonderheit: 'Bonitätsprüfung bei Eröffnung',
-    affiliateUrl: '/go/n26-girokonto/'
+    affiliateUrl: '/firmendo-test-pages/go/n26-girokonto/'
   },
   {
     name: 'C24 Smart-Konto',
@@ -1378,7 +1378,7 @@ const products = [
     einordnung: 'Dispo bei Bonität',
     footerNote: 'Dispo bei ausreichender Bonität möglich',
     besonderheit: '0,75 % Zinsen, 0,05 % Cashback, 4 Pockets',
-    affiliateUrl: '/go/c24-smart-konto/'
+    affiliateUrl: '/firmendo-test-pages/go/c24-smart-konto/'
   },
   {
     name: 'Trade Republic Girokonto',
@@ -1416,7 +1416,7 @@ const products = [
     einordnung: 'Dispo möglich',
     footerNote: 'Nicht als Guthabenkonto einordnen',
     besonderheit: '0 € unter 30 oder ab 500 € Eingang, sonst 3,90 €',
-    affiliateUrl: '/go/norisbank-girokonto/'
+    affiliateUrl: '/firmendo-test-pages/go/norisbank-girokonto/'
   },
   {
     name: 'Sparkasse Basiskonto (Beispiel Berlin)',
@@ -1501,8 +1501,8 @@ function providerCtaMarkup(p, mode = 'table') {
   }
   const icon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
   return mode === 'mobile'
-    ? `<a href="/firmendo-test-pages/guthabenkonto/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter ${icon}</a>`
-    : `<a href="/firmendo-test-pages/guthabenkonto/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">Zum Anbieter ${icon}</a>`;
+    ? `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter ${icon}</a>`
+    : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table">Zum Anbieter ${icon}</a>`;
 }
 
 function updateFilterCount() {

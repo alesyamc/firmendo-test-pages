@@ -7,7 +7,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'bis 50', employeeCardsSort: 50,
     datev: true, belegerfassung: true,
-    affiliateUrl: '/go/vivid-business-firmenkarte/',
+    affiliateUrl: '/firmendo-test-pages/go/vivid-business-firmenkarte/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
   },
   {
@@ -18,7 +18,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: true, belegerfassung: true,
-    affiliateUrl: '/go/finom-prime-card/',
+    affiliateUrl: '/firmendo-test-pages/go/finom-prime-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async">'
   },
   {
@@ -42,7 +42,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'ja', employeeCardsSort: 10,
     datev: false, belegerfassung: true,
-    affiliateUrl: '/go/revolut-business-debit-card/',
+    affiliateUrl: '/firmendo-test-pages/go/revolut-business-debit-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/revolut.svg" alt="Revolut Logo" loading="lazy" decoding="async">'
   },
   {
@@ -53,7 +53,7 @@ const products = [
     limit: 'Debit',
     employeeCards: '1–30 physische (tarifabhängig)', employeeCardsSort: 30,
     datev: true, belegerfassung: true,
-    affiliateUrl: '/go/qonto-business-credit-card/',
+    affiliateUrl: '/firmendo-test-pages/go/qonto-business-credit-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async">'
   },
   {
@@ -64,7 +64,7 @@ const products = [
     limit: 'variabel',
     employeeCards: 'bis 99 inklusive', employeeCardsSort: 99,
     datev: false, belegerfassung: false,
-    affiliateUrl: '/go/american-express-business-gold-card/',
+    affiliateUrl: '/firmendo-test-pages/go/american-express-business-gold-card/',
     ctaDisabled: true,
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/american-express.svg" alt="American Express Logo" loading="lazy" decoding="async">'
   },
@@ -76,7 +76,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: false, belegerfassung: false,
-    affiliateUrl: '/go/n26-business-card/',
+    affiliateUrl: '/firmendo-test-pages/go/n26-business-card/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async">'
   },
   {
@@ -87,7 +87,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'solo', employeeCardsSort: 1,
     datev: true, belegerfassung: true,
-    affiliateUrl: '/go/kontist-premium-karte/',
+    affiliateUrl: '/firmendo-test-pages/go/kontist-premium-karte/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/kontist.png" alt="Kontist Logo" loading="lazy" decoding="async">'
   }
 ];
@@ -271,7 +271,7 @@ function renderDesktopTable(data) {
         <div class="td-cta-stack">
           ${p.ctaDisabled
             ? '<span class="btn-table btn-table--muted" aria-disabled="true">Zum Anbieter</span>'
-            : `<a href="/firmendo-test-pages/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table${p.highlight ? ' highlighted' : ''}${p.mutedCta ? ' btn-table--muted' : ''}">
+            : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-table${p.highlight ? ' highlighted' : ''}${p.mutedCta ? ' btn-table--muted' : ''}">
                 ${p.ctaLabel || 'Zum Anbieter'}
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>`}
@@ -357,7 +357,7 @@ function renderMobileCards(data) {
         <div class="mc-footer-note">${p.priceNote || ''}</div>
         ${p.ctaDisabled
           ? '<span class="mc-cta mc-cta--disabled" aria-disabled="true">Zum Anbieter</span>'
-          : `<a href="/firmendo-test-pages/${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
+          : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
               ${p.ctaLabel || 'Zum Anbieter'}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>`}
