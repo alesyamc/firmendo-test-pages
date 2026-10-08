@@ -1322,8 +1322,8 @@
 const products = [
   {
     // Prices and listed promotions checked 2026-10-08; see source audit.
-    name: 'Finom Solo', priceNote: 'Solo, 0 €/Monat; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.', calculationNote: 'Berechnung während der sechsmonatigen SEPA-Aktion für teilnahmeberechtigte Neukunden. Danach gilt die reguläre Preisstaffel nach Überweisungsvolumen.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
-    suitable: ['Freiberufler','Einzelunternehmen','Gründer','eK'],
+    name: 'Finom Solo', variableCardCost: true, priceNote: 'Solo für Freiberufler und neu eingetragene Unternehmen, 0 €/Monat; physische Karte zusätzlich kostenpflichtig; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.', calculationNote: 'Berechnung während der sechsmonatigen SEPA-Aktion für teilnahmeberechtigte Neukunden. Danach gilt die reguläre Preisstaffel nach Überweisungsvolumen.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
+    targetGroup: 'Freiberufler & neu eingetragene Unternehmen', suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','eK'],
     schufa: false, rating: 4.8, cashback: '—', intl: true, datev: true, accounting: true,
     affiliateUrl: '/firmendo-test-pages/go/finom-solo/', reviewUrl: '/firmendo-test-pages/finom-geschaeftskonto/',
     logo: '<img class="provider-logo-img" src="/firmendo-test-pages/images/mini-logos/finom.svg" alt="Finom Logo" loading="lazy" decoding="async" width="144" height="144">'
@@ -1547,6 +1547,9 @@ function totalBreakdownMarkup(p) {
   if (withdrawalLimitExceeded(p)) {
     return `<span class="price-wrap total-breakdown"><span class="td-total">Limit überschritten</span><span class="price-hint">Details</span><span class="price-tooltip">Die gewählten Abhebungen überschreiten das monatliche Limit von ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}. Für dieses Nutzungsprofil ist kein passender Gesamtpreis berechenbar.</span></span>`;
   }
+  if (p.variableCardCost && monthlyWithdrawalTotal() > 0) {
+    return '<span class="price-wrap total-breakdown"><span class="td-total">Variabel</span><span class="price-hint">Details</span><span class="price-tooltip">Für Abhebungen ist eine kostenpflichtige physische Karte erforderlich. Die Gesamtkosten hängen von der gewählten Karte ab.</span></span>';
+  }
   if (p.totalVariable) {
     return '<span class="price-wrap total-breakdown"><span class="td-total">Variabel</span><span class="price-hint">Details</span><span class="price-tooltip">Transferkosten hängen von Betrag, Währung und Zahlungsweg ab. Ein monatlicher Gesamtpreis lässt sich aus der Anzahl der Buchungen allein nicht berechnen. Einmalige Einrichtung: 55 €.</span></span>';
   }
@@ -1635,13 +1638,13 @@ function comparisonCosts(p) {
 }
 
 function calcTotal(p) {
-  if (p.totalVariable || withdrawalLimitExceeded(p)) return null;
+  if (p.totalVariable || (p.variableCardCost && monthlyWithdrawalTotal() > 0) || withdrawalLimitExceeded(p)) return null;
   return comparisonCosts(p).total;
 }
 
 function comparisonTotalLabel(p) {
   if (withdrawalLimitExceeded(p)) return 'Limit überschritten';
-  if (p.totalVariable) return 'Variabel';
+  if (p.totalVariable || (p.variableCardCost && monthlyWithdrawalTotal() > 0)) return 'Variabel';
   return formatEuro(p._total);
 }
 
