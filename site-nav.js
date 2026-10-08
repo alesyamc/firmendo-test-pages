@@ -285,6 +285,7 @@
     ["data-track-pos", null],
     ["mini-anbieter-cta", "anbieter-box"],
     ["btn-table", "tabelle"],
+    ["mc-cta", "tabelle"],
     ["hero-cta", "hero"],
     ["toc-promo-cta", "toc-promo"],
     ["aktion-bar-cta", "aktionsleiste"],
