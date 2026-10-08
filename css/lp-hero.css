@@ -9,7 +9,9 @@ body.lp-comparison-page {
   --border-left-blue: 3px solid var(--accent-color-border);
   --border-left-blue-wide: 4px solid var(--accent-color-border);
   --shadow-cta: 0 4px 16px rgba(47,73,179,0.24);
+  --shadow-cta: 0 4px 16px light-dark(rgba(47,73,179,0.24), rgba(0,0,0,0.55));
   --shadow-table-cta: 0 4px 12px rgba(47,73,179,0.2);
+  --shadow-table-cta: 0 4px 12px light-dark(rgba(47,73,179,0.2), rgba(0,0,0,0.5));
 }
 
 body.lp-comparison-page .hero .hero-stat-card.accent {
@@ -39,13 +41,14 @@ body.lp-comparison-page .hero .hero-stat-card.accent {
 }
 
 .hero-stat-card {
-  background: #fff;
+  background: var(--surface);
   border: var(--border-card);
   border-radius: 14px;
   padding: 20px 14px;
   min-height: 118px;
   text-align: center;
   box-shadow: 0 2px 12px rgba(34,68,232,0.06);
+  box-shadow: 0 2px 12px light-dark(rgba(34,68,232,0.06), rgba(0,0,0,0.15));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -154,6 +157,7 @@ body.lp-comparison-page .hero .hero-stat-card.accent {
 
 body.lp-comparison-page .section-eyebrow {
   color: #46527A;
+  color: light-dark(#46527A, #BEC5DA);
 }
 
 body.lp-comparison-page .section-eyebrow::before {

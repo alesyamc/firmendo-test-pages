@@ -26,7 +26,7 @@ section.content-section { padding: 60px 5vw 80px; background: var(--gray-50); }
 /* VERGLEICH BOXES */
 .vergleich-3col { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 18px 0; }
 @media (max-width: 680px) { .vergleich-3col { grid-template-columns: 1fr; } }
-.vergleich-col { border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 16px; background: #fff; }
+.vergleich-col { border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 16px; background: var(--surface); }
 .vergleich-col.yes { border-color: rgba(34,68,232,0.2); background: var(--blue-ultra); }
 .vergleich-col-title { font-size: var(--text-ui-size); font-weight: 800; color: var(--gray-800); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
 .vergleich-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
@@ -136,6 +136,7 @@ body.lp-comparison-page .vergleich-3col--split .vergleich-col.yes li::before {
 /* Vergleichstabelle: use the shared Firmendo reference chrome from lp-comparison-table.css. */
 body.lp-comparison-page .filter-section {
   background: linear-gradient(180deg, rgba(248,250,254,0.98) 0%, var(--blue-ultra) 46%, var(--gray-50) 100%);
+  background: linear-gradient(180deg, light-dark(rgba(248,250,254,0.98), rgba(17,32,60,0.98)) 0%, var(--blue-ultra) 46%, var(--gray-50) 100%);
   border-top: 1px solid rgba(34,68,232,0.07);
   border-bottom: 0;
   padding: 48px 5vw 14px;
@@ -170,7 +171,7 @@ body.lp-comparison-page .table-scroll-wrap::after { display: none; }
 body.lp-comparison-page .table-wrap {
   width: 100%;
   margin: 0;
-  background: #fff;
+  background: var(--surface);
   border-radius: 18px;
   border: 1px solid var(--gray-200);
   overflow-x: auto;

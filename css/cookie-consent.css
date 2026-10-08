@@ -10,10 +10,13 @@
   width: min(720px, calc(100vw - 36px));
   padding: 16px;
   border: 1px solid rgba(22, 34, 52, 0.14);
+  border: 1px solid light-dark(rgba(22, 34, 52, 0.14), rgba(213,223,237,0.14));
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: 0 18px 50px rgba(22, 34, 52, 0.18);
+  box-shadow: 0 18px 50px light-dark(rgba(22, 34, 52, 0.18), rgba(0,0,0,0.45));
   color: #162234;
+  color: light-dark(#162234, #DDE5F1);
   font-family: inherit;
 }
 
@@ -25,6 +28,7 @@
 
 .cookie-consent-text a {
   color: #2244e8;
+  color: light-dark(#2244e8, #99A9F4);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -59,8 +63,10 @@
 
 .cookie-consent-button-secondary {
   border-color: rgba(22, 34, 52, 0.18);
-  background: #ffffff;
+  border-color: light-dark(rgba(22, 34, 52, 0.18), rgba(213,223,237,0.18));
+  background: var(--surface);
   color: #162234;
+  color: light-dark(#162234, #DDE5F1);
 }
 
 .cookie-settings-button {
@@ -75,10 +81,14 @@
   width: 46px;
   height: 46px;
   border: 1px solid rgba(22, 34, 52, 0.16);
+  border: 1px solid light-dark(rgba(22, 34, 52, 0.16), rgba(213,223,237,0.16));
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.96);
+  background: light-dark(rgba(255, 255, 255, 0.96), rgba(19,25,50,0.96));
   box-shadow: 0 8px 24px rgba(22, 34, 52, 0.14);
+  box-shadow: 0 8px 24px light-dark(rgba(22, 34, 52, 0.14), rgba(0,0,0,0.35));
   color: rgba(22, 34, 52, 0.78);
+  color: light-dark(rgba(22, 34, 52, 0.78), rgba(221,229,241,0.78));
   cursor: pointer;
   opacity: 0.76;
 }
@@ -87,6 +97,7 @@
 .cookie-settings-button:focus-visible {
   opacity: 1;
   color: #162234;
+  color: light-dark(#162234, #DDE5F1);
 }
 
 .cookie-settings-button:focus-visible {

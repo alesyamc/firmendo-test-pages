@@ -49,22 +49,26 @@
 }
 
 .faq-item {
-  background: #fff;
+  background: var(--surface);
   border: var(--border-panel-blue);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(34, 68, 232, 0.06);
+  box-shadow: 0 1px 4px light-dark(rgba(34, 68, 232, 0.06), rgba(0,0,0,0.15));
   transition: var(--transition-faq);
 }
 
 .faq-item:hover {
   border-color: #B8C4F5;
+  border-color: light-dark(#B8C4F5, #212E63);
   box-shadow: 0 4px 16px rgba(34, 68, 232, 0.10);
+  box-shadow: 0 4px 16px light-dark(rgba(34, 68, 232, 0.10), rgba(0,0,0,0.25));
 }
 
 .faq-item.open {
   border-color: var(--accent-color-border);
   box-shadow: 0 4px 20px rgba(34, 68, 232, 0.13);
+  box-shadow: 0 4px 20px light-dark(rgba(34, 68, 232, 0.13), rgba(0,0,0,0.325));
 }
 
 .faq-q {

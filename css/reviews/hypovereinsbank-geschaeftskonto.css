@@ -22,7 +22,7 @@
 }
 
 .modul-card {
-  background: #fff;
+  background: var(--surface);
   border: 1.5px solid var(--gray-200);
   border-radius: 14px;
   padding: 22px 18px;
@@ -31,7 +31,9 @@
 
 .modul-card.recommended {
   border-color: #003865;
+  border-color: light-dark(#003865, #B7DDFB);
   box-shadow: 0 4px 20px rgba(0,56,101,0.10);
+  box-shadow: 0 4px 20px light-dark(rgba(0,56,101,0.10), rgba(0,0,0,0.25));
 }
 
 .modul-badge {

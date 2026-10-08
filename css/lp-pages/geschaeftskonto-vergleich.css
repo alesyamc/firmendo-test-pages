@@ -1,7 +1,7 @@
 /* Vergleich: page-specific additions. Shared filter/table chrome lives in lp-comparison-table.css. */
 
 body.lp-gruender-page .post-checklist {
-  background: #fff;
+  background: var(--surface);
   border: var(--border-subtle);
   border-radius: var(--radius);
   padding: 22px 24px;
@@ -108,7 +108,7 @@ body.lp-comparison-page .rechner-field input {
 body.lp-comparison-page .rechner-field input:focus {
   outline: none;
   border-color: var(--blue);
-  background: #fff;
+  background: var(--surface);
 }
 
 body.lp-comparison-page #inp-abhebungen {
@@ -164,6 +164,7 @@ body.lp-comparison-page .promo-badge {
   border-radius: 999px;
   border: 1px solid rgba(232, 91, 42, 0.28);
   background: rgba(255, 248, 244, 0.94);
+  background: light-dark(rgba(255, 248, 244, 0.94), rgba(57,36,24,0.94));
   color: var(--gray-800);
   font-size: 13px;
   font-weight: 700;
@@ -175,11 +176,14 @@ body.lp-comparison-page .promo-badge {
 body.lp-comparison-page .promo-badge--hot {
   border-color: rgba(232, 91, 42, 0.42);
   background: #fff5ef;
+  background: light-dark(#fff5ef, #3D271A);
   box-shadow: 0 1px 0 rgba(232, 91, 42, 0.08);
+  box-shadow: 0 1px 0 light-dark(rgba(232, 91, 42, 0.08), rgba(0,0,0,0.2));
 }
 
 body.lp-comparison-page .promo-wrap .price-hint {
   color: #3f5195;
+  color: light-dark(#3f5195, #B1BBDE);
   font-weight: 600;
 }
 
@@ -194,6 +198,7 @@ body.lp-comparison-page .promo-wrap:hover .price-hint {
 
 body.lp-comparison-page .td-price .price-hint {
   color: #3f5195;
+  color: light-dark(#3f5195, #B1BBDE);
 }
 
 body.lp-comparison-page .td-price .price-hint::before {
@@ -296,9 +301,12 @@ body.lp-comparison-page .guide-card {
   min-height: 0;
   padding: 20px 22px 18px;
   background: linear-gradient(180deg, #fff 0%, #fcfdff 100%);
+  background: linear-gradient(180deg, light-dark(#fff, #131932) 0%, light-dark(#fcfdff, #141A34) 100%);
   border: 1px solid rgba(211, 220, 246, 0.92);
+  border: 1px solid light-dark(rgba(211, 220, 246, 0.92), rgba(31,47,92,0.92));
   border-radius: 14px;
   box-shadow: 0 10px 24px rgba(17, 24, 69, 0.035);
+  box-shadow: 0 10px 24px light-dark(rgba(17, 24, 69, 0.035), rgba(0,0,0,0.088));
 }
 
 body.lp-comparison-page .guide-card::before {
@@ -306,7 +314,7 @@ body.lp-comparison-page .guide-card::before {
   position: absolute;
   inset: 0 0 auto;
   height: 4px;
-  background: linear-gradient(90deg, var(--guide-accent, var(--blue)) 0%, rgba(47,73,179,0.18) 100%);
+  background: linear-gradient(90deg, var(--guide-accent, var(--blue-bg)) 0%, rgba(47,73,179,0.18) 100%);
 }
 
 body.lp-comparison-page .guide-card:nth-child(3n + 1) { --guide-accent: var(--blue); }

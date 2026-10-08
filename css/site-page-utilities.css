@@ -47,6 +47,7 @@
   margin-bottom: 0;
   background: var(--green-light);
   border-color: rgba(22,163,74,0.2);
+  border-color: light-dark(rgba(22,163,74,0.2), rgba(144,240,179,0.2));
 }
 
 .status-title-success {

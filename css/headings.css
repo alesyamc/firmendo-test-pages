@@ -43,6 +43,7 @@
   font-size: var(--text-eyebrow-size);
   font-weight: var(--font-weight-semibold);
   color: #46527A;
+  color: light-dark(#46527A, #BEC5DA);
   background: transparent;
   padding: 0;
   border: 0;

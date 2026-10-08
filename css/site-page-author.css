@@ -76,7 +76,7 @@
 
 .author-article:hover,
 .author-article:focus-visible {
-  background: #fff;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
   outline: none;
@@ -105,7 +105,7 @@
 }
 
 .author-side-card {
-  background: #fff;
+  background: var(--surface);
 }
 
 .author-facts {

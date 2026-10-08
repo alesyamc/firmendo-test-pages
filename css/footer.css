@@ -1,5 +1,5 @@
 footer {
-  background: var(--gray-800);
+  background: var(--ink-bg);
   color: #fff;
   padding: var(--space-8xl) var(--space-page-x) var(--space-5xl);
 }
@@ -128,7 +128,7 @@ footer {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface);
 }
 
 .footer-logo-word {

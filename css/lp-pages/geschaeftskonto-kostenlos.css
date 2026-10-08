@@ -70,7 +70,7 @@ body.lp-kostenlos-page .rechner-field input {
 body.lp-kostenlos-page .rechner-field input:focus {
   outline: none;
   border-color: var(--accent-blue);
-  background: #fff;
+  background: var(--surface);
 }
 
 body.lp-kostenlos-page .kostenlos-table { min-width: 1794px; }
@@ -92,6 +92,7 @@ body.lp-kostenlos-page .td-total {
 
 body.lp-kostenlos-page .price-wrap--base-action .price-hint {
   color: #3f5195;
+  color: light-dark(#3f5195, #B1BBDE);
   font-weight: 600;
 }
 
@@ -130,6 +131,7 @@ body.lp-kostenlos-page .promo-badge {
   border-radius: 999px;
   border: 1px solid rgba(232, 91, 42, 0.28);
   background: rgba(255, 248, 244, 0.94);
+  background: light-dark(rgba(255, 248, 244, 0.94), rgba(57,36,24,0.94));
   color: var(--gray-800);
   font-size: 13px;
   font-weight: 700;
@@ -141,11 +143,14 @@ body.lp-kostenlos-page .promo-badge {
 body.lp-kostenlos-page .promo-badge--hot {
   border-color: rgba(232, 91, 42, 0.42);
   background: #fff5ef;
+  background: light-dark(#fff5ef, #3D271A);
   box-shadow: 0 1px 0 rgba(232, 91, 42, 0.08);
+  box-shadow: 0 1px 0 light-dark(rgba(232, 91, 42, 0.08), rgba(0,0,0,0.2));
 }
 
 body.lp-kostenlos-page .promo-wrap .price-hint {
   color: #3f5195;
+  color: light-dark(#3f5195, #B1BBDE);
   font-weight: 600;
 }
 
@@ -183,15 +188,15 @@ body.lp-kostenlos-page .promo-tooltip::after {
 }
 
 body.lp-kostenlos-page .th-total {
-  background: color-mix(in srgb, var(--accent-blue) 8%, transparent) !important;
+  background: color-mix(in srgb, var(--accent-color-bg) 8%, transparent) !important;
 }
 
 body.lp-kostenlos-page .td-total-col {
-  background: color-mix(in srgb, var(--accent-blue) 4.5%, transparent);
+  background: color-mix(in srgb, var(--accent-color-bg) 4.5%, transparent);
 }
 
 body.lp-kostenlos-page tr:hover .td-total-col {
-  background: color-mix(in srgb, var(--accent-blue) 7%, transparent);
+  background: color-mix(in srgb, var(--accent-color-bg) 7%, transparent);
 }
 
 body.lp-kostenlos-page .td-total-col .u-text-green-xstrong {

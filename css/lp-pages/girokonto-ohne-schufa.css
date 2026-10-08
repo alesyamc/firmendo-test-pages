@@ -26,7 +26,8 @@ body.lp-comparison-page .girokonto-schufa-table .icon-no {
   border-radius: 50%;
 }
 body.lp-comparison-page .girokonto-schufa-table .icon-yes { background: var(--green-light); }
-body.lp-comparison-page .girokonto-schufa-table .icon-no { background: #FEE2E2; color: var(--red); }
+body.lp-comparison-page .girokonto-schufa-table .icon-no { background: #FEE2E2;
+ background: light-dark(#FEE2E2, #4F1717); color: var(--red); }
 body.lp-comparison-page .girokonto-schufa-table .icon-yes svg,
 body.lp-comparison-page .girokonto-schufa-table .icon-no svg {
   width: 12px;
@@ -85,7 +86,7 @@ body.lp-comparison-page .vergleich-2col-layout { grid-template-columns: repeat(2
 @media (max-width: 680px) { body.lp-comparison-page .vergleich-2col-layout { grid-template-columns: 1fr; } }
 .vergleich-col {
   border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 16px;
-  background: #fff;
+  background: var(--surface);
 }
 .vergleich-col.yes { border-color: rgba(34,68,232,0.2); background: var(--blue-ultra); }
 .vergleich-col-title { font-size: var(--text-ui-size); font-weight: 800; color: var(--gray-800); margin-bottom: 12px; }

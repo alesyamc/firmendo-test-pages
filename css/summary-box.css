@@ -1,5 +1,5 @@
 .summary-box {
-  background: #fff;
+  background: var(--surface);
   border: var(--border-panel-blue);
   border-radius: 16px;
   padding: 28px 32px;
@@ -12,6 +12,7 @@
   font-size: 22px;
   font-weight: var(--font-weight-bold);
   color: #111845;
+  color: light-dark(#111845, #D4D8F4);
   margin-bottom: 16px;
   letter-spacing: -0.3px;
   line-height: normal;
@@ -31,6 +32,7 @@
 .summary-box ul li {
   font-size: 17px;
   color: #1E2A52;
+  color: light-dark(#1E2A52, #CFD6ED);
   padding-left: 22px;
   position: relative;
   line-height: var(--line-height-body);
@@ -48,7 +50,7 @@
 }
 
 .summary-box-brief {
-  background: #fff;
+  background: var(--surface);
   border: var(--border-panel-blue);
   border-radius: 16px;
   padding: 26px 27px;
@@ -68,6 +70,7 @@
   letter-spacing: var(--letter-spacing-xwide);
   text-transform: uppercase;
   color: #2244E8;
+  color: light-dark(#2244E8, #99A9F4);
   line-height: var(--line-height-heading-loose);
 }
 
@@ -77,7 +80,9 @@
   height: 30px;
   border-radius: 8px;
   background: #E5EAFB;
+  background: light-dark(#E5EAFB, #17244F);
   color: #2244E8;
+  color: light-dark(#2244E8, #99A9F4);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -101,6 +106,7 @@
   padding-left: 24px;
   border-bottom: var(--border-bottom-pale);
   color: #1E2A52;
+  color: light-dark(#1E2A52, #CFD6ED);
   font-size: var(--text-summary-item-size);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-list);

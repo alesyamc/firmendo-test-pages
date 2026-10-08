@@ -3,10 +3,15 @@
 :root {
   --orange: #F05E18;
   --orange-dark: #D44E10;
+  --orange-dark: light-dark(#D44E10, #F7B191);
   --orange-light: #FBF0E8;
+  --orange-light: light-dark(#FBF0E8, #452E1E);
   --green: #16A34A;
+  --green: light-dark(#16A34A, #A8F3C4);
   --green-light: #DCFCE7;
+  --green-light: light-dark(#DCFCE7, #19562E);
   --white: #fff;
+  --white: light-dark(#fff, #131932);
   --gray-50: #F8FAFE;
   --gray-100: #F4F6FD;
   --gray-200: #E4E9F8;
@@ -24,7 +29,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 
 /* PAGE HEADER */
 .page-header {
-  background: #fff;
+  background: var(--surface);
   border-bottom: 1px solid var(--gray-200);
   padding: 48px 5vw 44px;
 }
@@ -34,7 +39,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 }
 .page-header-accent {
   width: 6px; height: 80px; border-radius: 6px; flex-shrink: 0;
-  background: linear-gradient(180deg, var(--accent-color-bg) 0%, var(--orange) 100%);
+  background: linear-gradient(180deg, var(--accent-color-bg) 0%, var(--orange-bg) 100%);
 }
 .page-header-text { flex: 1; }
 .page-eyebrow {
@@ -53,7 +58,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 
 /* BREADCRUMB */
 .breadcrumb {
-  background: var(--white);
+  background: var(--surface);
   border-bottom: 1px solid var(--gray-200);
   padding: 12px 5vw;
 }
@@ -75,7 +80,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 }
 
 .impressum-card {
-  background: #fff;
+  background: var(--surface);
   border: 1.5px solid var(--gray-200);
   border-radius: var(--radius);
   padding: 32px 36px;

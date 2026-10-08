@@ -9,14 +9,17 @@
   margin: 10px 0 0;
   font-size: var(--text-badge-size);
   color: #6B7280;
+  color: light-dark(#6B7280, #BDC1C8);
 }
 
 .hero-infocard {
   background: rgba(255,255,255,0.97);
+  background: light-dark(rgba(255,255,255,0.97), rgba(19,25,50,0.97));
   border: var(--border-card);
   border-radius: 28px;
   padding: 19px 28px 18px;
   box-shadow: 0 14px 34px rgba(34,68,232,0.08);
+  box-shadow: 0 14px 34px light-dark(rgba(34,68,232,0.08), rgba(0,0,0,0.2));
   width: 404px;
   flex-shrink: 0;
   display: flex;
@@ -63,6 +66,7 @@
   font-weight: var(--font-weight-extrabold);
   font-size: var(--text-logo-emphasis-size);
   color: #33427A;
+  color: light-dark(#33427A, #BDC5E4);
 }
 
 .ic-logo-sub {
@@ -84,6 +88,7 @@
   column-gap: 14px;
   padding: 9px 0;
   border-bottom: 1px solid rgba(228,233,248,0.65);
+  border-bottom: 1px solid light-dark(rgba(228,233,248,0.65), rgba(29,44,88,0.65));
 }
 
 .ic-row:last-child {
@@ -97,6 +102,7 @@
 .ic-row-label {
   font-size: var(--text-card-body-size);
   color: #4E588B;
+  color: light-dark(#4E588B, #B7BCD6);
   font-weight: 550;
   line-height: 1.16;
   min-width: 0;

@@ -73,7 +73,7 @@ body.lp-comparison-page .rechner-field input {
 body.lp-comparison-page .rechner-field input:focus {
   outline: none;
   border-color: var(--blue);
-  background: #fff;
+  background: var(--surface);
 }
 
 body.lp-comparison-page .schufa-table { min-width: 1574px; }
@@ -146,6 +146,7 @@ body.lp-comparison-page .promo-badge {
   border-radius: 999px;
   border: 1px solid rgba(232, 91, 42, 0.28);
   background: rgba(255, 248, 244, 0.94);
+  background: light-dark(rgba(255, 248, 244, 0.94), rgba(57,36,24,0.94));
   color: var(--gray-800);
   font-size: 13px;
   font-weight: 700;
@@ -157,11 +158,14 @@ body.lp-comparison-page .promo-badge {
 body.lp-comparison-page .promo-badge--hot {
   border-color: rgba(232, 91, 42, 0.42);
   background: #fff5ef;
+  background: light-dark(#fff5ef, #3D271A);
   box-shadow: 0 1px 0 rgba(232, 91, 42, 0.08);
+  box-shadow: 0 1px 0 light-dark(rgba(232, 91, 42, 0.08), rgba(0,0,0,0.2));
 }
 
 body.lp-comparison-page .promo-wrap .price-hint {
   color: #3f5195;
+  color: light-dark(#3f5195, #B1BBDE);
   font-weight: 600;
 }
 
@@ -262,7 +266,7 @@ body.lp-comparison-page .schufa-criteria-grid .u-note-body-muted {
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 28px;
-  background: #fff;
+  background: var(--surface);
   border: 1.5px solid var(--gray-200);
   border-radius: var(--radius);
   padding: 28px 32px;
@@ -308,7 +312,7 @@ section.content-section { background: var(--gray-50); padding: 64px 5vw 80px; bo
 .content-body { min-width: 0; }
 
 /* Vergleich 2col */
-.vergleich-col { background: #fff; border: 1.5px solid var(--gray-200); border-radius: 14px; padding: 20px 18px; }
+.vergleich-col { background: var(--surface); border: 1.5px solid var(--gray-200); border-radius: 14px; padding: 20px 18px; }
 .vergleich-col.yes { border-color: rgba(34,68,232,0.3); background: var(--blue-ultra); }
 .vergleich-col.no { border-color: var(--gray-200); }
 .vergleich-col-title { display: flex; align-items: center; gap: 8px; font-size: var(--text-card-body-size); font-weight: 800; color: var(--gray-800); margin-bottom: 12px; }

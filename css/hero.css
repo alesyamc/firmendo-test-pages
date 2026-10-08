@@ -3,7 +3,9 @@
   --lp-highlight-marker-color: var(--accent-orange-display);
   --border-blue: 2px solid var(--accent-color-border);
   --shadow-cta: 0 4px 16px rgba(47,73,179,0.24);
+  --shadow-cta: 0 4px 16px light-dark(rgba(47,73,179,0.24), rgba(0,0,0,0.55));
   background: linear-gradient(180deg, #F8FAFF 0%, #F2F5FC 52%, #EDF1F8 100%);
+  background: linear-gradient(180deg, light-dark(#F8FAFF, #151C37) 0%, light-dark(#F2F5FC, #132243) 52%, light-dark(#EDF1F8, #1B2A45) 100%);
   padding: 52px 5vw 48px;
   border-bottom: var(--border-bottom-subtle);
   position: relative;
@@ -44,6 +46,7 @@
   align-items: center;
   gap: 11px;
   color: #46527A;
+  color: light-dark(#46527A, #BEC5DA);
   font-size: var(--text-eyebrow-size);
   font-weight: var(--font-weight-semibold);
   line-height: 1.2;
@@ -66,7 +69,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--lp-highlight-marker-color, var(--orange));
+  background: var(--lp-highlight-marker-color, var(--orange-bg));
   flex: 0 0 7px;
   margin-top: 1px;
 }
@@ -119,6 +122,7 @@
   line-height: var(--line-height-heading);
   text-decoration: none;
   box-shadow: 0 12px 28px rgba(17,24,69,0.14);
+  box-shadow: 0 12px 28px light-dark(rgba(17,24,69,0.14), rgba(0,0,0,0.35));
   transition: background .18s, color .18s, transform .15s, box-shadow .2s;
 }
 
@@ -128,14 +132,16 @@
   border-color: var(--accent-color-border);
   color: #fff;
   box-shadow: 0 14px 30px rgba(47,73,179,0.28);
+  box-shadow: 0 14px 30px light-dark(rgba(47,73,179,0.28), rgba(0,0,0,0.55));
 }
 
 .hero-cta.secondary,
 .hero-cta-secondary {
-  background: #fff;
+  background: var(--surface);
   color: var(--accent-color-text);
   border: 2px solid var(--accent-color-border);
   box-shadow: 0 10px 24px rgba(47,73,179,0.10);
+  box-shadow: 0 10px 24px light-dark(rgba(47,73,179,0.10), rgba(0,0,0,0.25));
 }
 
 .hero-cta:hover,
@@ -148,6 +154,7 @@
 .hero-cta-primary:hover {
   background: var(--accent-color-bg-hover);
   box-shadow: 0 8px 22px rgba(47,73,179,0.28);
+  box-shadow: 0 8px 22px light-dark(rgba(47,73,179,0.28), rgba(0,0,0,0.55));
 }
 
 .hero-cta.secondary:hover,
@@ -163,6 +170,7 @@
   margin-top: 2px;
   margin-bottom: 20px;
   color: #3A4268;
+  color: light-dark(#3A4268, #C6CBDF);
   font-size: var(--text-caption-size);
   font-weight: var(--font-weight-semibold);
 }
@@ -178,7 +186,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--lp-highlight-marker-color, var(--orange));
+  background: var(--lp-highlight-marker-color, var(--orange-bg));
   flex: 0 0 6px;
 }
 

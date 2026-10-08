@@ -33,6 +33,15 @@
   --amber: #8A4600;
   --amber-light: #FEF3C7;
   --white: #fff;
+  /* Semantische Tokens fuer Dark Mode (css/dark-mode.css) */
+  --surface: #fff;
+  --ink-bg: var(--gray-800);
+  --ink-bg-2: var(--gray-700);
+  --blue-bg-hover: var(--blue-dark);
+  --blue-bg: var(--blue);
+  --orange-bg: var(--orange);
+  --green-bg: var(--green);
+  --red-bg: var(--red);
   --gray-50: #F8FAFE;
   --gray-100: #F4F6FD;
   --gray-200: #E4E9F8;

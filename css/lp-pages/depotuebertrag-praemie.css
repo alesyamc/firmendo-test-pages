@@ -2,14 +2,22 @@
 
 body.lp-comparison-page {
   --depot-blue-surface: #F4F7FF;
+  --depot-blue-surface: light-dark(#F4F7FF, #121E3F);
   --depot-blue-surface-strong: #EAF0FF;
+  --depot-blue-surface-strong: light-dark(#EAF0FF, #152347);
   --depot-blue-border-soft: rgba(47,73,179,0.12);
+  --depot-blue-border-soft: light-dark(rgba(47,73,179,0.12), rgba(135,153,224,0.12));
   --depot-blue-border-medium: rgba(47,73,179,0.18);
+  --depot-blue-border-medium: light-dark(rgba(47,73,179,0.18), rgba(135,153,224,0.18));
   --depot-blue-shadow-soft: rgba(47,73,179,0.06);
+  --depot-blue-shadow-soft: light-dark(rgba(47,73,179,0.06), rgba(0,0,0,0.15));
   --depot-blue-shadow-medium: rgba(47,73,179,0.10);
+  --depot-blue-shadow-medium: light-dark(rgba(47,73,179,0.10), rgba(0,0,0,0.25));
   --depot-blue-shadow-strong: rgba(47,73,179,0.16);
+  --depot-blue-shadow-strong: light-dark(rgba(47,73,179,0.16), rgba(0,0,0,0.4));
   --depot-violet: #6773CF;
   --depot-violet-light: #EEF1FF;
+  --depot-violet-light: light-dark(#EEF1FF, #141C44);
 }
 
 body.lp-comparison-page .depot-table .th-col-anbieter { width: 276px; min-width: 276px; }
@@ -27,7 +35,9 @@ body.lp-comparison-page .depot-table .td-praemie-col { text-align: center; }
 
 body.lp-comparison-page .depot-table .badge-orange {
   background: #FFF0E2;
+  background: light-dark(#FFF0E2, #47321E);
   color: #8F4109;
+  color: light-dark(#8F4109, #FACFB0);
   font-size: var(--text-caption-size);
   font-weight: 700;
   padding: 4px 10px;
@@ -107,50 +117,69 @@ body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible .price
   background: var(--accent-color-bg);
   color: #fff;
   box-shadow: 0 3px 8px rgba(47,73,179,0.18);
+  box-shadow: 0 3px 8px light-dark(rgba(47,73,179,0.18), rgba(0,0,0,0.45));
 }
 
 body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible {
   border-radius: 999px;
   box-shadow: 0 0 0 3px rgba(47,73,179,0.16);
+  box-shadow: 0 0 0 3px light-dark(rgba(47,73,179,0.16), rgba(0,0,0,0.4));
 }
 
 body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible .price-tooltip {
   display: block;
 }
 body.lp-comparison-page .brand-logo-text { font-weight: 900; font-size: 13px; line-height: 1; }
-body.lp-comparison-page .brand-logo-text.comdirect { color: #0066B3; }
-body.lp-comparison-page .brand-logo-text.consorsbank { color: #E5690A; }
-body.lp-comparison-page .brand-logo-text.targobank { color: #0B3D91; }
-body.lp-comparison-page .brand-logo-text.wuestenrot { color: #5B2D8E; }
-body.lp-comparison-page .brand-logo-text.maxblue { color: #0077B5; font-size: 12px; }
-body.lp-comparison-page .brand-logo-text.fidelity { color: #2F704D; font-size: 11px; }
-body.lp-comparison-page .brand-logo-text.direkt1822 { color: #008800; }
-body.lp-comparison-page .brand-logo-text.lynx { color: #C00; }
+body.lp-comparison-page .brand-logo-text.comdirect { color: #0066B3;
+ color: light-dark(#0066B3, #A4D5FA); }
+body.lp-comparison-page .brand-logo-text.consorsbank { color: #E5690A;
+ color: light-dark(#E5690A, #F9BA8A); }
+body.lp-comparison-page .brand-logo-text.targobank { color: #0B3D91;
+ color: light-dark(#0B3D91, #B0CBF9); }
+body.lp-comparison-page .brand-logo-text.wuestenrot { color: #5B2D8E;
+ color: light-dark(#5B2D8E, #CCB3E7); }
+body.lp-comparison-page .brand-logo-text.maxblue { color: #0077B5;
+ color: light-dark(#0077B5, #A3DCFA); font-size: 12px; }
+body.lp-comparison-page .brand-logo-text.fidelity { color: #2F704D;
+ color: light-dark(#2F704D, #C2E5D2); font-size: 11px; }
+body.lp-comparison-page .brand-logo-text.direkt1822 { color: #008800;
+ color: light-dark(#008800, #B6FBB6); }
+body.lp-comparison-page .brand-logo-text.lynx { color: #C00;
+ color: light-dark(#C00, #FA9999); }
 body.lp-comparison-page .brand-logo-text.scalable { color: #1A6FFF; }
-body.lp-comparison-page .mini-anbieter-logo.comdirect { color: #0066B3; }
-body.lp-comparison-page .mini-anbieter-logo.consorsbank { color: #E5690A; }
-body.lp-comparison-page .mini-anbieter-logo.targobank { color: #0B3D91; }
-body.lp-comparison-page .mini-anbieter-logo.wuestenrot { color: #5B2D8E; }
+body.lp-comparison-page .mini-anbieter-logo.comdirect { color: #0066B3;
+ color: light-dark(#0066B3, #A4D5FA); }
+body.lp-comparison-page .mini-anbieter-logo.consorsbank { color: #E5690A;
+ color: light-dark(#E5690A, #F9BA8A); }
+body.lp-comparison-page .mini-anbieter-logo.targobank { color: #0B3D91;
+ color: light-dark(#0B3D91, #B0CBF9); }
+body.lp-comparison-page .mini-anbieter-logo.wuestenrot { color: #5B2D8E;
+ color: light-dark(#5B2D8E, #CCB3E7); }
 body.lp-comparison-page .mini-stat-val.blue-small { color: var(--blue); font-size: var(--text-card-body-size); }
 body.lp-comparison-page .table-note-wrap { max-width: 1200px; margin: 0 auto; }
 body.lp-comparison-page .table-note { margin-top: var(--space-lg); font-size: var(--text-caption-size); line-height: 1.55; color: var(--gray-300); }
 body.lp-comparison-page .hero-trust-row { font-size: 14px; }
 body.lp-comparison-page .hero-eyebrow,
-body.lp-comparison-page .section-eyebrow { color: #46527A; }
+body.lp-comparison-page .section-eyebrow { color: #46527A;
+ color: light-dark(#46527A, #BEC5DA); }
 body.lp-comparison-page .hero-stat-card { box-shadow: 0 4px 14px var(--depot-blue-shadow-soft); }
 
 body.lp-comparison-page .filter-section {
   background: linear-gradient(180deg, rgba(248,250,254,0.98) 0%, var(--depot-blue-surface) 46%, var(--gray-50) 100%);
+  background: linear-gradient(180deg, light-dark(rgba(248,250,254,0.98), rgba(17,32,60,0.98)) 0%, var(--depot-blue-surface) 46%, var(--gray-50) 100%);
   border-top: 1px solid rgba(47,73,179,0.08);
+  border-top: 1px solid light-dark(rgba(47,73,179,0.08), rgba(135,153,224,0.08));
 }
 
 body.lp-comparison-page .filter-title-pill {
   border-color: rgba(47,73,179,0.14);
+  border-color: light-dark(rgba(47,73,179,0.14), rgba(135,153,224,0.14));
 }
 
 body.lp-comparison-page .filter-select:focus,
 body.lp-comparison-page .fd.open .fd-trigger {
   box-shadow: 0 0 0 3px rgba(47,73,179,0.12);
+  box-shadow: 0 0 0 3px light-dark(rgba(47,73,179,0.12), rgba(0,0,0,0.3));
 }
 
 body.lp-comparison-page .filter-select.has-value,
@@ -161,6 +190,7 @@ body.lp-comparison-page .fd-option.selected {
 
 body.lp-comparison-page .fd-menu {
   box-shadow: 0 12px 40px rgba(47,73,179,0.12), 0 4px 12px rgba(17,24,69,0.05);
+  box-shadow: 0 12px 40px light-dark(rgba(47,73,179,0.12), rgba(0,0,0,0.3)), 0 4px 12px light-dark(rgba(17,24,69,0.05), rgba(0,0,0,0.125));
 }
 
 body.lp-comparison-page .fd-option:hover { background: var(--depot-blue-surface); }
@@ -175,23 +205,28 @@ body.lp-comparison-page .filter-reset:hover {
 
 body.lp-comparison-page .toggle-btn.active {
   box-shadow: 0 2px 8px rgba(47,73,179,0.20);
+  box-shadow: 0 2px 8px light-dark(rgba(47,73,179,0.20), rgba(0,0,0,0.5));
 }
 
 body.lp-comparison-page .filter-count-badge {
   border-color: rgba(47,73,179,0.16);
+  border-color: light-dark(rgba(47,73,179,0.16), rgba(135,153,224,0.16));
 }
 
 body.lp-comparison-page .mc-cta {
   box-shadow: 0 3px 10px rgba(47,73,179,0.18);
+  box-shadow: 0 3px 10px light-dark(rgba(47,73,179,0.18), rgba(0,0,0,0.45));
 }
 
 body.lp-comparison-page .table-disclaimer-inner {
   background: rgba(47,73,179,0.05);
   border: 1px solid rgba(47,73,179,0.14);
+  border: 1px solid light-dark(rgba(47,73,179,0.14), rgba(135,153,224,0.14));
 }
 
 body.lp-comparison-page .trust-bar {
   border-bottom: 1px solid rgba(47,73,179,0.08);
+  border-bottom: 1px solid light-dark(rgba(47,73,179,0.08), rgba(135,153,224,0.08));
 }
 
 .methodik-intro { max-width: none; margin: 0 0 36px; }
@@ -204,6 +239,7 @@ body.lp-comparison-page .trust-bar {
   overflow: hidden;
   min-height: 238px;
   background: linear-gradient(180deg, #FFFFFF 0%, var(--depot-blue-surface) 100%);
+  background: linear-gradient(180deg, light-dark(#FFFFFF, #131932) 0%, var(--depot-blue-surface) 100%);
   border: 1px solid var(--depot-blue-border-soft);
   border-radius: 24px;
   padding: 18px 26px 24px;
@@ -213,8 +249,10 @@ body.lp-comparison-page .trust-bar {
 .methodik-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--card-accent) 0%, rgba(47,73,179,0.18) 100%); }
 .methodik-card:hover { transform: translateY(-4px); border-color: var(--depot-blue-border-medium); box-shadow: 0 22px 48px var(--depot-blue-shadow-medium); }
 .methodik-card.audit { --card-accent: var(--blue-dark); }
-.methodik-card.cost { --card-accent: #0F766E; }
-.methodik-card.transparency { --card-accent: #D44E10; }
+.methodik-card.cost { --card-accent: #0F766E;
+ --card-accent: light-dark(#0F766E, #BCF7F2); }
+.methodik-card.transparency { --card-accent: #D44E10;
+ --card-accent: light-dark(#D44E10, #F7B191); }
 .methodik-card.quality { --card-accent: var(--depot-violet); }
 .methodik-card-head { position: relative; z-index: 1; display: flex; align-items: center; justify-content: flex-end; margin-bottom: var(--space-lg); min-height: 18px; }
 .methodik-step { font-size: var(--text-eyebrow-size); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--card-accent); line-height: 1; }
@@ -223,9 +261,12 @@ body.lp-comparison-page .trust-bar {
 .methodik-note { font-size: var(--text-card-body-size); color: var(--gray-500); max-width: 720px; margin: var(--space-lg) 0 0; line-height: 1.7; }
 .eignung-wrap .content-list li { font-size: 15px; }
 .praemien-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 28px 0; align-items: stretch; }
-.praemien-card { --praemie-accent: var(--blue); position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F7F9FF 100%); border: 1px solid var(--depot-blue-border-soft); border-radius: var(--radius-card-xl); padding: 18px 20px 20px; min-height: 190px; display: flex; flex-direction: column; gap: var(--space-lg); box-shadow: 0 12px 30px rgba(47,73,179,0.05); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.praemien-card { --praemie-accent: var(--blue); position: relative; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F7F9FF 100%);
+ background: linear-gradient(180deg, light-dark(#FFFFFF, #131932) 0%, light-dark(#F7F9FF, #111C3C) 100%); border: 1px solid var(--depot-blue-border-soft); border-radius: var(--radius-card-xl); padding: 18px 20px 20px; min-height: 190px; display: flex; flex-direction: column; gap: var(--space-lg); box-shadow: 0 12px 30px rgba(47,73,179,0.05);
+ box-shadow: 0 12px 30px light-dark(rgba(47,73,179,0.05), rgba(0,0,0,0.125)); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
 .praemien-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--praemie-accent) 0%, rgba(47,73,179,0.18) 100%); }
-.praemien-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(47,73,179,0.09); border-color: var(--depot-blue-border-medium); }
+.praemien-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(47,73,179,0.09);
+ box-shadow: 0 18px 36px light-dark(rgba(47,73,179,0.09), rgba(0,0,0,0.225)); border-color: var(--depot-blue-border-medium); }
 .praemien-card.cash { --praemie-accent: var(--green); }
 .praemien-card.interest { --praemie-accent: var(--blue); }
 .praemien-card.percent { --praemie-accent: var(--orange); }

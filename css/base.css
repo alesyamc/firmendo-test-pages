@@ -118,8 +118,9 @@ div[id] {
   left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent-color-bg) 0%, var(--accent-color-bg-hover) 55%, var(--orange) 100%);
+  background: linear-gradient(90deg, var(--accent-color-bg) 0%, var(--accent-color-bg-hover) 55%, var(--orange-bg) 100%);
   box-shadow: 0 1px 0 rgba(255,255,255,0.55), 0 2px 8px rgba(34, 68, 232, 0.16);
+  box-shadow: 0 1px 0 light-dark(rgba(255,255,255,0.55), rgba(255,255,255,0.044)), 0 2px 8px light-dark(rgba(34, 68, 232, 0.16), rgba(0,0,0,0.4));
   z-index: 999;
   pointer-events: none;
   transition: width 0.1s linear;

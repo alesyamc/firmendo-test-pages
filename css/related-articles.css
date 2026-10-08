@@ -18,7 +18,7 @@
 }
 
 .related-card {
-  background: #fff;
+  background: var(--surface);
   border: var(--border-subtle);
   border-radius: 16px;
   text-decoration: none;
@@ -80,6 +80,7 @@
 .related-card-cat--tax {
   background: var(--green-light);
   color: #15803D;
+  color: light-dark(#15803D, #B8F3CE);
 }
 
 .related-card-title {

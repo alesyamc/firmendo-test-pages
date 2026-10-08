@@ -16,6 +16,7 @@ body.lp-comparison-page .card-type-card .vergleich-col-title {
   margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(17,24,64,0.08);
+  border-bottom: 1px solid light-dark(rgba(17,24,64,0.08), rgba(205,210,242,0.08));
   font-size: 16px;
   line-height: 1.25;
 }

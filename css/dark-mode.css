@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Firmendo Dark Mode
+   Aktiv, wenn <html data-theme="dark"> gesetzt ist (siehe Inline-Script im
+   <head> und /theme-toggle.js). Muss als LETZTES Stylesheet geladen werden.
+   1) Token-Overrides  2) Komponenten mit fest codierten Hellfarben
+   ========================================================================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Flächen & Text (helle Grautöne werden zu dunklen Navy-Flächen) */
+  --surface: #121936;
+  --ink-bg: #1A2350;
+  --ink-bg-2: #222D5E;
+  --blue-bg-hover: #4563F5;
+  --white: #121936;
+  --gray-50: #0A0F24;
+  --gray-100: #172042;
+  --gray-200: #27325F;
+  --gray-300: #8792C2;
+  --gray-500: #B3BBDD;
+  --gray-700: #DCE1F4;
+  --gray-800: #EEF1FB;
+
+  /* Blau: Text heller, Flächen kräftig */
+  --blue: #8EA2FF;
+  --blue-dark: #A9B8FF;
+  --blue-bg: #3352EE;
+  --blue-light: #1B2759;
+  --blue-ultra: #141C42;
+  --accent-blue: #8EA2FF;
+  --accent-blue-dark: #A9B8FF;
+  --accent-blue-light: #1B2759;
+  --accent-color-text: #8EA2FF;
+  --accent-color-bg: #3352EE;
+  --accent-color-bg-hover: #4563F5;
+  --accent-color-soft: #1B2759;
+  --accent-color-soft-strong: #2A3A82;
+  --accent-color-border: #6F86FF;
+  --accent-color-border-muted: rgba(142,162,255,0.28);
+  --accent-color-underline: rgba(142,162,255,0.45);
+  --heading-accent-blue: #8EA2FF;
+
+  /* Orange */
+  --orange: #FF9257;
+  --orange-dark: #FFA672;
+  --orange-bg: #D9541A;
+  --orange-light: #3A1E10;
+  --accent-orange-display: #FF7A3D;
+  --accent-orange-action: #D9541A;
+  --accent-orange-action-hover: #E8652A;
+  --accent-orange-bg: #D9541A;
+  --accent-orange-bg-hover: #E8652A;
+
+  /* Status */
+  --green: #5BD98A;
+  --green-bg: #1C8A47;
+  --green-light: #12331F;
+  --red: #FF8080;
+  --red-bg: #C93030;
+  --red-light: #3A1518;
+  --amber: #F7C04A;
+  --amber-light: #33260A;
+  --purple: #B9A2FF;
+  --purple-light: #261C4D;
+
+  /* Rahmen & Schatten */
+  --border-neutral: 1px solid #27325F;
+  --border-neutral-strong: 1.5px solid #27325F;
+  --border-bottom-pale: 1px solid #1E2850;
+  --border-top-faq: 1px solid #27325F;
+  --border-white-ring: 2px solid #121936;
+  --border-panel: 1px solid rgba(39, 50, 95, 0.95);
+  --border-panel-soft: 1px solid rgba(39, 50, 95, 0.9);
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.25);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.32);
+  --shadow-hover: 0 12px 48px rgba(0,0,0,0.45);
+  --shadow-avatar: 0 2px 10px rgba(0,0,0,0.3);
+  --shadow-soft-blue: 0 2px 12px rgba(0,0,0,0.2);
+  --shadow-cta: 0 4px 16px rgba(51,82,238,0.35);
+  --shadow-table-cta: 0 4px 12px rgba(51,82,238,0.3);
+  --shadow-inset-white: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* --------------------------------------------------------------------------
+   Basis
+   -------------------------------------------------------------------------- */
+:root[data-theme="dark"] body {
+  background: var(--gray-50);
+  color: var(--gray-800);
+}
+
+:root[data-theme="dark"] img:not([src$=".svg"]):not(.sn-logo-img) {
+  filter: brightness(.92);
+}
+
+/* --------------------------------------------------------------------------
+   Theme-Umschalter (Navigation)
+   -------------------------------------------------------------------------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: var(--transition-bg);
+}
+.theme-toggle:hover,
+.theme-toggle:focus-visible { background: var(--gray-100); }
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.theme-toggle--mobile { display: none; }
+@media (max-width: 700px) {
+  .theme-toggle--mobile { display: inline-flex; margin-left: auto; margin-right: 4px; }
+  .theme-toggle-item { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   Komponenten
+   -------------------------------------------------------------------------- */
+:root[data-theme="dark"] #site-footer {
+  background: #070B1C;
+  border-top: 1px solid #1E2850;
+}
+
+/* Startseite: Finder-Schritte nutzen die Textfarbe als Fläche */
+:root[data-theme="dark"] .hero-finder-step.is-active,
+:root[data-theme="dark"] .hero-finder-step.is-done {
+  background: var(--blue-bg);
+  border-color: var(--blue-bg);
+  color: #fff;
+}
+:root[data-theme="dark"] .hero-finder-line.is-done { background: var(--blue-bg); }
+
+/* Logo sofort tauschen (theme-toggle.js setzt zusätzlich das src-Attribut) */
+:root[data-theme="dark"] #site-nav .sn-logo-img { content: url("/firmendo-test-pages/images/firmendo-logo-white.svg"); }
+
+/* Breadcrumb-Trenner (nutzt sonst die Rahmenfarbe) */
+:root[data-theme="dark"] .breadcrumb .sep { color: var(--gray-300); }
+
+/* Ratgeber-Hub: Kategorie-Label nutzt Hover-Farbe als Text */
+:root[data-theme="dark"] .c-konto { color: var(--accent-color-text); }

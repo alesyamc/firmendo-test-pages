@@ -2,11 +2,17 @@
 
 :root {
   --orange: #B4410C;
+  --orange: light-dark(#B4410C, #F9BCA0);
   --orange-dark: #963407;
+  --orange-dark: light-dark(#963407, #FBC6AD);
   --orange-light: #FBF0E8;
+  --orange-light: light-dark(#FBF0E8, #452E1E);
   --green: #0B7833;
+  --green: light-dark(#0B7833, #BBF9D2);
   --green-light: #DCFCE7;
+  --green-light: light-dark(#DCFCE7, #19562E);
   --white: #fff;
+  --white: light-dark(#fff, #131932);
   --gray-50: #F8FAFE;
   --gray-100: #F4F6FD;
   --gray-200: #E4E9F8;
@@ -24,7 +30,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 
 /* PAGE HEADER */
 .page-header {
-  background: #fff;
+  background: var(--surface);
   border-bottom: 1px solid var(--gray-200);
   padding: 48px 5vw 44px;
 }
@@ -34,7 +40,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 }
 .page-header-accent {
   width: 6px; height: 80px; border-radius: 6px; flex-shrink: 0;
-  background: linear-gradient(180deg, var(--accent-color-text) 0%, var(--orange) 100%);
+  background: linear-gradient(180deg, var(--accent-color-bg) 0%, var(--orange-bg) 100%);
 }
 .page-header-text { flex: 1; }
 .page-eyebrow {
@@ -53,7 +59,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 
 /* BREADCRUMB */
 .breadcrumb {
-  background: var(--white);
+  background: var(--surface);
   border-bottom: 1px solid var(--gray-200);
   padding: 12px 5vw;
 }
@@ -76,7 +82,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 
 /* CARDS */
 .kontakt-card {
-  background: #fff;
+  background: var(--surface);
   border: 1.5px solid var(--gray-200);
   border-radius: var(--radius);
   padding: 32px 36px;
@@ -139,7 +145,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--accent-color-text);
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color-text) 8%, transparent);
 }
 .form-group input::placeholder,
@@ -151,7 +157,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
 
 .form-submit {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--accent-color-text); color: #fff;
+  background: var(--accent-color-bg); color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: var(--text-ui-size); font-weight: 700;
   border: none; border-radius: 50px;
@@ -174,6 +180,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
   display: none;
   background: var(--green-light);
   border: 1.5px solid rgba(22,163,74,0.25);
+  border: 1.5px solid light-dark(rgba(22,163,74,0.25), rgba(144,240,179,0.25));
   border-radius: 12px;
   padding: 20px 24px;
   font-size: 0.93rem; color: var(--green);
@@ -220,13 +227,14 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--green-light);
   border: 1.5px solid rgba(22,163,74,0.2);
+  border: 1.5px solid light-dark(rgba(22,163,74,0.2), rgba(144,240,179,0.2));
   border-radius: 50px;
   padding: 5px 12px;
   font-size: var(--text-badge-size); font-weight: 700; color: var(--green);
   margin-top: 12px;
 }
 .response-badge-dot {
-  width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+  width: 7px; height: 7px; border-radius: 50%; background: var(--green-bg);
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
@@ -253,7 +261,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
   user-select: none;
 }
 .topic-chip:hover { background: var(--accent-color-soft-strong); border-color: var(--accent-color-text); }
-.topic-chip.selected { background: var(--accent-color-text); color: #fff; }
+.topic-chip.selected { background: var(--accent-color-bg); color: #fff; }
 
 .contact-person-name {
   font-size: var(--text-ui-large-size);
@@ -291,7 +299,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--gray-800); background: v
   color: var(--accent-color-text);
   transition: background .2s, transform .2s;
 }
-.faq-item.open .faq-icon { background: var(--accent-color-text); transform: rotate(45deg); }
+.faq-item.open .faq-icon { background: var(--accent-color-bg); transform: rotate(45deg); }
 .faq-icon svg { transition: stroke .2s; }
 .faq-item.open .faq-icon svg { stroke: #fff; }
 .faq-answer {
