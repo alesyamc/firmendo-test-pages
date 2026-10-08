@@ -1736,8 +1736,8 @@ function renderMobileCards(data) {
           </div>
         </div>
         <div class="mc-price-main">
-          <div class="mc-price-amount ${p._total === 0 ? 'free' : ''}">${comparisonTotalLabel(p)}</div>
-          <div class="mc-price-period">/Monat*</div>
+          <div class="mc-price-amount ${p._total === 0 ? 'free' : ''}">${withdrawalLimitExceeded(p) ? '—' : comparisonTotalLabel(p)}</div>
+          <div class="mc-price-period">${withdrawalLimitExceeded(p) ? 'Abhebungslimit' : '/Monat*'}</div>
         </div>
       </div>
       <div class="mc-specs">
@@ -1750,7 +1750,7 @@ function renderMobileCards(data) {
         <div class="mc-spec"><span class="mc-spec-label">International</span><span class="mc-spec-value ${p.intl ? 'green' : 'muted'}">${p.intl ? 'Ja' : 'Nein'}</span></div>
       </div>
       <div class="mc-footer">
-        <div class="mc-footer-note">${p.priceNote}</div>
+        <div class="mc-footer-note">${withdrawalLimitExceeded(p) ? `Abhebungslimit: ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}/Monat; gewählte Abhebungen: ${formatEuro(monthlyWithdrawalTotal())}. ` : ''}${p.priceNote}</div>
         ${providerCtaMarkup(p, 'mobile')}
       </div>
     </article>
