@@ -24,5 +24,10 @@ Redirect 301 /bestes-privatkonto-selbststaendige https://www.firmendo.de/privatk
 # Quelle: tools/affiliate-links.txt
 # Klick-Tracking aktiv: /go/<slug>/ -> t/go.php (zaehlt, haengt SubID an, 302 zum Partner).
 RewriteEngine On
+RewriteOptions AllowNoSlash
+<If "%{REQUEST_URI} =~ m#^/go/[a-z0-9]+(?:-[a-z0-9]+)*$#">
+  DirectorySlash Off
+  Options -Indexes
+</If>
 RewriteRule ^go/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ t/go.php?slug=$1 [QSA,L]
 # END firmendo-affiliate
