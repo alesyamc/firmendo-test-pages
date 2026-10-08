@@ -276,3 +276,107 @@
 
   loadSharedNav().finally(init);
 })();
+
+// Firmendo Klick-Tracking (ohne Cookies): ergaenzt Partnerlinks /go/<slug>/ beim Klick um
+// Seite, Platzierung und Abschnitt und zaehlt Seitenaufrufe fuer die Klickrate.
+// Auswertung: /intern/klicks/ · Server: /t/go.php, /t/pv.php · Doku: docs/klick-tracking/README.md
+(() => {
+  const PLACEMENTS = [
+    ["data-track-pos", null],
+    ["mini-anbieter-cta", "anbieter-box"],
+    ["btn-table", "tabelle"],
+    ["hero-cta", "hero"],
+    ["toc-promo-cta", "toc-promo"],
+    ["aktion-bar-cta", "aktionsleiste"],
+    ["alt-card-btn", "alternativen"],
+    ["td-cta-btn", "testbericht-cta"],
+  ];
+  const trackingHost = /(^|\.)firmendo\.de$/i.test(window.location.hostname);
+
+  function referrerInfo() {
+    let ref = "";
+    try {
+      ref = document.referrer ? new URL(document.referrer).hostname : "";
+    } catch (error) {
+      ref = "";
+    }
+    let us = "";
+    try {
+      us = new URLSearchParams(window.location.search).get("utm_source") || "";
+    } catch (error) {
+      us = "";
+    }
+    return { ref, us: us.slice(0, 40) };
+  }
+
+  function placementOf(link) {
+    const own = link.closest("[data-track-pos]");
+    if (own) return own.getAttribute("data-track-pos");
+    for (const [cls, pos] of PLACEMENTS) {
+      if (pos && link.classList.contains(cls)) return pos;
+    }
+    if (link.closest("table")) return "tabelle";
+    return "text-link";
+  }
+
+  function sectionOf(link) {
+    const anchors = document.querySelectorAll('.toc-sidebar a[href^="#"], #toc a[href^="#"], nav[aria-label*="Inhalt"] a[href^="#"]');
+    let section = "";
+    anchors.forEach((anchor) => {
+      const id = anchor.getAttribute("href").slice(1);
+      const target = id && document.getElementById(id);
+      if (target && (target === link || target.compareDocumentPosition(link) & Node.DOCUMENT_POSITION_FOLLOWING || target.contains(link))) {
+        section = id;
+      }
+    });
+    if (!section) {
+      const wrapper = link.closest("section[id], [id].filter-section, [id].faq-section");
+      section = wrapper ? wrapper.id : "";
+    }
+    return section.slice(0, 60);
+  }
+
+  function decorate(event) {
+    const link = event.target && event.target.closest ? event.target.closest('a[href*="/go/"]') : null;
+    if (!link || link.dataset.fmTracked === "1") return;
+    let url;
+    try {
+      url = new URL(link.getAttribute("href"), window.location.href);
+    } catch (error) {
+      return;
+    }
+    if (!/^\/go\/[a-z0-9-]+\/?$/.test(url.pathname) || url.host !== window.location.host) return;
+    const { ref, us } = referrerInfo();
+    url.searchParams.set("pos", placementOf(link));
+    url.searchParams.set("pg", window.location.pathname);
+    const sec = sectionOf(link);
+    if (sec) url.searchParams.set("sec", sec);
+    if (ref) url.searchParams.set("ref", ref);
+    if (us) url.searchParams.set("us", us);
+    link.setAttribute("href", url.pathname + url.search);
+    link.dataset.fmTracked = "1";
+  }
+
+  ["pointerdown", "contextmenu", "keydown", "click"].forEach((type) => {
+    document.addEventListener(type, (event) => {
+      if (type === "keydown" && event.key !== "Enter") return;
+      decorate(event);
+    }, { capture: true, passive: true });
+  });
+
+  if (trackingHost && navigator.sendBeacon) {
+    const send = () => {
+      const { ref, us } = referrerInfo();
+      const data = new FormData();
+      data.append("pg", window.location.pathname);
+      data.append("ref", ref);
+      data.append("us", us);
+      navigator.sendBeacon("/t/pv.php", data);
+    };
+    if (document.visibilityState === "prerender") {
+      document.addEventListener("visibilitychange", send, { once: true });
+    } else {
+      send();
+    }
+  }
+})();

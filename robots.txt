@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /go/
+Disallow: /t/
+Disallow: /intern/
 
 Sitemap: https://www.firmendo.de/sitemap.xml
