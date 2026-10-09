@@ -10,61 +10,12 @@ function scrollBusinesskontoFinderIntoView() {
 
   window.scrollTo({
     top: Math.max(0, targetTop - navHeight - breathingRoom),
-    behavior: 'smooth'
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
   });
 }
 
 (function() {
-var heroFinder = document.querySelector('[data-hero-finder]');
-if (!heroFinder) return;
-
-var hQ1 = null;
-var hContinueBtn = heroFinder.querySelector('[data-hero-action="/firmendo-test-pages/js/continue"]');
-
-function setHeroProgressSelected() {
-  var dot1 = heroFinder.querySelector('[data-hero-step-dot="1"]');
-  var dot2 = heroFinder.querySelector('[data-hero-step-dot="2"]');
-  var line1 = heroFinder.querySelector('[data-hero-step-line="1"]');
-  if (!dot1 || !dot2 || !line1) return;
-
-  dot1.classList.remove('is-active');
-  dot1.classList.add('is-done');
-  line1.classList.add('is-done');
-  dot2.classList.add('is-active');
-}
-
-function handOffToMainFinder() {
-  if (!hQ1) return;
-
-  document.dispatchEvent(new CustomEvent('firmendo:heroFinderSelected', {
-    detail: { q1: hQ1 }
-  }));
-
-  var mainFinder = document.getElementById('businesskonto-finder');
-  if (mainFinder) scrollBusinesskontoFinderIntoView();
-}
-
-heroFinder.addEventListener('click', function(event) {
-  var q1Button = event.target.closest('[data-hero-q1]');
-  if (q1Button) {
-    hQ1 = q1Button.dataset.heroQ1;
-    heroFinder.querySelectorAll('[data-hero-q1]').forEach(function(btn) {
-      btn.classList.toggle('is-selected', btn === q1Button);
-    });
-    hContinueBtn.disabled = false;
-    setHeroProgressSelected();
-    handOffToMainFinder();
-    return;
-  }
-
-  var actionButton = event.target.closest('[data-hero-action="/firmendo-test-pages/js/continue"]');
-  if (actionButton) handOffToMainFinder();
-});
-})();
-
-(function() {
 var fQ1 = null, fQ2 = null;
-var fQ1FromHero = false;
 var fLogos = {
   'Finom':         '../images/mini-logos/finom.svg',
   'Kontist':       '../images/mini-logos/kontist.png',
@@ -156,8 +107,8 @@ var fDB = {
 
 function fSelectQ1(val, btn) {
   fQ1 = val;
-  document.querySelectorAll('#fstep1 .finder-opt').forEach(function(b) { b.classList.remove('selected'); });
-  if (btn) btn.classList.add('selected');
+  document.querySelectorAll('#fstep1 .finder-opt').forEach(function(b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+  if (btn) { btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true'); }
   document.getElementById('fbtn1').disabled = false;
   document.getElementById('fresult').hidden = true;
 };
@@ -167,14 +118,14 @@ function fUpdateQ1Summary() {
 
   var source = prefillNote.querySelector('[data-finder-prefill-source]');
   var label = prefillNote.querySelector('[data-finder-prefill-label]');
-  if (source) source.textContent = fQ1FromHero ? 'Aus der Auswahl oben übernommen' : 'Ausgewählt in Schritt 1';
+  if (source) source.textContent = 'Ausgewählt in Schritt 1';
   if (label) label.textContent = fQ1Labels[fQ1] || 'Ihre Auswahl';
   prefillNote.hidden = false;
 }
 function fSelectQ2(val, btn) {
   fQ2 = val;
-  document.querySelectorAll('#fstep2 .finder-opt').forEach(function(b) { b.classList.remove('selected'); });
-  if (btn) btn.classList.add('selected');
+  document.querySelectorAll('#fstep2 .finder-opt').forEach(function(b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+  if (btn) { btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true'); }
   document.getElementById('fbtn2').disabled = false;
   document.getElementById('fresult').hidden = true;
 };
@@ -188,7 +139,7 @@ function fGoStep2() {
   document.getElementById('fline1').className = 'finder-step-line done';
   document.getElementById('fdot2').className = 'finder-step-dot active';
   document.getElementById('fline2').className = 'finder-step-line';
-  document.getElementById('fdot3').className = 'finder-step-dot pending';
+  document.getElementById('fdot3').className = 'finder-step-dot finder-step-dot-check pending';
 };
 function fGoStep1() {
   document.getElementById('fstep2').hidden = true;
@@ -200,7 +151,7 @@ function fGoStep1() {
   document.getElementById('fline1').className = 'finder-step-line';
   document.getElementById('fdot2').className = 'finder-step-dot pending';
   document.getElementById('fline2').className = 'finder-step-line';
-  document.getElementById('fdot3').className = 'finder-step-dot pending';
+  document.getElementById('fdot3').className = 'finder-step-dot finder-step-dot-check pending';
 };
 function fShowResult() {
   if (!fQ1 || !fQ2) return;
@@ -208,7 +159,7 @@ function fShowResult() {
   document.getElementById('fstep2').hidden = true;
   document.getElementById('fdot2').className = 'finder-step-dot done';
   document.getElementById('fline2').className = 'finder-step-line done';
-  document.getElementById('fdot3').className = 'finder-step-dot done';
+  document.getElementById('fdot3').className = 'finder-step-dot finder-step-dot-check done';
   var html = '<div class="finder-result-grid">';
   recs.forEach(function(r) {
     var logoSrc = fLogos[r.name] || '';
@@ -233,18 +184,17 @@ function fShowResult() {
 };
 function fRestart() {
   fQ1 = null; fQ2 = null;
-  fQ1FromHero = false;
   document.getElementById('fresult').hidden = true;
   document.getElementById('fstep1').hidden = false;
   document.getElementById('fstep2').hidden = true;
   var prefillNote = document.getElementById('finder-prefill-note');
   if (prefillNote) prefillNote.hidden = true;
-  document.querySelectorAll('.finder-opt').forEach(function(b) { b.classList.remove('selected'); });
+  document.querySelectorAll('.finder-opt').forEach(function(b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
   document.getElementById('fbtn1').disabled = true;
   document.getElementById('fbtn2').disabled = true;
   document.getElementById('fdot1').className = 'finder-step-dot active';
   document.getElementById('fdot2').className = 'finder-step-dot pending';
-  document.getElementById('fdot3').className = 'finder-step-dot pending';
+  document.getElementById('fdot3').className = 'finder-step-dot finder-step-dot-check pending';
   document.getElementById('fline1').className = 'finder-step-line';
   document.getElementById('fline2').className = 'finder-step-line';
 };
@@ -256,7 +206,6 @@ function initFinderControls() {
   finder.addEventListener('click', function(event) {
     const q1Button = event.target.closest('[data-finder-q1]');
     if (q1Button) {
-      fQ1FromHero = false;
       fSelectQ1(q1Button.dataset.finderQ1, q1Button);
       var prefillNote = document.getElementById('finder-prefill-note');
       if (prefillNote) prefillNote.hidden = true;
@@ -272,27 +221,10 @@ function initFinderControls() {
     const actionButton = event.target.closest('[data-finder-action]');
     if (!actionButton) return;
 
-    if (actionButton.dataset.finderAction === 'next') fGoStep2();
-    if (actionButton.dataset.finderAction === 'back') fGoStep1();
-    if (actionButton.dataset.finderAction === 'result') fShowResult();
-    if (actionButton.dataset.finderAction === 'restart') fRestart();
-  });
-
-  document.addEventListener('firmendo:heroFinderSelected', function(event) {
-    const q1 = event.detail && event.detail.q1;
-    if (!q1) return;
-
-    const q1Button = finder.querySelector('[data-finder-q1="' + q1 + '"]');
-    if (!q1Button) return;
-
-    fSelectQ1(q1, q1Button);
-    fQ1FromHero = true;
-    fQ2 = null;
-    finder.querySelectorAll('#fstep2 .finder-opt').forEach(function(btn) {
-      btn.classList.remove('selected');
-    });
-    document.getElementById('fbtn2').disabled = true;
-    fGoStep2();
+    if (actionButton.dataset.finderAction === 'next' && fQ1) { fGoStep2(); finder.querySelector('#fstep2 .finder-q-label').focus({ preventScroll: true }); }
+    if (actionButton.dataset.finderAction === 'back') { fGoStep1(); finder.querySelector('#fstep1 .finder-q-label').focus({ preventScroll: true }); }
+    if (actionButton.dataset.finderAction === 'result' && fQ1 && fQ2) { fShowResult(); finder.querySelector('#fresult').focus({ preventScroll: true }); scrollBusinesskontoFinderIntoView(); }
+    if (actionButton.dataset.finderAction === 'restart') { fRestart(); finder.querySelector('#fstep1 .finder-q-label').focus({ preventScroll: true }); scrollBusinesskontoFinderIntoView(); }
   });
 
   document.addEventListener('click', function(event) {
@@ -354,8 +286,8 @@ const segmentTitles = {
 };
 
 function switchSegment(seg, btn) {
-  document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
+  document.querySelectorAll('.seg-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+  if (btn) { btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true'); }
 
   const title = segmentTitles[seg] || segmentTitles.einzelunternehmer;
   const titleNode = document.getElementById('segment-title');
@@ -382,16 +314,3 @@ function initSegmentSwitcher() {
 }
 
 initSegmentSwitcher();
-
-// Activate first seg-card by default + handle click toggle
-(function() {
-  const cards = document.querySelectorAll('.seg-card');
-  if (!cards.length) return;
-  cards[0].classList.add('active');
-  cards.forEach(card => {
-    card.addEventListener('click', function(e) {
-      cards.forEach(c => c.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-})();
