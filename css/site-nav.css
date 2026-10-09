@@ -454,6 +454,29 @@
   z-index: 320;
 }
 
+
+/* Keep the pointer inside the dropdown while crossing its 12px visual gap.
+   The trigger bridge also covers the submenu's 8px opening movement. */
+@media (min-width: 701px) {
+  #site-nav .sn-dropdown::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 20px;
+  }
+
+  #site-nav .sn-submenu::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 0;
+    right: 0;
+    height: 13px;
+  }
+}
+
 #site-nav .sn-dropdown-banking .sn-submenu {
   left: 50%;
   right: auto;
