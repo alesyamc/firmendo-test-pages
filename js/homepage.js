@@ -177,7 +177,7 @@ function fShowResult() {
     html += '<a href="' + r.review + '" class="finder-link-secondary">Detailtest lesen</a>';
     html += '</div></div>';
   });
-  html += '</div><button class="finder-restart" data-finder-action="/firmendo-test-pages/js/restart">← Neu starten</button>';
+  html += '</div><button class="finder-restart" data-finder-action="restart">← Neu starten</button>';
   var rv = document.getElementById('fresult');
   rv.innerHTML = html;
   rv.hidden = false;
