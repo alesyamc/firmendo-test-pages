@@ -106,7 +106,7 @@ body {
 }
 .hero h1 {
   font-size: var(--text-home-hero-title-size);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.12;
   color: var(--gray-800);
   letter-spacing: -0.02em;
@@ -631,7 +631,7 @@ body {
 .hero-finder-result-name {
   color: var(--gray-800);
   font-size: var(--text-home-step-title-size);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.15;
 }
 .hero-finder-result-why {
@@ -744,7 +744,7 @@ body {
 }
 .anbieter-strip-title {
   font-size: var(--text-home-section-title-size);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--gray-800);
   line-height: 1.15;
@@ -915,7 +915,7 @@ body {
 }
 .section-header h2 {
   font-size: var(--text-home-section-title-size);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--gray-800);
   line-height: 1.15;
@@ -1004,7 +1004,7 @@ body {
 .top-card-body { padding: 22px 22px 18px; flex: 1; }
 .top-card-bank-name {
   font-size: var(--text-home-card-title-size);
-  font-weight: 900;
+  font-weight: 800;
   color: var(--gray-800);
   margin-bottom: 4px;
 }
@@ -1402,7 +1402,7 @@ body {
 }
 .faq-sidebar h2 {
   font-size: var(--text-home-section-title-size);
-  font-weight: 900;
+  font-weight: 800;
   color: var(--gray-800);
   margin-bottom: var(--space-2xl);
   line-height: 1.15;
@@ -1573,7 +1573,7 @@ body {
 
 .author-body { padding: 36px 40px; }
 .author-eyebrow { font-size: var(--text-home-micro-size); font-weight: 700; color: var(--blue); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-xs); }
-.author-name { font-size: var(--text-home-section-title-size); font-weight: 900; color: var(--gray-800); letter-spacing: -0.03em; margin-bottom: var(--space-sm); line-height: 1.1; }
+.author-name { font-size: var(--text-home-section-title-size); font-weight: 800; color: var(--gray-800); letter-spacing: -0.03em; margin-bottom: var(--space-sm); line-height: 1.1; }
 .author-bio { font-size: var(--text-home-body-size); color: var(--gray-700); line-height: 1.6; margin-bottom: var(--space-3xl); }
 .author-tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-3xl); }
 .author-tag {
@@ -2331,7 +2331,7 @@ body {
 }
 .finder-result-badge.top { background: var(--orange-light); color: var(--orange-dark); border: 1px solid rgba(240,94,24,0.18); box-shadow: none; }
 .finder-result-badge.alt { background: var(--blue-ultra-light); color: var(--blue); border: 1px solid var(--blue-light); }
-.finder-result-name { font-size: var(--text-home-result-title-size); font-weight: 900; color: var(--gray-800); line-height: 1.2; }
+.finder-result-name { font-size: var(--text-home-result-title-size); font-weight: 800; color: var(--gray-800); line-height: 1.2; }
 .finder-result-tag { font-size: var(--text-home-body-size); color: var(--gray-700); margin-top: var(--space-2xs); }
 .finder-result-header {
   display: flex;

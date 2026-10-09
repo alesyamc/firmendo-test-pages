@@ -1014,7 +1014,7 @@
 
 .trust-block h2 {
   font-size: var(--text-highlight-size);
-  font-weight: 900;
+  font-weight: 800;
   color: var(--gray-800);
   letter-spacing: -0.3px;
   margin-bottom: 12px;
