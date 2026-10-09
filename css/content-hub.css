@@ -345,6 +345,3 @@
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-
-/* Autorenfoto in Hero, Artikelkarten und gefilterten Ergebnissen. */
-.hp-meta .av, .mini-av, .fcard-av { object-fit: cover; object-position: center; flex-shrink: 0; }
