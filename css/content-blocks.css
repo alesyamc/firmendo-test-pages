@@ -37,7 +37,7 @@
   margin-bottom: -8px;
   color: var(--accent-color-text);
   font-size: var(--text-guide-number-size);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1;
   opacity: 0.08;
 }
@@ -1525,19 +1525,19 @@
   align-items: center;
   justify-content: center;
   font-size: var(--text-cta-title-size);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1;
 }
 
 .mini-anbieter-logo--moss {
   color: var(--accent-color-text);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .mini-anbieter-logo--amex {
   color: #0071E3;
   color: light-dark(#0071E3, #8FC4F9);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .mini-anbieter .mini-anbieter-logo--image {

@@ -58,7 +58,7 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  --font-weight-black: 900;
+  --font-weight-black: var(--font-weight-extrabold);
   --line-height-tight: 1;
   --line-height-title: 1.15;
   --line-height-heading: 1.2;

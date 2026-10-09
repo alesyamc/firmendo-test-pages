@@ -626,7 +626,7 @@ body {
   background: var(--ink-bg);
   color: #fff;
   font-size: var(--text-home-step-title-size);
-  font-weight: 900;
+  font-weight: 800;
 }
 .hero-finder-result-name {
   color: var(--gray-800);
@@ -647,7 +647,7 @@ body {
 .hero-finder-result-score strong {
   display: block;
   font-size: 25px;
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1;
 }
 .hero-finder-result-score span {
@@ -961,7 +961,7 @@ body {
 .why-card-bg-icon svg { width: 100%; height: 100%; }
 .why-card:hover .why-card-bg-icon { opacity: 0.07; }
 .why-title { font-size: var(--text-home-card-title-size); font-weight: 800; color: var(--gray-800); margin-bottom: var(--space-md); position: relative; z-index: 1; display: flex; align-items: baseline; gap: var(--space-md); }
-.why-num { font-size: var(--text-home-card-title-size); font-weight: 900; color: var(--blue); opacity: 0.35; flex-shrink: 0; }
+.why-num { font-size: var(--text-home-card-title-size); font-weight: 800; color: var(--blue); opacity: 0.35; flex-shrink: 0; }
 .why-text { font-size: var(--text-home-body-size); color: var(--gray-700); line-height: 1.6; position: relative; z-index: 1; }
 
 /* ─────────── TOP EMPFEHLUNGEN ─────────── */
@@ -1317,7 +1317,7 @@ body {
   background: var(--gray-200);
   color: var(--gray-500);
   font-size: var(--text-home-body-size);
-  font-weight: 900;
+  font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 20px;
   position: relative; z-index: 1;
@@ -1726,7 +1726,7 @@ body {
   padding: var(--space-md);
   z-index: 2;
 }
-.card-hero-banner-logo-box span { font-size: var(--text-home-body-size); font-weight: 900; }
+.card-hero-banner-logo-box span { font-size: var(--text-home-body-size); font-weight: 800; }
 .card-hero-banner-logo-box img {
   display: block;
   max-width: 100%;

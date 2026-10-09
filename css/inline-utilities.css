@@ -386,7 +386,6 @@
 .u-text-orange-strong { color:var(--accent-orange-text); font-weight: var(--font-weight-semibold); }
 .u-fw-700 { font-weight: var(--font-weight-bold); }
 .u-fw-800 { font-weight: var(--font-weight-extrabold); }
-.u-fw-900 { font-weight: var(--font-weight-black); }
 .u-bg-white { background:var(--surface); }
 .u-mb-0 { margin-bottom:0; }
 .u-mb-14 { margin-bottom:14px; }

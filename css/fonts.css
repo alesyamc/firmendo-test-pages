@@ -40,14 +40,6 @@
 
 @font-face {
   font-family: "Poppins";
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url("/firmendo-test-pages/fonts/poppins/poppins-900.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Poppins";
   font-style: italic;
   font-weight: 400;
   font-display: block;

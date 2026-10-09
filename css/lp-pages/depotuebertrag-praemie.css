@@ -129,7 +129,7 @@ body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible {
 body.lp-comparison-page .depot-table .price-wrap--with-info:focus-visible .price-tooltip {
   display: block;
 }
-body.lp-comparison-page .brand-logo-text { font-weight: 900; font-size: 13px; line-height: 1; }
+body.lp-comparison-page .brand-logo-text { font-weight: 800; font-size: 13px; line-height: 1; }
 body.lp-comparison-page .brand-logo-text.comdirect { color: #0066B3;
  color: light-dark(#0066B3, #A4D5FA); }
 body.lp-comparison-page .brand-logo-text.consorsbank { color: #E5690A;

@@ -78,7 +78,7 @@ body.lp-comparison-page .table-wrap td:nth-child(4),
 body.lp-comparison-page .table-wrap td:nth-child(5),
 body.lp-comparison-page .table-wrap td:nth-child(6) { text-align: center; }
 body.lp-comparison-page .td-logo {
-  font-weight: 900;
+  font-weight: 800;
   font-size: var(--text-badge-size);
   color: var(--gray-700);
 }
