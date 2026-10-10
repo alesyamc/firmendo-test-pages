@@ -98,11 +98,11 @@
 .opening-choice select:focus-visible, .opening-reset:focus-visible { outline: 2px solid var(--accent-color-border); outline-offset: 3px; }
 .opening-account-selection { overflow: visible; }
 #opening-accounts table { table-layout: fixed; width: 100%; }
-#opening-accounts th:nth-child(1) { width: 25%; }
-#opening-accounts th:nth-child(2) { width: 19%; }
-#opening-accounts th:nth-child(3) { width: 34%; }
-#opening-accounts th:nth-child(4) { width: 22%; }
-#opening-accounts td { vertical-align: top; overflow-wrap: anywhere; }
+#opening-accounts th:nth-child(1) { width: 27%; }
+#opening-accounts th:nth-child(2) { width: 20%; }
+#opening-accounts th:nth-child(3) { width: 35%; }
+#opening-accounts th:nth-child(4) { width: 18%; }
+#opening-accounts td { vertical-align: top; overflow-wrap: normal; }
 #opening-accounts details { margin-top: 12px; font-size: 13px; line-height: 1.5; }
 #opening-accounts summary { cursor: pointer; color: var(--gray-600); }
 #opening-accounts details p { margin: 8px 0; font-size: 13px; }
@@ -117,4 +117,43 @@
   .post-hero h1 { font-size: clamp(30px, 8vw, 40px); }
   #opening-accounts table { table-layout: auto; }
   #opening-accounts .opening-review { text-align: center; min-height: 44px; padding: 10px; }
+}
+
+/* Der Kontoüberblick nutzt beide Spalten, der Ratgeber behält sein Inhaltsmenü. */
+.page-with-toc > .opening-article { display: contents; }
+.opening-overview { grid-column: 1 / -1; }
+.opening-overview > .content-divider:first-of-type { margin-top: 0; }
+.opening-overview > p { max-width: 1000px; }
+.opening-overview .opening-choice { max-width: 1000px; }
+#opening-accounts .mini-anbieter-head { align-items: flex-start; }
+#opening-accounts .mini-anbieter-head > a,
+#opening-accounts .mini-anbieter-head > strong { min-width: 0; }
+#opening-accounts .mini-anbieter-logo { flex: 0 0 44px; }
+
+/* Original-Logos brauchen auch im dunklen Design eine helle Fläche. */
+.opening-article .post-compare-table .mini-anbieter-logo--image { background: #fff; }
+
+/* Bankname und Ident-Verfahren bleiben neben dem vorhandenen Logo zusammen. */
+.table-wrap[aria-labelledby="legitimation"] td { vertical-align: top; }
+.table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 4px 12px 4px 0;
+  vertical-align: middle;
+}
+.table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head > span:last-child { min-width: 0; }
+.table-wrap[aria-labelledby="legitimation"] .mini-anbieter-logo {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 5px;
+}
+@media (max-width: 640px) {
+  #opening-accounts .mini-anbieter-head { align-items: center; }
+  #opening-accounts tbody tr + tr { margin-top: 16px; }
+  .table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head { margin-right: 0; }
 }
