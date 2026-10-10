@@ -98,7 +98,7 @@ function photoZone(p, extraClass) {
 }
 
 function catBadge(p){ return `<span class="card-cat c-${p.category}">${p.catLabel}</span>`; }
-function footer(p){ return `<div class="card-footer"><div class="card-author"><div class="mini-av">${p.author}</div><span>${p.authorName}</span></div><div class="card-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${p.readTime}</div><span class="card-sep">·</span><span class="card-date">${p.date}</span></div>`; }
+function footer(p){ return `<div class="card-footer"><div class="card-author"><img class="mini-av" src="../images/autoren/alessia-pewnew-avatar.webp" alt="${p.authorName}" width="22" height="22" decoding="async"><span>${p.authorName}</span></div><div class="card-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${p.readTime}</div><span class="card-sep">·</span><span class="card-date">${p.date}</span></div>`; }
 
 function heroCard(p){
   const visual = p.image
@@ -112,7 +112,7 @@ function heroCard(p){
       <div class="hp-title">${p.title}</div>
       <div class="hp-excerpt">${p.excerpt}</div>
       <div class="hp-meta">
-        <div class="hp-meta-left"><div class="av">${p.author}</div><strong>${p.authorName}</strong><span>·</span><span>${p.date}</span><span>·</span><span>${p.readTime}</span></div>
+        <div class="hp-meta-left"><img class="av" src="../images/autoren/alessia-pewnew-avatar.webp" alt="${p.authorName}" width="30" height="30" decoding="async"><strong>${p.authorName}</strong><span>·</span><span>${p.date}</span><span>·</span><span>${p.readTime}</span></div>
         <div class="hp-cta">Artikel lesen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
     </div>
@@ -151,7 +151,7 @@ function filterCard(p){
       <div class="fcard-excerpt">${p.excerpt}</div>
     </div>
     <div class="fcard-bottom">
-      <div class="fcard-meta"><div class="fcard-av">${p.author}</div><span>${p.readTime}</span><span>·</span><span>${p.date}</span></div>
+      <div class="fcard-meta"><img class="fcard-av" src="../images/autoren/alessia-pewnew-avatar.webp" alt="${p.authorName}" width="24" height="24" decoding="async"><span>${p.readTime}</span><span>·</span><span>${p.date}</span></div>
       <div class="fcard-read">Artikel lesen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </div>
   </a>`;
