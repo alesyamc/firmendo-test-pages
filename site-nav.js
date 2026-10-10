@@ -263,9 +263,15 @@
 
   function loadChecklistProgress() {
     if (!document.querySelector('.post-checklist, .interactive-checklist, [data-checklist-progress]')) return;
+    if (!document.querySelector('link[href*="css/checklist.css"]')) {
+      const styles = document.createElement('link');
+      styles.rel = 'stylesheet';
+      styles.href = new URL('css/checklist.css?v=20261010-2', shellAssetBase).href;
+      document.head.append(styles);
+    }
     if (document.querySelector('script[src*="checklist-progress.js"]')) return;
     const script = document.createElement('script');
-    script.src = new URL('checklist-progress.js?v=20261010-all', shellAssetBase).href;
+    script.src = new URL('checklist-progress.js?v=20261010-2', shellAssetBase).href;
     document.head.append(script);
   }
 
