@@ -1,0 +1,97 @@
+/* Gemeinsame Seitennavigation, beschriftete mobile Tabellen und Checklist-Zugriff.
+   Für LPs und Ratgeber; ergänzt die bestehenden Hero-, TOC- und Post-Komponenten. */
+.content-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.content-shortcuts a,
+.text-body a.content-cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: var(--border-blue-muted);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--accent-color-text);
+  font-size: var(--text-ui-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: var(--transition-bg-border);
+}
+.content-shortcuts a:hover,
+.text-body a.content-cta-link:hover {
+  background: var(--accent-color-soft);
+  border-color: var(--accent-color-border);
+}
+.content-shortcuts a:focus-visible,
+.toc-mobile summary:focus-visible,
+.text-body a.content-cta-link:focus-visible {
+  outline: 2px solid var(--accent-color-border);
+  outline-offset: 3px;
+}
+.toc-mobile { display: none; }
+@media (max-width: 1024px) {
+  .toc-mobile {
+    display: block;
+    margin: 0 0 24px;
+    padding: 14px 18px;
+    border: var(--border-subtle);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .toc-mobile summary {
+    cursor: pointer;
+    color: var(--gray-800);
+    font-weight: var(--font-weight-semibold);
+    min-height: 28px;
+  }
+  .toc-mobile .toc-mobile-list {
+    list-style: none;
+    padding: 12px 0 0;
+    margin: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  .toc-mobile .toc-mobile-list li { padding: 0; margin: 0; }
+  .toc-mobile .toc-mobile-list li::before { display: none; }
+  .toc-mobile .toc-mobile-list a { display: block; padding: 10px 0; min-height: 44px; color: var(--gray-700); text-decoration: none; font-size: var(--text-ui-size); }
+}
+@media (max-width: 640px) {
+  .content-shortcuts { gap: 8px; }
+  .content-shortcuts a { padding: 10px 14px; }
+  .text-body a.content-cta-link { width: 100%; text-align: center; }
+  .post-compare-table.post-compare-table--labeled tbody tr {
+    gap: 12px;
+    padding: 18px;
+  }
+  .post-compare-table.post-compare-table--labeled td {
+    width: 100%;
+    border-bottom: 0;
+  }
+  .post-compare-table.post-compare-table--labeled td:first-child {
+    font-weight: var(--font-weight-semibold);
+  }
+  .post-compare-table.post-compare-table--labeled td:not(:first-child)::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    color: var(--gray-500);
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: .02em;
+  }
+}
+/* Das vorhandene Checkbox-Element auch per Tastatur erreichbar halten. */
+.post-checklist .check-item input[type="checkbox"] { display: block; }
+
+/* Gemeinsame mobile Hero-Anpassung für Seiten mit diesen Komponenten. */
+@media (max-width: 640px) {
+  .post-hero .hero-cta-row { display: grid; gap: 10px; }
+  .post-hero .hero-cta-row a { width: 100%; justify-content: center; min-height: 48px; padding: 12px; }
+  .post-hero h1 { font-size: clamp(30px, 8vw, 40px); }
+}
