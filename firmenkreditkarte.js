@@ -29,7 +29,7 @@ const products = [
     limit: 'Debit',
     employeeCards: 'unbegrenzt', employeeCardsSort: 999,
     datev: false, belegerfassung: true,
-    affiliateUrl: 'https://getmoss.com/?ref=firmendo',
+    affiliateUrl: '/firmendo-test-pages/go/moss-free/',
     ctaLabel: 'Konditionen prüfen',
     mutedCta: true,
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/moss.svg" alt="moss Logo" loading="lazy" decoding="async">'
