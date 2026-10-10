@@ -24,7 +24,7 @@
         providers.add(row.querySelector('.opening-review').getAttribute('href'));
       }
     });
-    document.getElementById('opening-result').textContent = `${count} ${count === 1 ? 'Tarifvariante' : 'Tarifvarianten'} von ${providers.size} ${providers.size === 1 ? 'Anbieter' : 'Anbietern'}. ${type === 'all' ? 'Wählen Sie Ihre Rechtsform und Ihren Gründungsstand.' : 'Auswahl: ' + legal.options[legal.selectedIndex].text + ' · ' + stage.options[stage.selectedIndex].text + '.'}`;
+    document.getElementById('opening-result').textContent = `${count} ${count === 1 ? 'Tarifvariante' : 'Tarifvarianten'} von ${providers.size} ${providers.size === 1 ? 'Anbieter' : 'Anbietern'}. ${type === 'all' ? 'Wählen Sie Ihre Rechtsform und Ihren Gründungsstand.' : 'Auswahl: ' + legal.options[legal.selectedIndex].text + ', ' + stage.options[stage.selectedIndex].text + '.'}`;
     document.getElementById('opening-empty').hidden = count > 0 || (corporate && phase === 'plan');
     const note = document.getElementById('opening-stage-note');
     note.hidden = !(corporate && phase !== 'active' && phase !== 'all');
@@ -40,7 +40,7 @@
     });
     document.getElementById('opening-documents-note').textContent = type === 'other'
       ? 'Für andere Rechtsformen klären Sie die benötigten Unternehmensnachweise direkt mit der Bank. Die allgemeine Checkliste bleibt verfügbar.'
-      : 'Unterlagen für: ' + legal.options[legal.selectedIndex].text + ' · ' + stage.options[stage.selectedIndex].text + '. Die Bank kann weitere Nachweise anfordern.';
+      : 'Unterlagen für: ' + legal.options[legal.selectedIndex].text + ', ' + stage.options[stage.selectedIndex].text + '. Die Bank kann weitere Nachweise anfordern.';
   }
   form.addEventListener('change', update);
   form.addEventListener('reset', () => requestAnimationFrame(update));

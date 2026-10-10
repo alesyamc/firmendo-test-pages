@@ -774,7 +774,7 @@
         <p>Wer sein Privatkonto auch für betriebliche Zahlungen nutzen möchte, sollte die Bedingungen der Bank vorab prüfen oder direkt beim Anbieter nachfragen. Sicherer ist es, einen Anbieter zu wählen, bei dem ein Privatkonto für Selbstständige möglich ist.</p>
 
         <h3>Bei welchen Banken darf man ein Privatkonto geschäftlich nutzen?</h3>
-        <p class="u-fs-caption privatkonto-stand-note">Stand: 18. September 2026 · * kostenlos unter Bedingungen</p>
+        <p class="u-fs-caption privatkonto-stand-note">Stand: 18. September 2026. * kostenlos unter Bedingungen</p>
         <div class="editorial-table-wrap editorial-table-wrap--privatstatus">
           <table class="editorial-table editorial-table--privatstatus">
             <thead>
@@ -1602,7 +1602,7 @@ function renderMobileCards(data) {
         <div class="mc-spec"><span class="mc-spec-label">Banktyp</span><span class="mc-spec-value blue">${a.typLabel}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Bedingungen</span><span class="mc-spec-value">${a.bedingungen}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Karte</span><span class="mc-spec-value ${a.visa ? 'green' : 'muted'}">${a.visa ? 'Inklusive' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Dispo</span><span class="mc-spec-value ${a.dispo ? 'green' : 'muted'}">${a.dispo ? `Möglich${a.dispoNote ? ` · ${a.dispoNote}` : ''}` : 'Nein'}</span></div>
+        <div class="mc-spec"><span class="mc-spec-label">Dispo</span><span class="mc-spec-value ${a.dispo ? 'green' : 'muted'}">${a.dispo ? `Möglich${a.dispoNote ? ` (${a.dispoNote})` : ''}` : 'Nein'}</span></div>
       </div>
       <div class="mc-footer">
         <div class="mc-footer-note">${a.freiberufler ? 'Berufliche Umsätze bei überwiegend privater Nutzung erlaubt.' : 'Geschäftliche Nutzung vor der Eröffnung klären.'}</div>

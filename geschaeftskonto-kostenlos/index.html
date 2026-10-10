@@ -394,7 +394,7 @@
       </div>
       <div class="counter-date">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Stand: 28. September 2026 · Alle Preise zzgl. MwSt. · Qonto-Konditionen: 7. Oktober 2026
+        Stand: 28. September 2026 (Qonto-Konditionen: 7. Oktober 2026). Alle Preise zzgl. MwSt.
       </div>
     </div>
     <div class="counter-actions">
@@ -1142,9 +1142,9 @@ function totalBreakdownMarkup(p) {
     abhebeFee += Math.max(p.abhebeMin || 0, abhebeTotal * p.abhebePct);
   }
   if (withdrawalLimitExceeded(p)) {
-    return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Limit beachten</span><span class="price-tooltip total-breakdown-tooltip">Grundgeb&uuml;hr ${formatEuro(base)} &middot; Transaktionen ${formatEuro(tx)} &middot; Abhebungen ${formatEuro(abhebeFee)} &middot; Anbieterlimit ${formatEuro(p.abhebeCap)} / Monat</span></span>`;
+    return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Limit beachten</span><span class="price-tooltip total-breakdown-tooltip">Grundgeb&uuml;hr ${formatEuro(base)} + Transaktionen ${formatEuro(tx)} + Abhebungen ${formatEuro(abhebeFee)}; Anbieterlimit ${formatEuro(p.abhebeCap)} / Monat</span></span>`;
   }
-  return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Kosten ansehen</span><span class="price-tooltip total-breakdown-tooltip">Grundgeb&uuml;hr ${formatEuro(base)} &middot; Transaktionen ${formatEuro(tx)} &middot; Abhebungen ${formatEuro(abhebeFee)}</span></span>`;
+  return `<span class="price-wrap total-breakdown">${totalMarkup(p._total)}<span class="price-hint total-breakdown-hint">Kosten ansehen</span><span class="price-tooltip total-breakdown-tooltip">Grundgeb&uuml;hr ${formatEuro(base)} + Transaktionen ${formatEuro(tx)} + Abhebungen ${formatEuro(abhebeFee)}</span></span>`;
 }
 
 function toggleFilter(key, btn) {
