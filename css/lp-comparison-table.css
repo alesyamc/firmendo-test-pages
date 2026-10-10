@@ -63,6 +63,7 @@ body.lp-comparison-page .inline-info-panel {
   padding: 18px 20px 16px;
   box-shadow: var(--shadow-sm);
 }
+body.lp-comparison-page .inline-info-panel { border-radius: 0; }
 body.lp-comparison-page .filter-row-primary,
 body.lp-comparison-page .u-filter-actions-row,
 body.lp-comparison-page .filter-row {

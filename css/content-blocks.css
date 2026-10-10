@@ -55,7 +55,7 @@ line-height: 1.5;
 background: var(--surface);
 border: 1px solid var(--gray-200);
 border-left: 3px solid var(--accent-color-border);
-border-radius: 8px;
+border-radius: 0;
 }
 .guide-tip-label {
 margin-right: 6px;
@@ -1912,7 +1912,7 @@ line-height: 1.45;
   background: var(--surface);
   border: var(--border-card);
   border-left: 4px solid var(--accent-color-border);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 20px 24px 12px;
   margin: 18px 0 24px;
   box-shadow: var(--shadow-sm);

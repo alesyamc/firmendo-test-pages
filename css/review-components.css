@@ -910,7 +910,7 @@
   border: 1.5px solid rgba(47, 73, 179, 0.18);
   border: 1.5px solid light-dark(rgba(47, 73, 179, 0.18), rgba(135,153,224,0.18));
   border-left: 4px solid var(--accent-color-border);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-radius: 0;
   padding: var(--space-4xl) 28px;
   margin: var(--space-3xl) 0;
 }

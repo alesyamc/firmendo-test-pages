@@ -10,7 +10,7 @@
 .content-highlight {
   --content-highlight-bg: #F5F7FE;
   --content-highlight-bg: light-dark(#F5F7FE, #121C3F);
-  --content-highlight-radius: 0 8px 8px 0;
+  --content-highlight-radius: 0;
   --content-highlight-padding: 12px 16px;
   --content-highlight-margin: 14px 0;
   --content-highlight-color: var(--gray-700);

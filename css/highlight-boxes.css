@@ -1,7 +1,7 @@
 .content-highlight {
   background: var(--content-highlight-bg, var(--accent-color-soft, var(--blue-light)));
   border-left: var(--content-highlight-border-width, 3px) solid var(--content-highlight-border-color, var(--accent-color-border, var(--blue)));
-  border-radius: var(--content-highlight-radius, 0 10px 10px 0);
+  border-radius: 0;
   padding: var(--content-highlight-padding, 14px 18px);
   margin: var(--content-highlight-margin, 16px 0);
   font-size: var(--content-highlight-font-size, var(--highlight-boxes-font-size, 1.0625rem));
@@ -57,7 +57,7 @@
   background-image: none;
   border: 1px solid rgba(220, 38, 38, 0.12);
   border-left: 4px solid var(--red);
-  border-radius: 0 14px 14px 0;
+  border-radius: 0;
   padding: 18px 22px;
   box-shadow: none;
 }
@@ -184,7 +184,7 @@
 .inline-info-panel {
   background: var(--gray-50);
   border: var(--border-card);
-  border-radius: var(--radius-card);
+  border-radius: 0;
   padding: 20px 24px;
 }
 
