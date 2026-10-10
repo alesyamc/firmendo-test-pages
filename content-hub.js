@@ -57,7 +57,7 @@ document.getElementById('nlEmail').addEventListener('keydown', e => {
 });
 
 /* =======================================================
-   POSTS — neuen Artikel oben einfügen, neueste zuerst
+   POSTS – neuen Artikel oben einfügen, neueste zuerst
    ======================================================= */
 const POSTS = [
   {id:10, title:"Geschäftskonto eröffnen 2026: Unterlagen, Ablauf & Dauer", excerpt:"Welche Unterlagen Banken je nach Rechtsform verlangen, wie die Online-Eröffnung mit Video-Ident abläuft, wie lange sie dauert und was GmbH und UG beachten müssen.", category:"konto", catLabel:"Konto", author:"AP", authorName:"Alessia Pewnew", readTime:"13 Min.", date:"9. Oktober 2026", icon:"🏦", href:"/firmendo-test-pages/geschaeftskonto-eroeffnen/", image:"../images/ratgeber/geschaeftskonto-eroeffnen.webp"},
