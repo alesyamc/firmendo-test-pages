@@ -261,7 +261,16 @@
     overlay.dataset.ready = "true";
   }
 
+  function loadChecklistProgress() {
+    if (!document.querySelector('.post-checklist, .interactive-checklist, [data-checklist-progress]')) return;
+    if (document.querySelector('script[src*="checklist-progress.js"]')) return;
+    const script = document.createElement('script');
+    script.src = new URL('checklist-progress.js?v=20261010-all', shellAssetBase).href;
+    document.head.append(script);
+  }
+
   function init() {
+    loadChecklistProgress();
     initNav();
     initSearch();
   }
