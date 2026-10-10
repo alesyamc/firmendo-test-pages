@@ -1636,6 +1636,7 @@ font-weight: 800;
 line-height: 1;
 letter-spacing: -0.02em;
 }
+.text-body .numbered-points__title,
 .numbered-points__title {
 margin: 0 0 6px;
 color: var(--gray-800);
@@ -1643,6 +1644,7 @@ font-size: 17px;
 font-weight: 800;
 line-height: 1.3;
 }
+.text-body .numbered-points__text,
 .numbered-points__text {
 margin: 0;
 color: var(--gray-500);
