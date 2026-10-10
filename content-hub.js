@@ -60,7 +60,7 @@ document.getElementById('nlEmail').addEventListener('keydown', e => {
    POSTS – neuen Artikel oben einfügen, neueste zuerst
    ======================================================= */
 const POSTS = [
-  {id:10, title:"Geschäftskonto eröffnen: Konto wählen & online starten", excerpt:"Passende Konten nach Rechtsform und Gründungsstand auswählen, Unterlagen vorbereiten und den Antrag beim Anbieter starten.", category:"konto", catLabel:"Konto eröffnen", author:"AP", authorName:"Alessia Pewnew", readTime:"13 Min.", date:"10. Oktober 2026", icon:"🏦", href:"/firmendo-test-pages/geschaeftskonto-eroeffnen/", image:"../images/ratgeber/geschaeftskonto-eroeffnen-unterlagen.webp"},
+  {id:10, title:"Geschäftskonto eröffnen: Konto wählen & online starten", excerpt:"Passende Konten nach Rechtsform und Gründungsstand auswählen, Unterlagen vorbereiten und den Antrag beim Anbieter starten.", category:"konto", catLabel:"Konto eröffnen", ctaLabel:"Konto auswählen", author:"AP", authorName:"Alessia Pewnew", readTime:"13 Min.", date:"10. Oktober 2026", icon:"🏦", href:"/firmendo-test-pages/geschaeftskonto-eroeffnen/", image:"../images/ratgeber/geschaeftskonto-eroeffnen-unterlagen.webp"},
   {id:9,  title:"Einnahmenüberschussrechnung (EÜR) 2026: Anleitung, Beispiel & Vorlage", excerpt:"Wer eine EÜR machen muss, wie Sie die Anlage EÜR ausfüllen, zwei Rechenbeispiele und eine kostenlose Excel-Vorlage für Kleinunternehmer und Regelbesteuerte.", category:"steuer", catLabel:"Steuer & Recht", author:"AP", authorName:"Alessia Pewnew", readTime:"11 Min.", date:"7. Oktober 2026", icon:"📒", href:"/firmendo-test-pages/einnahmenueberschussrechnung/", image:"../images/ratgeber/einnahmenueberschussrechnung.webp"},
   {id:8,  title:"Geschäftskonto-Pflicht 2026: Wer ein Geschäftskonto braucht", excerpt:"Für Einzelunternehmer und Freiberufler gibt es keine gesetzliche Pflicht, für GmbH und UG praktisch schon. Was Gesetz, Finanzamt und Bank verlangen.", category:"konto", catLabel:"Konto", author:"AP", authorName:"Alessia Pewnew", readTime:"9 Min.", date:"25. September 2026", icon:"🏦", href:"/firmendo-test-pages/geschaeftskonto-pflicht/", image:"../images/ratgeber/geschaeftskonto-pflicht.webp"},
   {id:7,  title:"E-Rechnung 2027: Pflicht, Fristen & Checkliste für Selbstständige", excerpt:"Ab 2027 beginnt die nächste Stufe der E-Rechnungspflicht. Wer betroffen ist, welche Ausnahmen gelten und wie Sie sich jetzt vorbereiten.", category:"rechnung", catLabel:"Rechnungen", author:"AP", authorName:"Alessia Pewnew", readTime:"10 Min.", date:"14. September 2026", icon:"🧾", href:"/firmendo-test-pages/e-rechnung-pflicht-2027/", image:"../images/ratgeber/e-rechnung-pflicht-2027.webp"},
@@ -113,7 +113,7 @@ function heroCard(p){
       <div class="hp-excerpt">${p.excerpt}</div>
       <div class="hp-meta">
         <div class="hp-meta-left"><img class="av" src="../images/autoren/alessia-pewnew-avatar.webp" alt="${p.authorName}" width="30" height="30" decoding="async"><strong>${p.authorName}</strong><span>·</span><span>${p.date}</span><span>·</span><span>${p.readTime}</span></div>
-        <div class="hp-cta">Artikel lesen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="hp-cta">${p.ctaLabel || "Artikel lesen"} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
     </div>
   </a>`;
@@ -152,7 +152,7 @@ function filterCard(p){
     </div>
     <div class="fcard-bottom">
       <div class="fcard-meta"><img class="fcard-av" src="../images/autoren/alessia-pewnew-avatar.webp" alt="${p.authorName}" width="24" height="24" decoding="async"><span>${p.readTime}</span><span>·</span><span>${p.date}</span></div>
-      <div class="fcard-read">Artikel lesen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="fcard-read">${p.ctaLabel || "Artikel lesen"} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </div>
   </a>`;
 }
