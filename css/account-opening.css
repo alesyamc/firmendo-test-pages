@@ -1,49 +1,16 @@
 /* Nur die Kontoauswahl und das individuelle Layout dieser Landingpage. */
-/* Kontoauswahl: dieselben Inhalte als Desktop-Tabelle und mobile Karten. */
-.opening-choice { padding: 22px; margin: 24px 0 16px; border: var(--border-blue-muted); border-radius: var(--radius); background: var(--surface); }
-.opening-choice-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.opening-choice label { display: grid; gap: 8px; color: var(--gray-800); font-weight: 600; min-width: 0; }
-.opening-choice select { width: 100%; min-height: 48px; padding: 10px; border: var(--border-subtle); border-radius: 8px; background: var(--surface); color: var(--gray-800); font: inherit; font-size: 15px; }
-.opening-choice p, .opening-disclosure { font-size: 14px; line-height: 1.6; }
-.opening-reset { min-height: 44px; padding: 8px 0; border: 0; background: transparent; color: var(--accent-color-text); cursor: pointer; font: inherit; text-decoration: underline; }
-.opening-choice select:focus-visible, .opening-reset:focus-visible { outline: 2px solid var(--accent-color-border); outline-offset: 3px; }
-.opening-account-selection { overflow: visible; }
-#opening-accounts table { table-layout: fixed; width: 100%; }
-#opening-accounts th:nth-child(1) { width: 27%; }
-#opening-accounts th:nth-child(2) { width: 20%; }
-#opening-accounts th:nth-child(3) { width: 35%; }
-#opening-accounts th:nth-child(4) { width: 18%; }
-#opening-accounts td { vertical-align: top; overflow-wrap: normal; }
-#opening-accounts details { margin-top: 12px; font-size: 13px; line-height: 1.5; }
-#opening-accounts summary { cursor: pointer; color: var(--gray-600); }
-#opening-accounts details p { margin: 8px 0; font-size: 13px; }
-.text-body #opening-accounts a.hero-cta { color: #fff; display: flex; padding: 10px 12px; min-height: 44px; text-align: center; text-decoration: none; font-size: 14px; }
-.text-body a.opening-review { display: block; margin-top: 12px; font-size: 13px; }
-[data-opening-forms][hidden], [data-document-forms][hidden], [data-check-forms][hidden], #opening-empty[hidden], #opening-stage-note[hidden] { display: none !important; }
-@media (max-width: 640px) {
-  .opening-choice { padding: 16px; }
-  .opening-choice-fields { grid-template-columns: 1fr; }
-  #opening-accounts table { table-layout: auto; }
-  #opening-accounts .opening-review { text-align: center; min-height: 44px; padding: 10px; }
-}
-
 /* Der Kontoüberblick nutzt beide Spalten, der Ratgeber behält sein Inhaltsmenü. */
 .page-with-toc > .opening-article { display: contents; }
 .opening-overview { grid-column: 1 / -1; }
 .opening-overview > .content-divider:first-of-type { margin-top: 0; }
 .opening-overview > p { max-width: 1000px; }
-.opening-overview .opening-choice { max-width: 1000px; }
-#opening-accounts .mini-anbieter-head { align-items: flex-start; }
-#opening-accounts .mini-anbieter-head > a,
-#opening-accounts .mini-anbieter-head > strong { min-width: 0; }
-#opening-accounts .mini-anbieter-logo { flex: 0 0 44px; }
 
 /* Original-Logos brauchen auch im dunklen Design eine helle Fläche. */
 .opening-article .post-compare-table .mini-anbieter-logo--image { background: #fff; }
 
 /* Bankname und Ident-Verfahren bleiben neben dem vorhandenen Logo zusammen. */
-.table-wrap[aria-labelledby="legitimation"] td { vertical-align: top; }
-.table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head {
+.opening-table-wrap[aria-labelledby="legitimation"] td { vertical-align: top; }
+.opening-table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head {
   display: inline-flex;
   max-width: 100%;
   align-items: flex-start;
@@ -51,8 +18,8 @@
   margin: 4px 12px 4px 0;
   vertical-align: middle;
 }
-.table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head > span:last-child { min-width: 0; }
-.table-wrap[aria-labelledby="legitimation"] .mini-anbieter-logo {
+.opening-table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head > span:last-child { min-width: 0; }
+.opening-table-wrap[aria-labelledby="legitimation"] .mini-anbieter-logo {
   flex: 0 0 32px;
   width: 32px;
   height: 32px;
@@ -61,7 +28,80 @@
   padding: 5px;
 }
 @media (max-width: 640px) {
-  #opening-accounts .mini-anbieter-head { align-items: center; }
-  #opening-accounts tbody tr + tr { margin-top: 16px; }
-  .table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head { margin-right: 0; }
+  .opening-table-wrap[aria-labelledby="legitimation"] .mini-anbieter-head { margin-right: 0; }
 }
+
+/* Artikel-Tabellen behalten das Ratgeber-Layout (blog-template .table-wrap), getrennt vom Vergleichsrechner. */
+.opening-table-wrap {
+  contain: inline-size;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 12px;
+  border: var(--border-subtle);
+  margin: 24px 0;
+  background: var(--surface);
+}
+
+/* Kontoauswahl im Vergleichsrechner-Design: Filter-Card, Zähler, Tabelle und mobile Karten. */
+[data-document-forms][hidden], [data-check-forms][hidden], #opening-empty[hidden], #opening-stage-note[hidden] { display: none !important; }
+body.lp-comparison-page .opening-choice { margin: 24px 0 16px; }
+body.lp-comparison-page .opening-choice-hint { margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--gray-500); }
+body.lp-comparison-page .opening-table-section { padding: 0; margin: 20px 0 8px; background: transparent; border-bottom: 0; }
+body.lp-comparison-page .opening-table-section .counter-bar { padding: 0 2px 8px; }
+body.lp-comparison-page .opening-table-section .table-wrap .geschaeftskonto-table { min-width: 1188px; }
+body.lp-comparison-page .opening-table-section .th-col-anbieter { width: 230px; min-width: 230px; }
+body.lp-comparison-page .opening-table-section .th-col-price { width: 118px; min-width: 118px; }
+body.lp-comparison-page .opening-table-section .th-col-rf { width: 176px; min-width: 176px; }
+body.lp-comparison-page .opening-table-section .th-col-gruendung { width: 108px; min-width: 108px; text-align: center; }
+body.lp-comparison-page .opening-table-section .th-col-legitimation { width: 160px; min-width: 160px; }
+body.lp-comparison-page .opening-table-section .th-col-inklusive { width: 210px; min-width: 210px; text-align: left; }
+body.lp-comparison-page .opening-table-section .fd-sort { width: 290px; min-width: 290px; }
+body.lp-comparison-page .opening-table-section .td-inklusive,
+body.lp-comparison-page .opening-table-section .td-legitimation { text-align: left; }
+body.lp-comparison-page .opening-table-section .td-inklusive .table-text,
+body.lp-comparison-page .opening-table-section .td-legitimation .table-text { font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; hyphens: auto; }
+body.lp-comparison-page .opening-table-section .td-cat { text-transform: none; }
+body.lp-comparison-page .opening-table-section .table-disclaimer { margin-top: 14px; }
+.text-body #opening-accounts a.btn-table,
+.text-body #opening-accounts a.mc-cta { color: #fff; text-decoration: none; }
+.text-body #opening-accounts a.btn-table-detail,
+.text-body #opening-accounts a.mc-secondary { text-decoration: none; }
+.text-body #opening-accounts a.btn-table-detail:hover,
+.text-body #opening-accounts a.mc-secondary:hover { text-decoration: underline; }
+body.lp-comparison-page .mc-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+body.lp-comparison-page .mc-secondary { font-size: var(--text-caption-size); font-weight: 700; color: var(--blue); white-space: nowrap; }
+body.lp-comparison-page .opening-table-section .mc-spec-value { font-weight: 500; line-height: 1.45; }
+body.lp-comparison-page .opening-table-section .mc-spec-value.green { font-weight: 700; }
+@media (max-width: 768px) {
+  body.lp-comparison-page .opening-table-section .counter-bar { flex-direction: column; align-items: stretch; }
+  body.lp-comparison-page .opening-table-section .mc-footer { flex-direction: column; align-items: stretch; }
+  body.lp-comparison-page .opening-table-section .mc-actions { justify-content: space-between; }
+}
+@media (max-width: 640px) {
+  .post-hero .hero-cta-row { display: grid; gap: 10px; }
+  .post-hero .hero-cta-row a { width: 100%; justify-content: center; min-height: 48px; padding: 12px; }
+  .post-hero h1 { font-size: clamp(30px, 8vw, 40px); }
+}
+body.lp-comparison-page .opening-cta-stack { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+body.lp-comparison-page .opening-center { text-align: center; }
+body.lp-comparison-page .opening-muted { color: var(--gray-300); }
+/* Fazit unter der Kontoauswahl: Text und Link zum vollständigen Vergleich in einer Zeile. */
+.opening-overview .opening-fazit {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 16px 0 8px;
+  padding: 16px 20px;
+  border: var(--border-subtle);
+  border-radius: 0;
+  background: var(--surface);
+}
+.opening-overview .opening-fazit p { margin: 0; flex: 1 1 auto; max-width: none; font-size: 15px; line-height: 1.55; color: var(--gray-700); }
+.opening-overview .opening-fazit .content-cta-link { flex: 0 0 auto; }
+@media (max-width: 768px) {
+  .opening-overview .opening-fazit { flex-direction: column; align-items: stretch; gap: 14px; padding: 16px; }
+}
+
+/* Lesbare Zielgruppenangabe in der hervorgehobenen Kontozeile. */
+body.lp-comparison-page .opening-table-section tr.highlight .tariff-group-text { color: var(--gray-600); }
