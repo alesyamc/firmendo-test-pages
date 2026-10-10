@@ -106,7 +106,7 @@
 #opening-accounts details { margin-top: 12px; font-size: 13px; line-height: 1.5; }
 #opening-accounts summary { cursor: pointer; color: var(--gray-600); }
 #opening-accounts details p { margin: 8px 0; font-size: 13px; }
-.text-body #opening-accounts a.hero-cta { display: flex; padding: 10px 12px; min-height: 44px; text-align: center; text-decoration: none; font-size: 14px; }
+.text-body #opening-accounts a.hero-cta { color: #fff; display: flex; padding: 10px 12px; min-height: 44px; text-align: center; text-decoration: none; font-size: 14px; }
 .text-body a.opening-review { display: block; margin-top: 12px; font-size: 13px; }
 [data-opening-forms][hidden], [data-document-forms][hidden], [data-check-forms][hidden], #opening-empty[hidden], #opening-stage-note[hidden] { display: none !important; }
 @media (max-width: 640px) {
