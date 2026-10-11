@@ -1,4 +1,10 @@
 :root {
+  --site-page-width: 1200px;
+  --site-toc-width: 280px;
+  --site-toc-gap: 40px;
+  --site-content-gutter: 12px;
+  --site-hero-gutter: 24px;
+  --site-content-width: calc(var(--site-page-width) - 2 * var(--site-content-gutter));
   --blue: #2244E8;
   --blue-dark: #1836C8;
   --blue-light: #E5EAFB;

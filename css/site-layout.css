@@ -1,0 +1,153 @@
+/* Shared page frame. Load after template CSS; reference: Krankenversicherung Ratgeber. */
+body :is(.hero, .page-header) {
+  padding-inline: 0;
+}
+
+body :is(.hero-inner, .post-hero-inner, .page-header-inner) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-hero-gutter);
+}
+
+body :is(.hero-inner, .post-hero-inner, .page-header-inner) > * {
+  min-width: 0;
+}
+
+body section.content-section:has(> .page-with-toc),
+body .content-section:has(> .page-with-toc),
+body .content-section:has(> .content-inner > .page-with-toc) {
+  padding-inline: 0;
+}
+
+body .page-with-toc,
+body.lp-comparison-page .content-layout {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-content-gutter);
+  column-gap: var(--site-toc-gap);
+}
+
+body :is(.about-section, .kontakt-section, .impressum-section) {
+  padding-inline: 0;
+}
+
+body :is(.about-wrap, .kontakt-wrap, .impressum-wrap, .blog-main) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-content-gutter);
+}
+
+body.lp-comparison-page :is(.filter-section, .table-section, .trust-bar, .rechner-section, .vergleich-top-band, .u-method-strip, .u-method-strip-white) {
+  padding-inline: var(--site-content-gutter);
+}
+
+body.lp-comparison-page :is(.filter-inner, .counter-bar, .table-scroll-wrap, .scroll-hint, .scroll-hint-label, .table-disclaimer, .trust-bar-inner, .rechner-inner, .table-note-wrap) {
+  max-width: var(--site-content-width);
+  margin-inline: auto;
+}
+
+body :is(.u-container-1200, .u-container-1200-mt-sm) {
+  box-sizing: border-box;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-content-gutter);
+}
+
+body.lp-comparison-page :is(.u-method-strip, .u-method-strip-white, .vergleich-top-band) > :is(.u-container-1200, .u-container-1200-mt-sm) {
+  max-width: var(--site-content-width);
+  padding-inline: 0;
+}
+
+/* Homepage sections use the same outer frame; controls and cards keep their own padding. */
+body main > section:has(> .section-inner) {
+  padding-inline: 0;
+}
+
+body main > section > .section-inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-content-gutter);
+}
+
+body :is(.section-autor, .section-fragen) {
+  padding-inline: var(--site-content-gutter);
+}
+
+body :is(.section-autor > .author-card, .section-fragen > .faq-layout) {
+  max-width: var(--site-content-width);
+  margin-inline: auto;
+}
+
+body .breadcrumb {
+  max-width: var(--site-page-width);
+  padding-inline: var(--site-hero-gutter);
+}
+
+body .breadcrumb:has(> .breadcrumb-inner) {
+  max-width: none;
+  padding-inline: 0;
+}
+
+body .breadcrumb-inner {
+  box-sizing: border-box;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-hero-gutter);
+}
+
+body #site-nav,
+body footer {
+  padding-inline: 0;
+}
+
+body :is(.sn-inner, .footer-inner) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-page-width);
+  margin-inline: auto;
+  padding-inline: var(--site-hero-gutter);
+}
+
+body :is(.archive-banner, .aktion-bar) {
+  padding-inline: var(--site-content-gutter);
+}
+
+body :is(.archive-banner-inner, .aktion-bar-inner) {
+  max-width: var(--site-content-width);
+  margin-inline: auto;
+}
+
+/* Long German headings must stay inside the shared mobile frame. */
+body :is(.hero, .post-hero, .page-header, .blog-hero) h1 {
+  overflow-wrap: anywhere;
+}
+
+body .bento > * {
+  min-width: 0;
+}
+
+body .post-card .card-footer {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  body .cards-carousel > .cards-grid {
+    margin-inline: calc(-1 * var(--site-content-gutter));
+    padding-inline: var(--site-content-gutter);
+  }
+}
+
+@media (min-width: 1025px) {
+  body .page-with-toc,
+  body.lp-comparison-page .content-layout {
+    grid-template-columns: minmax(0, 1fr) var(--site-toc-width);
+  }
+}
