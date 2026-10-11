@@ -1,11 +1,11 @@
 const products = [
   {
-    name: 'Vivid Business Firmenkarte', priceNote: 'Kostenlos, Visa Debitkarte, bis 1 % Cashback auf Einkäufe außer Bargeldabhebungen und SEPA-Überweisungen', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
+    name: 'Vivid Business Firmenkarte', priceNote: 'Free Start kostenlos, Visa-Debitkarte mit 0,1 % garantiertem Cashback (bis 2 % in ausgewählten Kategorien); bis 1 % garantiert und bis 10 % in Kategorien im Tarif Enterprise+', base: 0, cat: 'Online-Bank', highlight: true, sortRank: 1,
     suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer'],
     cardType: 'Debitkarte', rating: 4.8,
     cashbackRate: 1, cashbackLabel: 'bis 1 %',
     limit: 'Debit',
-    employeeCards: 'bis 50', employeeCardsSort: 50,
+    employeeCards: 'unbegrenzt', employeeCardsSort: 999,
     datev: true, belegerfassung: true,
     affiliateUrl: '/firmendo-test-pages/go/vivid-business-firmenkarte/',
     logo: '<img class="provider-logo-img u-logo-media-fit" src="../images/mini-logos/vivid-money.png" alt="Vivid Money Logo" loading="lazy" decoding="async">'
