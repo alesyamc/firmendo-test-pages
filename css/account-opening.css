@@ -1,6 +1,5 @@
 /* Nur die Kontoauswahl und das individuelle Layout dieser Landingpage. */
 .opening-overview > .content-divider:first-of-type { margin-top: 0; }
-.opening-overview > p { max-width: 1000px; }
 
 /* Original-Logos brauchen auch im dunklen Design eine helle Fläche. */
 .opening-article .post-compare-table .mini-anbieter-logo--image { background: #fff; }
@@ -44,8 +43,6 @@
 [data-document-forms][hidden], [data-check-forms][hidden], #opening-empty[hidden], #opening-stage-note[hidden] { display: none !important; }
 body.lp-comparison-page .opening-choice { margin: 24px 0 16px; }
 body.lp-comparison-page .opening-choice-hint { margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--gray-500); }
-body.lp-comparison-page .opening-table-section { padding: 0; margin: 20px 0 8px; background: transparent; border-bottom: 0; }
-body.lp-comparison-page .opening-table-section .counter-bar { padding: 0 2px 8px; }
 body.lp-comparison-page .opening-table-section .table-wrap .geschaeftskonto-table { min-width: 1188px; }
 body.lp-comparison-page .opening-table-section .th-col-anbieter { width: 230px; min-width: 230px; }
 body.lp-comparison-page .opening-table-section .th-col-price { width: 118px; min-width: 118px; }
@@ -74,11 +71,6 @@ body.lp-comparison-page .opening-table-section .mc-spec-value.green { font-weigh
   body.lp-comparison-page .opening-table-section .counter-bar { flex-direction: column; align-items: stretch; }
   body.lp-comparison-page .opening-table-section .mc-footer { flex-direction: column; align-items: stretch; }
   body.lp-comparison-page .opening-table-section .mc-actions { justify-content: space-between; }
-}
-@media (max-width: 640px) {
-  .post-hero .hero-cta-row { display: grid; gap: 10px; }
-  .post-hero .hero-cta-row a { width: 100%; justify-content: center; min-height: 48px; padding: 12px; }
-  .post-hero h1 { font-size: clamp(30px, 8vw, 40px); }
 }
 body.lp-comparison-page .opening-cta-stack { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
 body.lp-comparison-page .opening-center { text-align: center; }
