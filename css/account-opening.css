@@ -1,7 +1,4 @@
 /* Nur die Kontoauswahl und das individuelle Layout dieser Landingpage. */
-/* Der Kontoüberblick nutzt beide Spalten, der Ratgeber behält sein Inhaltsmenü. */
-.page-with-toc > .opening-article { display: contents; }
-.opening-overview { grid-column: 1 / -1; }
 .opening-overview > .content-divider:first-of-type { margin-top: 0; }
 .opening-overview > p { max-width: 1000px; }
 
