@@ -1,0 +1,47 @@
+# Firmendo
+
+> Firmendo (www.firmendo.de) ist ein deutschsprachiges Vergleichs- und Ratgeberportal für Selbstständige, Freiberufler, Gründer und kleine Unternehmen in Deutschland. Es vergleicht Geschäftskonten, Firmenkarten, Firmentagesgeld und Kredite und erklärt Steuer-, Rechnungs- und Gründungsthemen.
+
+Firmendo wurde 2014 von Alessia Pewnew gegründet. Sie ist Gründerin und Chefredakteurin und verantwortet die Inhalte. Die Anbieterkennzeichnung steht im Impressum.
+
+Die Vergleiche nennen Grundgebühr, Kosten je Buchung, Karten, Bargeld, Rechtsformen und aktuelle Aktionen der Anbieter. Preise und Konditionen werden an den offiziellen Preis- und Konditionsseiten der Anbieter geprüft; jede Seite trägt ein Aktualisierungsdatum. Gesetzliche Angaben in Ratgebern stützen sich auf den Gesetzestext (z. B. UStG, EStG, AO, GewO, BGB).
+
+Firmendo finanziert sich über Provisionen: Für Abschlüsse über einige Links erhält Firmendo eine Vergütung. Für Nutzer entstehen dadurch keine Mehrkosten.
+
+## Vergleiche
+
+- [Geschäftskonto Vergleich](https://www.firmendo.de/geschaeftskonto-vergleich/): Geschäftskonten für Freelancer, Selbstständige, GmbH und UG mit Kosten und Funktionen.
+- [Kostenloses Geschäftskonto](https://www.firmendo.de/geschaeftskonto-kostenlos/): 0-€-Tarife im Vergleich, mit Kostenrechner.
+- [Geschäftskonto für Gründer & Startups](https://www.firmendo.de/geschaeftskonto-fuer-gruender-startups/): Konten für UG und GmbH in Gründung.
+- [Geschäftskonto ohne Schufa](https://www.firmendo.de/geschaeftskonto-ohne-schufa/): Firmenkonten ohne Schufa-Abfrage.
+- [Girokonto für Selbstständige und Freiberufler](https://www.firmendo.de/girokonto-fuer-selbststaendige-und-freiberufler/): Konten für die berufliche Nutzung.
+- [Firmenkreditkarte](https://www.firmendo.de/firmenkreditkarte/): Business-Kreditkarten für Selbstständige, GmbH und Teams.
+- [Firmentagesgeld](https://www.firmendo.de/firmentagesgeld/): Tagesgeld für Firmen, GmbH und Selbstständige.
+- [Kredit für Selbstständige](https://www.firmendo.de/kredit-fuer-selbststaendige/): Kredite für Freiberufler und Einzelunternehmer.
+- [Kreditkarte ohne Schufa](https://www.firmendo.de/kreditkarte-ohne-schufa/), [Girokonto ohne Schufa](https://www.firmendo.de/girokonto-ohne-schufa/), [Guthabenkonto](https://www.firmendo.de/guthabenkonto/), [Girokonto mit Prämie](https://www.firmendo.de/girokonto-mit-praemie/), [Depotübertrag mit Prämie](https://www.firmendo.de/depotuebertrag-praemie/): Privatkunden-Vergleiche.
+
+## Anbieter-Tests (Geschäftskonto)
+
+- [Commerzbank](https://www.firmendo.de/commerzbank-geschaeftskonto/), [Deutsche Bank](https://www.firmendo.de/deutsche-bank-geschaeftskonto/), [DKB](https://www.firmendo.de/dkb-geschaeftskonto/), [Finom](https://www.firmendo.de/finom-geschaeftskonto/), [FYRST](https://www.firmendo.de/fyrst-geschaeftskonto/), [Holvi](https://www.firmendo.de/holvi-geschaeftskonto/), [HypoVereinsbank](https://www.firmendo.de/hypovereinsbank-geschaeftskonto/), [ING](https://www.firmendo.de/ing-geschaeftskonto/), [Kontist](https://www.firmendo.de/kontist-geschaeftskonto/), [Postbank](https://www.firmendo.de/postbank-geschaeftskonto/), [Qonto](https://www.firmendo.de/qonto-geschaeftskonto/), [Vivid](https://www.firmendo.de/vivid-geschaeftskonto/): Kosten der Tarife, Karten, Bargeld, Kontoeröffnung.
+
+## Ratgeber
+
+- [Geschäftskonto eröffnen](https://www.firmendo.de/geschaeftskonto-eroeffnen/): Konto nach Rechtsform wählen, Unterlagen, Ablauf.
+- [Geschäftskonto-Pflicht](https://www.firmendo.de/geschaeftskonto-pflicht/): Wer ein Geschäftskonto braucht.
+- [Privatkonto als Geschäftskonto](https://www.firmendo.de/privatkonto-als-geschaeftskonto/): Welche Banken die berufliche Nutzung erlauben.
+- [Geschäftskonto kündigen](https://www.firmendo.de/geschaeftskonto-kuendigen/) und [Geschäftskonto-Kosten absetzen](https://www.firmendo.de/geschaeftskonto-kosten-absetzen/).
+- [Kleinunternehmerregelung](https://www.firmendo.de/kleinunternehmerregelung-2026/): § 19 UStG, Grenzen, Rechnungen.
+- [Rechnung schreiben](https://www.firmendo.de/rechnungen-schreiben-selbststaendige/): Pflichtangaben und Vorlage.
+- [E-Rechnung Pflicht](https://www.firmendo.de/e-rechnung-pflicht-2027/): Fristen 2026 bis 2028, XRechnung und ZUGFeRD.
+- [Mahnung schreiben](https://www.firmendo.de/mahnung-schreiben/): Fristen, Verzugszinsen, Vorlagen und Rechner.
+- [Einnahmenüberschussrechnung](https://www.firmendo.de/einnahmenueberschussrechnung/): EÜR-Anleitung und Excel-Vorlage.
+- [Krankenversicherung für Selbstständige](https://www.firmendo.de/krankenversicherung-selbststaendige/): GKV oder PKV.
+- [5 Finanzfehler von Einzelunternehmern](https://www.firmendo.de/5-finanzfehler-einzelunternehmer/).
+- [Alle Ratgeber](https://www.firmendo.de/ratgeber/).
+
+## Über Firmendo
+
+- [Über uns](https://www.firmendo.de/ueber-uns/)
+- [Alessia Pewnew, Autorin](https://www.firmendo.de/author/alessia-pewnew/)
+- [Kontakt](https://www.firmendo.de/kontakt/)
+- [Impressum](https://www.firmendo.de/impressum/)

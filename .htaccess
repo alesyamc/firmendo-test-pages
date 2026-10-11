@@ -4,6 +4,8 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^firmendo\.de$ [NC]
 RewriteRule ^ https://www.firmendo.de%{REQUEST_URI} [R=301,L]
 
+ErrorDocument 404 /404.html
+
 # Explicit browser caching; mutable images and unversioned code expire quickly.
 <IfModule mod_headers.c>
   <FilesMatch "\.(css|js)$">
