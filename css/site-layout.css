@@ -130,7 +130,8 @@ body :is(.hero, .post-hero, .page-header, .blog-hero) h1 {
   overflow-wrap: anywhere;
 }
 
-body .bento > * {
+body .bento > *,
+body .impressum-grid > * {
   min-width: 0;
 }
 
