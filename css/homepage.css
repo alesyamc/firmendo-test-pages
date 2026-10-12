@@ -1175,6 +1175,8 @@ body {
   padding-bottom: var(--space-10xl);
 }
 .section-finder .section-inner {
+  /* Karte bleibt im Seitenrahmen: Abstand zum Bildschirmrand wie der Inhalt. */
+  width: calc(100% - 2 * var(--site-content-gutter));
   background: var(--surface);
   border: 1px solid rgba(228, 233, 248, 0.95);
   border: 1px solid light-dark(rgba(228, 233, 248, 0.95), rgba(29,44,88,0.95));
@@ -1884,6 +1886,8 @@ body {
     margin: 0 -24px;
   }
   .cards-grid::-webkit-scrollbar { display: none; }
+  /* Snap-Start respektiert den Seitenrand, erste Karte klebt nicht am Bildschirmrand. */
+  .cards-grid { scroll-padding-inline: var(--site-content-gutter); }
   .konto-card { scroll-snap-align: start; }
   .steps-grid { grid-template-columns: 1fr; }
   .steps-grid::before { display: none; }
@@ -1893,6 +1897,7 @@ body {
   .author-trust-items { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
+  .segments-grid,
   .segments-grid.segments-grid-reviews { grid-template-columns: 1fr; }
   nav { padding: 0 4vw; }
   .hero { padding: 56px 4vw 52px; }
@@ -2509,4 +2514,11 @@ body {
   .finder-options-grid { grid-template-columns: 1fr; }
   .finder-step-line    { flex: 0 0 32px; }
   .finder-opt          { padding: 22px 14px 18px; }
+}
+
+/* Sehr schmale Displays (≤ 400 px): Fortschritt des Hero-Finders rutscht unter den Titel. */
+@media (max-width: 400px) {
+  .hero-finder-head { flex-wrap: wrap; row-gap: var(--space-md); }
+  .hero-finder-progress { margin-left: auto; }
+  .hero-finder-option { padding-inline: 8px; }
 }
