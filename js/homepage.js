@@ -100,16 +100,16 @@ var fDB = {
   },
   gruender: {
     kostenlos: [
-      { name:'FYRST', tag:'Deutsche Bank Tochter – Gründerkonto', pros:['0 € Kontoführung im 1. Jahr','Deutsches IBAN & Bankgarantie','DATEV-Schnittstelle optional'], price:'Gründerkonto: 0 € Kontoführung im 1. Jahr, danach 10 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:true },
+      { name:'FYRST', tag:'Deutsche Bank Tochter – Gründerkonto', pros:['0 € Kontoführung im 1. Jahr','Deutsche IBAN und gesetzliche Einlagensicherung','DATEV-Schnittstelle optional'], price:'Gründerkonto: 0 € Kontoführung im 1. Jahr, danach 10 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:true },
       { name:'Finom', tag:'Zinskonto & Buchhaltung', pros:['Solo-Tarif dauerhaft kostenlos','5 % p.a. für 5 Monate für ausgewählte Neukunden','Rechnungsstellung inklusive'], price:'Solo kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/firmendo-test-pages/finom-geschaeftskonto/', top:false }
     ],
     buchhaltung: [
-      { name:'FYRST', tag:'DATEV & Buchhaltungs-Integration', pros:['DATEV-Schnittstelle optional','Deutsche-Bank-Infrastruktur','Online + Filiale kombinierbar'], price:'Gründerkonto: 0 € Kontoführung im 1. Jahr, danach 10 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:true },
+      { name:'FYRST', tag:'DATEV & Buchhaltungs-Integration', pros:['DATEV-Schnittstelle optional','Deutsche-Bank-Infrastruktur','Bargeldservice an Postbank- und Deutsche-Bank-Schaltern'], price:'Gründerkonto: 0 € Kontoführung im 1. Jahr, danach 10 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:true },
       { name:'Finom', tag:'Buchhaltung + Zinskonto', pros:['DATEV & Lexoffice-Integration','5 % p.a. für 5 Monate für ausgewählte Neukunden','Rechnungsstellung inklusive'], price:'Solo kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/firmendo-test-pages/finom-geschaeftskonto/', top:false }
     ],
     komplett: [
       { name:'Finom', tag:'All-in-One mit Zinskonto', pros:['Rechnungsstellung inklusive','5 % p.a. für 5 Monate für ausgewählte Neukunden','DATEV & Lexoffice-Integration'], price:'Solo kostenlos', affiliate:'https://finom.co/?ref=firmendo', review:'/firmendo-test-pages/finom-geschaeftskonto/', top:true },
-      { name:'FYRST', tag:'Deutsch, sicher und vollständig', pros:['0 € Kontoführung im 1. Jahr','DATEV optional','Online + Filiale kombinierbar'], price:'Gründerkonto: 0 € Kontoführung im 1. Jahr, danach 10 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:false }
+      { name:'FYRST', tag:'Deutsch, sicher und vollständig', pros:['0 € Kontoführung im 1. Jahr','DATEV optional','Bargeldservice an Postbank- und Deutsche-Bank-Schaltern'], price:'Gründerkonto: 0 € Kontoführung im 1. Jahr, danach 10 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:false }
     ],
     cashback: [
       { name:'Vivid Business', tag:'Cashback & moderne Features', pros:['Cashback auf Kartenzahlungen','Unterkonten für Budgets','Virtuelle Karten verfügbar'], price:'Free Start kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/firmendo-test-pages/vivid-geschaeftskonto/', top:true },
@@ -123,7 +123,7 @@ var fDB = {
     ],
     buchhaltung: [
       { name:'Qonto', tag:'DATEV & Teamzugänge', pros:['DATEV, Lexware Office und sevdesk','Für alle deutschen Rechtsformen','Echtzeit-Benachrichtigungen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/firmendo-test-pages/qonto-geschaeftskonto/', top:true },
-      { name:'FYRST', tag:'DATEV & Filiale kombinierbar', pros:['DATEV-Schnittstelle optional','Stammkapital-Einzahlung möglich','Online + Filiale kombinierbar'], price:'BASE: 0 € für natürliche Personen, juristische Personen 6 Monate 0 €, danach 6 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:false }
+      { name:'FYRST', tag:'DATEV & Filiale kombinierbar', pros:['DATEV-Schnittstelle optional','Stammkapital-Einzahlung möglich','Bargeldservice an Postbank- und Deutsche-Bank-Schaltern'], price:'BASE: 0 € für natürliche Personen, juristische Personen 6 Monate 0 €, danach 6 €/Monat', affiliate:'https://www.fyrst.de/?ref=firmendo', review:'/firmendo-test-pages/fyrst-geschaeftskonto/', top:false }
     ],
     komplett: [
       { name:'Qonto', tag:'Ideal für GmbH & UG', pros:['Stammkapital-Einzahlung möglich','DATEV & Integrationen','Team- und Freigabefunktionen'], price:'Ab 9 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/firmendo-test-pages/qonto-geschaeftskonto/', top:true },
@@ -144,7 +144,7 @@ var fDB = {
       { name:'Finom', tag:'Buchhaltung + Zinskonto', pros:['DATEV & Lexoffice-Integration','5 % p.a. für 5 Monate für ausgewählte Neukunden','Rechnungsstellung inklusive'], price:'Basic ab 8 €/Monat (zzgl. MwSt.)', affiliate:'https://finom.co/?ref=firmendo', review:'/firmendo-test-pages/finom-geschaeftskonto/', top:false }
     ],
     komplett: [
-      { name:'Qonto', tag:'Stark für strukturierte Teams', pros:['Ausgabenrichtlinien & Budgets','Admin- und Teamzugänge','DATEV & Integrationen'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/firmendo-test-pages/qonto-geschaeftskonto/', top:true },
+      { name:'Qonto', tag:'Stark für strukturierte Teams', pros:['Cashflow-Tracking und -Prognose','Admin- und Teamzugänge','DATEV & Integrationen'], price:'Smart ab 19 €/Monat (zzgl. MwSt.)', affiliate:'https://qonto.com/?ref=firmendo', review:'/firmendo-test-pages/qonto-geschaeftskonto/', top:true },
       { name:'Vivid Business', tag:'Unterkonten & virtuelle Karten', pros:['Unterkonten für Teambudgets','Virtuelle Karten verfügbar','Free Start kostenlos'], price:'Free Start kostenlos', affiliate:'https://vivid.money/business?ref=firmendo', review:'/firmendo-test-pages/vivid-geschaeftskonto/', top:false }
     ],
     cashback: [
