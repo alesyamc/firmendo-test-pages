@@ -1397,8 +1397,7 @@ line-height: 1.6;
 max-width: none;
 margin-bottom: 2px;
 }
-.mini-anbieter-cta,
-.text-body .post-compare-table a.mini-anbieter-cta {
+.mini-anbieter-cta {
 display: inline-flex;
 align-items: center;
 justify-content: center;
@@ -1418,6 +1417,7 @@ box-shadow: 0 4px 16px rgba(47,73,179,0.24);
 box-shadow: 0 4px 16px light-dark(rgba(47,73,179,0.24), rgba(0,0,0,0.55));
 }
 .text-body .post-compare-table a.mini-anbieter-cta {
+font-weight: 700;
 margin-top: 12px;
 }
 .mini-anbieter-cta:hover {
