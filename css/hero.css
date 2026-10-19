@@ -286,3 +286,55 @@
     width: 100%;
   }
 }
+
+/* Werbehinweis als dritter Punkt in .hero-author-meta — an css/hero.css anhängen.
+   <details> statt JS: funktioniert auf allen Seiten ohne zusätzliches Skript. */
+.werbehinweis {
+  position: relative;
+  display: block;
+}
+
+.werbehinweis > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--gray-500);
+  border-radius: 4px;
+}
+
+.werbehinweis > summary::-webkit-details-marker { display: none; }
+
+.werbehinweis > summary svg { color: var(--accent-color-text); flex-shrink: 0; }
+
+.werbehinweis > summary span {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.werbehinweis > summary:hover span,
+.werbehinweis[open] > summary span { color: var(--gray-800); }
+
+.werbehinweis > summary:focus-visible {
+  outline: 2px solid var(--accent-color-text);
+  outline-offset: 2px;
+}
+
+.werbehinweis-panel {
+  /* öffnet nach oben wie das Autoren-Popover: unten schneidet der Hero-Rand ab */
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: 500;
+  width: min(320px, calc(100vw - 40px));
+  padding: 14px 16px;
+  background: var(--surface);
+  border: var(--border-card);
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(17,24,69,0.13);
+  box-shadow: 0 8px 32px light-dark(rgba(17,24,69,0.13), rgba(0,0,0,0.325));
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--gray-500);
+}
