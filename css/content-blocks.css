@@ -1397,7 +1397,8 @@ line-height: 1.6;
 max-width: none;
 margin-bottom: 2px;
 }
-.mini-anbieter-cta {
+.mini-anbieter-cta,
+.text-body .post-compare-table a.mini-anbieter-cta {
 display: inline-flex;
 align-items: center;
 justify-content: center;
@@ -1415,6 +1416,9 @@ align-self: flex-start;
 margin-top: auto;
 box-shadow: 0 4px 16px rgba(47,73,179,0.24);
 box-shadow: 0 4px 16px light-dark(rgba(47,73,179,0.24), rgba(0,0,0,0.55));
+}
+.text-body .post-compare-table a.mini-anbieter-cta {
+margin-top: 12px;
 }
 .mini-anbieter-cta:hover {
 background: var(--accent-color-bg-hover);
@@ -1440,7 +1444,10 @@ transform: translateY(-1px);
 }
 .text-body a.mini-anbieter-cta,
 .text-body a.mini-anbieter-cta:hover,
-.text-body a.mini-anbieter-cta:focus-visible {
+.text-body a.mini-anbieter-cta:focus-visible,
+.text-body .post-compare-table a.mini-anbieter-cta,
+.text-body .post-compare-table a.mini-anbieter-cta:hover,
+.text-body .post-compare-table a.mini-anbieter-cta:focus-visible {
 color: #fff;
 text-decoration: none;
 text-decoration-color: transparent;
