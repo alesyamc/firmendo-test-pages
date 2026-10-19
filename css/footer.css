@@ -36,6 +36,7 @@ footer {
 }
 
 .footer-col-title {
+  overflow-wrap: anywhere;
   font-size: var(--fs-xs);
   font-weight: var(--font-weight-bold);
   color: #FF7A3D;
@@ -118,4 +119,8 @@ footer {
   .footer-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4xl) var(--space-3xl); }
   .footer-col-links a { display: inline-block; padding-block: 3px; }
   .footer-bottom { flex-direction: column; }
+}
+
+@media (max-width: 360px) {
+  .footer-col-title { font-size: 11px; letter-spacing: 0.04em; }
 }
