@@ -258,7 +258,7 @@
       <div class="hero-author-meta">
         <div class="hero-meta-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          Zuletzt aktualisiert: 11. Oktober 2026
+          Zuletzt aktualisiert: 22. Oktober 2026
         </div>
         <div class="hero-meta-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1073,7 +1073,7 @@ const products = [
     logo: '<img class="provider-logo-img" src="/firmendo-test-pages/images/mini-logos/kontist.png" alt="Kontist Logo" loading="lazy" decoding="async" width="550" height="551">'
   },
   {
-    name: 'Qonto Starter', priceNote: 'Starter, 0 €/Monat, nur für Freiberufler und Einzelunternehmen, 5 SEPA-Transaktionen inkl., danach 0,20 €, 1 virtuelle Mastercard Debit, DATEV/Lexware-Sync; für Bargeld physische One Card +5 €/Monat; je One Card 1 Abhebung/Monat frei, danach 2 €, Limit 1.000 €/Monat; Preise netto', promo: null, promoNote: null, base: 0, txFree: 5, txCost: 0.20, cashWithdrawal: { freeCount: 1, fee: 2, cardMonthly: 5, monthlyLimit: 1000 }, cat: 'Fintech', price: 0, highlight: false,
+    name: 'Qonto Starter', priceNote: 'Starter, 0 €/Monat, nur für Freiberufler und Einzelunternehmen, 5 SEPA-Transaktionen inkl., danach 0,20 €, 1 virtuelle Mastercard Debit, DATEV/Lexware-Sync; für Bargeld physische One Card +5 €/Monat; je One Card 1 Abhebung/Monat frei, danach 2 €, Limit 1.000 €/Monat; Preise netto', promo: '250 € Bonus', promoNote: 'Für Neukunden in Deutschland bei Kontoeröffnung vom 21.10. bis 30.11.2026: einmalig 250 € nach mindestens 800 € berechtigten Kartenzahlungen in jedem der ersten drei Kalendermonate; Auszahlung im vierten Monat. Alle Tarife. Company Creators (Stammkapitaleinzahlung oder Gründungspaket) sind ausgeschlossen; Solo Creators sind berechtigt.', base: 0, txFree: 5, txCost: 0.20, cashWithdrawal: { freeCount: 1, fee: 2, cardMonthly: 5, monthlyLimit: 1000 }, cat: 'Fintech', price: 0, highlight: false,
     targetGroup: 'Selbstständige',
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     schufa: false, rating: 4.4, cashback: '—', cashbackSort: 0, intl: true, datev: true, accounting: true,
@@ -1253,6 +1253,10 @@ function getFilteredData() {
   return data;
 }
 
+function mobilePromoNote(p) {
+  return p.name.startsWith('Qonto') && p.promoNote ? ' ' + p.promoNote : '';
+}
+
 function renderMobileCards(data) {
   const root = document.getElementById('mobileCards');
   if (!root) return;
@@ -1287,7 +1291,7 @@ function renderMobileCards(data) {
         <div class="mc-spec"><span class="mc-spec-label">International</span><span class="mc-spec-value ${p.intl ? 'green' : 'muted'}">${p.intl ? 'Ja' : 'Nein'}</span></div>
       </div>
       <div class="mc-footer">
-        <div class="mc-footer-note">${p.priceNote}</div>
+        <div class="mc-footer-note">${p.priceNote}${mobilePromoNote(p)}</div>
         <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter</a>
       </div>
     </article>

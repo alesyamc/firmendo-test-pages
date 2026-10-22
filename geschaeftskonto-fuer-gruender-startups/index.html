@@ -29,7 +29,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/firmendo-test-pages/android-chrome-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/firmendo-test-pages/android-chrome-512x512.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"Geschäftskonto für Gründer 2026: Vergleich","url":"https://www.firmendo.de/geschaeftskonto-fuer-gruender-startups/","mainEntityOfPage":"https://www.firmendo.de/geschaeftskonto-fuer-gruender-startups/","dateModified":"2026-10-19","inLanguage":"de","author":{"@type":"Person","name":"Alessia Pewnew","url":"https://www.firmendo.de/author/alessia-pewnew/"},"publisher":{"@type":"Organization","name":"Firmendo","url":"https://www.firmendo.de/"},"image":"https://www.firmendo.de/images/og-images/geschaeftskonto-fuer-gruender-startups.jpg?v=20261011-freshness"}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Geschäftskonto für Gründer 2026: Vergleich","url":"https://www.firmendo.de/geschaeftskonto-fuer-gruender-startups/","mainEntityOfPage":"https://www.firmendo.de/geschaeftskonto-fuer-gruender-startups/","dateModified":"2026-10-22","inLanguage":"de","author":{"@type":"Person","name":"Alessia Pewnew","url":"https://www.firmendo.de/author/alessia-pewnew/"},"publisher":{"@type":"Organization","name":"Firmendo","url":"https://www.firmendo.de/"},"image":"https://www.firmendo.de/images/og-images/geschaeftskonto-fuer-gruender-startups.jpg?v=20261011-freshness"}
 </script>
 <script type="application/ld+json">
 {
@@ -280,7 +280,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 19. Oktober 2026
+            Zuletzt aktualisiert: 22. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1233,7 +1233,7 @@ const products = [
   },
   {
     // verified 2026-10-11
-    name: 'Qonto Starter', priceNote: 'Starter, 0 €/Monat, nur für Freiberufler und Einzelunternehmen, 5 SEPA-Transaktionen inkl., danach 0,20 €, 1 virtuelle Mastercard Debit, DATEV/Lexware-Sync; für Bargeld physische One Card +5 €/Monat; je One Card 1 Abhebung/Monat frei, danach 2 €, Limit 1.000 €/Monat; Preise netto', promo: null, promoNote: null, base: 0, txCost: 0.20, txFree: 5, cashWithdrawal: { freeCount: 1, fee: 2, cardMonthly: 5, monthlyLimit: 1000 }, cat: 'Fintech', highlight: false,
+    name: 'Qonto Starter', priceNote: 'Starter, 0 €/Monat, nur für Freiberufler und Einzelunternehmen, 5 SEPA-Transaktionen inkl., danach 0,20 €, 1 virtuelle Mastercard Debit, DATEV/Lexware-Sync; für Bargeld physische One Card +5 €/Monat; je One Card 1 Abhebung/Monat frei, danach 2 €, Limit 1.000 €/Monat; Preise netto', promo: '250 € Bonus', promoNote: 'Für Neukunden in Deutschland bei Kontoeröffnung vom 21.10. bis 30.11.2026: einmalig 250 € nach mindestens 800 € berechtigten Kartenzahlungen in jedem der ersten drei Kalendermonate; Auszahlung im vierten Monat. Alle Tarife. Company Creators (Stammkapitaleinzahlung oder Gründungspaket) sind ausgeschlossen; Solo Creators sind berechtigt.', base: 0, txCost: 0.20, txFree: 5, cashWithdrawal: { freeCount: 1, fee: 2, cardMonthly: 5, monthlyLimit: 1000 }, cat: 'Fintech', highlight: false,
     targetGroup: 'Selbstständige',
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     schufa: false, rating: 4.4, cashback: '—', intl: true, datev: true, accounting: true,
@@ -1522,6 +1522,10 @@ function getFilteredData() {
   return data;
 }
 
+function mobilePromoNote(p) {
+  return p.name.startsWith('Qonto') && p.promoNote ? ' ' + p.promoNote : '';
+}
+
 function renderMobileCards(data) {
   const root = document.getElementById('mobileCards');
   if (!root) return;
@@ -1556,7 +1560,7 @@ function renderMobileCards(data) {
         <div class="mc-spec"><span class="mc-spec-label">International</span><span class="mc-spec-value ${p.intl ? 'green' : 'muted'}">${p.intl ? 'Ja' : 'Nein'}</span></div>
       </div>
       <div class="mc-footer">
-        <div class="mc-footer-note">${p.priceNote}</div>
+        <div class="mc-footer-note">${p.priceNote}${mobilePromoNote(p)}</div>
         ${providerCtaMarkup(p, 'mobile')}
       </div>
     </article>
