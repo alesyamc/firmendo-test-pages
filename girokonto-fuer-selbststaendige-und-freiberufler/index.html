@@ -2164,7 +2164,7 @@ function renderTable() {
 }
 
 function mobilePromoNote(p) {
-  return p.name.startsWith('Qonto') && p.promoNote ? ' ' + p.promoNote : '';
+  return p.name.startsWith('Qonto') && p.promoNote ? '<p class="mc-footer-note">' + p.promoNote + '</p>' : '';
 }
 
 function renderMobileCards(data) {
@@ -2207,8 +2207,9 @@ function renderMobileCards(data) {
         <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
         <div class="mc-spec"><span class="mc-spec-label">Steuer-Feature</span><span class="mc-spec-value ${p.steuer ? 'green' : 'muted'}">${p.steuer ? 'Ja' : 'Nein'}</span></div>
       </div>
+      ${mobilePromoNote(p)}
       <div class="mc-footer">
-        <div class="mc-footer-note">${p.typ}${mobilePromoNote(p)}</div>
+        <div class="mc-footer-note">${p.typ}</div>
         <div class="mc-actions">
           <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">
             Zum Anbieter
