@@ -644,15 +644,16 @@ body.lp-comparison-page .td-logo {
   width: 66px; height: 48px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+  background: #fff;
   border-radius: 10px;
-  padding: 2px;
+  padding: 4px;
 }
 body.lp-comparison-page .td-logo svg { max-width: 55px; max-height: 40px; }
 body.lp-comparison-page .provider-logo-img { max-width: 55px; max-height: 40px; object-fit: contain; }
 body.lp-comparison-page .provider-logo-text { font-weight: 800; line-height: 1; }
 /* Highlight row logo treatment. */
 body.lp-comparison-page .table-wrap tr.highlight .td-logo {
-  background: var(--surface);
+  background: #fff;
   box-shadow: 0 2px 8px rgba(194,76,18,0.12);
   box-shadow: 0 2px 8px light-dark(rgba(194,76,18,0.12), rgba(0,0,0,0.3));
   border: 1px solid rgba(194,76,18,0.15);
@@ -1293,7 +1294,7 @@ body.lp-comparison-page .mobile-cards { display: none; }
     width: 52px; height: 40px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    background: var(--gray-50);
+    background: #fff;
     border-radius: 10px;
     padding: 4px;
   }
