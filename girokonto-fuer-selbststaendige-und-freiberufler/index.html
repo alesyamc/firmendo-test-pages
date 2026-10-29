@@ -25,9 +25,6 @@
 <link rel="icon" type="image/x-icon" href="/firmendo-test-pages/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/firmendo-test-pages/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/firmendo-test-pages/favicon-32x32.png">
-<meta name="application-name" content="Firmendo">
-<meta name="apple-mobile-web-app-title" content="Firmendo">
-<link rel="manifest" href="/firmendo-test-pages/site.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="/firmendo-test-pages/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/firmendo-test-pages/android-chrome-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/firmendo-test-pages/android-chrome-512x512.png">
@@ -153,7 +150,7 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/editorial-table.css?v=20261008-dark1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/girokonto-selbststaendige.css?v=20261008-dark1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/girokonto-selbststaendige.css?v=20261028-a11y1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
@@ -429,14 +426,18 @@
               <svg class="fd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="fd-menu" role="listbox">
-              <button type="button" class="fd-option selected" data-value="">Alle Rechtsformen</button>
-              <span class="fd-group-label">Selbstständige</span>
-              <button type="button" class="fd-option" data-value="Freiberufler">Freiberufler</button>
-              <button type="button" class="fd-option" data-value="Einzelunternehmen">Einzelunternehmen / e.K.</button>
-              <button type="button" class="fd-option" data-value="GbR">GbR</button>
-              <span class="fd-group-label">Kapitalgesellschaften</span>
-              <button type="button" class="fd-option" data-value="GmbH">GmbH &amp; UG</button>
-              <button type="button" class="fd-option" data-value="AG">AG</button>
+              <button type="button" class="fd-option selected" role="option" aria-selected="true" data-value="">Alle Rechtsformen</button>
+              <div role="group" aria-label="Selbstständige">
+                <span class="fd-group-label" aria-hidden="true">Selbstständige</span>
+                <button type="button" class="fd-option" role="option" data-value="Freiberufler">Freiberufler</button>
+                <button type="button" class="fd-option" role="option" data-value="Einzelunternehmen">Einzelunternehmen / e.K.</button>
+                <button type="button" class="fd-option" role="option" data-value="GbR">GbR</button>
+              </div>
+              <div role="group" aria-label="Kapitalgesellschaften">
+                <span class="fd-group-label" aria-hidden="true">Kapitalgesellschaften</span>
+                <button type="button" class="fd-option" role="option" data-value="GmbH">GmbH &amp; UG</button>
+                <button type="button" class="fd-option" role="option" data-value="AG">AG</button>
+              </div>
             </div>
           </div>
         </div>
@@ -451,10 +452,10 @@
               <svg class="fd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="fd-menu" role="listbox">
-              <button type="button" class="fd-option selected" data-value="">Alle Typen</button>
-              <button type="button" class="fd-option" data-value="Fintech">Fintech / Neobank</button>
-              <button type="button" class="fd-option" data-value="Direktbank">Direktbank</button>
-              <button type="button" class="fd-option" data-value="Filialbank">Filialbank</button>
+              <button type="button" class="fd-option selected" role="option" aria-selected="true" data-value="">Alle Typen</button>
+              <button type="button" class="fd-option" role="option" data-value="Fintech">Fintech / Neobank</button>
+              <button type="button" class="fd-option" role="option" data-value="Direktbank">Direktbank</button>
+              <button type="button" class="fd-option" role="option" data-value="Filialbank">Filialbank</button>
             </div>
           </div>
         </div>
@@ -516,9 +517,9 @@
             <svg class="fd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="fd-menu" role="listbox">
-            <button type="button" class="fd-option selected" data-value="preis-asc">Preis: aufsteigend</button>
-            <button type="button" class="fd-option" data-value="preis-desc">Preis: absteigend</button>
-            <button type="button" class="fd-option" data-value="name-asc">Name: A → Z</button>
+            <button type="button" class="fd-option selected" role="option" aria-selected="true" data-value="preis-asc">Preis: aufsteigend</button>
+            <button type="button" class="fd-option" role="option" data-value="preis-desc">Preis: absteigend</button>
+            <button type="button" class="fd-option" role="option" data-value="name-asc">Name: A → Z</button>
           </div>
         </div>
       </div>
@@ -529,7 +530,7 @@
     Tabelle nach rechts scrollen für alle Spalten
   </div>
   <div class="table-scroll-wrap" id="tableScrollWrap">
-    <div class="table-wrap" id="tableWrap">
+    <div class="table-wrap" id="tableWrap" tabindex="0" aria-label="Vergleichstabelle horizontal scrollen">
       <table>
         <thead>
           <tr>
@@ -1442,7 +1443,7 @@
           Tabelle nach rechts scrollen für alle Spalten
         </div>
         <div class="table-scroll-wrap" id="gmbhTableScrollWrap">
-          <div class="editorial-table-wrap" id="gmbhTableWrap">
+          <div class="editorial-table-wrap" id="gmbhTableWrap" tabindex="0" aria-label="GmbH-Vergleichstabelle horizontal scrollen">
             <table class="editorial-table">
             <thead>
               <tr>
@@ -1456,52 +1457,52 @@
             <tbody>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/qonto.png" alt="Qonto Logo" loading="lazy" decoding="async" width="480" height="480"></span><span class="editorial-table-item-copy"><strong>Qonto</strong><span class="editorial-table-item-meta">1–9 Mitarbeiter: Basic / Smart / Premium</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="Vollständig geeignet">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="Vollständig geeignet">✓</span></td>
                 <td><span class="editorial-table-price">9 € / 19 € / 39 €</span> bei jährlicher Abrechnung, zzgl. MwSt.</td>
                 <td>Premium: 200 Überweisungen inkl., danach 0,10 €</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="DATEV verfügbar">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="DATEV verfügbar">✓</span></td>
               </tr>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/vivid-money.png" alt="Vivid Business Logo" loading="lazy" decoding="async" width="256" height="256"></span><span class="editorial-table-item-copy"><strong>Vivid</strong><span class="editorial-table-item-meta">Free Start / Basic / Pro</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="Vollständig geeignet">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="Vollständig geeignet">✓</span></td>
                 <td><span class="editorial-table-price">0 € / 6,90 € / 18,90 €</span></td>
                 <td>tarifabhängig</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="DATEV verfügbar">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="DATEV verfügbar">✓</span></td>
               </tr>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/fyrst.svg" alt="FYRST Logo" loading="lazy" decoding="async" width="16" height="16"></span><span class="editorial-table-item-copy"><strong>FYRST</strong><span class="editorial-table-item-meta">COMPLETE</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="Vollständig geeignet">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="Vollständig geeignet">✓</span></td>
                 <td><span class="editorial-table-price">10 €</span></td>
                 <td>75 inkl., danach 0,08 €</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="DATEV verfügbar">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="DATEV verfügbar">✓</span></td>
               </tr>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/ing.svg" alt="ING Logo" loading="lazy" decoding="async" width="340" height="340"></span><span class="editorial-table-item-copy"><strong>ING</strong><span class="editorial-table-item-meta">Business Konto S / M / L</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="Vollständig geeignet">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="Vollständig geeignet">✓</span></td>
                 <td><span class="editorial-table-price">0 € / 4,90 € / 14,90 €</span></td>
                 <td>0,30 / 0,20 / 0,10 € je Transaktion</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="DATEV verfügbar">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="DATEV verfügbar">✓</span></td>
               </tr>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/commerzbank.svg" alt="Commerzbank Logo" loading="lazy" decoding="async" width="82" height="71"></span><span class="editorial-table-item-copy"><strong>Commerzbank</strong><span class="editorial-table-item-meta">PremiumGeschäftskonto</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="Vollständig geeignet">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="Vollständig geeignet">✓</span></td>
                 <td><span class="editorial-table-price">8,90 € (24 Monate), danach 34,90 €</span></td>
                 <td>50 inkl., danach 0,15 €</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="DATEV verfügbar">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="DATEV verfügbar">✓</span></td>
               </tr>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/deutsche-bank.svg" alt="Deutsche Bank Logo" loading="lazy" decoding="async" width="32" height="32"></span><span class="editorial-table-item-copy"><strong>Deutsche Bank</strong><span class="editorial-table-item-meta">Business BasicKonto</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="Vollständig geeignet">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="Vollständig geeignet">✓</span></td>
                 <td><span class="editorial-table-price">14,90 €</span></td>
                 <td>0,30 € je Posten</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" aria-label="DATEV verfügbar">✓</span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--good" role="img" aria-label="DATEV verfügbar">✓</span></td>
               </tr>
               <tr>
                 <td><div class="editorial-table-item"><span class="editorial-table-item-logo"><img src="/firmendo-test-pages/images/mini-logos/n26.svg" alt="N26 Logo" loading="lazy" decoding="async" width="46" height="32"></span><span class="editorial-table-item-copy"><strong>N26</strong><span class="editorial-table-item-meta">Business</span></span></div></td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--bad" aria-label="Nur Einzelunternehmer"></span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--bad" role="img" aria-label="Nur Einzelunternehmer"></span></td>
                 <td><span class="editorial-table-price editorial-table-price--free">0 €</span></td>
                 <td>Inklusive</td>
-                <td><span class="editorial-table-status-pill editorial-table-status-pill--bad" aria-label="DATEV nicht verfügbar"></span></td>
+                <td><span class="editorial-table-status-pill editorial-table-status-pill--bad" role="img" aria-label="DATEV nicht verfügbar"></span></td>
               </tr>
             </tbody>
             </table>

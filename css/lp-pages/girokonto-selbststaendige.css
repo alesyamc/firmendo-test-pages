@@ -419,8 +419,21 @@ body.lp-comparison-page .mc-secondary:hover {
 }
 
 body.lp-comparison-page .mc-secondary.disabled {
-  color: var(--gray-300);
+  color: var(--gray-500);
   text-decoration: none;
+}
+
+body.lp-comparison-page .btn-table-detail.btn-table-ghost--disabled,
+body.lp-comparison-page .btn-table-detail.btn-table-ghost--disabled:hover,
+body.lp-comparison-page .btn-table-ghost--disabled,
+body.lp-comparison-page .btn-table-ghost--disabled:hover {
+  color: var(--gray-500);
+}
+
+body.lp-comparison-page .table-wrap:focus-visible,
+body.lp-comparison-page .editorial-table-wrap:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
