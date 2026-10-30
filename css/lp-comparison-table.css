@@ -1672,3 +1672,12 @@ body.lp-comparison-page #mobileCards :is(.mc-badge, .promo-badge, .rf-tag, .tag)
   }
   body.lp-comparison-page .mc-card--v2 .mc-badge--edge::before { color: var(--orange); }
 }
+@media (max-width: 360px) {
+  /* Schmale Displays: Nutzungsprofil und Kosten behalten lesbare Zeilen. */
+  body.lp-comparison-page .mc-card--v2 .mc-fact--total {
+    flex-direction: column; align-items: flex-start; gap: 6px;
+  }
+  body.lp-comparison-page .mc-card--v2 .mc-fact--total dd.is-note {
+    overflow-wrap: normal; text-align: left;
+  }
+}
