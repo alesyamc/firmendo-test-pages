@@ -33,7 +33,8 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/firmendo-test-pages/android-chrome-512x512.png">
 <script src="/firmendo-test-pages/site-nav.js?v=20261008-tracking-1" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=2"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -166,12 +167,12 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/depotuebertrag-praemie.css?v=20261009-all800">
 
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -203,7 +204,7 @@
       "url": "https://www.firmendo.de/android-chrome-512x512.png"
     }
   },
-  "dateModified": "2026-10-26T21:24:15+04:00"
+  "dateModified": "2026-10-30"
 }
 </script>
 </head>
@@ -380,7 +381,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 26. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1428,43 +1429,18 @@ function renderMobileCta(p) {
 }
 
 function renderMobileCards(data) {
-  const mobileCards = document.getElementById('mobileCards');
-  if (!mobileCards) return;
-  if (data.length === 0) {
-    mobileCards.innerHTML = `<div class="mobile-empty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p>
-    </div>`;
-    return;
-  }
-  mobileCards.innerHTML = data.map(p => `
-    <article class="mc-card ${p.highlight ? 'highlight' : ''}">
-      <div class="mc-head">
-        <div class="mc-logo">${p.logo}</div>
-        <div class="mc-head-text">
-          ${p.highlight ? '<span class="mc-badge">Empfehlung</span>' : ''}
-          <div class="mc-name">${p.fullname}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${p.cat}</span>
-          </div>
-        </div>
-      </div>
-      <div class="mc-specs">
-        <div class="mc-spec"><span class="mc-spec-label">Depotkosten</span><span class="mc-spec-value">${p.depotFeeLabel || '0 €'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Prämie</span><span class="mc-spec-value green">${p.praemieLabel}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Typ</span><span class="mc-spec-value blue">${{bar:'Barprämie',zins:'Tagesgeld',freetrades:'Free Trades',prozent:'% Prämie',fondsanteile:'Fondsanteile',gutschein:'Gutschein'}[p.typ]}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Mindestvolumen</span><span class="mc-spec-value muted">${p.minvolLabel}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Haltefrist</span><span class="mc-spec-value muted">${p.haltefrist}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Zielgruppe</span><span class="mc-spec-value muted">${p.zielLabel}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Order ab</span><span class="mc-spec-value blue">${p.orderAb}</span></div>
-      </div>
-      <p class="mc-footer-note">${p.praemieNote}</p>
-      <div class="mc-footer">
-        <div class="mc-footer-note">${p.etf ? 'ETF-Sparplan verfügbar' : 'Kein ETF-Sparplan markiert'}</div>
-        ${renderMobileCta(p)}
-      </div>
-    </article>
-  `).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    return {
+      name: p.fullname, logo: p.logo, meta: p.cat, highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Prämie', value: p.praemieLabel},
+      facts: [ui.fact('Depotkosten', p.depotFeeLabel || '0 €'), ui.fact('Mindestvolumen', p.minvolLabel)],
+      features: [ui.feature('ETF-Sparplan', p.etf)],
+      details: [ui.detail('Prämie', p.praemieNote), ui.detail('Typ', {bar:'Barprämie',zins:'Tagesgeld',freetrades:'Free Trades',prozent:'% Prämie',fondsanteile:'Fondsanteile',gutschein:'Gutschein'}[p.typ]),
+        ui.detail('Haltefrist', p.haltefrist), ui.detail('Zielgruppe', p.zielLabel), ui.detail('Order ab', p.orderAb)],
+      actions: renderMobileCta(p)
+    };
+  });
 }
 
 function renderTable() {

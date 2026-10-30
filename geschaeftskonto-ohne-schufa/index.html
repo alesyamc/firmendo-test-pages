@@ -132,7 +132,8 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/fonts.css?v=20261009-all800">
 <script src="/firmendo-test-pages/site-nav.js?v=20261008-tracking-1" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=3"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/design-tokens.css?v=20261011-width1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/typography-tokens.css?v=20261009-all800">
 <link rel="stylesheet" href="/firmendo-test-pages/css/base.css?v=20261008-dark1">
@@ -150,11 +151,11 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/geschaeftskonto-ohne-schufa.css?v=20261008-dark1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -186,7 +187,7 @@
       "url": "https://www.firmendo.de/android-chrome-512x512.png"
     }
   },
-  "dateModified": "2026-10-22T18:19:12+04:00"
+  "dateModified": "2026-10-30"
 }
 </script>
 </head>
@@ -363,7 +364,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 22. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1100,7 +1101,7 @@
 <script>
 const products = [
   {
-    name: 'Finom Solo', priceNote: 'Solo, 0 €/Monat; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf bis zu 10.000 € im Zinskonto, danach 0,5 % p.a., und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', base: 0, txCost: 0, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, txFree: 999, cat: 'Fintech', price: 0, highlight: true,
+    name: 'Finom Solo', variableCardCost: true, physicalCardFee: 3, mobileTargetGroup: 'Für Freelancer & neue Unternehmen', priceNote: 'Solo, 0 €/Monat; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf bis zu 10.000 € im Zinskonto, danach 0,5 % p.a., und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', base: 0, txCost: 0, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, txFree: 999, cat: 'Fintech', price: 0, highlight: true,
     promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf bis zu 10.000 € im Zinskonto, danach 0,5 % p.a., und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.',
     suitable: ['Freiberufler','Einzelunternehmen','Gründer','eK'],
     schufa: false, rating: 4.5, label: 'Beste Wahl für Freelancer', cashback: '—', intl: true, datev: true, accounting: true,
@@ -1218,10 +1219,11 @@ function updateFilterCount() {
 }
 
 function calcTotal(p) {
+  if (lpAccountCostStatus(p).kind !== 'number') return null;
   if (p.cashWithdrawal) return lpCardCashCosts(p, lpComparisonUsage()).total;
-  const buchungen = parseInt(document.getElementById('inp-buchungen')?.value, 10) || 30;
-  const abhebungen = parseInt(document.getElementById('inp-abhebungen')?.value, 10) || 4;
-  const betrag = parseFloat(document.getElementById('inp-betrag')?.value) || 200;
+  const buchungen = lpComparisonUsage().transactions;
+  const abhebungen = lpComparisonUsage().amount > 0 ? lpComparisonUsage().withdrawals : 0;
+  const betrag = lpComparisonUsage().amount;
   const base = p.base || 0;
   const tx = (p.txCost || 0) * Math.max(0, buchungen - (p.txFree || 0));
   const abhebeTotal = Math.max(0, abhebungen * betrag - (p.abhebeFreeAmount || 0));
@@ -1230,10 +1232,12 @@ function calcTotal(p) {
 }
 
 function totalBreakdownMarkup(p) {
+  const statusMarkup = lpAccountCostStatusMarkup(p);
+  if (statusMarkup) return statusMarkup;
   if (p.cashWithdrawal) return lpCardCashBreakdownMarkup(p);
-  const buchungen = parseInt(document.getElementById('inp-buchungen')?.value, 10) || 30;
-  const abhebungen = parseInt(document.getElementById('inp-abhebungen')?.value, 10) || 4;
-  const betrag = parseFloat(document.getElementById('inp-betrag')?.value) || 200;
+  const buchungen = lpComparisonUsage().transactions;
+  const abhebungen = lpComparisonUsage().amount > 0 ? lpComparisonUsage().withdrawals : 0;
+  const betrag = lpComparisonUsage().amount;
   const base = p.base || 0;
   const tx = (p.txCost || 0) * Math.max(0, buchungen - (p.txFree || 0));
   const abhebeTotal = Math.max(0, abhebungen * betrag - (p.abhebeFreeAmount || 0));
@@ -1276,42 +1280,26 @@ function mobilePromoNote(p) {
 }
 
 function renderMobileCards(data) {
-  const root = document.getElementById('mobileCards');
-  if (!root) return;
-  if (data.length === 0) {
-    root.innerHTML = '<div class="mobile-empty"><p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div>';
-    return;
-  }
-  root.innerHTML = data.map(p => `
-    <article class="mc-card ${p.highlight ? 'highlight' : ''}">
-      <div class="mc-head">
-        <div class="mc-logo">${p.logo}</div>
-        <div class="mc-head-text">
-          <div class="mc-name">${p.name}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${p.cat}</span>
-            ${p.targetGroup ? `<span class="tariff-group-text">Tarif für ${p.targetGroup.replace(' & ', ', ')}</span>` : ''}
-            ${p.highlight ? '<span class="mc-badge">Empfehlung</span>' : ''}
-          </div>
-        </div>
-      </div>
-      <div class="mc-specs">
-        <div class="mc-spec"><span class="mc-spec-label">Grundgebühr</span><span class="mc-spec-value ${p.base === 0 ? 'green' : 'blue'}">${p.base === 0 ? '0 €' : formatEuro(p.base)}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Aktion</span><span class="mc-spec-value blue">${p.promo || '—'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Gesamtkosten*</span><span class="mc-spec-value ${p._total === 0 ? 'green' : 'blue'}">${formatEuro(p._total)}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Schufa</span><span class="mc-spec-value green">Ohne klassisch</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Cashback</span><span class="mc-spec-value blue">${p.cashback}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Buchhaltung</span><span class="mc-spec-value ${p.accounting ? 'green' : 'muted'}">${p.accounting ? 'Ja' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">International</span><span class="mc-spec-value ${p.intl ? 'green' : 'muted'}">${p.intl ? 'Ja' : 'Nein'}</span></div>
-      </div>
-      ${mobilePromoNote(p)}
-      <div class="mc-footer">
-        <div class="mc-footer-note">${p.label}, ${p.priceNote}</div>
-        <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter</a>
-      </div>
-    </article>
-  `).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    const base = ui.cell(formatBase(p.base));
+    const total = ui.cell(totalBreakdownMarkup(p));
+    const datev = ui.datev(p);
+    const transactions = p.txLabel === 'variable' ? 'Variabel' : p.txFree >= 999 ? 'inklusive' : `${p.txFree || 0} inkl., danach ${formatEuro(p.txCost || 0)}`;
+    return {
+      name: p.name, logo: p.logo, meta: [p.cat, ui.target(p)].filter(Boolean).join(' · '),
+      highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Gesamtkosten*', value: total.value, period: p._total === null ? '' : '/Monat', usage: ui.usage(), free: p._total === 0},
+      facts: [ui.fact('Grundgebühr', base.value, p.base === 0 ? 'free' : ''),
+        p.promo ? ui.promoFact(p) : ui.fact('Transaktionen', transactions)],
+      features: ui.features(p),
+      details: [ui.detail('Aktion', ui.promo(p)), ui.detail('So gerechnet', p._total === null ? total.note : ui.costNote(p._total, total.note)),
+        ui.detail('Grundgebühr', base.note),
+        ui.detail('Zusatzoptionen', datev.optional ? `${datev.label}, nicht im Gesamtpreis enthalten.` : ''),
+        ui.detail('Weitere Konditionen', p.priceNote), ui.detail('Einordnung', p.label || '')],
+      actions: ui.action(p.affiliateUrl) + ui.review(p.reviewUrl)
+    };
+  });
 }
 
 function renderTable() {

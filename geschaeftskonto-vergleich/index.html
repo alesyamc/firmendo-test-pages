@@ -65,7 +65,8 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/fonts.css?v=20261009-all800">
 <script src="/firmendo-test-pages/site-nav.js?v=20261008-tracking-1" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=3"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/design-tokens.css?v=20261011-width1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/typography-tokens.css?v=20261009-all800">
 <link rel="stylesheet" href="/firmendo-test-pages/css/base.css?v=20261008-dark1">
@@ -84,11 +85,11 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/author-popover.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261030-mcard10">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/geschaeftskonto-vergleich.css?v=20261008-dark1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-footer">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-footer" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -124,7 +125,7 @@
 }
 </script>
 </head>
-<body class="lp-comparison-page" data-cookie-settings-footer>
+<body class="lp-comparison-page">
 
 <!-- NAV: synced from ../snippets/nav.html -->
 <nav id="site-nav">
@@ -1790,141 +1791,34 @@ function mobilePromoNote(p) {
   return p.name.startsWith('Qonto') && p.promoNote ? '<p class="mc-footer-note">' + p.promoNote + '</p>' : '';
 }
 
-// Mobile cards: table cells carry hover tooltips; on touch they are split into a short value and a note for the "Details" panel.
-function mobileCellParts(html) {
-  const box = document.createElement('div');
-  box.innerHTML = html || '';
-  const note = Array.from(box.querySelectorAll('.price-tooltip')).map(n => n.textContent.trim()).filter(Boolean).join(' ');
-  box.querySelectorAll('.price-tooltip, .price-hint').forEach(n => n.remove());
-  box.querySelectorAll('br').forEach(n => n.replaceWith(' · '));
-  return { value: box.textContent.replace(/\s+/g, ' ').trim(), note };
-}
-
-const MC_ICON_YES = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const MC_ICON_NO = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
-
-function mobileFeature(label, on, optional = false) {
-  return `<li class="mc-feat ${optional ? 'mc-feat--optional' : on ? 'mc-feat--yes' : 'mc-feat--no'}">${on ? MC_ICON_YES : MC_ICON_NO}<span>${label}</span><span class="mc-sr">${optional ? ': kostenpflichtige Option' : on ? ': ja' : ': nein'}</span></li>`;
-}
-
-function mobileDetailRow(label, text) {
-  return text ? `<div class="mc-detail-row"><dt>${label}</dt><dd>${text}</dd></div>` : '';
-}
-
-function mobileUsageLine() {
-  const u = lpComparisonUsage();
-  const nb = '\u00a0';
-  const amount = formatEuro(u.amount).replace(',00', '').replace(/\s/g, nb);
-  const cash = u.withdrawals > 0 && u.amount > 0 ? `${u.withdrawals}×${nb}${amount}${nb}Bargeld` : `ohne${nb}Bargeld`;
-  return `bei ${u.transactions}${nb}Buchungen · ${cash}`;
-}
-
-function mobilePromoEnd(p) {
-  if (p.promoEnd) return p.promoEnd;
-  const m = String(p.promoNote || '').match(/bis (\d{1,2}\.\d{1,2}\.\d{4})/);
-  return m ? m[1] : '';
-}
-
-// Kostenaufstellung als kleine Rechnung; der Erklärtext ohne die schon gezeigten Beträge darunter.
-function mobileCostBreakdown(p, note) {
-  const costs = comparisonCosts(p);
-  const rows = [['Grundgebühr', costs.base], ['Transaktionen', costs.transactions]];
-  if (costs.card) rows.push(['Physische Karte', costs.card]);
-  rows.push(['Abhebungen', costs.withdrawals]);
-  const rest = String(note || '').replace(/^Grundgebühr[^.]*?(\.\s*|$)/, '').trim();
-  return `<table class="mc-calc"><tbody>${rows.map(([l, v]) => `<tr><th scope="row">${l}</th><td>${formatEuro(v)}</td></tr>`).join('')}</tbody><tfoot><tr><th scope="row">Gesamt</th><td>${formatEuro(costs.total)}<small>/Monat</small></td></tr></tfoot></table>${rest ? `<p class="mc-calc-note">${rest}</p>` : ''}`;
-}
-
-function mobilePromoMarkup(p) {
-  const parts = String(p.promoNote || '').split(/;\s*zusätzlich\s+/).map(s => s.trim()).filter(Boolean);
-  if (parts.length < 2) return p.promoNote || '';
-  return `<ul class="mc-detail-points">${parts.map(s => `<li>${s.replace(/\.$/, '')}</li>`).join('')}</ul>`;
-}
-
-// Tarif text without the parts the card already shows separately (Aktion, Bargeld).
-function mobileTariffRest(p) {
-  if (p.mobileConditions) return p.mobileConditions;
-  const parts = String(p.priceNote || '').split(/;\s+/).map(s => s.trim()).filter(Boolean);
-  if (parts.length < 2) return parts.join('').replace(/(^|,\s*)0 €\/Monat(?=,|$)/, '').replace(/^,\s*/, '').trim();
-  return parts.filter(s =>
-    !/Bonus|Onboarding|Aktivierung|\bAktion\b|Neukunden|p\.a\.|Bargeld|Abhebung|\bATM\b|^Preise netto$/i.test(s)
-  ).map(s => s.replace(/(^|,\s*)0 €\/Monat(?=,|$)/, '').replace(/^,\s*/, '').trim()).filter(Boolean).join('; ');
-}
-
 function renderMobileCards(data) {
-  const root = document.getElementById('mobileCards');
-  if (!root) return;
-  if (data.length === 0) {
-    root.innerHTML = `<div class="mobile-empty"><p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div>`;
-    return;
-  }
-  root.innerHTML = data.map((p, i) => {
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
     const limit = withdrawalLimitExceeded(p);
-    const base = mobileCellParts(basePriceMarkup(p, formatEuro(p.base)));
-    const total = mobileCellParts(totalBreakdownMarkup(p));
-    const cash = mobileCellParts(abhebungMarkup(p));
+    const base = ui.cell(basePriceMarkup(p, formatEuro(p.base)));
+    const total = ui.cell(totalBreakdownMarkup(p));
+    const cash = ui.cell(abhebungMarkup(p));
     const costs = comparisonCosts(p);
     const cashSummary = cash.value.split(' · ')[0] || '—';
-    const cardShownInCalculation = costs.card > 0 || (p.variableCardCost && monthlyWithdrawalTotal() > 0 && !limit);
-    const cashDetailValue = cardShownInCalculation ? cashSummary : cash.value;
+    const cardShown = costs.card > 0 || (p.variableCardCost && monthlyWithdrawalTotal() > 0 && !limit);
+    const cashDetailValue = cardShown ? cashSummary : cash.value;
     const cashDetail = p.promo || cash.note || cashDetailValue !== cashSummary ? cashDetailValue + (cash.note ? ' – ' + cash.note : '') : '';
-    const targetGroup = p.mobileTargetGroup || (p.targetGroup ? `Tarif für ${p.targetGroup.replace(' & ', ', ')}` : '');
-    const totalLabel = comparisonTotalLabel(p);
-    const totalIsNumber = !limit && p._total !== null;
-    const limitNote = limit ? `Abhebungslimit: ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}/Monat; gewählte Abhebungen: ${formatEuro(monthlyWithdrawalTotal())}.` : '';
-    const hasCashback = p.cashback && p.cashback !== '—';
-    const review = p.reviewUrl ? `<a href="${p.reviewUrl}" class="mc-review">Testbericht</a>` : '';
-    return `
-    <article class="mc-card mc-card--v2 ${p.highlight ? 'highlight' : ''}">
-      ${p.highlight ? '<span class="mc-badge mc-badge--edge">Empfehlung</span>' : ''}
-      <div class="mc-head">
-        <div class="mc-logo">${p.logo}<span class="mc-rank" aria-label="Platz ${i + 1}">${i + 1}</span></div>
-        <div class="mc-head-text">
-          <div class="mc-name">${p.name}</div>
-          <div class="mc-meta">${p.cat}${targetGroup ? ` · ${targetGroup}` : ''}</div>
-        </div>
-      </div>
-      <dl class="mc-facts">
-        <div class="mc-fact mc-fact--total">
-          <dt>Gesamtkosten*<span class="mc-usage">${mobileUsageLine()}</span></dt>
-          <dd class="${p._total === 0 && !limit ? 'is-free' : ''}${totalIsNumber ? '' : ' is-note'}">${totalLabel}${totalIsNumber ? '<small>/Monat</small>' : ''}</dd>
-        </div>
-        <div class="mc-fact">
-          <dt>Grundgebühr</dt>
-          <dd class="${p.base === 0 && p.baseLabel !== 'regional' ? 'is-free' : ''}">${base.value}</dd>
-        </div>
-        ${p.promo ? `<div class="mc-fact mc-fact--promo has-promo">
-          <dt>Aktion</dt>
-          <dd>${p.promo}${mobilePromoEnd(p) ? `<span class="mc-fact-sub">bis ${mobilePromoEnd(p)}</span>` : ''}</dd>
-        </div>` : `<div class="mc-fact">
-          <dt>Bargeld</dt>
-          <dd class="mc-fact-small">${cashSummary}</dd>
-        </div>`}
-      </dl>
-      <ul class="mc-feats" aria-label="Merkmale">
-        ${mobileFeature('Ohne Schufa', !p.schufa)}
-        ${mobileFeature(p.datevMonthly ? `DATEV +${formatEuro(p.datevMonthly).replace(',00', '')}/Monat` : 'DATEV', p.datev, !!p.datevMonthly)}
-        ${mobileFeature('Buchhaltung', p.accounting)}
-        ${mobileFeature('International', p.intl)}
-        ${hasCashback ? mobileFeature('Cashback ' + p.cashback.replace(/\s*garantiert$/i, ''), true) : ''}
-      </ul>
-      <details class="mc-details">
-        <summary>Konditionen &amp; Kosten</summary>
-        <dl class="mc-detail-list">
-          ${mobileDetailRow('Aktion', mobilePromoMarkup(p))}
-          ${mobileDetailRow('So gerechnet', limitNote || (totalIsNumber ? mobileCostBreakdown(p, total.note) : total.note))}
-          ${mobileDetailRow('Grundgebühr', base.note)}
-          ${mobileDetailRow('Bargeld', cashDetail)}
-          ${mobileDetailRow('Zusatzoptionen', p.datevMonthly ? `DATEV: +${formatEuro(p.datevMonthly)}/Monat, nicht im Gesamtpreis enthalten.` : '')}
-          ${mobileDetailRow('Weitere Konditionen', mobileTariffRest(p))}
-        </dl>
-      </details>
-      <div class="mc-actions ${review ? '' : 'mc-actions--single'}">
-        ${providerCtaMarkup(p, 'mobile')}
-        ${review}
-      </div>
-    </article>`;
-  }).join('');
+    const numeric = !limit && p._total !== null;
+    return {
+      name: p.name, logo: p.logo, meta: [p.cat, ui.target(p)].filter(Boolean).join(' · '),
+      highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Gesamtkosten*', value: comparisonTotalLabel(p), usage: ui.usage(), period: numeric ? '/Monat' : '', free: p._total === 0 && !limit},
+      facts: [ui.fact('Grundgebühr', base.value, p.base === 0 && p.baseLabel !== 'regional' ? 'free' : ''),
+        p.promo ? ui.promoFact(p) : ui.fact('Bargeld', cashSummary)],
+      features: ui.features(p),
+      details: [ui.detail('Aktion', ui.promo(p)),
+        ui.detail('So gerechnet', limit ? `Abhebungslimit: ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}/Monat; gewählte Abhebungen: ${formatEuro(monthlyWithdrawalTotal())}.` : numeric ? ui.costTable(costs, total.note) : total.note),
+        ui.detail('Grundgebühr', base.note), ui.detail('Bargeld', cashDetail),
+        ui.detail('Zusatzoptionen', p.datevMonthly ? `DATEV: +${formatEuro(p.datevMonthly)}/Monat, nicht im Gesamtpreis enthalten.` : ''),
+        ui.detail('Weitere Konditionen', ui.tariff(p))],
+      actions: providerCtaMarkup(p, 'mobile') + ui.review(p.reviewUrl)
+    };
+  });
 }
 
 function renderTable() {

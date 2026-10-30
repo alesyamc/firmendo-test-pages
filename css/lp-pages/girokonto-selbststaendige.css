@@ -397,14 +397,6 @@ body.lp-comparison-page .promo-tooltip::after {
   border-bottom-color: var(--gray-800);
 }
 
-body.lp-comparison-page .mc-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
 body.lp-comparison-page .mc-secondary {
   font-size: var(--text-caption-size);
   font-weight: 700;

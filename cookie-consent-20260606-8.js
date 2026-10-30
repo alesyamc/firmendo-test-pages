@@ -86,7 +86,7 @@
     button.addEventListener('click', function () {
       renderBanner(true);
     });
-    var footerLinks = document.body.hasAttribute('data-cookie-settings-footer')
+    var footerLinks = document.querySelector('.mobile-cards')
       ? document.querySelector('#site-footer .footer-links') : null;
     if (footerLinks) {
       button.classList.add('cookie-settings-button--footer');

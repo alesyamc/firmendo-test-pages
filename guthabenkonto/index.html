@@ -164,7 +164,8 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/fonts.css?v=20261009-all800">
 <script src="/firmendo-test-pages/site-nav.js?v=20261010-checklists-2" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=2"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/design-tokens.css?v=20261011-width1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/typography-tokens.css?v=20261009-all800">
 <link rel="stylesheet" href="/firmendo-test-pages/css/base.css?v=20261008-dark1">
@@ -183,11 +184,11 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/guthabenkonto.css?v=20261008-dark1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <link href="/firmendo-test-pages/css/checklist.css?v=20261010-2" rel="stylesheet">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
@@ -220,7 +221,7 @@
       "url": "https://www.firmendo.de/android-chrome-512x512.png"
     }
   },
-  "dateModified": "2026-10-19T17:36:02+04:00"
+  "dateModified": "2026-10-30"
 }
 </script>
 </head>
@@ -397,7 +398,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 19. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1651,43 +1652,17 @@ function renderTable() {
 }
 
 function renderMobileCards(data) {
-  const mobileCards = document.getElementById('mobileCards');
-  if (!mobileCards) return;
-  if (data.length === 0) {
-    mobileCards.innerHTML = `<div class="mobile-empty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p>
-    </div>`;
-    return;
-  }
-  mobileCards.innerHTML = data.map(p => `
-    <article class="mc-card ${p.highlight ? 'highlight' : ''}">
-      <div class="mc-head">
-        <div class="mc-logo">${p.logo}</div>
-        <div class="mc-head-text">
-          <div class="mc-name">${p.name}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${p.cat}</span>
-            ${p.highlight ? '<span class="mc-badge">Empfehlung</span>' : ''}
-          </div>
-        </div>
-        <div class="mc-price-main">
-          <div class="mc-price-amount ${p.gebuehr === 0 ? 'free' : ''}">${p.gebuehrText ? p.gebuehrText.replace(' / Mon.', '') : (p.gebuehr === 0 ? '0 €' : p.gebuehr.toFixed(2).replace('.', ',') + ' €')}</div>
-          <div class="mc-price-period">/ Monat</div>
-        </div>
-      </div>
-      <div class="mc-specs">
-        <div class="mc-spec"><span class="mc-spec-label">Karte</span><span class="mc-spec-value blue">${p.karte}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Geldabhebung</span><span class="mc-spec-value muted">${p.abhebung}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Nutzertyp</span><span class="mc-spec-value muted">${p.nutzertyp.slice(0, 2).join(', ')}${p.nutzertyp.length > 2 ? ' +' + (p.nutzertyp.length - 2) : ''}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Einordnung</span><span class="mc-spec-value muted">${p.einordnung}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Besonderheit</span><span class="mc-spec-value muted">${p.besonderheit}</span></div>
-      </div>
-      <div class="mc-footer">
-        <div class="mc-footer-note">${p.footerNote || (p.guthabenbasis ? 'Auf Guthabenbasis nutzbar' : 'Konditionen individuell prüfen')}</div>
-        ${providerCtaMarkup(p, 'mobile')}
-      </div>
-    </article>`).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    return {
+      name: p.name, logo: p.logo, meta: p.cat, highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Grundgebühr', value: p.gebuehrText ? p.gebuehrText.replace(' / Mon.', '') : ui.euro(p.gebuehr), period: '/Monat', free: p.gebuehr === 0},
+      facts: [ui.fact('Karte', p.karte), ui.fact('Geldabhebung', p.abhebung)],
+      details: [ui.detail('Nutzertyp', p.nutzertyp.join(', ')), ui.detail('Einordnung', p.einordnung), ui.detail('Besonderheit', p.besonderheit),
+        ui.detail('Weitere Konditionen', p.footerNote || (p.guthabenbasis ? 'Auf Guthabenbasis nutzbar' : 'Konditionen individuell prüfen'))],
+      actions: providerCtaMarkup(p, 'mobile')
+    };
+  });
 }
 
 function updateScrollState() {

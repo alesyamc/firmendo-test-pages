@@ -132,7 +132,8 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/fonts.css?v=20261009-all800">
 <script src="/firmendo-test-pages/site-nav.js?v=20261008-tracking-1" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=2"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/design-tokens.css?v=20261011-width1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/typography-tokens.css?v=20261009-all800">
 <link rel="stylesheet" href="/firmendo-test-pages/css/base.css?v=20261008-dark1">
@@ -150,12 +151,12 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/editorial-table.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/girokonto-selbststaendige.css?v=20261028-a11y1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -187,7 +188,7 @@
       "url": "https://www.firmendo.de/android-chrome-512x512.png"
     }
   },
-  "dateModified": "2026-10-22T18:19:12+04:00"
+  "dateModified": "2026-10-30"
 }
 </script>
 </head>
@@ -364,7 +365,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 22. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -2206,58 +2207,17 @@ function mobilePromoNote(p) {
 }
 
 function renderMobileCards(data) {
-  const mobileCards = document.getElementById('mobileCards');
-  if (!mobileCards) return;
-  if (data.length === 0) {
-    mobileCards.innerHTML = `<div class="mobile-empty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p>
-    </div>`;
-    return;
-  }
-
-  mobileCards.innerHTML = data.map(p => {
-    const isKostenlos = p.preis === 0;
-    const reviewLink = p.reviewUrl
-      ? `<a href="${p.reviewUrl}" class="mc-secondary">Detailtest</a>`
-      : `<span class="mc-secondary disabled">Detailtest folgt</span>`;
-    return `
-    <article class="mc-card ${p.highlight ? 'highlight' : ''}">
-      <div class="mc-head">
-        <div class="mc-logo">${p.logo}</div>
-        <div class="mc-head-text">
-          ${p.highlight ? '<span class="mc-badge">Empfehlung Freelancer</span>' : ''}
-          <div class="mc-name">${tariffName(p)}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${p.typ}</span>
-            ${p.targetGroup ? `<span class="tariff-group-text">Tarif für ${p.targetGroup.replace(' & ', ', ')}</span>` : ''}
-          </div>
-        </div>
-        <div class="mc-price-main">
-          <div class="mc-price-amount ${isKostenlos ? 'free' : ''}">${p.preisLabel}</div>
-          <div class="mc-price-period">pro Monat</div>
-        </div>
-      </div>
-	      <div class="mc-specs">
-	        <div class="mc-spec"><span class="mc-spec-label">Aktion</span><span class="mc-spec-value blue">${p.promo || '—'}</span></div>
-	        <div class="mc-spec"><span class="mc-spec-label">Buchungen</span><span class="mc-spec-value blue">${p.buchung}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Geeignet für</span><span class="mc-spec-value muted">${p.suitable.slice(0, 2).join(', ')}${p.suitable.length > 2 ? ' +' + (p.suitable.length - 2) : ''}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Steuer-Feature</span><span class="mc-spec-value ${p.steuer ? 'green' : 'muted'}">${p.steuer ? 'Ja' : 'Nein'}</span></div>
-      </div>
-      ${mobilePromoNote(p)}
-      <div class="mc-footer">
-        <div class="mc-footer-note">${p.typ}</div>
-        <div class="mc-actions">
-          <a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta">
-            Zum Anbieter
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-          ${reviewLink}
-        </div>
-      </div>
-    </article>`;
-  }).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    return {
+      name: tariffName(p), logo: p.logo, meta: [p.typ, ui.target(p)].filter(Boolean).join(' · '), highlight: p.highlight, badge: p.highlight ? 'Empfehlung Freelancer' : '',
+      metric: {label: 'Grundgebühr', value: p.preisLabel, period: '/Monat', free: p.preis === 0},
+      facts: [ui.fact('Aktion', p.promo || '—', p.promo ? 'promo' : ''), ui.fact('Buchungen', p.buchung)],
+      features: [ui.datev(p), ui.feature('Steuer-Feature', p.steuer)],
+      details: [ui.detail('Aktion', ui.promo(p)), ui.detail('Geeignet für', p.suitable.join(', '))],
+      actions: ui.action(p.affiliateUrl) + ui.review(p.reviewUrl, 'Detailtest')
+    };
+  });
 }
 
 function updateScrollState() {

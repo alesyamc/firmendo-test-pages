@@ -282,88 +282,17 @@ function renderDesktopTable(data) {
 }
 
 function renderMobileCards(data) {
-  const mc = document.getElementById('mobileCards');
-  if (!mc) return;
-  if (data.length === 0) {
-    mc.innerHTML = `<div class="mobile-empty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div>`;
-    return;
-  }
-
-  mc.innerHTML = data.map(p => {
-    const priceStr = p.base === 0
-      ? `<div class="mc-price-amount free">0 &euro;</div><div class="mc-price-period">Grundgeb&uuml;hr</div>`
-      : `<div class="mc-price-amount">${p.base % 1 === 0 ? p.base : p.base.toFixed(2).replace('.',',')} &euro;</div><div class="mc-price-period">/ ${p.base >= 100 ? 'Jahr' : 'Monat'}</div>`;
-    const cardBadgeClass = p.cardType === 'Kreditkarte' ? 'kredit' : p.cardType === 'Prepaid' ? 'prepaid' : 'debit';
-    const cashbackVal = p.cashbackRate > 0
-      ? `<span class="mc-spec-value green">${p.cashbackLabel}</span>`
-      : (p.cashbackLabel && p.cashbackLabel !== '—'
-        ? `<span class="mc-spec-value purple">${p.cashbackLabel}</span>`
-        : `<span class="mc-spec-value muted">&mdash;</span>`);
-    const limitVal = p.limit === 'Debit'
-      ? `<span class="mc-spec-value muted">Debit</span>`
-      : p.limit === '—'
-        ? `<span class="mc-spec-value muted">&mdash;</span>`
-        : p.limit === 'variabel'
-          ? `<span class="mc-spec-value purple">variabel</span>`
-          : `<span class="mc-spec-value orange">${p.limit}</span>`;
-    const empVal = p.employeeCards === 'solo'
-      ? `<span class="mc-spec-value muted">Einzelkonto</span>`
-      : p.employeeCardsSort >= 999
-        ? `<span class="mc-spec-value orange">${p.employeeCards}</span>`
-        : (p.employeeCardsSort > 0
-          ? `<span class="mc-spec-value blue">${p.employeeCards}</span>`
-          : `<span class="mc-spec-value muted">&mdash;</span>`);
-    const datevVal = p.datev
-      ? `<span class="mc-spec-value green">${YES_SMALL} DATEV</span>`
-      : `<span class="mc-spec-value muted">${NO_SMALL} DATEV</span>`;
-
-    return `
-    <div class="mc-card ${p.highlight ? 'highlight' : ''}">
-      <div class="mc-head">
-        <div class="mc-logo">${p.logo}</div>
-        <div class="mc-head-text">
-          <div class="mc-name">${p.name}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${p.cat}</span>
-            <span class="card-badge ${cardBadgeClass}">${p.cardType}</span>
-          </div>
-          ${p.highlight ? '<span class="mc-badge">Empfehlung</span>' : ''}
-        </div>
-        <div class="mc-price-main">${priceStr}</div>
-      </div>
-
-      <div class="mc-specs">
-        <div class="mc-spec">
-          <div class="mc-spec-label">Cashback</div>
-          ${cashbackVal}
-        </div>
-        <div class="mc-spec">
-          <div class="mc-spec-label">Kreditrahmen</div>
-          ${limitVal}
-        </div>
-        <div class="mc-spec">
-          <div class="mc-spec-label">Mitarbeiterkarten</div>
-          ${empVal}
-        </div>
-        <div class="mc-spec">
-          <div class="mc-spec-label">Buchhaltung</div>
-          ${datevVal}
-        </div>
-      </div>
-
-      <div class="mc-footer">
-        <div class="mc-footer-note">${p.priceNote || ''}</div>
-        ${p.ctaDisabled
-          ? '<span class="mc-cta mc-cta--disabled" aria-disabled="true">Zum Anbieter</span>'
-          : `<a href="${p.affiliateUrl}" target="_blank" rel="noopener sponsored" class="mc-cta${p.mutedCta ? ' mc-cta--muted' : ''}">
-              ${p.ctaLabel || 'Zum Anbieter'}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>`}
-      </div>
-    </div>`;
-  }).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    return {
+      name: p.name, logo: p.logo, meta: `${p.cat} · ${p.cardType}`, highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Grundgebühr', value: ui.euro(p.base), period: p.base >= 100 ? '/Jahr' : '/Monat', free: p.base === 0},
+      facts: [ui.fact('Cashback', p.cashbackLabel || '—'), ui.fact('Kreditrahmen', p.limit)],
+      features: [ui.datev(p), ui.feature('Belegerfassung', p.belegerfassung)],
+      details: [ui.detail('Mitarbeiterkarten', p.employeeCards === 'solo' ? 'Einzelkonto' : p.employeeCards), ui.detail('Weitere Konditionen', p.priceNote)],
+      actions: ui.action(p.affiliateUrl, p.ctaLabel || 'Zum Anbieter', {disabled: p.ctaDisabled, muted: p.mutedCta})
+    };
+  });
 }
 
 function updateScrollState() {

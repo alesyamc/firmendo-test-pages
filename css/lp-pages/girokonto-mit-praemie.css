@@ -160,14 +160,6 @@ body.lp-comparison-page .mc-spec-grid strong {
   line-height: 1.35;
 }
 
-body.lp-comparison-page .mc-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
 body.lp-comparison-page .td-condition {
   color: var(--gray-600);
   font-size: var(--text-caption-size);

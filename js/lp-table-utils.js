@@ -246,6 +246,26 @@ function lpCardCashCosts(product, usage) {
   return { base, transactions, card, withdrawals, exceedsLimit, total: base + transactions + card + withdrawals };
 }
 
+// A partial cash/card cost must not be presented as a complete monthly total.
+function lpAccountCostStatus(product, usage = lpComparisonUsage()) {
+  const amount = usage.withdrawals * usage.amount;
+  const limit = product.abhebeCap || product.cashWithdrawal?.monthlyLimit;
+  if (limit > 0 && amount > limit) {
+    return {kind: 'limit', label: 'Limit überschritten', note: `Abhebungslimit: ${formatEuro(limit)}/Monat; gewählte Abhebungen: ${formatEuro(amount)}.`};
+  }
+  if (product.variableCardCost && amount > 0) {
+    const cash = product.abhebePct ? `Abhebungsgebühr für Ihr Nutzungsprofil: ${formatEuro(amount * product.abhebePct)} pro Monat. ` : '';
+    const card = product.physicalCardFee ? ` Die physische Standardkarte kostet ${formatEuro(product.physicalCardFee)} je Karte.` : '';
+    return {kind: 'variable', label: 'Variabel', note: cash + 'Für Abhebungen ist zusätzlich eine kostenpflichtige physische Karte erforderlich.' + card + ' Die Kartengebühr ist nicht in der Abhebungsgebühr enthalten.'};
+  }
+  return {kind: 'number'};
+}
+
+function lpAccountCostStatusMarkup(product) {
+  const status = lpAccountCostStatus(product);
+  return status.kind === 'number' ? '' : `<span class="price-wrap total-breakdown"><span class="td-total">${status.label}</span><span class="price-hint">Details</span><span class="price-tooltip">${status.note}</span></span>`;
+}
+
 function lpCardCashWithdrawalMarkup(product) {
   const plan = product.cashWithdrawal;
   const extra = plan.cardMonthly ? `<br>Physische Karte +${formatEuro(plan.cardMonthly)}/Monat` : '';

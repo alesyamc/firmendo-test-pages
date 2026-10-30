@@ -112,41 +112,19 @@
       </tr>`).join('');
   }
 
-  function renderCards(data) {
-    if (!mobile) return;
-    if (!data.length) {
-      mobile.innerHTML = '<div class="mobile-empty"><p>Kein passender Tarif für diese Filter. Bitte Auswahl anpassen oder zurücksetzen.</p></div>';
-      return;
-    }
-    mobile.innerHTML = data.map(p => `
-      <article class="mc-card ${p.highlight ? 'highlight' : ''}">
-        <div class="mc-head">
-          <div class="mc-logo">${p.logo}</div>
-          <div class="mc-head-text">
-            ${p.highlight ? '<span class="mc-badge">Empfehlung</span>' : ''}
-            <div class="mc-name">${fullName(p)}</div>
-            <div class="mc-meta"><span class="mc-cat">${p.cat}</span><span class="tariff-group-text">Tarif für ${p.targetGroup}</span></div>
-          </div>
-          <div class="mc-price-main">
-            <div class="mc-price-amount ${p.base === 0 ? 'free' : ''}">${p.baseText}</div>
-            <div class="mc-price-period">${p.baseHint || 'Grundpreis'}</div>
-          </div>
-        </div>
-        <div class="mc-specs">
-          <div class="mc-spec"><span class="mc-spec-label">Inklusive</span><span class="mc-spec-value">${p.inklusive}</span></div>
-          <div class="mc-spec"><span class="mc-spec-label">Rechtsformen</span><span class="mc-spec-value">${p.suitable.join(', ')}</span></div>
-          <div class="mc-spec"><span class="mc-spec-label">In Gründung</span><span class="mc-spec-value ${p.founding ? 'green' : 'muted'}">${foundingMarkup(p, 'mobile')}</span></div>
-          <div class="mc-spec"><span class="mc-spec-label">Legitimation</span><span class="mc-spec-value">${p.legitimation}</span></div>
-        </div>
-        <div class="mc-footer">
-          <div class="mc-footer-note">${p.baseNote ? `${p.baseNote} ` : ''}${p.note}</div>
-          <div class="mc-actions">
-            ${ctaMarkup(p, 'mobile')}
-            <a href="${p.reviewUrl}" class="mc-secondary opening-review">Testbericht →</a>
-          </div>
-        </div>
-      </article>`).join('');
-  }
+function renderCards(data) {
+  const ui = lpMobileCards;
+  ui.render(mobile, data, p => {
+    const base = ui.cell(basePriceMarkup(p));
+    return {
+      name: fullName(p), logo: p.logo, meta: [p.cat, ui.target(p)].filter(Boolean).join(' · '), highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Grundgebühr', value: p.baseText, usage: p.baseHint || 'Grundpreis', free: p.base === 0},
+      facts: [ui.fact('In Gründung', foundingMarkup(p, 'mobile')), ui.fact('Legitimation', p.legitimation)],
+      details: [ui.detail('Inklusive', p.inklusive), ui.detail('Rechtsformen', p.suitable.join(', ')), ui.detail('Grundgebühr', base.note), ui.detail('Weitere Konditionen', p.note)],
+      actions: ctaMarkup(p, 'mobile') + ui.review(p.reviewUrl)
+    };
+  }, {emptyMessage: 'Kein passender Tarif für diese Filter. Bitte Auswahl anpassen oder zurücksetzen.'});
+}
 
   function update() {
     const type = legalFd.dataset.value || 'all';

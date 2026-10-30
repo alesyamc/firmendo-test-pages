@@ -146,7 +146,8 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/fonts.css?v=20261009-all800">
 <script src="/firmendo-test-pages/site-nav.js?v=20261008-tracking-1" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=2"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/design-tokens.css?v=20261011-width1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/typography-tokens.css?v=20261009-all800">
 <link rel="stylesheet" href="/firmendo-test-pages/css/base.css?v=20261008-dark1">
@@ -164,11 +165,11 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/girokonto-mit-praemie.css?v=20261008-dark1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -200,7 +201,7 @@
       "url": "https://www.firmendo.de/android-chrome-512x512.png"
     }
   },
-  "dateModified": "2026-10-19T09:06:11+04:00"
+  "dateModified": "2026-10-30"
 }
 </script>
 </head>
@@ -377,7 +378,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 19. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -2097,37 +2098,17 @@ function renderTable() {
 }
 
 function renderMobileCards(data) {
-  const wrap = document.getElementById('mobileCards');
-  if (!wrap) return;
-  if (data.length === 0) {
-    wrap.innerHTML = `<div class="empty-state"><p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div>`;
-    return;
-  }
-  wrap.innerHTML = data.map(p => `
-    <article class="mc-card ${p.highlight ? 'highlight' : ''}">
-      <div class="mc-card-top">
-        <div class="td-anbieter">
-          <div class="td-logo">${p.logo}</div>
-          <div>
-            ${p.highlight ? '<span class="highlight-badge">Empfehlung</span>' : ''}
-            <div class="td-name">${p.name}</div>
-            <div class="td-cat">${p.cat}</div>
-          </div>
-        </div>
-      </div>
-      <div class="mc-spec-grid">
-        <div><span>Grundgebühr</span><strong>${p.priceLabel || (p.base === 0 ? (p.noEingang ? '0 €' : 'ab 0 €') : formatEuro(p.base))}</strong></div>
-        <div><span>Prämie</span><strong>${p.praemieLabel}</strong></div>
-        <div><span>Bedingung</span><strong>${p.bedingung}</strong></div>
-        <div><span>Cashback</span><strong>${p.cashback}</strong></div>
-        <div><span>Zinsen p.a.</span><strong>${p.zins}</strong></div>
-        <div><span>Kostenlos</span><strong>${p.kostenlos ? 'Ja' : 'Nein'}</strong></div>
-      </div>
-      <div class="mc-actions">
-        ${providerCtaMarkup(p, 'mobile')}
-      </div>
-    </article>
-  `).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    return {
+      name: p.name, logo: p.logo, meta: p.cat, highlight: p.highlight, badge: p.highlight ? 'Empfehlung' : '',
+      metric: {label: 'Prämie', value: p.praemieLabel},
+      facts: [ui.fact('Grundgebühr', p.priceLabel || (p.base === 0 ? (p.noEingang ? '0 €' : 'ab 0 €') : formatEuro(p.base)), p.base === 0 ? 'free' : ''), ui.fact('Zinsen p.a.', p.zins)],
+      features: [ui.feature('Kostenlos', p.kostenlos)],
+      details: [ui.detail('Bedingung', p.bedingung), ui.detail('Cashback', p.cashback)],
+      actions: providerCtaMarkup(p, 'mobile')
+    };
+  });
 }
 
 function updateScrollState() {

@@ -33,7 +33,8 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/firmendo-test-pages/android-chrome-512x512.png">
 <script src="/firmendo-test-pages/site-nav.js?v=20261008-tracking-1" defer></script>
 <script src="/firmendo-test-pages/site-toc.js" defer></script>
-<script src="/firmendo-test-pages/js/lp-table-utils.js?v=2"></script>
+<script src="/firmendo-test-pages/js/lp-table-utils.js?v=a664bfa48951"></script>
+<script src="/firmendo-test-pages/js/lp-mobile-cards.js?v=f63cfe95148b"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,7 +63,7 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=017d149a7500">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/editorial-table.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/privatkonto.css?v=20261008-dark1">
@@ -154,8 +155,8 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-shared1">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-shared1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -331,7 +332,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 19. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1590,44 +1591,18 @@ function renderTable(data) {
 }
 
 function renderMobileCards(data) {
-  const mobileCards = document.getElementById('mobileCards');
-  if (!mobileCards) return;
-  if (!data.length) {
-    mobileCards.innerHTML = `<div class="mobile-empty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <p>Keine Anbieter gefunden. Bitte Filter anpassen.</p>
-    </div>`;
-    return;
-  }
-  mobileCards.innerHTML = data.map(a => `
-    <article class="mc-card ${a.highlight ? 'highlight' : ''}">
-      <div class="mc-head">
-        <div class="mc-logo">${a.logo}</div>
-        <div class="mc-head-text">
-          <div class="mc-name">${a.name}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${a.cat}</span>
-            ${a.badge ? `<span class="mc-badge">${a.badge}</span>` : ''}
-          </div>
-        </div>
-        <div class="mc-price-main">
-          <div class="mc-price-amount ${a.gebuehrTyp === 'kostenlos' ? 'free' : ''}">${a.gebuehrLabel}</div>
-          <div class="mc-price-period">Kontoführung</div>
-        </div>
-      </div>
-      <div class="mc-specs">
-        <div class="mc-spec"><span class="mc-spec-label">Selbstständige</span><span class="mc-spec-value ${a.freiberufler ? 'green' : 'muted'}">${a.freiberuflerLabel || (a.freiberufler ? 'Möglich' : 'Eingeschränkt')}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Banktyp</span><span class="mc-spec-value blue">${a.typLabel}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Bedingungen</span><span class="mc-spec-value">${a.bedingungen}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Karte</span><span class="mc-spec-value ${a.visa ? 'green' : 'muted'}">${a.visa ? 'Inklusive' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Dispo</span><span class="mc-spec-value ${a.dispo ? 'green' : 'muted'}">${a.dispo ? `Möglich${a.dispoNote ? ` (${a.dispoNote})` : ''}` : 'Nein'}</span></div>
-      </div>
-      <div class="mc-footer">
-        <div class="mc-footer-note">${a.freiberufler ? 'Berufliche Umsätze bei überwiegend privater Nutzung erlaubt.' : 'Geschäftliche Nutzung vor der Eröffnung klären.'}</div>
-        <a href="${a.cta}" target="_blank" rel="noopener sponsored" class="mc-cta">Zum Anbieter</a>
-      </div>
-    </article>
-  `).join('');
+  const ui = lpMobileCards;
+  ui.render('mobileCards', data, p => {
+    return {
+      name: p.name, logo: p.logo, meta: p.cat, highlight: p.highlight, badge: p.badge || '',
+      metric: {label: 'Kontoführung', value: p.gebuehrLabel, free: p.gebuehrTyp === 'kostenlos'},
+      facts: [ui.fact('Selbstständige', p.freiberuflerLabel || (p.freiberufler ? 'Möglich' : 'Eingeschränkt')), ui.fact('Banktyp', p.typLabel)],
+      features: [ui.feature('Karte inklusive', p.visa), ui.feature('Dispo möglich', p.dispo)],
+      details: [ui.detail('Bedingungen', p.bedingungen), ui.detail('Dispo', p.dispo && p.dispoNote ? p.dispoNote : ''),
+        ui.detail('Geschäftliche Nutzung', p.freiberufler ? 'Berufliche Umsätze bei überwiegend privater Nutzung erlaubt.' : 'Geschäftliche Nutzung vor der Eröffnung klären.')],
+      actions: ui.action(p.cta)
+    };
+  });
 }
 
 function getFiltered() {
