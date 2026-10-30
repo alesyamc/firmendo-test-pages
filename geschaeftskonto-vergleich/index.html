@@ -1386,7 +1386,7 @@
 const products = [
   {
     // Prices and listed promotions checked 2026-10-11; see source audit.
-    name: 'Finom Solo', variableCardCost: true, priceNote: 'Solo für Freiberufler und neu eingetragene Unternehmen, 0 €/Monat; physische Karte zusätzlich kostenpflichtig; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.', calculationNote: 'Berechnung während der sechsmonatigen SEPA-Aktion für teilnahmeberechtigte Neukunden. Danach gilt die reguläre Preisstaffel nach Überweisungsvolumen.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
+    name: 'Finom Solo', variableCardCost: true, physicalCardFee: 3, priceNote: 'Solo für Freiberufler und neu eingetragene Unternehmen, 0 €/Monat; 1 virtuelle Karte inklusive; physische Karte 3 € je Karte; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.', calculationNote: 'Berechnung während der sechsmonatigen SEPA-Aktion für teilnahmeberechtigte Neukunden. Danach gilt die reguläre Preisstaffel nach Überweisungsvolumen.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
     targetGroup: 'Freiberufler & neu eingetragene Unternehmen', suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','eK'],
     schufa: false, rating: 4.8, cashback: '—', intl: true, datev: true, accounting: true,
     affiliateUrl: '/firmendo-test-pages/go/finom-solo/', reviewUrl: '/firmendo-test-pages/finom-geschaeftskonto/',
@@ -1553,6 +1553,7 @@ function formatPct(value) {
 
 function abhebungMarkup(p) {
   if (p.abhebeLabel) return `<span class="table-text">${p.abhebeLabel}</span>`;
+  if (p.variableCardCost && p.physicalCardFee) return `<span class="table-text">${formatPct(p.abhebePct)} bis ${formatEuro(p.abhebeCap)} / Monat<br>Physische Karte ${formatEuro(p.physicalCardFee)} je Karte</span>`;
   if (p.abhebeCardMonthly) return `<span class="table-text">${formatPct(p.abhebePct)}<br>Physische Karte +${formatEuro(p.abhebeCardMonthly)}/Monat</span>`;
   if (p.cashWithdrawal) return lpCardCashWithdrawalMarkup(p);
   if (/keine Abhebungen/i.test(p.priceNote)) {
@@ -1612,7 +1613,9 @@ function totalBreakdownMarkup(p) {
     return `<span class="price-wrap total-breakdown"><span class="td-total">Limit überschritten</span><span class="price-hint">Details</span><span class="price-tooltip">Die gewählten Abhebungen überschreiten das monatliche Limit von ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}. Für dieses Nutzungsprofil ist kein passender Gesamtpreis berechenbar.</span></span>`;
   }
   if (p.variableCardCost && monthlyWithdrawalTotal() > 0) {
-    return '<span class="price-wrap total-breakdown"><span class="td-total">Variabel</span><span class="price-hint">Details</span><span class="price-tooltip">Für Abhebungen ist eine kostenpflichtige physische Karte erforderlich. Die Gesamtkosten hängen von der gewählten Karte ab.</span></span>';
+    const costs = comparisonCosts(p);
+    const cardFee = p.physicalCardFee ? ` Die physische Standardkarte kostet ${formatEuro(p.physicalCardFee)} je Karte.` : '';
+    return `<span class="price-wrap total-breakdown"><span class="td-total">Variabel</span><span class="price-hint">Details</span><span class="price-tooltip">Abhebungsgebühr für Ihr Nutzungsprofil: ${formatEuro(costs.withdrawals)} pro Monat (${formatPct(p.abhebePct)} von ${formatEuro(monthlyWithdrawalTotal())}). Für Abhebungen ist zusätzlich eine kostenpflichtige physische Karte erforderlich.${cardFee} Die Kartengebühr ist nicht in der Abhebungsgebühr enthalten.</span></span>`;
   }
   if (p.totalVariable) {
     return '<span class="price-wrap total-breakdown"><span class="td-total">Variabel</span><span class="price-hint">Details</span><span class="price-tooltip">Transferkosten hängen von Betrag, Währung und Zahlungsweg ab. Ein monatlicher Gesamtpreis lässt sich aus der Anzahl der Buchungen allein nicht berechnen. Einmalige Einrichtung: 55 €.</span></span>';
