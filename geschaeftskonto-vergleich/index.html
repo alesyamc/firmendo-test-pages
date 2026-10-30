@@ -84,7 +84,7 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/author-popover.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261010-square1">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261030-mcard7">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/geschaeftskonto-vergleich.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
@@ -120,7 +120,7 @@
       "url": "https://www.firmendo.de/android-chrome-512x512.png"
     }
   },
-  "dateModified": "2026-10-28T16:07:48+04:00"
+  "dateModified": "2026-10-30"
 }
 </script>
 </head>
@@ -307,7 +307,7 @@
         <div class="hero-author-meta">
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Zuletzt aktualisiert: 28. Oktober 2026
+            Zuletzt aktualisiert: 30. Oktober 2026
           </div>
           <div class="hero-meta-item">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -415,7 +415,7 @@
             </div>
             <div class="rechner-field">
               <label for="inp-abhebungen">Abhebungen / Monat</label>
-              <input type="number" id="inp-abhebungen" value="4" min="0" max="50" inputmode="numeric" oninput="renderTable()">
+              <input type="number" id="inp-abhebungen" value="2" min="0" max="50" inputmode="numeric" oninput="renderTable()">
             </div>
             <div class="rechner-field">
               <label for="inp-betrag">Betrag / Abhebung</label>
@@ -1787,6 +1787,66 @@ function mobilePromoNote(p) {
   return p.name.startsWith('Qonto') && p.promoNote ? '<p class="mc-footer-note">' + p.promoNote + '</p>' : '';
 }
 
+// Mobile cards: table cells carry hover tooltips; on touch they are split into a short value and a note for the "Details" panel.
+function mobileCellParts(html) {
+  const box = document.createElement('div');
+  box.innerHTML = html || '';
+  const note = Array.from(box.querySelectorAll('.price-tooltip')).map(n => n.textContent.trim()).filter(Boolean).join(' ');
+  box.querySelectorAll('.price-tooltip, .price-hint').forEach(n => n.remove());
+  box.querySelectorAll('br').forEach(n => n.replaceWith(' · '));
+  return { value: box.textContent.replace(/\s+/g, ' ').trim(), note };
+}
+
+const MC_ICON_YES = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const MC_ICON_NO = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
+
+function mobileFeature(label, on) {
+  return `<li class="mc-feat ${on ? 'mc-feat--yes' : 'mc-feat--no'}">${on ? MC_ICON_YES : MC_ICON_NO}<span>${label}</span><span class="mc-sr">${on ? ': ja' : ': nein'}</span></li>`;
+}
+
+function mobileDetailRow(label, text) {
+  return text ? `<div class="mc-detail-row"><dt>${label}</dt><dd>${text}</dd></div>` : '';
+}
+
+function mobileUsageLine() {
+  const u = lpComparisonUsage();
+  const nb = '\u00a0';
+  const amount = formatEuro(u.amount).replace(',00', '').replace(/\s/g, nb);
+  const cash = u.withdrawals > 0 && u.amount > 0 ? `${u.withdrawals}×${nb}${amount}${nb}Bargeld` : `ohne${nb}Bargeld`;
+  return `bei ${u.transactions}${nb}Buchungen · ${cash}`;
+}
+
+function mobilePromoEnd(p) {
+  if (p.promoEnd) return p.promoEnd;
+  const m = String(p.promoNote || '').match(/bis (\d{1,2}\.\d{1,2}\.\d{4})/);
+  return m ? m[1] : '';
+}
+
+// Kostenaufstellung als kleine Rechnung; der Erklärtext ohne die schon gezeigten Beträge darunter.
+function mobileCostBreakdown(p, note) {
+  const costs = comparisonCosts(p);
+  const rows = [['Grundgebühr', costs.base], ['Transaktionen', costs.transactions]];
+  if (costs.card) rows.push(['Physische Karte', costs.card]);
+  rows.push(['Abhebungen', costs.withdrawals]);
+  const rest = String(note || '').replace(/^Grundgebühr[^.]*?(\.\s*|$)/, '').trim();
+  return `<table class="mc-calc"><tbody>${rows.map(([l, v]) => `<tr><th scope="row">${l}</th><td>${formatEuro(v)}</td></tr>`).join('')}</tbody><tfoot><tr><th scope="row">Gesamt</th><td>${formatEuro(costs.total)}<small>/Monat</small></td></tr></tfoot></table>${rest ? `<p class="mc-calc-note">${rest}</p>` : ''}`;
+}
+
+function mobilePromoMarkup(p) {
+  const parts = String(p.promoNote || '').split(/;\s*zusätzlich\s+/).map(s => s.trim()).filter(Boolean);
+  if (parts.length < 2) return p.promoNote || '';
+  return `<ul class="mc-detail-points">${parts.map(s => `<li>${s.replace(/\.$/, '')}</li>`).join('')}</ul>`;
+}
+
+// Tarif text without the parts the card already shows separately (Aktion, Bargeld).
+function mobileTariffRest(p) {
+  const parts = String(p.priceNote || '').split(/;\s+/).map(s => s.trim()).filter(Boolean);
+  if (parts.length < 2) return parts.join('').replace(/(^|,\s*)0 €\/Monat(?=,|$)/, '').replace(/^,\s*/, '').trim();
+  return parts.filter(s =>
+    !/Bonus|Onboarding|Aktivierung|\bAktion\b|Neukunden|p\.a\.|Bargeld|Abhebung|\bATM\b|^Preise netto$/i.test(s)
+  ).map(s => s.replace(/(^|,\s*)0 €\/Monat(?=,|$)/, '').replace(/^,\s*/, '').trim()).filter(Boolean).join('; ');
+}
+
 function renderMobileCards(data) {
   const root = document.getElementById('mobileCards');
   if (!root) return;
@@ -1794,39 +1854,66 @@ function renderMobileCards(data) {
     root.innerHTML = `<div class="mobile-empty"><p>Keine Anbieter gefunden. Bitte Filter anpassen.</p></div>`;
     return;
   }
-  root.innerHTML = data.map(p => `
-    <article class="mc-card ${p.highlight ? 'highlight' : ''}">
+  root.innerHTML = data.map((p, i) => {
+    const limit = withdrawalLimitExceeded(p);
+    const base = mobileCellParts(basePriceMarkup(p, formatEuro(p.base)));
+    const total = mobileCellParts(totalBreakdownMarkup(p));
+    const cash = mobileCellParts(abhebungMarkup(p));
+    const totalLabel = comparisonTotalLabel(p);
+    const totalIsNumber = !limit && p._total !== null;
+    const limitNote = limit ? `Abhebungslimit: ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}/Monat; gewählte Abhebungen: ${formatEuro(monthlyWithdrawalTotal())}.` : '';
+    const hasCashback = p.cashback && p.cashback !== '—';
+    const review = p.reviewUrl ? `<a href="${p.reviewUrl}" class="mc-review">Testbericht</a>` : '';
+    return `
+    <article class="mc-card mc-card--v2 ${p.highlight ? 'highlight' : ''}">
+      ${p.highlight ? '<span class="mc-badge mc-badge--edge">Empfehlung</span>' : ''}
       <div class="mc-head">
-        <div class="mc-logo">${p.logo}</div>
+        <div class="mc-logo">${p.logo}<span class="mc-rank" aria-label="Platz ${i + 1}">${i + 1}</span></div>
         <div class="mc-head-text">
-          ${p.highlight ? '<span class="mc-badge">Empfehlung</span>' : ''}
           <div class="mc-name">${p.name}</div>
-          <div class="mc-meta">
-            <span class="mc-cat">${p.cat}</span>
-            ${p.targetGroup ? `<span class="tariff-group-text">Tarif für ${p.targetGroup.replace(' & ', ', ')}</span>` : ''}
-          </div>
-        </div>
-        <div class="mc-price-main">
-          <div class="mc-price-amount ${p._total === 0 ? 'free' : ''}">${withdrawalLimitExceeded(p) ? '—' : comparisonTotalLabel(p)}</div>
-          <div class="mc-price-period">${withdrawalLimitExceeded(p) ? 'Abhebungslimit' : '/Monat*'}</div>
+          <div class="mc-meta">${p.cat}${p.targetGroup ? ` · Tarif für ${p.targetGroup.replace(' & ', ', ')}` : ''}</div>
         </div>
       </div>
-      <div class="mc-specs">
-        <div class="mc-spec"><span class="mc-spec-label">Grundgebühr</span><span class="mc-spec-value ${p.base === 0 ? 'green' : 'blue'}">${basePriceMarkup(p, formatEuro(p.base))}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Aktion</span><span class="mc-spec-value ${p.promo ? 'orange' : 'muted'}">${p.promo || '—'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Ohne Schufa</span><span class="mc-spec-value ${p.schufa ? 'muted' : 'green'}">${p.schufa ? 'Nein' : 'Ja'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Cashback</span><span class="mc-spec-value ${p.cashback !== '—' ? 'blue' : 'muted'}">${p.cashback}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">DATEV</span><span class="mc-spec-value ${p.datev ? 'green' : 'muted'}">${p.datev ? 'Ja' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">Buchhaltung</span><span class="mc-spec-value ${p.accounting ? 'green' : 'muted'}">${p.accounting ? 'Ja' : 'Nein'}</span></div>
-        <div class="mc-spec"><span class="mc-spec-label">International</span><span class="mc-spec-value ${p.intl ? 'green' : 'muted'}">${p.intl ? 'Ja' : 'Nein'}</span></div>
-      </div>
-      ${mobilePromoNote(p)}
-      <div class="mc-footer">
-        <div class="mc-footer-note">${withdrawalLimitExceeded(p) ? `Abhebungslimit: ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}/Monat; gewählte Abhebungen: ${formatEuro(monthlyWithdrawalTotal())}. ` : ''}${p.priceNote}</div>
+      <dl class="mc-facts">
+        <div class="mc-fact mc-fact--total">
+          <dt>Gesamtkosten*<span class="mc-usage">${mobileUsageLine()}</span></dt>
+          <dd class="${p._total === 0 && !limit ? 'is-free' : ''}${totalIsNumber ? '' : ' is-note'}">${totalLabel}${totalIsNumber ? '<small>/Monat</small>' : ''}</dd>
+        </div>
+        <div class="mc-fact">
+          <dt>Grundgebühr</dt>
+          <dd class="${p.base === 0 && p.baseLabel !== 'regional' ? 'is-free' : ''}">${base.value}</dd>
+        </div>
+        ${p.promo ? `<div class="mc-fact mc-fact--promo has-promo">
+          <dt>Aktion</dt>
+          <dd>${p.promo}${mobilePromoEnd(p) ? `<span class="mc-fact-sub">bis ${mobilePromoEnd(p)}</span>` : ''}</dd>
+        </div>` : `<div class="mc-fact">
+          <dt>Bargeld</dt>
+          <dd class="mc-fact-small">${cash.value.split(' · ')[0] || '—'}</dd>
+        </div>`}
+      </dl>
+      <ul class="mc-feats" aria-label="Merkmale">
+        ${mobileFeature('Ohne Schufa', !p.schufa)}
+        ${mobileFeature('DATEV', p.datev)}
+        ${mobileFeature('Buchhaltung', p.accounting)}
+        ${mobileFeature('International', p.intl)}
+        ${hasCashback ? mobileFeature('Cashback ' + p.cashback.replace(/\s*garantiert$/i, ''), true) : ''}
+      </ul>
+      <details class="mc-details">
+        <summary>Konditionen &amp; Kosten</summary>
+        <dl class="mc-detail-list">
+          ${mobileDetailRow('Aktion', mobilePromoMarkup(p))}
+          ${mobileDetailRow('So gerechnet', limitNote || (totalIsNumber ? mobileCostBreakdown(p, total.note) : total.note))}
+          ${mobileDetailRow('Grundgebühr', base.note)}
+          ${mobileDetailRow('Bargeld', cash.value + (cash.note ? ' – ' + cash.note : ''))}
+          ${mobileDetailRow('Weitere Konditionen', mobileTariffRest(p))}
+        </dl>
+      </details>
+      <div class="mc-actions ${review ? '' : 'mc-actions--single'}">
         ${providerCtaMarkup(p, 'mobile')}
+        ${review}
       </div>
-    </article>
-  `).join('');
+    </article>`;
+  }).join('');
 }
 
 function renderTable() {
