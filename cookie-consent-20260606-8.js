@@ -86,7 +86,17 @@
     button.addEventListener('click', function () {
       renderBanner(true);
     });
-    document.body.appendChild(button);
+    var footerLinks = document.body.hasAttribute('data-cookie-settings-footer')
+      ? document.querySelector('#site-footer .footer-links') : null;
+    if (footerLinks) {
+      button.classList.add('cookie-settings-button--footer');
+      button.appendChild(document.createTextNode('Cookie-Einstellungen'));
+      var item = document.createElement('li');
+      item.appendChild(button);
+      footerLinks.appendChild(item);
+    } else {
+      document.body.appendChild(button);
+    }
   }
 
   function renderBanner(isSettingsOpen) {

@@ -134,3 +134,24 @@
     bottom: 12px;
   }
 }
+
+/* Opt-in footer placement keeps the settings control out of comparison cards. */
+.footer-links:has(.cookie-settings-button--footer) { flex-wrap: wrap; }
+.cookie-settings-button--footer {
+  position: static;
+  display: inline-flex;
+  gap: 6px;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(255,255,255,.78);
+  font: inherit;
+  font-size: var(--fs-xs);
+  opacity: 1;
+}
+.cookie-settings-button--footer:hover,
+.cookie-settings-button--footer:focus-visible { color: #fff; }
+.cookie-settings-button--footer .cookie-settings-icon { width: 15px; height: 15px; }

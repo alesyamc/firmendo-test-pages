@@ -84,11 +84,11 @@
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-hero.css?v=20261019-werbehinweis">
 <link rel="stylesheet" href="/firmendo-test-pages/css/author-popover.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/content-blocks.css?v=20261010-points1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261030-mcard9">
+<link rel="stylesheet" href="/firmendo-test-pages/css/lp-comparison-table.css?v=20261030-mcard10">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-content-components.css?v=20261008-dark1">
 <link rel="stylesheet" href="/firmendo-test-pages/css/lp-pages/geschaeftskonto-vergleich.css?v=20261008-dark1">
-<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261008-dark1">
-<script src="/firmendo-test-pages/cookie-consent-20260606-8.js" defer></script>
+<link rel="stylesheet" href="/firmendo-test-pages/css/cookie-consent.css?v=20261030-footer">
+<script src="/firmendo-test-pages/cookie-consent-20260606-8.js?v=20261030-footer" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/dark-mode.css?v=20261008-dark1">
 <script src="/firmendo-test-pages/theme-toggle.js?v=20261008-dark1" defer></script>
 <link rel="stylesheet" href="/firmendo-test-pages/css/site-layout.css?v=20261011-width2">
@@ -124,7 +124,7 @@
 }
 </script>
 </head>
-<body class="lp-comparison-page">
+<body class="lp-comparison-page" data-cookie-settings-footer>
 
 <!-- NAV: synced from ../snippets/nav.html -->
 <nav id="site-nav">
@@ -1386,7 +1386,7 @@
 const products = [
   {
     // Prices and listed promotions checked 2026-10-11; see source audit.
-    name: 'Finom Solo', variableCardCost: true, physicalCardFee: 3, priceNote: 'Solo für Freiberufler und neu eingetragene Unternehmen, 0 €/Monat; 1 virtuelle Karte inklusive; physische Karte 3 € je Karte; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.', calculationNote: 'Berechnung während der sechsmonatigen SEPA-Aktion für teilnahmeberechtigte Neukunden. Danach gilt die reguläre Preisstaffel nach Überweisungsvolumen.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
+    name: 'Finom Solo', mobileTargetGroup: 'Für Freelancer & neue Unternehmen', mobileConditions: '1 virtuelle Karte inklusive.', variableCardCost: true, physicalCardFee: 3, priceNote: 'Solo für Freiberufler und neu eingetragene Unternehmen, 0 €/Monat; 1 virtuelle Karte inklusive; physische Karte 3 € je Karte; bei Onboarding ab 23.09. und Aktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten, 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen', promo: '350 € + 5 % p.a.', promoNote: 'Bei Onboarding ab 23.09. und Kontoaktivierung bis 31.10.2026: 350 € Bonus nach jeweils 1.000 € berechtigten Kartenausgaben in den ersten beiden Monaten; zusätzlich 5 % p.a. für 5 Monate auf dem Zinskonto und 6 Monate unbegrenzte kostenlose SEPA-Überweisungen.', calculationNote: 'Berechnung während der sechsmonatigen SEPA-Aktion für teilnahmeberechtigte Neukunden. Danach gilt die reguläre Preisstaffel nach Überweisungsvolumen.', base: 0, txCost: 0, txFree: 999, abhebePct: 0.01, abhebeCap: 500, abhebeMin: 0, cat: 'Fintech', highlight: true,
     targetGroup: 'Freiberufler & neu eingetragene Unternehmen', suitable: ['Freiberufler','Einzelunternehmen','GmbH & UG','Gründer','eK'],
     schufa: false, rating: 4.8, cashback: '—', intl: true, datev: true, accounting: true,
     affiliateUrl: '/firmendo-test-pages/go/finom-solo/', reviewUrl: '/firmendo-test-pages/finom-geschaeftskonto/',
@@ -1428,7 +1428,7 @@ const products = [
   },
   {
     // Prices and listed promotions checked 2026-10-11; see source audit.
-    name: 'Holvi Flex', priceNote: 'Flex, 0 €/Monat, dauerhaft ohne Grundgebühr, 0,25 € je SEPA-Überweisung/Lastschrift, klassische Karte 3 €/Monat, DATEV 3 €/Monat, 2,5 % Bargeldabhebung', base: 0, txCost: 0.25, txFree: 0, abhebeCardMonthly: 3, abhebePct: 0.025, abhebeMin: 0, cat: 'Fintech', highlight: false,
+    name: 'Holvi Flex', datevMonthly: 3, mobileConditions: '0,25 € je SEPA-Überweisung/Lastschrift.', priceNote: 'Flex, 0 €/Monat, dauerhaft ohne Grundgebühr, 0,25 € je SEPA-Überweisung/Lastschrift, klassische Karte 3 €/Monat, DATEV 3 €/Monat, 2,5 % Bargeldabhebung', base: 0, txCost: 0.25, txFree: 0, abhebeCardMonthly: 3, abhebePct: 0.025, abhebeMin: 0, cat: 'Fintech', highlight: false,
     suitable: ['Freiberufler','Einzelunternehmen','Gründer'],
     schufa: false, rating: 4.1, cashback: '—', intl: true, datev: true, accounting: true,
     affiliateUrl: '/firmendo-test-pages/go/holvi-lite/', reviewUrl: '/firmendo-test-pages/holvi-geschaeftskonto/',
@@ -1803,8 +1803,8 @@ function mobileCellParts(html) {
 const MC_ICON_YES = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const MC_ICON_NO = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
 
-function mobileFeature(label, on) {
-  return `<li class="mc-feat ${on ? 'mc-feat--yes' : 'mc-feat--no'}">${on ? MC_ICON_YES : MC_ICON_NO}<span>${label}</span><span class="mc-sr">${on ? ': ja' : ': nein'}</span></li>`;
+function mobileFeature(label, on, optional = false) {
+  return `<li class="mc-feat ${optional ? 'mc-feat--optional' : on ? 'mc-feat--yes' : 'mc-feat--no'}">${on ? MC_ICON_YES : MC_ICON_NO}<span>${label}</span><span class="mc-sr">${optional ? ': kostenpflichtige Option' : on ? ': ja' : ': nein'}</span></li>`;
 }
 
 function mobileDetailRow(label, text) {
@@ -1843,6 +1843,7 @@ function mobilePromoMarkup(p) {
 
 // Tarif text without the parts the card already shows separately (Aktion, Bargeld).
 function mobileTariffRest(p) {
+  if (p.mobileConditions) return p.mobileConditions;
   const parts = String(p.priceNote || '').split(/;\s+/).map(s => s.trim()).filter(Boolean);
   if (parts.length < 2) return parts.join('').replace(/(^|,\s*)0 €\/Monat(?=,|$)/, '').replace(/^,\s*/, '').trim();
   return parts.filter(s =>
@@ -1862,6 +1863,10 @@ function renderMobileCards(data) {
     const base = mobileCellParts(basePriceMarkup(p, formatEuro(p.base)));
     const total = mobileCellParts(totalBreakdownMarkup(p));
     const cash = mobileCellParts(abhebungMarkup(p));
+    const costs = comparisonCosts(p);
+    const cashSummary = cash.value.split(' · ')[0] || '—';
+    const cashDetail = p.promo || cash.note || (cash.value !== cashSummary && !costs.card) ? cash.value + (cash.note ? ' – ' + cash.note : '') : '';
+    const targetGroup = p.mobileTargetGroup || (p.targetGroup ? `Tarif für ${p.targetGroup.replace(' & ', ', ')}` : '');
     const totalLabel = comparisonTotalLabel(p);
     const totalIsNumber = !limit && p._total !== null;
     const limitNote = limit ? `Abhebungslimit: ${formatEuro(p.abhebeCap || p.cashWithdrawal.monthlyLimit)}/Monat; gewählte Abhebungen: ${formatEuro(monthlyWithdrawalTotal())}.` : '';
@@ -1874,7 +1879,7 @@ function renderMobileCards(data) {
         <div class="mc-logo">${p.logo}<span class="mc-rank" aria-label="Platz ${i + 1}">${i + 1}</span></div>
         <div class="mc-head-text">
           <div class="mc-name">${p.name}</div>
-          <div class="mc-meta">${p.cat}${p.targetGroup ? ` · Tarif für ${p.targetGroup.replace(' & ', ', ')}` : ''}</div>
+          <div class="mc-meta">${p.cat}${targetGroup ? ` · ${targetGroup}` : ''}</div>
         </div>
       </div>
       <dl class="mc-facts">
@@ -1891,12 +1896,12 @@ function renderMobileCards(data) {
           <dd>${p.promo}${mobilePromoEnd(p) ? `<span class="mc-fact-sub">bis ${mobilePromoEnd(p)}</span>` : ''}</dd>
         </div>` : `<div class="mc-fact">
           <dt>Bargeld</dt>
-          <dd class="mc-fact-small">${cash.value.split(' · ')[0] || '—'}</dd>
+          <dd class="mc-fact-small">${cashSummary}</dd>
         </div>`}
       </dl>
       <ul class="mc-feats" aria-label="Merkmale">
         ${mobileFeature('Ohne Schufa', !p.schufa)}
-        ${mobileFeature('DATEV', p.datev)}
+        ${mobileFeature(p.datevMonthly ? `DATEV +${formatEuro(p.datevMonthly).replace(',00', '')}/Monat` : 'DATEV', p.datev, !!p.datevMonthly)}
         ${mobileFeature('Buchhaltung', p.accounting)}
         ${mobileFeature('International', p.intl)}
         ${hasCashback ? mobileFeature('Cashback ' + p.cashback.replace(/\s*garantiert$/i, ''), true) : ''}
@@ -1907,7 +1912,8 @@ function renderMobileCards(data) {
           ${mobileDetailRow('Aktion', mobilePromoMarkup(p))}
           ${mobileDetailRow('So gerechnet', limitNote || (totalIsNumber ? mobileCostBreakdown(p, total.note) : total.note))}
           ${mobileDetailRow('Grundgebühr', base.note)}
-          ${mobileDetailRow('Bargeld', cash.value + (cash.note ? ' – ' + cash.note : ''))}
+          ${mobileDetailRow('Bargeld', cashDetail)}
+          ${mobileDetailRow('Zusatzoptionen', p.datevMonthly ? `DATEV: +${formatEuro(p.datevMonthly)}/Monat, nicht im Gesamtpreis enthalten.` : '')}
           ${mobileDetailRow('Weitere Konditionen', mobileTariffRest(p))}
         </dl>
       </details>
@@ -1963,7 +1969,7 @@ function renderTable() {
       <td class="td-abhebung u-text-center">${abhebungMarkup(p)}</td>
       <td class="td-total-col u-text-center">${totalBreakdownMarkup(p)}</td>
       <td class="u-text-center">${p.cashback !== '—' ? `<span class="u-text-green-strong">${p.cashback}</span>` : `<span class="u-text-gray-300">—</span>`}</td>
-      <td class="td-bool">${p.datev ? YES : NO}</td>
+      <td class="td-bool">${p.datevMonthly ? `<span class="table-text">Optional<br>+${formatEuro(p.datevMonthly)}/Monat</span>` : p.datev ? YES : NO}</td>
       <td class="td-bool">${p.accounting ? YES : NO}</td>
       <td class="td-bool">${p.intl ? YES : NO}</td>
       <td class="td-cta">
