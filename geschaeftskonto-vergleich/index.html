@@ -1865,7 +1865,9 @@ function renderMobileCards(data) {
     const cash = mobileCellParts(abhebungMarkup(p));
     const costs = comparisonCosts(p);
     const cashSummary = cash.value.split(' · ')[0] || '—';
-    const cashDetail = p.promo || cash.note || (cash.value !== cashSummary && !costs.card) ? cash.value + (cash.note ? ' – ' + cash.note : '') : '';
+    const cardShownInCalculation = costs.card > 0 || (p.variableCardCost && monthlyWithdrawalTotal() > 0 && !limit);
+    const cashDetailValue = cardShownInCalculation ? cashSummary : cash.value;
+    const cashDetail = p.promo || cash.note || cashDetailValue !== cashSummary ? cashDetailValue + (cash.note ? ' – ' + cash.note : '') : '';
     const targetGroup = p.mobileTargetGroup || (p.targetGroup ? `Tarif für ${p.targetGroup.replace(' & ', ', ')}` : '');
     const totalLabel = comparisonTotalLabel(p);
     const totalIsNumber = !limit && p._total !== null;
